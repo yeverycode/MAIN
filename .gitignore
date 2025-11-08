@@ -1,0 +1,11 @@
+# macOS 시스템 파일
+.DS_Store
+
+# Node / Web 환경 (선택적으로 추가)
+node_modules/
+dist/
+.env
+
+# OS 및 에디터 관련
+*.log
+.vscode/

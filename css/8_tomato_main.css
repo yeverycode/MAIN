@@ -63,23 +63,30 @@ html[data-theme="light"] .fyig-title {
 /* 이미지 슬롯 공통 */
 .ani,
 .gif {
-  color: transparent;
   position: relative;
   display: inline-block;
+  color: transparent;
+  vertical-align: middle;
+  overflow: visible;
 }
 
-/* 로켓 이미지 (O) */
-.ani-o::after {
-  content: "";
+.ani-img,
+.gif-img {
   display: block;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.ani-o .ani-img {
   width: 176px;
   height: 229px;
-  background: url(/assets/rocket.png) center center no-repeat;
-  background-size: 100% 100%;
+}
+
+/* 로켓 이미지 (O) */
+.ani-o .ani-img {
   animation: ro 3s ease-in-out infinite;
 }
 
@@ -95,17 +102,12 @@ html[data-theme="light"] .fyig-title {
   }
 }
 
-.ani-oo::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(0);
+.ani-oo .ani-img {
   width: 269px;
   height: 140px;
-  background: url(/assets/infinite.png) center center no-repeat;
-  background-size: 100% 100%;
+}
+
+.ani-oo .ani-img {
   animation: ro2 3s ease-in-out infinite;
 }
 
@@ -124,25 +126,10 @@ html[data-theme="light"] .fyig-title {
   }
 }
 
-.gif-a::after,
-.gif-i::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.gif-a .gif-img,
+.gif-i .gif-img {
   width: 130px;
   height: 130px;
-  background-size: 100% 100%;
-}
-
-.gif-a::after {
-  background-image: url(/assets/A.png);
-}
-
-.gif-i::after {
-  background-image: url(/assets/I.png);
 }
 
 .fyig-rotator {

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAIN</title>
+  <link rel="stylesheet" href="/css/8_tomato_common.css" />
+  <link rel="stylesheet" href="/css/8_tomato_main.css" />
+</head>
+<body>
+
+<!-- 다크/라이트 전환 토글  -->
+<button class="theme-toggle" aria-label="테마 전환">
+  <span class="tgl-sun">☀️</span>
+  <span class="tgl-moon">🌙</span>
+</button>
+
+<!-- 헤더/네비게이션 -->
+<div class="site-header-backdrop" aria-hidden="true"></div>
+<header class="site-header" aria-label="주요 탐색">
+  <nav class="nav" role="navigation">
+    <a href="/" class="nav__link nav__link--main is-active" aria-label="home">
+      <img
+        src="/assets/8_tomato_home_white.png"
+        alt="MAIN 홈"
+        class="nav__logo"
+        data-logo-dark="/assets/8_tomato_home_white.png"
+        data-logo-light="/assets/8_tomato_home_black.png"
+      >
+    </a>
+
+    <div class="nav__item">
+      <a href="/pages/intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/curriculum.html" class="dropdown__item" role="menuitem">커리큘럼 소개</a>
+        <a href="/pages/academy.html" class="dropdown__item" role="menuitem">학회 소개</a>
+        <a href="/pages/dept.html" class="dropdown__item" role="menuitem">부서 소개</a>
+      </div>
+    </div>
+
+    <a href="/pages/professors.html" class="nav__link">교수님 소개</a>
+    <a href="/pages/calendar.html" class="nav__link">연간 행사</a>
+    <a href="/pages/faq.html" class="nav__link">FAQ</a>
+  </nav>
+</header>
+
+<!-- 섹션 1  -->
+<section class="fyig-hero" aria-label="FOR YOUR INNOVATIVE GROWTH">
+  <h1 class="fyig-title">
+    <!-- 1줄: F[로켓]R YOUR -->
+    <span class="fyig-line">
+      <span class="fyig-word">
+        F<span class="ani ani-o">O</span>R&nbsp;YOUR
+      </span>
+    </span>
+
+    <!-- 2줄: A,I 요소 -->
+    <span class="fyig-line">
+      <span class="fyig-rotator" aria-live="polite" aria-atomic="true">
+        <span class="fyig-rot-word">
+          INNOV<span class="gif gif-a">A</span>T<span class="gif gif-i">I</span>VE
+        </span>
+        <span class="fyig-rot-word">
+          CRE<span class="gif gif-a">A</span>T<span class="gif gif-i">I</span>VE
+        </span>
+        <span class="fyig-rot-word">
+          <span class="gif gif-a">A</span>CADEM<span class="gif gif-i">I</span>C
+        </span>
+      </span>
+    </span>
+
+    <!-- 3줄: GR[무한대]WTH -->
+    <span class="fyig-line">
+      <span class="fyig-word">
+        GR<span class="ani ani-oo">OO</span>WTH
+      </span>
+    </span>
+  </h1>
+</section>
+
+<!-- 섹션 2 -->
+<section class="section sec-intro con_w" aria-labelledby="intro-title">
+  <div class="container">
+    <div class="intro-wrapper">
+      <div class="intro-inner">
+        <div class="intro-left">
+          <h2 id="intro-title" class="intro-heading">
+            <span class="intro-kicker reveal" data-reveal="up" style="--i:0"><b>MAIN</b>은</span>
+            <span class="reveal" data-reveal="up" style="--i:1">혁신적인 성장을</span><br/>
+            <span class="reveal" data-reveal="up" style="--i:2">도모합니다.</span>
+          </h2>
+        </div>
+
+        <div class="intro-right">
+          <div class="intro-txt">
+            <p class="reveal reveal-scale" data-reveal="up" style="--i:3">
+              MAIN은 학부의 다양한 사람과<br/>이야기를 잇는 공간입니다.
+            </p>
+            <p class="reveal reveal-scale" data-reveal="up" style="--i:4">
+              학생, 교수, 그리고 프로젝트가 만나는 곳,<br/>MAIN에서 새로운 시작이 이어집니다.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vertical-line" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 3: 카드 (학부 소개) -->
+<section class="section sec-cards" aria-labelledby="cards-title">
+  <div class="container">
+    <h2 id="cards-title" class="sec-title">인공지능공학부는<br/>이런 곳입니다</h2>
+
+    <div class="cards-grid">
+      <!-- Card 1 -->
+      <article class="info-card reveal" data-reveal="up">
+        <span class="card-dot" aria-hidden="true"></span>
+        <div class="card-eyebrow">CURRICULUM</div>
+        <h3 class="card-title">인공지능공학부 커리큘럼</h3>
+        <div class="card-line" aria-hidden="true"></div>
+        <p class="card-desc">입문부터 심화 전공까지,<br/>단계별로 체계적인 커리큘럼을 제공합니다.</p>
+        <a class="card-more" href="#">+ MORE</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="info-card reveal" data-reveal="up" style="--i:1">
+        <span class="card-dot" aria-hidden="true"></span>
+        <div class="card-eyebrow">DEPT</div>
+        <h3 class="card-title">학생회 부서 소개</h3>
+        <div class="card-line" aria-hidden="true"></div>
+        <p class="card-desc">입문부터 심화 전공까지,<br/>단계별로 체계적인 커리큘럼을 제공합니다.</p>
+        <a class="card-more" href="#">+ MORE</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="info-card reveal" data-reveal="up" style="--i:2">
+        <span class="card-dot" aria-hidden="true"></span>
+        <div class="card-eyebrow">INTRO</div>
+        <h3 class="card-title">인공지능공학부 소개</h3>
+        <div class="card-line" aria-hidden="true"></div>
+        <p class="card-desc">입문부터 심화 전공까지,<br/>단계별로 체계적인 커리큘럼을 제공합니다.</p>
+        <a class="card-more" href="#">+ MORE</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 4: 행사 -->
+<section class="section sec-events" aria-labelledby="events-title">
+  <div class="container">
+    <div class="events-header">
+      <h2 id="events-title" class="sec-title">
+        <span class="events-title-line">메인이 기획하고</span>
+        <span class="events-title-line events-title-line--cta">진행한 행사를 확인해보세요.</span>
+      </h2>
+      <div class="viewmore">
+        <a href="#" class="viewmore-link">VIEW MORE</a>
+        <span class="viewmore-icon" aria-hidden="true">+</span>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <!-- Event 1 -->
+      <article class="event-card reveal" data-reveal="up">
+        <div class="event-img">
+          <img src="https://aie.sookmyung.ac.kr/app/board/attach/image/thumb_32853_1743940890000.do" alt="" loading="lazy">
+        </div>
+        <div class="event-content">
+          <h3 class="event-title">신입생 OT</h3>
+          <a class="event-more" href="#">+ MORE</a>
+        </div>
+      </article>
+
+      <!-- Event 2 -->
+      <article class="event-card reveal" data-reveal="up" style="--i:1">
+        <div class="event-img">
+          <img src="https://aie.sookmyung.ac.kr/app/board/attach/image/thumb_32858_1743941061000.do" alt="" loading="lazy">
+        </div>
+        <div class="event-content">
+          <h3 class="event-title">1학기 개강총회</h3>
+          <a class="event-more" href="#">+ MORE</a>
+        </div>
+      </article>
+
+      <!-- Event 3 -->
+      <article class="event-card reveal" data-reveal="up" style="--i:2">
+        <div class="event-img">
+          <img src="https://aie.sookmyung.ac.kr/app/board/attach/image/thumb_33030_1747986470000.do" alt="" loading="lazy">
+        </div>
+        <div class="event-content">
+          <h3 class="event-title">인공지능 짝선짝후</h3>
+          <a class="event-more" href="#">+ MORE</a>
+        </div>
+      </article>
+
+      <!-- Event 4 -->
+      <article class="event-card reveal" data-reveal="up" style="--i:3">
+        <div class="event-img">
+          <img src="https://aie.sookmyung.ac.kr/app/board/attach/image/thumb_33035_1747986831000.do" alt="" loading="lazy">
+        </div>
+        <div class="event-content">
+          <h3 class="event-title">학부 연구실 설명회</h3>
+          <a class="event-more" href="#">+ MORE</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 5: 캘린더  -->
+<section class="section sec-calendar" aria-labelledby="cal-title">
+  <div class="cal-wrapper">
+    <div class="cal-left">
+      <!-- Nov 2025 (뒤쪽) -->
+      <div class="cal-card cal-card--back reveal" data-reveal="up">
+        <header class="cal-header">Nov 2025</header>
+        <div class="cal-grid">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+          <i></i><i></i><i></i><b>1</b><b>2</b><b>3</b><b>4</b>
+          <b class="is-primary">5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b>
+          <b>12</b><b>13</b><b>14</b><b>15</b><b>16</b><b>17</b><b class="is-primary">18</b>
+          <b>19</b><b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b>
+          <b>26</b><b>27</b><b>28</b><b>29</b><b>30</b><i></i><i></i>
+        </div>
+      </div>
+
+      <!-- Dec 2025 (앞쪽) -->
+      <div class="cal-card cal-card--front reveal" data-reveal="up" style="--i:1">
+        <header class="cal-header">Dec 2025</header>
+        <div class="cal-grid">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+          <i></i><b>1</b><b>2</b><b>3</b><b>4</b><b class="is-primary">5</b><b>6</b>
+          <b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b>
+          <b>14</b><b>15</b><b>16</b><b>17</b><b class="is-primary">18</b><b>19</b><b>20</b>
+          <b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b><b>27</b>
+          <b>28</b><b>29</b><b>30</b><b>31</b><i></i><i></i><i></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 오른쪽: 텍스트 및 버튼 영역 -->
+    <div class="cal-right">
+      <h2 id="cal-title" class="sec-title reveal" data-reveal="up">학과 캘린더를 확인해보세요.</h2>
+      <p class="cal-subtitle reveal" data-reveal="up" style="--i:1">구글폼 링크까지 한눈에 보실 수 있습니다.</p>
+      <a class="btn-cal reveal" data-reveal="up" style="--i:2" href="#">행사 신청하러 가기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 6: CTA  -->
+<section class="section sec-cta" aria-labelledby="cta-title">
+  <div class="cta-container">
+    <h2 id="cta-title" class="sec-title">나에게 맞는<br/>연구실은 어디일까?</h2>
+    <p class="cta-subtitle">자가 진단을 통해, 나에게 어울리는 연구실을 찾아보세요.</p>
+    
+    <!-- 무한 스크롤 카드 영역 -->
+    <div class="lab-scroll-section">
+      <!-- 첫 번째 줄 (오른쪽으로) -->
+      <div class="scroll-wrapper row-1">
+        <div class="scroll-content">
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <!-- 복제본 -->
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+        </div>
+      </div>
+
+      <!-- 두 번째 줄 (왼쪽으로) -->
+      <div class="scroll-wrapper row-2">
+        <div class="scroll-content">
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <!-- 복제본 -->
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+        </div>
+      </div>
+
+      <!-- 세 번째 줄 (오른쪽으로) -->
+      <div class="scroll-wrapper row-3">
+        <div class="scroll-content">
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <!-- 복제본 -->
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+          <div class="lab-card"><img src="/assets/8_tomato_bhkim_logo.png" alt="B.H. Kim Lab Logo"></div>
+        </div>
+      </div>
+    </div>
+    
+    <a class="btn-cta" href="#">테스트하러 가기</a>
+  </div>
+</section>
+
+<!-- 푸터  -->
+<footer class="footer-section" aria-label="하단 정보">
+  <div class="brand">
+    <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+    MAIN
+  </div>
+  <address class="addr">
+    <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
+    <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
+    <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
+  </address>
+  <p class="copy">
+    COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
+  </p>
+</footer>
+
+<!-- js (나중에 분리하라하면 따로 분리) -->
+<script>
+  (function initTheme(){
+    const html = document.documentElement;
+    const logo = document.querySelector('.nav__logo');
+
+    const applyTheme = (theme) => {
+      html.setAttribute('data-theme', theme);
+      if (logo) {
+        const nextLogo = theme === 'dark' ? logo.dataset.logoDark : logo.dataset.logoLight;
+        if (nextLogo) logo.src = nextLogo;
+      }
+    };
+
+    const saved = localStorage.getItem('theme') || 'dark';
+    applyTheme(saved);
+
+    document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('theme', next);
+    });
+  })();
+
+  (function () {
+    const html = document.documentElement;
+    const all = document.querySelectorAll('.reveal');
+
+    html.classList.add('reveal-ready');
+
+    const failOpen = () => all.forEach(el => el.classList.add('is-inview'));
+    if (!all.length) return;
+
+    try {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        failOpen(); return;
+      }
+      if (!('IntersectionObserver' in window)) { failOpen(); return; }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('is-inview');
+            }, 50);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      document.querySelectorAll('.reveal-stagger').forEach(group => {
+        group.querySelectorAll('.reveal').forEach((el, idx) => {
+          if (!el.style.getPropertyValue('--i')) el.style.setProperty('--i', idx);
+          io.observe(el);
+        });
+      });
+
+      document.querySelectorAll('.reveal:not(.reveal-stagger .reveal)').forEach(el => io.observe(el));
+    } catch (e) {
+      console.error('[reveal] init error:', e);
+      failOpen();
+    }
+  })();
+
+  (function () {
+    const secIntro = document.querySelector('.sec-intro');
+    if (!secIntro) return;
+
+    try {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        secIntro.classList.add('line-active');
+        return;
+      }
+      
+      if (!('IntersectionObserver' in window)) {
+        secIntro.classList.add('line-active');
+        return;
+      }
+
+      const lineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('line-active');
+            }, 300);
+            lineObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      lineObserver.observe(secIntro);
+    } catch (e) {
+      console.error('[line animation] init error:', e);
+      secIntro.classList.add('line-active');
+    }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>연간 행사 | 숙명여자대학교 인공지능공학부</title>
+
+  <link rel="stylesheet" href="/css/8_tomato_common.css" />
+  <link rel="stylesheet" href="/css/8_tomato_annual_event.css" />
+</head>
+<body>
+
+<!-- 공통 헤더-->
+<div class="site-header-backdrop" aria-hidden="true"></div>
+<header class="site-header" aria-label="주요 탐색">
+  <nav class="nav" role="navigation">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+      <img
+        src="/assets/8_tomato_home_white.png"
+        alt="MAIN 홈"
+        class="nav__logo"
+        data-logo-dark="/assets/8_tomato_home_white.png"
+        data-logo-light="/assets/8_tomato_home_black.png"
+      >
+    </a>
+
+    <div class="nav__item">
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼 소개</a>
+        <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학회 소개</a>
+        <a href="/pages/8_tomato_dept.html" class="dropdown__item" role="menuitem">부서 소개</a>
+      </div>
+    </div>
+
+    <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-current="page">행사소개</a>
+    <a href="/pages/prof/8_tomato_professors.html" class="nav__link">교수님 소개</a>
+    <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
+    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECUIT</a>
+  </nav>
+</header>
+
+<!-- 상단 EVENT 헤더 -->
+<section class="page-hero page-hero--event" aria-label="행사 소개 헤더">
+  <div class="page-hero__headline">
+    <h1>EVE<span class="title-img-wrap"><img src="/assets/8_tomato_N.png" alt="" aria-hidden="true" class="title-img"></span>T</h1>
+  </div>
+  <nav class="page-hero__subnav" aria-label="이벤트 탭">
+    <ul>
+      <li class="is-active">
+        <a href="/pages/event/8_tomato_annual_event.html" aria-current="page">연간 행사</a>
+      </li>
+      <li>
+        <a href="#">진행중인 이벤트</a>
+      </li>
+      <li>
+        <a href="#">당첨자 발표</a>
+      </li>
+      <li>
+        <a href="#">지난 이벤트</a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+    <!-- 콘텐츠 영역 -->
+    <section class="content event-content">
+      <div class="container">
+
+        <!-- 상단 설명 + 검색 -->
+        <header class="event-content-header">
+          <div class="event-content-header__text">
+            <h2 class="sec-title">연간 행사</h2>
+            <p class="event-content-header__description">
+              인공지능공학부는 매년 새로운 행사를 기획하고 있으며,<br />
+              학부 구성원 모두가 함께 즐기고 성장할 수 있는 다양한 프로그램을 준비하고 있습니다.
+            </p>
+          </div>
+
+          <form class="event-search" action="#" method="get">
+            <div class="event-search__select">
+              <label for="event-search-type" class="sr-only">검색 범위</label>
+              <select id="event-search-type" name="type" class="event-search__select-field" aria-label="검색 범위 선택">
+                <option value="all">전체</option>
+                <option value="title">제목</option>
+                <option value="content">내용</option>
+              </select>
+            </div>
+
+            <div class="event-search__field">
+              <label for="event-search-query" class="sr-only">검색어</label>
+              <input
+                id="event-search-query"
+                type="text"
+                name="q"
+                placeholder="검색어를 입력하세요."
+                aria-label="이벤트 검색"
+              />
+            </div>
+
+            <button type="submit" class="event-search__submit" aria-label="검색">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="16" y1="16" x2="22" y2="22"></line>
+              </svg>
+            </button>
+          </form>
+        </header>
+
+        <!-- 행사 카드 그리드 (18개, 3열 x 6줄) -->
+        <section class="event-grid" aria-label="연간 행사 목록">
+
+          <!-- 1행 -->
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/ot.jpg" alt="신입생 OT 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">신입생 OT</h3>
+              <p class="event-card__date">2025.02.19 (수)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/opening-1st.jpg" alt="1학기 개강총회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">1학기 개강총회</h3>
+              <p class="event-card__date">2025.03.13 (목)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/lab-info.jpg" alt="학부연구실 설명회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">학부연구실 설명회</h3>
+              <p class="event-card__date">2025.03.27 (목)</p>
+            </div>
+          </article>
+
+          <!-- 2행 -->
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/mid-1st-snack.jpg" alt="1학기 중간고사 간식 배부 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">1학기 중간고사 간식 배부</h3>
+              <p class="event-card__date">2025.04.09 (수) ~ 2025.04.10 (목)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/grad-1st.jpg" alt="1학기 졸업 전시회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">1학기 졸업 전시회</h3>
+              <p class="event-card__date">2025.04.17 (목)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/mt.jpg" alt="총 MT 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">총 MT</h3>
+              <p class="event-card__date">2025.05.09 (금) ~ 2025.05.10 (토)</p>
+            </div>
+          </article>
+
+          <!-- 3행 -->
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/teachers-day.jpg" alt="스승의 날 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">스승의 날</h3>
+              <p class="event-card__date">2025.05.13 (화)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/major-fair.jpg" alt="전공 박람회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">전공 박람회</h3>
+              <p class="event-card__date">2025.05.19 (월) ~ 2025.05.20 (화)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/final-1st-snack.jpg" alt="1학기 기말고사 간식배부 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">1학기 기말고사 간식배부</h3>
+              <p class="event-card__date">2025.06.04 (수) ~ 2025.06.05 (목)</p>
+            </div>
+          </article>
+
+          <!-- 4행 -->
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/ips.jpg" alt="IPS 대회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">IPS 대회</h3>
+              <p class="event-card__date">2025.05.30 (금)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/end-1st.jpg" alt="1학기 종강총회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">1학기 종강총회</h3>
+              <p class="event-card__date">2025.06.17 (화)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/opening-2nd.jpg" alt="2학기 개강총회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">2학기 개강총회</h3>
+              <p class="event-card__date">2025.09.04 (목)</p>
+            </div>
+          </article>
+
+          <!-- 5행 -->
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/eng-10th.jpg" alt="공과대학 10주년 학술제 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">공과대학 10주년 학술제</h3>
+              <p class="event-card__date">2025.09.11 (목)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/career-concert.jpg" alt="진로콘서트 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">진로콘서트</h3>
+              <p class="event-card__date">2025.09.29 (월)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/mid-2nd-snack.jpg" alt="2학기 중간고사 간식 배부 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">2학기 중간고사 간식 배부</h3>
+              <p class="event-card__date">2025.09.30 (화)</p>
+            </div>
+          </article>
+
+          <!-- 6행 -->
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/grad-2nd.jpg" alt="2학기 졸업 전시회 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">2학기 졸업 전시회</h3>
+              <p class="event-card__date">2025.10.16 (목)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/uni-d.jpg" alt="Uni-D 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">Uni-D</h3>
+              <p class="event-card__date">2025.11.15 (토) ~ 2025.11.16 (일)</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__thumb">
+              <img src="/assets/events/ai-night.jpg" alt="AI인의 밤 사진" />
+            </div>
+            <div class="event-card__body">
+              <h3 class="event-card__title">AI인의 밤</h3>
+              <p class="event-card__date">2025.12.17 (수)</p>
+            </div>
+          </article>
+
+        </section>
+      </div>
+    </section>
+
+    <footer class="footer-section" aria-label="하단 정보">
+      <div class="footer-toggle">
+        <label class="theme-toggle" for="themeSwitch">
+          <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
+          <span class="theme-toggle__track" aria-hidden="true">
+            <span class="theme-toggle__thumb"></span>
+            <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+          </span>
+          <span class="theme-toggle__text">다크 모드</span>
+        </label>
+      </div>
+      <div class="brand">
+        <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+        MAIN
+      </div>
+      <address class="addr">
+        <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
+        <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
+        <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
+      </address>
+      <p class="copy">
+        COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
+      </p>
+    </footer>
+</body>
+</html>

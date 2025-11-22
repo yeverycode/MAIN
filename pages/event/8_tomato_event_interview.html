@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>행사 상세 | 숙명여자대학교 인공지능공학부</title>
+
+  <!-- 공통 스타일 -->
+  <link rel="stylesheet" href="/css/8_tomato_common.css" />
+  <!-- 행사 상세 페이지 전용 스타일 -->
+  <link rel="stylesheet" href="/css/8_tomato_event.css" />
+
+  <!-- Pretendard -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 공통 헤더-->
+<div class="site-header-backdrop" aria-hidden="true"></div>
+<header class="site-header" aria-label="주요 탐색">
+  <nav class="nav" role="navigation">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+      <img
+        src="/assets/8_tomato_home_white.png"
+        alt="MAIN 홈"
+        class="nav__logo"
+        data-logo-dark="/assets/8_tomato_home_white.png"
+        data-logo-light="/assets/8_tomato_home_black.png"
+      >
+    </a>
+
+    <div class="nav__item">
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼 소개</a>
+        <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학회 소개</a>
+        <a href="/pages/8_tomato_dept.html" class="dropdown__item" role="menuitem">부서 소개</a>
+      </div>
+    </div>
+
+    <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-current="page">행사소개</a>
+    <a href="/pages/prof/8_tomato_professors.html" class="nav__link">교수님 소개</a>
+    <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
+    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECUIT</a>
+  </nav>
+</header>
+
+<!-- 상단 EVENT 헤더 -->
+<section class="page-hero page-hero--event" aria-label="행사 소개 헤더">
+  <div class="page-hero__headline">
+    <h1>EVE<span class="title-img-wrap"><img src="/assets/8_tomato_N.png" alt="" aria-hidden="true" class="title-img"></span>T</h1>
+  </div>
+  <nav class="page-hero__subnav" aria-label="이벤트 탭">
+    <ul>
+      <li class="is-active">
+        <a href="/pages/event/8_tomato_annual_event.html" aria-current="page">연간 행사</a>
+      </li>
+      <li>
+        <a href="#!">진행중인 이벤트</a>
+      </li>
+      <li>
+        <a href="#!">당첨자 발표</a>
+      </li>
+      <li>
+        <a href="#!">지난 이벤트</a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<main class="event-detail" id="main">
+  <div class="event-detail__inner">
+
+    <!-- 상단 제목 / 행사일 라인 -->
+    <section class="event-detail__header">
+      <div class="event-detail__header-top-line" aria-hidden="true"></div>
+      <div class="event-detail__header-row">
+        <div class="event-detail__meta-label">제목</div>
+        <div class="event-detail__meta-value" id="event-meta-title">신입생 OT</div>
+
+        <div class="event-detail__meta-label event-detail__meta-label--right">행사일</div>
+        <div class="event-detail__meta-value" id="event-meta-date">2025.02.19 (수)</div>
+      </div>
+      <div class="event-detail__header-bottom-line" aria-hidden="true"></div>
+    </section>
+
+    <!-- 썸네일 + 정보 카드 -->
+    <section class="event-detail__summary">
+      <figure class="event-detail__cover">
+        <img
+          id="event-cover"
+          src="/assets/event_blackchef_cover.jpg"
+          alt="행사 대표 이미지"
+          loading="lazy"
+        />
+      </figure>
+
+      <aside class="event-detail__info-card" aria-label="행사 기본 정보">
+        <p class="event-detail__tag" id="event-tag">연간 행사</p>
+        <p class="event-detail__event-name" id="event-name">신입생 OT</p>
+        <p class="event-detail__event-date-sub" id="event-date-sub">2025.02.19 (수)</p>
+
+        <dl class="event-detail__info-list">
+          <div class="event-detail__info-item">
+            <dt>행사 날짜</dt>
+            <dd id="event-date-full">2025.~</dd>
+          </div>
+          <div class="event-detail__info-item">
+            <dt>참여 대상</dt>
+            <dd id="event-target-line1">선착순 100명</dd>
+            <dd id="event-target-line2">인공지능공학부 25학번 신입생 대상</dd>
+          </div>
+          <div class="event-detail__info-item">
+            <dt>설명</dt>
+            <dd id="event-description">
+              흑과 백, 두 팀으로 나뉘어 코드를 요리하듯 문제를 해결하는<br />
+              숙명여대 인공지능공학부만의 특별한 레크레이션!<br />
+              <strong>흑백요리사; 코드를 요리하다</strong>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <!-- 인터뷰 본문 -->
+    <section class="event-detail__interview" aria-label="행사 기획 인터뷰" id="event-interview">
+      <!-- JS에서 Q&A 카드가 여기에 렌더링됩니다.  -->
+    </section>
+
+    <!-- 하단 갤러리 (선택) -->
+    <section class="event-detail__gallery" aria-label="행사 사진" id="event-gallery">
+      <!-- JS에서 필요하다면 이미지 추가 -->
+    </section>
+
+    <!-- 이전/다음 이벤트 네비게이션 -->
+    <nav class="event-detail__pager" aria-label="다른 행사로 이동">
+      <a href="/pages/8_tomato_event.html?event=prev" class="event-detail__pager-link">
+        <span class="event-detail__pager-label">이전글</span>
+        <span class="event-detail__pager-title">KODEX 대학연계체험단비 ETF 거래이벤트</span>
+      </a>
+      <a href="/pages/8_tomato_event.html?event=next" class="event-detail__pager-link event-detail__pager-link--right">
+        <span class="event-detail__pager-label">다음글</span>
+        <span class="event-detail__pager-title">뱃기초 발명왕 이벤트</span>
+      </a>
+    </nav>
+
+    <div class="event-detail__button-wrap">
+      <a href="/pages/8_tomato_event_list.html?type=annual" class="btn btn--primary">
+        목록
+      </a>
+    </div>
+  </div>
+</main>
+
+<script src="/js/8_tomato_event.js" defer></script>
+</body>
+</html>

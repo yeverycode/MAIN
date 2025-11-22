@@ -1,0 +1,415 @@
+/* ========================================
+   교수님 소개 페이지 전용 스타일
+   ======================================== */
+
+/* ================================
+   1. 검정 배경 비주얼 섹션 (PROF)
+   ================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.prof-header {
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 24px 100px;
+  margin-top: var(--header-height);
+}
+
+.prof-headline {
+  text-align: center;
+}
+
+.prof-headline h1 {
+  font-size: clamp(72px, 12vw, 200px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* 교수/연구실 탭 서브 내비게이션 */
+.prof-subnav {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 48px));
+  margin: 0;
+  text-align: center;
+}
+
+.prof-subnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: clamp(40px, 12vw, 110px);
+  row-gap: 12px;
+}
+
+.prof-subnav li {
+  position: relative;
+}
+
+.prof-subnav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 26px 12px 32px;
+  border-radius: 999px;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.prof-subnav a:hover {
+  color: var(--white);
+}
+
+.prof-subnav li.is-active a {
+  color: var(--white);
+  background: transparent;
+}
+
+.prof-subnav li.is-active a::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--blue, #0056e0);
+  left: 50%;
+  top: 2px;
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.prof-headline p {
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ================================
+   2. 소개 문구 / 섹션 래퍼
+   ================================ */
+
+.prof-section {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px 0 140px;
+}
+
+.prof-section__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 상단 소개 문구 */
+.prof-intro-text {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.prof-intro-text p {
+  margin: 0;
+}
+
+.prof-intro-text__strong {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.prof-intro-text__light {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.prof-intro-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prof-intro-text {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ================================
+   3. (옵션) 검색창 영역
+   ================================ */
+
+.search-wrapper {
+  max-width: 1280px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+
+.prof-search {
+  position: relative;
+  width: min(600px, 100%);
+  margin: 0 auto;
+}
+
+.prof-search .ico {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-muted);
+  pointer-events: none;
+}
+
+.prof-search input {
+  width: 100%;
+  padding: 18px 24px 18px 52px;
+  background: var(--gray);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--black);
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.prof-search input::placeholder {
+  color: var(--gray-muted);
+}
+
+.prof-search input:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 86, 223, 0.1);
+}
+
+/* ================================
+   4. 교수님 카드 그리드
+   ================================ */
+
+.prof-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 320px); /* 카드 너비 320 */
+  justify-content: center;
+  gap: 30px 20px; /* row, column */
+}
+
+/* ================================
+   5. 교수 카드 (기본 + hover 상태)
+   ================================ */
+
+/* 카드 전체 (320 x 400, radius 30, #F7F8FB) */
+.prof-card {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  background: #F7F8FB;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.prof-card::before {
+  content: "";
+  position: absolute;
+  inset: -8px; /* 카드 밖까지 덮어 가장자리 어둠 제거 */
+  background: rgba(255, 255, 255, 0.7);
+  filter: blur(14px);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1; /* 텍스트 아래 */
+}
+
+.prof-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1; /* 텍스트 아래 */
+}
+
+/* 이름 + 연구실 한 줄 (좌측 상단) */
+.prof-card__name-row {
+  position: absolute;
+  left: 30px;
+  top: 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  z-index: 2;
+}
+
+.prof-card__name {
+  margin: 0;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000;
+}
+
+.prof-card__lab {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  z-index: 2;
+}
+
+/* 연구 분야 설명 텍스트 (hover 시 노출) */
+.prof-card__desc {
+  position: absolute;
+  left: 30px;
+  top: 70px;
+  margin: 0;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #000;
+
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 2;
+}
+
+/* 교수 사진: 카드 오른쪽 하단 고정 */
+.prof-card__image-wrap {
+  position: absolute;
+  right: 24px;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.prof-card__avatar {
+  width: 240px;
+  height: 280px;
+  display: block;
+  object-fit: cover;
+  filter: brightness(1);
+  opacity: 1;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.prof-card__image-mask {
+  display: none; /* 이미지 위 블러/오버레이 제거 */
+}
+
+/* 플러스 버튼 (둥근 흰색 원) — 좌측 하단 */
+.prof-card__plus {
+  position: absolute;
+  left: 30px;
+  bottom: 28px;
+  width: 35px;
+  height: 32px;
+  border-radius: 9999px;
+  border: none;
+  padding: 0;
+  background: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  z-index: 2;
+}
+
+.prof-card__plus-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #A2A2A2;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: transform 0.25s ease, stroke 0.25s ease;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* hover 상태: 설명 노출, 사진 흐려짐, + 약간 회전 */
+.prof-card:hover .prof-card__desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prof-card:hover .prof-card__avatar {
+  transform: scale(1.01);
+  filter: brightness(1);
+}
+
+.prof-card:hover .prof-card__plus {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prof-card:hover::before {
+  opacity: 1;
+}
+
+.prof-card:hover::after {
+  opacity: 1;
+  box-shadow: none;
+}
+
+/* ================================
+   6. 접근성 유틸
+   ================================ */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -338,14 +338,20 @@ html[data-theme="light"] .fyig-title {
 .intro-wrapper {
   width: 100%;
   position: relative;
-  min-height: clamp(680px, 65vh, 860px);
+  min-height: clamp(760px, 72vh, 1080px);
+  --intro-top-offset: clamp(80px, 12vh, 200px);
+  --intro-bottom-offset: 200px;
+  --intro-gap: clamp(24px, 3vw, 80px);
 }
 
 .intro-inner {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(40px, 6vw, 200px);
-  align-items: start;
+  align-items: stretch;
+  min-height: inherit;
+  padding-top: var(--intro-top-offset);
+  padding-bottom: var(--intro-bottom-offset);
   position: relative;
   z-index: 2;
 }
@@ -353,7 +359,8 @@ html[data-theme="light"] .fyig-title {
 .intro-left {
   grid-column: 2 / span 5;
   max-width: none;
-  margin-top: clamp(40px, 8vh, 150px);
+  margin-top: 80px;
+  padding-left: 150px;
 }
 
 .intro-heading {
@@ -379,21 +386,38 @@ html[data-theme="light"] .fyig-title {
   line-height: inherit;
 }
 
-.intro-kicker b {
-  color: var(--accent);
+.intro-kicker__letter,
+.intro-kicker__accent {
+  display: inline-block;
   font-weight: 700;
 }
 
+.intro-kicker__accent {
+  color: var(--accent);
+}
+
 .intro-right {
-  grid-column: 8 / span 4;
-  max-width: none;
-  margin-top: clamp(120px, 16vh, 260px);
+  grid-column: 7 / -1;
+  max-width: min(520px, 100%);
+  margin-top: 0;
+  align-self: stretch;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: var(--intro-gap);
+  padding-bottom: 80px;
+  min-height: clamp(360px, 40vh, 520px);
+  text-align: left;
 }
 
 .intro-txt {
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 2vw, 32px);
+  align-items: flex-start;
+  text-align: inherit;
 }
 
 .intro-txt p {
@@ -415,50 +439,48 @@ html[data-theme="light"] .fyig-title {
 .vertical-line {
   position: absolute;
   left: 50%;
-  top: clamp(80px, 12vh, 220px);
+  top: var(--intro-top-offset);
+  bottom: var(--intro-bottom-offset);
   width: 1px;
-  height: 0;
   background: transparent;
   border-left: 1px solid var(--border);
-  transition: height 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.3s ease;
   z-index: 1;
   transform: translateX(-50%);
 }
 
-.sec-intro.line-active .vertical-line {
-  height: clamp(420px, 48vh, 780px);
-}
-
-/* 반응형 - 태블릿 */
 @media (max-width: 1320px) {
   .intro-inner {
     column-gap: clamp(32px, 5vw, 120px);
+    min-height: auto;
+    padding-top: clamp(60px, 10vh, 140px);
+    padding-bottom: clamp(60px, 10vh, 140px);
+    align-items: start;
   }
   
   .intro-left {
     grid-column: 1 / span 6;
+    margin-top: 0;
+    padding-right: 0;
   }
   
   .intro-right {
     grid-column: 7 / -1;
-    margin-top: clamp(80px, 12vh, 180px);
+    display: block;
+    align-self: start;
+    justify-self: start;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-top: clamp(60px, 10vh, 140px);
+    min-height: auto;
   }
   
-  .intro-heading {
-    font-size: 42px;
-    line-height: 60px;
-  }
-  
-  .intro-kicker {
-    font-size: 42px;
-    line-height: 60px;
-  }
-  
-  .intro-txt p {
-    font-size: 26px;
-    line-height: 36px;
+  .vertical-line {
+    top: clamp(60px, 10vh, 160px);
+    bottom: clamp(60px, 10vh, 160px);
   }
 }
+
 
 /* 섹션 3: 서아 (다른 사람 건들지 말것 !!)*/
 .sec-cards {
@@ -664,7 +686,7 @@ html[data-theme="dark"] .event-content {
   font-size: 20px;
   font-family: "YiSunShin Dotum L", Pretendard;
   font-weight: 400;
-  color: var(--black);
+  color: var(--accent);
   margin-top: auto;
   align-self: flex-end;
   text-align: right;
@@ -675,41 +697,12 @@ html[data-theme="dark"] .event-content {
   color: var(--accent);
 }
 
-.event-card::before,
-.event-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
 .event-card::before {
-  background: color-mix(in srgb, var(--accent) 75%, transparent);
-  transform: scale(1.04);
-  z-index: 2;
-}
-
-.event-card::after {
-  content: "+";
-  display: grid;
-  place-items: center;
-  font-size: 64px;
-  font-family: "YiSunShin Dotum L", Pretendard;
-  color: #FFFFFF;
-  transform: translateY(16px);
-  z-index: 3;
+  content: none;
 }
 
 .event-card.reveal.is-inview:hover::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.event-card.reveal.is-inview:hover::after {
-  opacity: 1;
-  transform: translateY(0);
+  content: none;
 }
 
 @media (max-width: 1280px) {

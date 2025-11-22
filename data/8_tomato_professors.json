@@ -1,0 +1,201 @@
+{
+  "kim-sangyeon": {
+    "id": "kim-sangyeon",
+    "name": "김상연",
+    "role": "조교수",
+    "photo": "https://smap.sookmyung.ac.kr:8443/sap/bc/contentserver/100?get&pVersion=0045&contRep=Z1&docId=2C27D7A13A4A1FD081976E6D99DD4806&compId=data",
+    "phone": "02-710-9424",
+    "email": "sangyeonk@sookmyung.ac.kr",
+    "office": "수련교수회관 515호",
+
+    "interests": [
+      "인간-중심 인공지능",
+      "인간-인공지능 상호작용",
+      "지능형 사용자 인터페이스"
+    ],
+
+    "history": [
+      { "period": "2024.09", "text": "숙명여자대학교 조교수" },
+      { "period": "2023.10 ~ 2024.08", "text": "고려대학교 공학연구원 연구교수" },
+      { "period": "2022.09 ~ 2023.08", "text": "North Carolina State University 박사후연구원 (객원)" }
+    ],
+
+    "courses": [
+      {
+        "term": "2025 Fall",
+        "list": [
+          { "code": "21105365", "name": "Web Programming(1)" },
+          { "code": "21105365", "name": "Web Programming(2)" }
+        ]
+      },
+      {
+        "term": "2025 Spring",
+        "list": [
+          { "code": "21105587", "name": "UI/UX" },
+          { "code": "21104552", "name": "Artificial Intelligence & Machine Learning" }
+        ]
+      },
+      {
+        "term": "2024 Fall",
+        "list": [
+          { "code": "21105365", "name": "Web Programming(1)" },
+          { "code": "21105365", "name": "Web Programming(2)" },
+          { "code": "21105364", "name": "Introduction to Artificial Intelligence" }
+        ]
+      }
+    ],
+
+    "publications": [
+      {
+        "title": "스마트홈 자동화 환경에서 LLM 기반 선제적 에이전트에 대한 사용자 경험 연구",
+        "date": "2025.08",
+        "journal": "대한인간공학회지",
+        "publisher": "대한인간공학회"
+      },
+      {
+        "title": "Exploring the Mental Model of Web Page Scrap: Design Suggestion of an AI-Powered In-Browser Scrap Tool and Its Usability Evaluation",
+        "date": "2025.07",
+        "journal": "International Journal of Human–Computer Interaction",
+        "publisher": "TAYLOR & FRANCIS INC"
+      },
+      {
+        "title": "Balancing Diversity in Session-based Recommendation between Relevance and Unexpectedness",
+        "date": "2025.04",
+        "journal": "IEEE Access",
+        "publisher": "Institute of Electrical and Electronics Engineers Inc."
+      },
+      {
+        "title": "Is what I think what you think? Multilayer network-based inter-brain synchrony approach",
+        "date": "2025.03",
+        "journal": "Social Cognitive and Affective Neuroscience",
+        "publisher": "Oxford University Press (OUP)",
+        "articleNumber": "nsaf028"
+      },
+      {
+        "title": "Enhancing passenger-vehicle interaction through multimodal explanation for unexpected behaviors of fully autonomous driving in non-driving-related tasks",
+        "date": "2025.02",
+        "journal": "Transportation Research Part F: Traffic Psychology and Behaviour",
+        "publisher": "Pergamon Press Ltd."
+      },
+      {
+        "title": "Improving Trust in AI with Mitigating Confirmation Bias: Effects of Explanation Type and Debiasing Strategy for Decision-Making with Explainable AI",
+        "date": "2024.12",
+        "journal": "International Journal of Human–Computer Interaction",
+        "publisher": "TAYLOR & FRANCIS INC"
+      },
+      {
+        "title": "Interactive Feedback Loop with Counterfactual Data Modification for Serendipity in a Recommendation System",
+        "date": "2024.10",
+        "journal": "International Journal of Human–Computer Interaction",
+        "publisher": "TAYLOR & FRANCIS"
+      }
+    ]
+  },
+
+  "jung-seonghoon": {
+    "id": "jung-seonghoon",
+    "name": "정성훈",
+    "role": "교수",
+    "photo": "",
+    "phone": "",
+    "email": "",
+    "office": "",
+
+    "interests": [
+      "데이터중심보안",
+      "시스템보안",
+      "네트워크보안"
+    ],
+
+    "history": [
+      {
+        "period": "2024.03 ~ 2024.08",
+        "text": "고려대학교 강사"
+      },
+      {
+        "period": "2023.03 ~ 2024.08",
+        "text": "고려대학교 박사후연구원"
+      },
+      {
+        "period": "2022.03 ~ 2023.08",
+        "text": "고려대학교 강사"
+      },
+      {
+        "period": "2019.03 ~ 2022.02",
+        "text": "고려대정보보호연구원 전문연구요원"
+      }
+    ],
+
+    "courses": [
+      {
+        "term": "2025 Fall",
+        "list": [
+          { "code": "21105590-001", "name": "System Security" },
+          { "code": "21100720-003", "name": "Algorithms" }
+        ]
+      },
+      {
+        "term": "2025 Spring",
+        "list": [
+          { "code": "21102524-003", "name": "Introduction to Computer Programming" },
+          { "code": "21105541-001", "name": "Data-Driven Security (Graduate School)" }
+        ]
+      },
+      {
+        "term": "2024 Fall",
+        "list": [
+          { "code": "21102530-001", "name": "Server Administration and Security" },
+          { "code": "21102530-002", "name": "Server Administration and Security" },
+          { "code": "21100720-003", "name": "Algorithms" }
+        ]
+      }
+    ],
+
+    "publications": [
+      {
+        "title": "Detecting Domain Names Generated by DGAs With Low False Positives in Chinese Domain Names",
+        "date": "2024.09",
+        "journal": "IEEE Access",
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+      },
+      {
+        "title": "AERO: Automotive Ethernet Real-Time Observer for Anomaly Detection in In-Vehicle Networks",
+        "date": "2024.03",
+        "journal": "IEEE TRANSACTIONS ON INDUSTRIAL INFORMATICS",
+        "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+      },
+      {
+        "title": "Trading Behind-the-Scene: Analysis of Online Gold Farming Network in the Auction House System",
+        "date": "2022.09",
+        "journal": "IEEE TRANSACTIONS ON GAMES",
+        "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+      },
+      {
+        "title": "Convolutional neural network-based intrusion detection system for AVTP streams in automotive Ethernet-based networks",
+        "date": "2021.06",
+        "journal": "VEHICULAR COMMUNICATIONS",
+        "publisher": "ELSEVIER",
+        "articleNumber": "100338"
+      },
+      {
+        "title": "Cybersecurity for autonomous vehicles: Review of attacks and defense",
+        "date": "2021.04",
+        "journal": "COMPUTERS & SECURITY",
+        "publisher": "ELSEVIER ADVANCED TECHNOLOGY",
+        "articleNumber": "102150"
+      },
+      {
+        "title": "빅데이터 기반 침해사고 및 정보보호 정책 정량 분석 방법론",
+        "date": "2017.10",
+        "journal": "한국컴퓨터정보학회논문지",
+        "publisher": "한국컴퓨터정보학회"
+      },
+      {
+        "title": "결제로그 분석 및 데이터 마이닝을 이용한 이상거래 탐지 연구 조사",
+        "date": "2015.12",
+        "journal": "정보보호학회논문지",
+        "publisher": "한국정보보호학회"
+      }
+    ]
+  }
+}

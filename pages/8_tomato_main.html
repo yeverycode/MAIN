@@ -8,18 +8,11 @@
   <link rel="stylesheet" href="/css/8_tomato_main.css" />
 </head>
 <body>
-
-<!-- 다크/라이트 전환 토글  -->
-<button class="theme-toggle" aria-label="테마 전환">
-  <span class="tgl-sun">☀️</span>
-  <span class="tgl-moon">🌙</span>
-</button>
-
 <!-- 헤더/네비게이션 -->
 <div class="site-header-backdrop" aria-hidden="true"></div>
 <header class="site-header" aria-label="주요 탐색">
   <nav class="nav" role="navigation">
-    <a href="/" class="nav__link nav__link--main is-active" aria-label="home">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main is-active" aria-label="home" aria-current="page">
       <img
         src="/assets/8_tomato_home_white.png"
         alt="MAIN 홈"
@@ -29,18 +22,9 @@
       >
     </a>
 
-    <div class="nav__item">
-      <a href="/pages/intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
-      <div class="dropdown" role="menu">
-        <a href="/pages/curriculum.html" class="dropdown__item" role="menuitem">커리큘럼 소개</a>
-        <a href="/pages/academy.html" class="dropdown__item" role="menuitem">학회 소개</a>
-        <a href="/pages/dept.html" class="dropdown__item" role="menuitem">부서 소개</a>
-      </div>
-    </div>
-
-    <a href="/pages/professors.html" class="nav__link">교수님 소개</a>
-    <a href="/pages/calendar.html" class="nav__link">연간 행사</a>
-    <a href="/pages/faq.html" class="nav__link">FAQ</a>
+    <a href="/pages/event/8_tomato_annual_event.html" class="nav__link">행사소개</a>
+    <a href="/pages/prof/8_tomato_professors.html" class="nav__link">교수님 소개</a>
+    <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
   </nav>
 </header>
 
@@ -50,7 +34,18 @@
     <!-- 1줄: F[로켓]R YOUR -->
     <span class="fyig-line">
       <span class="fyig-word">
-        F<span class="ani ani-o">O<img src="/assets/rocket.png" alt="" aria-hidden="true" class="ani-img"></span>R&nbsp;YOUR
+        F
+        <span class="ani ani-o">
+          O
+          <img
+            src="/assets/8_tomato_black_rocket.png"
+            alt=""
+            aria-hidden="true"
+            class="ani-img"
+            data-theme-dark="/assets/8_tomato_black_rocket.png"
+            data-theme-light="/assets/8_tomato_white_rocket.png"
+          >
+        </span>R&nbsp;YOUR
       </span>
     </span>
 
@@ -58,13 +53,78 @@
     <span class="fyig-line">
       <span class="fyig-rotator" aria-live="polite" aria-atomic="true">
         <span class="fyig-rot-word">
-          INNOV<span class="gif gif-a">A<img src="/assets/A.png" alt="" aria-hidden="true" class="gif-img"></span>T<span class="gif gif-i">I<img src="/assets/I.png" alt="" aria-hidden="true" class="gif-img"></span>VE
+          INNOV
+          <span class="gif gif-a">
+            A
+            <img
+              src="/assets/8_tomato_black_A.png"
+              alt=""
+              aria-hidden="true"
+              class="gif-img"
+              data-theme-dark="/assets/8_tomato_black_A.png"
+              data-theme-light="/assets/8_tomato_white_A.png"
+            >
+          </span>T
+          <span class="gif gif-i">
+            I
+            <img
+              src="/assets/8_tomato_black_I.png"
+              alt=""
+              aria-hidden="true"
+              class="gif-img"
+              data-theme-dark="/assets/8_tomato_black_I.png"
+              data-theme-light="/assets/8_tomato_white_I.png"
+            >
+          </span>VE
         </span>
         <span class="fyig-rot-word">
-          CRE<span class="gif gif-a">A<img src="/assets/A.png" alt="" aria-hidden="true" class="gif-img"></span>T<span class="gif gif-i">I<img src="/assets/I.png" alt="" aria-hidden="true" class="gif-img"></span>VE
+          CRE
+          <span class="gif gif-a">
+            A
+            <img
+              src="/assets/8_tomato_black_A.png"
+              alt=""
+              aria-hidden="true"
+              class="gif-img"
+              data-theme-dark="/assets/8_tomato_black_A.png"
+              data-theme-light="/assets/8_tomato_white_A.png"
+            >
+          </span>T
+          <span class="gif gif-i">
+            I
+            <img
+              src="/assets/8_tomato_black_I.png"
+              alt=""
+              aria-hidden="true"
+              class="gif-img"
+              data-theme-dark="/assets/8_tomato_black_I.png"
+              data-theme-light="/assets/8_tomato_white_I.png"
+            >
+          </span>VE
         </span>
         <span class="fyig-rot-word">
-          <span class="gif gif-a">A<img src="/assets/A.png" alt="" aria-hidden="true" class="gif-img"></span>CADEM<span class="gif gif-i">I<img src="/assets/I.png" alt="" aria-hidden="true" class="gif-img"></span>C
+          <span class="gif gif-a">
+            A
+            <img
+              src="/assets/8_tomato_black_A.png"
+              alt=""
+              aria-hidden="true"
+              class="gif-img"
+              data-theme-dark="/assets/8_tomato_black_A.png"
+              data-theme-light="/assets/8_tomato_white_A.png"
+            >
+          </span>CADEM
+          <span class="gif gif-i">
+            I
+            <img
+              src="/assets/8_tomato_black_I.png"
+              alt=""
+              aria-hidden="true"
+              class="gif-img"
+              data-theme-dark="/assets/8_tomato_black_I.png"
+              data-theme-light="/assets/8_tomato_white_I.png"
+            >
+          </span>C
         </span>
       </span>
     </span>
@@ -72,7 +132,18 @@
     <!-- 3줄: GR[무한대]WTH -->
     <span class="fyig-line">
       <span class="fyig-word">
-        GR<span class="ani ani-oo">OO<img src="/assets/infinite.png" alt="" aria-hidden="true" class="ani-img"></span>WTH
+        GR
+        <span class="ani ani-oo">
+          OO
+          <img
+            src="/assets/8_tomato_black_infinite.png"
+            alt=""
+            aria-hidden="true"
+            class="ani-img"
+            data-theme-dark="/assets/8_tomato_black_infinite.png"
+            data-theme-light="/assets/8_tomato_white_infinite.png"
+          >
+        </span>WTH
       </span>
     </span>
   </h1>
@@ -85,7 +156,10 @@
       <div class="intro-inner">
         <div class="intro-left">
           <h2 id="intro-title" class="intro-heading">
-            <span class="intro-kicker reveal" data-reveal="up" style="--i:0"><b>MAIN</b>은</span>
+            <span class="intro-kicker reveal" data-reveal="up" style="--i:0">
+              <span class="intro-kicker__letter">M</span><span class="intro-kicker__accent">AI</span><span class="intro-kicker__letter">N</span>은
+            </span>
+            <br>
             <span class="reveal" data-reveal="up" style="--i:1">혁신적인 성장을</span><br/>
             <span class="reveal" data-reveal="up" style="--i:2">도모합니다.</span>
           </h2>
@@ -309,6 +383,17 @@
 
 <!-- 푸터  -->
 <footer class="footer-section" aria-label="하단 정보">
+  <div class="footer-toggle">
+    <label class="theme-toggle" for="themeSwitch">
+      <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
+      <span class="theme-toggle__track" aria-hidden="true">
+        <span class="theme-toggle__thumb"></span>
+        <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+      </span>
+      <span class="theme-toggle__text">다크 모드</span>
+    </label>
+  </div>
   <div class="brand">
     <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
     MAIN
@@ -324,108 +409,7 @@
 </footer>
 
 <!-- js (나중에 분리하라하면 따로 분리) -->
-<script>
-  (function initTheme(){
-    const html = document.documentElement;
-    const logo = document.querySelector('.nav__logo');
-
-    const applyTheme = (theme) => {
-      html.setAttribute('data-theme', theme);
-      if (logo) {
-        const nextLogo = theme === 'dark' ? logo.dataset.logoDark : logo.dataset.logoLight;
-        if (nextLogo) logo.src = nextLogo;
-      }
-    };
-
-    const saved = localStorage.getItem('theme') || 'dark';
-    applyTheme(saved);
-
-    document.querySelector('.theme-toggle')?.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      localStorage.setItem('theme', next);
-    });
-  })();
-
-  (function () {
-    const html = document.documentElement;
-    const all = document.querySelectorAll('.reveal');
-
-    html.classList.add('reveal-ready');
-
-    const failOpen = () => all.forEach(el => el.classList.add('is-inview'));
-    if (!all.length) return;
-
-    try {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        failOpen(); return;
-      }
-      if (!('IntersectionObserver' in window)) { failOpen(); return; }
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('is-inview');
-            }, 50);
-            io.unobserve(entry.target);
-          }
-        });
-      }, { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -8% 0px'
-      });
-
-      document.querySelectorAll('.reveal-stagger').forEach(group => {
-        group.querySelectorAll('.reveal').forEach((el, idx) => {
-          if (!el.style.getPropertyValue('--i')) el.style.setProperty('--i', idx);
-          io.observe(el);
-        });
-      });
-
-      document.querySelectorAll('.reveal:not(.reveal-stagger .reveal)').forEach(el => io.observe(el));
-    } catch (e) {
-      console.error('[reveal] init error:', e);
-      failOpen();
-    }
-  })();
-
-  (function () {
-    const secIntro = document.querySelector('.sec-intro');
-    if (!secIntro) return;
-
-    try {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        secIntro.classList.add('line-active');
-        return;
-      }
-      
-      if (!('IntersectionObserver' in window)) {
-        secIntro.classList.add('line-active');
-        return;
-      }
-
-      const lineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('line-active');
-            }, 300);
-            lineObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.2,
-        rootMargin: '0px 0px -10% 0px'
-      });
-
-      lineObserver.observe(secIntro);
-    } catch (e) {
-      console.error('[line animation] init error:', e);
-      secIntro.classList.add('line-active');
-    }
-  })();
-</script>
+<script src="/js/8_tomato_main.js" defer></script>
 
 </body>
 </html>

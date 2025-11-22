@@ -7,9 +7,6 @@
 
   <link rel="stylesheet" href="/css/8_tomato_common.css" />
   <link rel="stylesheet" href="/css/8_tomato_professors.css" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 </head>
 <body>
 
@@ -447,87 +444,7 @@
   </p>
 </footer>
 
-<!-- JavaScript -->
-<script>
-  // 테마 초기화
-  (function initTheme(){
-    const html = document.documentElement;
-    const logo = document.querySelector('.nav__logo');
-
-    const applyTheme = (theme) => {
-      html.setAttribute('data-theme', theme);
-      if (logo) {
-        const nextLogo = theme === 'dark' ? logo.dataset.logoDark : logo.dataset.logoLight;
-        if (nextLogo) logo.src = nextLogo;
-      }
-    };
-
-    const saved = localStorage.getItem('theme') || 'dark';
-    applyTheme(saved);
-
-    document.querySelector('.theme-toggle')?.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      localStorage.setItem('theme', next);
-    });
-  })();
-
-  // 헤더 스크롤 시 배경/패딩 변화
-  (function handleHeaderOnScroll() {
-    const header = document.querySelector('.site-header');
-    if (!header) return;
-
-    const toggle = () => {
-      if (window.scrollY > 10) {
-        header.classList.add('is-scrolled');
-      } else {
-        header.classList.remove('is-scrolled');
-      }
-    };
-
-    toggle();
-    window.addEventListener('scroll', toggle, { passive: true });
-  })();
-
-  // 소개 문구 진입 시 페이드 다운 애니메이션
-  (function animateIntroCopy() {
-    const intro = document.querySelector('.prof-intro-text');
-    if (!intro) return;
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      intro.classList.add('is-visible');
-      return;
-    }
-
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            intro.classList.add('is-visible');
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 0.35 });
-
-      io.observe(intro);
-    } else {
-      intro.classList.add('is-visible');
-    }
-  })();
-
-  // 교수 카드 플러스 버튼 클릭 시 공통 상세 페이지로 이동
-  (function initProfCardLinks() {
-    const buttons = document.querySelectorAll('.prof-card__plus');
-    buttons.forEach((btn) => {
-      const id = btn.dataset.profId;
-      if (!id) return;
-
-      btn.addEventListener('click', () => {
-        window.location.href = `/pages/8_tomato_professor.html?id=${encodeURIComponent(id)}`;
-      });
-    });
-  })();
-</script>
+<script src="/js/8_tomato_professors.js" defer></script>
 
 </body>
 </html>

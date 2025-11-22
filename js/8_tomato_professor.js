@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadProfessor(id) {
   try {
-    const response = await fetch('/data/professors.json', { cache: 'no-cache' });
+    const response = await fetch('/data/8_tomato_professor.json', { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }

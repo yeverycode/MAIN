@@ -103,6 +103,19 @@
   margin: 0 auto;
 }
 
+/* 연간 행사 탭을 가로 한 줄로 고정 */
+.page-hero__subnav {
+  width: 100%;
+  max-width: none;
+}
+
+.page-hero__subnav ul {
+  flex-wrap: nowrap;
+  justify-content: center;
+  column-gap: clamp(28px, 6vw, 48px);
+  row-gap: 0;
+}
+
 .title-img-wrap {
   position: relative;
   display: inline-flex;
@@ -157,6 +170,54 @@
   max-width: 540px;
 }
 
+.event-filter {
+  display: inline-flex;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.event-filter__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.event-filter input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.event-filter input[type="radio"]:checked + span {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.event-filter__item span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #d9d9d9;
+  color: #171717;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.event-filter__item:active {
+  transform: scale(0.98);
+}
 .event-content-header__description {
   margin-top: 32px;
   font-size: 16px;
@@ -249,9 +310,11 @@
   border-radius: 14px;
   overflow: hidden;
   background: #1C1C1C;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .event-card__thumb {
@@ -287,7 +350,8 @@
 
 /* 섹션 타이틀 컬러 고정 */
 .event-content .sec-title {
-  color: #000000;
+  color: var(--black);
+  font-weight: 800;
 }
 
 .sr-only {

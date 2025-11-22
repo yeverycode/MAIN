@@ -1,120 +1,175 @@
-// /js/8_tomato_event.js
-
+// 행사 상세 페이지 데이터 바인딩 스크립트
 (function () {
+  const manifest = [
+    { id: "1", title: "신입생 OT" },
+    { id: "2", title: "1학기 개강총회" },
+    { id: "3", title: "학부연구실 설명회" },
+    { id: "4", title: "1학기 졸업 전시회" },
+    { id: "5", title: "총 MT" },
+    { id: "6", title: "스승의 날" },
+    { id: "7", title: "전공 박람회" },
+    { id: "8", title: "IPS 대회" },
+    { id: "9", title: "1학기 종강총회" },
+    { id: "10", title: "2학기 개강총회" },
+    { id: "11", title: "공과대학 10주년 학술제" },
+    { id: "12", title: "진로콘서트" },
+    { id: "13", title: "2학기 졸업 전시회" },
+    { id: "14", title: "Uni-D" },
+    { id: "15", title: "AI인의 밤" }
+  ];
+
+  const DEFAULTS = {
+    cover: "/assets/event_interview_cover.svg",
+    qa: "/assets/event_interview_q1.svg",
+    gallery: "/assets/event_interview_gallery.svg"
+  };
+
   const params = new URLSearchParams(window.location.search);
-  const eventId = params.get("event") || "freshman-ot-2025";
-  const jsonPath = `/data/event_${eventId}.json`;
+  const eventId = params.get("id") || "1";
+  const jsonPath = `/data/event_interview/${eventId}.json`;
+  const fallbackPath = "/data/8_tomato_event_interview.json";
 
   fetch(jsonPath)
     .then((res) => {
       if (!res.ok) throw new Error("JSON load error");
       return res.json();
     })
-    .then(renderEvent)
-    .catch((err) => {
-      console.error(err);
+    .then((data) => renderEvent(data, eventId))
+    .catch(() => {
+      // 폴백: 기본 json
+      fetch(fallbackPath)
+        .then((res) => res.json())
+        .then((data) => renderEvent(data, eventId, true))
+        .catch((err) => console.error("데이터를 불러오지 못했습니다.", err));
     });
 
-  function renderEvent(data) {
+  function renderEvent(data, currentId, isFallback = false) {
     // 상단 메타
-    setText("event-meta-title", data.title);
-    setText("event-meta-date", data.headerDate || data.date);
+    setText("event-meta-title", data.title || "");
 
     // 썸네일 + 카드
     const coverImg = document.getElementById("event-cover");
-    if (coverImg && data.heroImage) {
-      coverImg.src = data.heroImage;
-      coverImg.alt = data.heroAlt || data.title;
+    if (coverImg) {
+      coverImg.src = data.heroImage || DEFAULTS.cover;
+      coverImg.alt = data.heroAlt || data.title || "행사 대표 이미지";
     }
 
-    setText("event-tag", data.categoryLabel || "연간 행사");
-    setText("event-name", data.title);
-    setText("event-date-sub", data.date);
-    setText("event-date-full", data.meta?.eventDate || data.date);
+    setText("event-tag", data.categoryLabel || "1학기");
+    setText("event-name", data.title || "");
+    setText("event-date-full", data.meta?.eventDate || data.date || "");
+    setText("event-location", data.meta?.location || "-");
 
     const [target1, target2] = data.meta?.target || [];
     setText("event-target-line1", target1 || "");
     setText("event-target-line2", target2 || "");
-    setHTML("event-description", toHtml(data.meta?.description || ""));
+    setHTML("event-description", formatMultiline(data.meta?.description));
 
-    // 인터뷰 Q&A
-    const interviewRoot = document.getElementById("event-interview");
-    if (interviewRoot && Array.isArray(data.interview)) {
-      data.interview.forEach((item, index) => {
-        const card = createQACard(item, index);
-        interviewRoot.appendChild(card);
-      });
+    const interview = Array.isArray(data.interview) ? data.interview : [];
+    fillQA(1, interview[0]);
+    fillQA(2, interview[1]);
+    fillQA(3, interview[2]);
+    fillQA(4, interview[3]);
+    fillQA(5, interview[4]);
+    fillQA(6, interview[5]);
+
+    // 이미지 매핑
+    const topImg = document.getElementById("qa-top-image");
+    const topRow = document.querySelector(".qa-row--image-with-questions");
+    if (topImg && topRow) {
+      const topItem = interview[0] || interview[1];
+      const topSrc = topItem?.image || data.heroImage || "";
+      if (topSrc) {
+        topImg.src = topSrc;
+        topImg.alt = topItem?.imageAlt || topItem?.question || "행사 이미지";
+        topRow.classList.remove("qa-row--no-image");
+      } else {
+        topRow.classList.add("qa-row--no-image");
+      }
     }
 
-    // 갤러리
-    const galleryRoot = document.getElementById("event-gallery");
-    if (galleryRoot && Array.isArray(data.galleryImages)) {
-      data.galleryImages.forEach((src) => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.loading = "lazy";
-        galleryRoot.appendChild(img);
-      });
+    const bottomImg = document.getElementById("qa-bottom-image");
+    const bottomRow = document.querySelector(".qa-row--image-bottom");
+    if (bottomImg && bottomRow) {
+      const bottom =
+        (data.galleryImages && data.galleryImages[0]) ||
+        interview[4]?.image ||
+        interview[5]?.image ||
+        "";
+      if (bottom) {
+        bottomImg.src = bottom;
+        bottomImg.alt =
+          interview[4]?.imageAlt ||
+          interview[5]?.imageAlt ||
+          "행사 갤러리 이미지";
+        bottomRow.classList.remove("qa-row--no-image");
+      } else {
+        bottomRow.classList.add("qa-row--no-image");
+      }
     }
+
+    setPager(currentId, data.title, isFallback);
   }
 
-  function createQACard(item, index) {
-    const wrapper = document.createElement("article");
-    wrapper.classList.add("qa-card");
+  function fillQA(index, item) {
+    const wrap = document.getElementById(`q${index}-wrap`);
+    if (!wrap) return;
 
-    const layout = item.layout || "image-left";
-    const hasImage = !!item.image;
-
-    if (!hasImage) {
-      wrapper.classList.add("qa-card--text-only");
-    } else if (layout === "image-right") {
-      wrapper.classList.add("qa-card--image-right");
+    if (!item) {
+      wrap.classList.add("is-hidden");
+      return;
     }
 
-    const imageEl = document.createElement("div");
-    imageEl.className = "qa-card__image";
+    setText(`q${index}-label`, `Q${item.no || index}`);
+    setText(`q${index}-question`, item.question || "");
+    setHTML(`q${index}-answer`, formatMultiline(item.answer));
+  }
 
-    if (hasImage) {
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.alt = item.imageAlt || item.question;
-      img.loading = "lazy";
-      imageEl.appendChild(img);
+  function setPager(currentId, currentTitle, isFallback) {
+    const pager = document.querySelector(".event-detail__pager");
+    const divider = document.querySelector(".event-detail__pager-divider");
+    const prevLink = document.getElementById("prev-link");
+    const nextLink = document.getElementById("next-link");
+    const prevTitle = document.getElementById("prev-title");
+    const nextTitle = document.getElementById("next-title");
+
+    const idx = manifest.findIndex((m) => String(m.id) === String(currentId));
+
+    const prev = idx > 0 ? manifest[idx - 1] : null;
+    const next = idx >= 0 && idx < manifest.length - 1 ? manifest[idx + 1] : null;
+
+    if (prev && prevLink && prevTitle) {
+      prevLink.href = `/pages/event/8_tomato_event_interview.html?id=${prev.id}`;
+      prevTitle.textContent = prev.title;
+      prevLink.classList.remove("is-hidden");
+    } else if (prevLink) {
+      prevLink.classList.add("is-hidden");
     }
 
-    const content = document.createElement("div");
-    content.className = "qa-card__content";
-
-    const label = document.createElement("div");
-    label.className = "qa-card__label";
-    label.textContent = `Q${item.no || index + 1}`;
-
-    const q = document.createElement("h2");
-    q.className = "qa-card__question";
-    q.textContent = item.question;
-
-    const a = document.createElement("p");
-    a.className = "qa-card__answer";
-    a.innerHTML = toHtml(item.answer);
-
-    content.appendChild(label);
-    content.appendChild(q);
-    content.appendChild(a);
-
-    // 순서: image-left / image-right / text-only 처리
-    if (hasImage) {
-      if (layout === "image-right") {
-        wrapper.appendChild(content);
-        wrapper.appendChild(imageEl);
-      } else {
-        wrapper.appendChild(imageEl);
-        wrapper.appendChild(content);
-      }
-    } else {
-      wrapper.appendChild(content);
+    if (next && nextLink && nextTitle) {
+      nextLink.href = `/pages/event/8_tomato_event_interview.html?id=${next.id}`;
+      nextTitle.textContent = next.title;
+      nextLink.classList.remove("is-hidden");
+    } else if (nextLink) {
+      nextLink.classList.add("is-hidden");
     }
 
-    return wrapper;
+    const hasPrev = prev && prevLink && !prevLink.classList.contains("is-hidden");
+    const hasNext = next && nextLink && !nextLink.classList.contains("is-hidden");
+
+    if (pager) {
+      pager.classList.toggle("pager--single", hasPrev !== hasNext);
+      pager.classList.toggle("pager--next-only", !hasPrev && hasNext);
+      pager.classList.toggle("pager--prev-only", hasPrev && !hasNext);
+    }
+
+    if (divider) {
+      divider.style.display = hasPrev && hasNext ? "block" : "none";
+    }
+
+    // 폴백 데이터로 들어왔을 때 제목만 동기화
+    if (isFallback && currentTitle && idx >= 0) {
+      manifest[idx].title = currentTitle;
+    }
   }
 
   function setText(id, value) {
@@ -127,16 +182,11 @@
     if (el && typeof html === "string") el.innerHTML = html;
   }
 
-  function toHtml(text) {
+  function formatMultiline(text) {
     if (!text) return "";
-    // 빈 줄 기준으로 단락 분리
-    const paragraphs = text.split(/\n\s*\n/);
-    return paragraphs
-      .map((p) =>
-        `<p>${p
-          .replace(/\n/g, "<br>")
-          .replace(/  /g, "&nbsp;&nbsp;")}</p>`
-      )
-      .join("");
+    return text
+      .replace(/\n{2,}/g, "<br><br>")
+      .replace(/\n/g, "<br>")
+      .trim();
   }
 })();

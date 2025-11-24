@@ -26,14 +26,28 @@
     <div class="nav__item">
       <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
       <div class="dropdown" role="menu">
-        <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼 소개</a>
-        <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학회 소개</a>
-        <a href="/pages/8_tomato_dept.html" class="dropdown__item" role="menuitem">부서 소개</a>
+        <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
+        <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
+        <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학생회 소개</a>
       </div>
     </div>
 
-    <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-current="page">행사소개</a>
-    <a href="/pages/prof/8_tomato_professors.html" class="nav__link">교수님 소개</a>
+    <div class="nav__item">
+      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">행사소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem" aria-current="page">연간 행사</a>
+        <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
+        <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
+        <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
+      </div>
+    </div>
+    <div class="nav__item">
+      <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
+        <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
+      </div>
+    </div>
     <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
     <a href="/pages/8_tomato_recruit.html" class="nav__link">RECUIT</a>
   </nav>
@@ -50,13 +64,13 @@
         <a href="/pages/event/8_tomato_annual_event.html" aria-current="page">연간 행사</a>
       </li>
       <li>
-        <a href="#">진행중인 이벤트</a>
+        <a href="/pages/event/8_tomato_event_list.html" data-status="ongoing" aria-current="page">진행중인 이벤트</a>
       </li>
       <li>
         <a href="#">당첨자 발표</a>
       </li>
       <li>
-        <a href="#">지난 이벤트</a>
+        <a href="#" data-status="past">지난 이벤트</a>
       </li>
     </ul>
   </nav>
@@ -122,163 +136,9 @@
         </header>
 
         <!-- 행사 카드 그리드 (15개, 3열 x 5줄) -->
-        <section class="event-grid" aria-label="연간 행사 목록">
-
-          <!-- 1행 -->
-          <article class="event-card" data-event-id="1" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="https://i.postimg.cc/gjcDhcY1/sin-ibsaeng-OT.png" alt="신입생 OT 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">신입생 OT</h3>
-              <p class="event-card__date">2025.02.19 (수)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="2" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="https://i.postimg.cc/J7pXzVFj/gaegangchonghoe1.png" alt="1학기 개강총회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">1학기 개강총회</h3>
-              <p class="event-card__date">2025.03.13 (목)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="3" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="https://i.postimg.cc/4dmYKnqc/hagbuyeongusil1.png" alt="학부연구실 설명회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">학부연구실 설명회</h3>
-              <p class="event-card__date">2025.03.27 (목)</p>
-            </div>
-          </article>
-
-          <!-- 2행 -->
-          <article class="event-card" data-event-id="4" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="/assets/events/grad-1st.jpg" alt="1학기 졸업 전시회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">1학기 졸업 전시회</h3>
-              <p class="event-card__date">2025.04.17 (목)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="5" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="/assets/events/mt.jpg" alt="총 MT 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">총 MT</h3>
-              <p class="event-card__date">2025.05.09 (금) ~ 2025.05.10 (토)</p>
-            </div>
-          </article>
-
-          <!-- 3행 -->
-          <article class="event-card" data-event-id="6" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="/assets/events/teachers-day.jpg" alt="스승의 날 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">스승의 날</h3>
-              <p class="event-card__date">2025.05.13 (화)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="7" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="/assets/events/major-fair.jpg" alt="전공 박람회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">전공 박람회</h3>
-              <p class="event-card__date">2025.05.19 (월) ~ 2025.05.20 (화)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="8" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="/assets/events/ips.jpg" alt="IPS 대회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">IPS 대회</h3>
-              <p class="event-card__date">2025.05.30 (금)</p>
-            </div>
-          </article>
-
-          <!-- 4행 -->
-          <article class="event-card" data-event-id="9" data-semester="first">
-            <div class="event-card__thumb">
-              <img src="/assets/events/end-1st.jpg" alt="1학기 종강총회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">1학기 종강총회</h3>
-              <p class="event-card__date">2025.06.17 (화)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="10" data-semester="second">
-            <div class="event-card__thumb">
-              <img src="/assets/events/opening-2nd.jpg" alt="2학기 개강총회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">2학기 개강총회</h3>
-              <p class="event-card__date">2025.09.04 (목)</p>
-            </div>
-          </article>
-
-          <!-- 5행 -->
-          <article class="event-card" data-event-id="11" data-semester="second">
-            <div class="event-card__thumb">
-              <img src="/assets/events/eng-10th.jpg" alt="공과대학 10주년 학술제 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">공과대학 10주년 학술제</h3>
-              <p class="event-card__date">2025.09.11 (목)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="12" data-semester="second">
-            <div class="event-card__thumb">
-              <img src="/assets/events/career-concert.jpg" alt="진로콘서트 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">진로콘서트</h3>
-              <p class="event-card__date">2025.09.29 (월)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="13" data-semester="second">
-            <div class="event-card__thumb">
-              <img src="/assets/events/grad-2nd.jpg" alt="2학기 졸업 전시회 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">2학기 졸업 전시회</h3>
-              <p class="event-card__date">2025.10.16 (목)</p>
-            </div>
-          </article>
-
-          <!-- 6행 -->
-          <article class="event-card" data-event-id="14" data-semester="second">
-            <div class="event-card__thumb">
-              <img src="/assets/events/uni-d.jpg" alt="Uni-D 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">Uni-D</h3>
-              <p class="event-card__date">2025.11.15 (토) ~ 2025.11.16 (일)</p>
-            </div>
-          </article>
-
-          <article class="event-card" data-event-id="15" data-semester="second">
-            <div class="event-card__thumb">
-              <img src="/assets/events/ai-night.jpg" alt="AI인의 밤 사진" />
-            </div>
-            <div class="event-card__body">
-              <h3 class="event-card__title">AI인의 밤</h3>
-              <p class="event-card__date">2025.12.17 (수)</p>
-            </div>
-          </article>
+        <section class="event-grid" aria-label="연간 행사 목록" id="eventGrid" data-state="loading">
+          <p class="sr-only">연간 행사 목록을 불러오는 중입니다.</p>
+        </section>
 
         </section>
       </div>
@@ -310,43 +170,6 @@
       </p>
     </footer>
 
-    <script>
-      // 카드 클릭 → 상세 페이지 이동
-      document.querySelectorAll(".event-card[data-event-id]").forEach((card) => {
-        const id = card.getAttribute("data-event-id");
-        card.setAttribute("role", "button");
-        card.setAttribute("tabindex", "0");
-
-        const go = () => {
-          if (id) {
-            window.location.href = `/pages/event/8_tomato_event_interview.html?id=${id}`;
-          }
-        };
-
-        card.addEventListener("click", go);
-        card.addEventListener("keypress", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            go();
-          }
-        });
-      });
-
-      // 학기 필터
-      const cards = Array.from(document.querySelectorAll(".event-card[data-semester]"));
-      const radios = document.querySelectorAll('input[name="event-term"]');
-
-      const applyFilter = () => {
-        const value = document.querySelector('input[name="event-term"]:checked')?.value || "all";
-        cards.forEach((card) => {
-          const sem = card.getAttribute("data-semester");
-          const show = value === "all" || (value === "first" && sem === "first") || (value === "second" && sem === "second");
-          card.style.display = show ? "" : "none";
-        });
-      };
-
-      radios.forEach((radio) => radio.addEventListener("change", applyFilter));
-      applyFilter();
-    </script>
+    <script src="/js/8_tomato_annual_event.js" defer></script>
 </body>
 </html>

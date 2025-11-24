@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>커리큘럼 | 숙명여자대학교 인공지능공학부</title>
+
+  <link rel="stylesheet" href="/css/8_tomato_common.css" />
+  <link rel="stylesheet" href="/css/8_tomato_curriculum.css" />
+</head>
+<body>
+
+<!-- 공통 헤더-->
+<div class="site-header-backdrop" aria-hidden="true"></div>
+<header class="site-header" aria-label="주요 탐색">
+  <nav class="nav" role="navigation">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+      <img
+        src="/assets/8_tomato_home_white.png"
+        alt="MAIN 홈"
+        class="nav__logo"
+        data-logo-dark="/assets/8_tomato_home_white.png"
+        data-logo-light="/assets/8_tomato_home_black.png"
+      >
+    </a>
+
+    <div class="nav__item">
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
+        <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem" aria-current="page">커리큘럼</a>
+        <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학생회 소개</a>
+      </div>
+    </div>
+
+    <div class="nav__item">
+      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">행사소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
+        <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
+        <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
+        <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
+      </div>
+    </div>
+    <div class="nav__item">
+      <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+      <div class="dropdown" role="menu">
+        <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
+        <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
+      </div>
+    </div>
+    <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
+    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECUIT</a>
+  </nav>
+</header>
+
+<!-- 상단 헤더 -->
+<section class="page-hero page-hero--curriculum" aria-label="커리큘럼 헤더">
+  <div class="page-hero__headline">
+    <h1>ai engineering</h1>
+  </div>
+  <nav class="page-hero__subnav" aria-label="커리큘럼 탭">
+    <ul>
+      <li>
+        <a href="/pages/8_tomato_intro.html">학과 소개</a>
+      </li>
+      <li class="is-active">
+        <a href="/pages/8_tomato_curriculum.html" aria-current="page">커리큘럼</a>
+      </li>
+      <li>
+        <a href="/pages/8_tomato_academy.html">학생회 소개</a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<!-- 콘텐츠 -->
+<section class="content curriculum-content">
+  <div class="container">
+    <div class="curriculum-hero-title">
+      <h2>세분화된 커리큘럼으로</h2>
+      <p>체계적이고 깊이 있는 학습을 제공합니다.</p>
+    </div>
+
+    <div class="curriculum-top">
+      <div class="curriculum-filters" role="group" aria-label="커리큘럼 필터">
+        <div class="curriculum-filter-group">
+          <label class="curriculum-select" aria-label="학년 선택">
+            <select id="gradeSelect">
+              <option value="1" selected>1학년</option>
+              <option value="2">2학년</option>
+              <option value="3">3학년</option>
+              <option value="4">4학년</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="curriculum-filter-group">
+          <label class="curriculum-select" aria-label="학기 선택">
+            <select id="semesterSelect">
+              <option value="1" selected>1학기</option>
+              <option value="2">2학기</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <form class="curriculum-search" id="curriculumSearchForm" role="search">
+        <div class="curriculum-search__select">
+          <label for="curriculumSearchType" class="sr-only">검색 범위</label>
+          <select id="curriculumSearchType" name="type" class="curriculum-search__select-field" aria-label="검색 범위 선택">
+            <option value="all">전체</option>
+            <option value="title">과목명</option>
+            <option value="tag">키워드</option>
+          </select>
+        </div>
+
+        <div class="curriculum-search__field">
+          <label for="curriculumSearch" class="sr-only">검색어</label>
+          <input
+            id="curriculumSearch"
+            type="text"
+            name="q"
+            placeholder="과목별 키워드 검색 (예 : 파이썬, 인공지능)"
+            aria-label="커리큘럼 검색"
+          />
+        </div>
+
+        <button type="submit" class="curriculum-search__submit" aria-label="검색">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16" y1="16" x2="22" y2="22"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <section class="curriculum-grid" id="curriculumGrid" aria-label="커리큘럼 목록">
+      <p class="sr-only">커리큘럼 목록을 불러오는 중입니다.</p>
+    </section>
+    <p class="curriculum-empty" id="curriculumEmpty" hidden>조건에 맞는 과목이 없습니다.</p>
+  </div>
+</section>
+
+<footer class="footer-section" aria-label="하단 정보">
+  <div class="footer-toggle">
+    <label class="theme-toggle" for="themeSwitch">
+      <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
+      <span class="theme-toggle__track" aria-hidden="true">
+        <span class="theme-toggle__thumb"></span>
+        <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+      </span>
+      <span class="theme-toggle__text">다크 모드</span>
+    </label>
+  </div>
+  <div class="brand">
+    <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+    MAIN
+  </div>
+  <address class="addr">
+    <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
+    <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
+    <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
+  </address>
+  <p class="copy">
+    COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
+  </p>
+</footer>
+
+<script src="/js/8_tomato_curriculum.js" defer></script>
+</body>
+</html>

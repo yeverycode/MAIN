@@ -16,7 +16,7 @@
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
   min-height: calc(100dvh - var(--header-height));
-  padding: 0 24px 140px;
+  padding: 0 24px 100px;
   position: relative;
 }
 
@@ -25,10 +25,10 @@
 }
 
 .page-hero__headline h1 {
-  font-size: clamp(88px, 13vw, 200px);
+  font-size: clamp(72px, 12vw, 200px);
   font-weight: 800;
   color: var(--white);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -171,22 +171,28 @@
 }
 
 .event-banner__dots {
-  position: static;
   display: flex;
   gap: 8px;
   justify-content: center;
-  margin: 12px auto 0;
+  margin: 32px auto 0;
 }
 
 .event-banner__dots .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 9999px;
-  background: #bfd7ec;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--card-border);
+  transition: all 0.3s ease;
 }
 
 .event-banner__dots .dot--active {
-  background: #00368e;
+  width: 24px;
+  border-radius: 4px;
+  background: var(--blue);
+}
+
+.event-banner__dots .dot:hover {
+  background: color-mix(in srgb, var(--blue) 50%, var(--card-border));
 }
 
 /* 툴바 */

@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "title": "자주 묻는 질문",
+    "subtitle": "카카오톡 채널 운영시간 | 평일 09:00 - 18:00",
+    "contact": {
+      "heading": "FAQ에 없는 질문이 있나요?",
+      "description": "카카오톡 채널을 통해 더 자세히 안내해드립니다.",
+      "actionText": "카카오톡 채널 문의하기",
+      "actionHref": "http://pf.kakao.com/_LJMjn"
+    }
+  },
+  "categories": [
+    { "id": "all", "label": "전체" },
+    { "id": "operation", "label": "운영 관련" },
+    { "id": "promotion", "label": "홍보 관련" },
+    { "id": "department", "label": "학부 관련" }
+  ],
+  "faqs": [
+    {
+      "id": "operation-01",
+      "category": "operation",
+      "question": "재학생 톡방에 입장하고 싶어요.",
+      "answer": [
+        "카카오톡 플러스 친구를 통해 포털 또는 헤이영의 성함·학번·학부 정보 캡쳐본을 보내주세요."
+      ],
+      "tags": ["운영", "톡방", "입장", "학생"]
+    },
+    {
+      "id": "operation-02",
+      "category": "operation",
+      "question": "학생회비를 환불받고 싶어요.",
+      "answer": [
+        "카카오톡 플러스친구를 통해 학번 7자리를 알려주시면 제출 서류를 안내해드립니다."
+      ],
+      "tags": ["운영", "학생회비", "환불"]
+    },
+    {
+      "id": "operation-03",
+      "category": "operation",
+      "question": "학생회비는 어디에 사용되나요?",
+      "answer": [
+        "행사 운영비, 학과 굿즈 제작비, 장학 사업 등 투명하게 공개됩니다."
+      ],
+      "tags": ["운영", "학생회비", "예산", "집행"]
+    },
+    {
+      "id": "promotion-01",
+      "category": "promotion",
+      "question": "카카오톡 플러스채널 운영 시간은 언제인가요?",
+      "answer": [
+        "월–금 09:00–18:00"
+      ],
+      "tags": ["홍보", "운영시간", "채널"]
+    },
+    {
+      "id": "promotion-02",
+      "category": "promotion",
+      "question": "홍보물을 공유하고 싶어요.",
+      "answer": [
+        "아래 항목을 카카오톡 플러스 친구를 통해 보내주시면 각 학번 톡방에 전달해드립니다.",
+        "필수 정보: 홍보물(사진/텍스트), 대상 학번(25·24·23·22 이상), 본인 신원"
+      ],
+      "tags": ["홍보", "자료", "공유", "톡방"]
+    },
+    {
+      "id": "promotion-03",
+      "category": "promotion",
+      "question": "학부 행사 홍보도 가능할까요?",
+      "answer": [
+        "인공지능공학부 관련 행사라면 가능합니다. 외부 행사일 경우 승인 후 공유됩니다."
+      ],
+      "tags": ["홍보", "행사", "승인"]
+    },
+    {
+      "id": "department-01",
+      "category": "department",
+      "question": "인공지능공학부에서는 어떤 걸 배우나요?",
+      "answer": [
+        "수학·통계 기반의 AI 이론부터 딥러닝, 데이터 분석, 자연어 처리, 컴퓨터비전, AI응용까지 폭넓게 배웁니다."
+      ],
+      "tags": ["학부", "커리큘럼", "딥러닝", "데이터"]
+    },
+    {
+      "id": "department-02",
+      "category": "department",
+      "question": "복수전공이나 부전공이 가능한가요?",
+      "answer": [
+        "가능합니다. 다만 전공 필수 과목이 많아 학기별 계획을 잘 세우는 것이 중요합니다."
+      ],
+      "tags": ["학부", "복수전공", "부전공"]
+    },
+    {
+      "id": "department-03",
+      "category": "department",
+      "question": "어떤 사람이 인공지능공학부에 잘 맞을까요?",
+      "answer": [
+        "논리적 사고와 문제 해결을 즐기고, 새로운 기술을 배우는 걸 좋아하는 사람에게 잘 맞아요.",
+        "팀 프로젝트나 연구에도 흥미가 있다면 더욱 좋습니다."
+      ],
+      "tags": ["학부", "적합도", "진로"]
+    },
+    {
+      "id": "department-04",
+      "category": "department",
+      "question": "인공지능공학부의 주요 진로에는 어떤 것이 있나요?",
+      "answer": [
+        "AI엔지니어, 데이터사이언티스트, 백엔드개발자, 연구원, 스타트업 창업 등 다양합니다."
+      ],
+      "tags": ["학부", "진로", "취업"]
+    },
+    {
+      "id": "department-05",
+      "category": "department",
+      "question": "학부 내 활동(학생회, 스터디, 대외활동 등)은 어떤 게 있나요?",
+      "answer": [
+        "학생회 MAIN(), 학회 WIN, CODE-IT, 매년 정기적으로 열리는 IPS, MEIT, UNI-D 등이 있습니다."
+      ],
+      "tags": ["학부", "활동", "학생회", "학회"]
+    },
+    {
+      "id": "department-06",
+      "category": "department",
+      "question": "인공지능공학부 학생이라면 꼭 참여해보면 좋은 활동은?",
+      "answer": [
+        "캡스톤 교과목 수강, 공모전·해커톤, 연구실 인턴십 등을 추천합니다."
+      ],
+      "tags": ["학부", "활동", "추천"]
+    }
+  ]
+}

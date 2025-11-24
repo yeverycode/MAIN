@@ -24,6 +24,8 @@
     gallery: "/assets/event_interview_gallery.svg"
   };
 
+  let resizeTimer;
+
   const params = new URLSearchParams(window.location.search);
   const eventId = params.get("id") || "1";
   const jsonPath = `/data/event_interview/${eventId}.json`;
@@ -76,14 +78,15 @@
     const topImg = document.getElementById("qa-top-image");
     const topRow = document.querySelector(".qa-row--image-with-questions");
     if (topImg && topRow) {
-      const topItem = interview[0] || interview[1];
-      const topSrc = topItem?.image || data.heroImage || "";
+      const topSrc = data.minImage || data.heroImage || data.galleryImage || "";
       if (topSrc) {
         topImg.src = topSrc;
-        topImg.alt = topItem?.imageAlt || topItem?.question || "행사 이미지";
+        topImg.alt = data.minAlt || data.heroAlt || data.title || "행사 이미지";
         topRow.classList.remove("qa-row--no-image");
+        topImg.addEventListener("load", syncTopImageHeight, { once: true });
       } else {
         topRow.classList.add("qa-row--no-image");
+        resetTopImageHeight();
       }
     }
 
@@ -91,15 +94,17 @@
     const bottomRow = document.querySelector(".qa-row--image-bottom");
     if (bottomImg && bottomRow) {
       const bottom =
+        data.galleryImage ||
         (data.galleryImages && data.galleryImages[0]) ||
-        interview[4]?.image ||
-        interview[5]?.image ||
+        data.heroImage ||
+        data.minImage ||
         "";
       if (bottom) {
         bottomImg.src = bottom;
         bottomImg.alt =
-          interview[4]?.imageAlt ||
-          interview[5]?.imageAlt ||
+          data.galleryAlt ||
+          data.heroAlt ||
+          data.minAlt ||
           "행사 갤러리 이미지";
         bottomRow.classList.remove("qa-row--no-image");
       } else {
@@ -107,6 +112,11 @@
       }
     }
 
+    syncTopImageHeight();
+    requestAnimationFrame(syncTopImageHeight);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncTopImageHeight).catch(() => {});
+    }
     setPager(currentId, data.title, isFallback);
   }
 
@@ -189,4 +199,34 @@
       .replace(/\n/g, "<br>")
       .trim();
   }
+
+  function syncTopImageHeight() {
+    const row = document.querySelector(".qa-row--image-with-questions");
+    if (!row || row.classList.contains("qa-row--no-image")) return resetTopImageHeight();
+
+    const contentCol = row.querySelector(".qa-row__content-col");
+    const imageCol = row.querySelector(".qa-row__image");
+    const img = row.querySelector(".qa-row__image img");
+    if (!contentCol || !imageCol || !img) return;
+
+    const targetHeight = contentCol.getBoundingClientRect().height;
+    if (targetHeight > 0) {
+      imageCol.style.height = `${targetHeight}px`;
+      img.style.height = `${targetHeight}px`;
+    }
+  }
+
+  function resetTopImageHeight() {
+    const imageCol = document.querySelector(".qa-row--image-with-questions .qa-row__image");
+    const img = document.querySelector(".qa-row--image-with-questions .qa-row__image img");
+    if (imageCol) imageCol.style.height = "";
+    if (img) img.style.height = "";
+  }
+
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncTopImageHeight, 150);
+  });
+
+  window.addEventListener("load", syncTopImageHeight);
 })();

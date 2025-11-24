@@ -154,9 +154,7 @@
 
               <li>
                 <span class="prof-contact-icon" aria-hidden="true">
-                  <svg width="16" height="12" viewBox="0 0 16 12">
-                    <path d="M14.4 0H1.6C0.72 0 0.008 0.675 0.008 1.5L0 10.5C0 11.325 0.72 12 1.6 12H14.4C15.28 12 16 11.325 16 10.5V1.5C16 0.675 15.28 0 14.4 0Z"/>
-                  </svg>
+                  <img src="/assets/8_tomato_email.svg" alt="" width="16" height="12" />
                 </span>
                 <a href="#" id="prof-email-link">
                   <span id="prof-email-text"></span>
@@ -165,9 +163,7 @@
 
               <li>
                 <span class="prof-contact-icon" aria-hidden="true">
-                  <svg width="14" height="17" viewBox="0 0 14 17">
-                    <path d="M7 8.5C7.48 8.5 7.89 8.33 8.23 8C8.58 7.67 8.75 7.27 8.75 6.8C8.75 6.33 8.58 5.93 8.23 5.6C7.89 5.27 7.48 5.1 7 5.1C6.52 5.1 6.11 5.27 5.76 5.6C5.42 5.93 5.25 6.33 5.25 6.8C5.25 7.27 5.42 7.67 5.76 8C6.11 8.33 6.52 8.5 7 8.5Z"/>
-                  </svg>
+                  <img src="/assets/8_tomato_location.svg" alt="" width="14" height="17" />
                 </span>
                 <span id="prof-office"></span>
               </li>
@@ -218,16 +214,25 @@
         <!-- 논문 게재 -->
         <div class="prof-slot prof-slot--pub">
           <section class="prof-bottom-section prof-pub-section">
-            <h2 class="prof-bottom-title">논문게재</h2>
-            <div class="prof-bottom-line"></div>
+            <div class="prof-bottom-header">
+              <h2 class="prof-bottom-title">논문게재</h2>
+              <div class="prof-pagination" id="prof-pub-pagination" aria-live="polite">
+                <button type="button" class="prof-pagination__btn" data-dir="prev" aria-label="이전 논문 목록">
+                  &lt;
+                </button>
+                <span class="prof-pagination__status" id="prof-pub-page-status"></span>
+                <button type="button" class="prof-pagination__btn" data-dir="next" aria-label="다음 논문 목록">
+                  &gt;
+                </button>
+              </div>
+            </div>
+            <div class="prof-bottom-line prof-bottom-line--pub"></div>
             <table class="prof-table prof-pub-table">
               <thead>
                 <tr>
-                  <th scope="col">제목</th>
-                  <th scope="col">발행일</th>
-                  <th scope="col">학회지</th>
+                  <th scope="col">게재년월</th>
+                  <th scope="col">논문 이름</th>
                   <th scope="col">발행처</th>
-                  <th scope="col">논문번호</th>
                 </tr>
               </thead>
               <tbody id="prof-pubs">

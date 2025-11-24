@@ -325,11 +325,10 @@ html[data-theme="dark"] .site-header-backdrop {
   top: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%);
-  min-width: 200px;
+  min-width: 100px;
   background: var(--surface);
   border: none;
   border-radius: 12px;
-  box-shadow: var(--shadow-card);
   padding: 8px;
   opacity: 0;
   visibility: hidden;

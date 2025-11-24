@@ -231,6 +231,8 @@ function setupStatusTabs(defaultStatus = "ongoing") {
 
 // 진행중 이벤트가 없으면 자동으로 지난 탭으로 이동
 function getDefaultStatus() {
+  const hash = (window.location.hash || "").replace("#", "");
+  if (hash === "past" || hash === "ongoing") return hash;
   const hasOngoing = eventsData.some(
     (ev) => getStatus(ev.startDate, ev.endDate) === "ongoing"
   );

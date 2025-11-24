@@ -207,7 +207,7 @@ html[data-theme="light"] .fyig-title {
   position: fixed;
   right: 26px;
   bottom: 140px;
-  width: 80px;
+  width: 68px;
   min-height: 520px;
   padding: 18px 12px 20px;
   border-radius: 999px;
@@ -230,6 +230,35 @@ html[data-theme="light"] .fyig-title {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
+  top: calc(var(--header-height) + 20px);
+  bottom: calc(68px + 24px + 14px);
+}
+
+.rail-collapse {
+  display: none;
+  width: 52px;
+  height: 52px;
+  border: none;
+  background: transparent;
+  color: var(--ink, #111);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.rail-collapse svg {
+  width: 26px;
+  height: 26px;
+}
+
+.rail.is-open .rail-collapse {
+  display: inline-flex;
+}
+
+.rail-collapse:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
 }
 
 .rail__icons {
@@ -267,12 +296,18 @@ html[data-theme="light"] .fyig-title {
 .rail__label {
   writing-mode: vertical-rl;
   text-align: left;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 300;
   letter-spacing: 1px;
   line-height: 1.2;
   color: var(--ink, #111);
   margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+.rail.is-open + .rail-fab .rail-trigger,
+.rail.is-open + .rail-fab .rail-trigger img {
+  display: none;
 }
 
 

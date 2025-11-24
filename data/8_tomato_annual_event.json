@@ -45,14 +45,14 @@
     "id": "major-fair",
     "title": "전공 박람회",
     "date": "2025.05.19 (월) ~ 2025.05.20 (화)",
-    "image": "/assets/events/major-fair.jpg",
+    "image": "https://i.postimg.cc/zvrjDgDX/jeongongbaglamhoe-2.jpg",
     "alt": "전공 박람회 사진"
   },
   {
     "id": "ips",
     "title": "IPS 대회",
     "date": "2025.05.30 (금)",
-    "image": "/assets/events/ips.jpg",
+    "image": "https://i.postimg.cc/V6CFqFHP/IPS-3.png",
     "alt": "IPS 대회 사진"
   },
   {

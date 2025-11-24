@@ -1,0 +1,450 @@
+{
+  "id": "yoon-yongik",
+  "name": "윤용익",
+  "role": "교수",
+  "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28055_1742615167000.do",
+  "phone": "02-710-9771",
+  "email": "yiyoon@sm.ac.kr",
+  "office": "새힘관 512호",
+
+  "interests": [
+    "자율주행",
+    "블록체인",
+    "빅데이터"
+  ],
+
+  "history": [
+    {
+      "period": "1997.09 ~ 현재",
+      "text": "숙명여자대학교 인공지능공학부 교수"
+    },
+    {
+      "period": "1985.02 ~ 1997.09",
+      "text": "한국전자통신연구원 책임연구원"
+    },
+    {
+      "period": "2009.03 ~ 2015.12",
+      "text": "국방부 CIO(정보화기획단) 전문위원"
+    },
+    {
+      "period": "2010.01 ~ 2013.12",
+      "text": "한국정보과학회 학회지편집위원회 위원장"
+    }
+  ],
+
+  "courses": [
+    {
+      "term": "담당 교과목",
+      "list": [
+        { "code": "21003076", "name": "모바일프로그래밍(캡스톤디자인)" },
+        { "code": "21100722", "name": "네트워크(캡스톤디자인)" },
+        { "code": "21104079", "name": "빅데이터기획(대학원)" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "SAPGDR: Situation Adaptive Prompt Guided Data Rectification Architecture for Safety AI",
+      "date": "2025.09",
+      "journal": "2025 IEEE/ACIS 23rd International Conference on Software Engineering Research, Management and Applications, SERA 2025 - Proceedings",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Proactive Scenario-driven Adaptable Defensive Driving Architecture for Autonomous Driving Environment",
+      "date": "2025.09",
+      "journal": "2025 IEEE/ACIS 23rd International Conference on Software Engineering Research, Management and Applications, SERA 2025 - Proceedings",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "RTC: Road Marking Thinking for Scenario Reasoning and Decision Support in Vigilant Driving",
+      "date": "2025.05",
+      "journal": "WWW Companion 2025 - Companion Proceedings of the ACM Web Conference 2025",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "Integrating Edge Computing-Based Ethical Decision-Making Framework for AI",
+      "date": "2025.05",
+      "journal": "WWW Companion 2025 - Companion Proceedings of the ACM Web Conference 2025",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "Trust-centric Big Data Ecosystem: An Ethical Framework in Autonomous Driving",
+      "date": "2025.01",
+      "journal": "2024 IEEE International Conference on Big Data (BigData)",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Enhancing Fairness in Autonomous Vehicles: Proof of Confidence With Blockchain Technology",
+      "date": "2024.11",
+      "journal": "IEEE ACCESS",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Intricate Object Detection in Self Driving Environments with Edge-Adaptive Depth Estimation(EADE)",
+      "date": "2024.10",
+      "journal": "Proceedings of the 33rd ACM International Conference on Information and Knowledge Management",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "AFTEA Framework for Supporting Dynamic Autonomous Driving Situation",
+      "date": "2024.09",
+      "journal": "ELECTRONICS",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Blockchain Model for Reliable Consensus Algorithm on the Autonomous Driving Data Management",
+      "date": "2024.01",
+      "journal": "Digest of Technical Papers - IEEE International Conference on Consumer Electronics",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Multi combination pattern labeling by using deep learning for chameleon rotary machine environment",
+      "date": "2023.07",
+      "journal": "Journal of Big Data",
+      "publisher": "SPRINGERNATURE"
+    },
+    {
+      "title": "Deep Learning SPIN Pattern Outlier Detection for Integrated Dynamic Rotary Machine",
+      "date": "2023.06",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "The Strategy of Digital Twin Convergence Service based on Metavers",
+      "date": "2023.05",
+      "journal": "Proceedings - 2023 IEEE/ACIS 21st International Conference on Software Engineering Research, Management and Applications, SERA 2023",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Prediction of Content Success and Cloud-Resource Management in Internet-of-Media-Things Environments",
+      "date": "2022.04",
+      "journal": "ELECTRONICS",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "비용 효율적인 OTT 서비스를 위한 심층강화학습 기반 클라우드 자원 할당 연구",
+      "date": "2022.03",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "Trusted information project platform based on blockchain for sharing strategy",
+      "date": "2022.03",
+      "journal": "Journal of Ambient Intelligence and Humanized Computing",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Trustworthy Dynamic Data Awareness Model for Tracking in CPS",
+      "date": "2022.03",
+      "journal": "HUMAN-CENTRIC COMPUTING AND INFORMATION SCIENCES",
+      "publisher": "KOREA INFORMATION PROCESSING SOC"
+    },
+    {
+      "title": "Range Segmentation of Dynamic Offloading (RSDO) Algorithm by Correlation for Edge Computing",
+      "date": "2021.10",
+      "journal": "JIPS(Journal of Information Processing Systems)",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Linked-Object Dynamic Offloading (LODO) for the Cooperation of Data and Tasks on Edge Computing Environment",
+      "date": "2021.09",
+      "journal": "ELECTRONICS",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Intelligent Personalized Transport Alert System with Edge Computing",
+      "date": "2021.01",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "Activity-Recognition Model for Violence Behavior Using LSTM",
+      "date": "2021.01",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "MRTensorCube: tensor factorization with data reduction for context-aware recommendations",
+      "date": "2020.10",
+      "journal": "Journal of Supercomputing",
+      "publisher": "Springer New York LLC"
+    },
+    {
+      "title": "Blockchain-based Perfect Sharing Project Platform based on the Proof of Atomicity Consensus Algorithm",
+      "date": "2020.08",
+      "journal": "TEHNICKI VJESNIK-TECHNICAL GAZETTE",
+      "publisher": "UNIV OSIJEK, TECH FAC"
+    },
+    {
+      "title": "Dynamic Offloading Model for Distributed Collaboration in Edge Computing: A Use Case on Forest Fires Management",
+      "date": "2020.04",
+      "journal": "APPLIED SCIENCES-BASEL",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Detecting Driver Drowsiness Based Fusion Multi-sensors Method",
+      "date": "2019.12",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Design and Implementation of a Trust Information Management Platform for Social Internet of Things Environments",
+      "date": "2019.11",
+      "journal": "SENSORS",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "분산원장의 원자성을 위한 PSP-플랫폼에 관한 연구",
+      "date": "2019.05",
+      "journal": "한국컴퓨터정보학회논문지",
+      "publisher": "한국컴퓨터정보학회"
+    },
+    {
+      "title": "Journalism Model Based on Blockchain with Sharing Space",
+      "date": "2019.01",
+      "journal": "SYMMETRY",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "응급실 과밀화 해결을 위한 데이터 분석 기반 응급실 혼잡도 예측 모형 연구",
+      "date": "2018.09",
+      "journal": "한국데이터정보과학회지",
+      "publisher": "한국데이터정보과학회"
+    },
+    {
+      "title": "Ambient intelligence middleware architecture based on awareness-cognition framework",
+      "date": "2018.08",
+      "journal": "JOURNAL OF AMBIENT INTELLIGENCE AND HUMANIZED COMPUTING",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Fusion Sentimental Analysis in Self-Growth Broadcasting",
+      "date": "2018.05",
+      "journal": "Proceedings - 2018 IEEE International Conference on Big Data and Smart Computing, BigComp 2018",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Intelligent smart home energy efficiency model using artificial TensorFlow engine",
+      "date": "2018.04",
+      "journal": "HUMAN-CENTRIC COMPUTING AND INFORMATION SCIENCES",
+      "publisher": "SPRINGEROPEN"
+    },
+    {
+      "title": "Hybrid sensing and behavior-aware in pedestrian hazard detection",
+      "date": "2017.12",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "사물인터넷 기반의 디스플레이 광고에 대한 탐색적 연구",
+      "date": "2017.11",
+      "journal": "OOH광고학연구",
+      "publisher": "한국OOH광고학회"
+    },
+    {
+      "title": "A model of energy-awareness predictor to improve the energy efficiency",
+      "date": "2017.05",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Energy efficiency for cloud computing system based on predictive optimization",
+      "date": "2017.04",
+      "journal": "JOURNAL OF PARALLEL AND DISTRIBUTED COMPUTING",
+      "publisher": "ACADEMIC PRESS INC ELSEVIER SCIENCE"
+    },
+    {
+      "title": "A Hedonic Model Effects for Consumer-oriented Retargeting Advertising Based on Internet of Things",
+      "date": "2017.02",
+      "journal": "한국컴퓨터정보학회논문지",
+      "publisher": "한국컴퓨터정보학회"
+    },
+    {
+      "title": "Prediction method for suspicious behavior based on omni-view model",
+      "date": "2017.01",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "바이오리듬 분석을 통한 스마트조명 감성제어 서비스 개발",
+      "date": "2016.12",
+      "journal": "정보과학회 컴퓨팅의 실제 논문지",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "Recommendation system for sharing economy based on multidimensional trust model",
+      "date": "2016.12",
+      "journal": "MULTIMEDIA TOOLS AND APPLICATIONS",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Improving digital image watermarking by means of optimal channel selection",
+      "date": "2016.11",
+      "journal": "EXPERT SYSTEMS WITH APPLICATIONS",
+      "publisher": "PERGAMON-ELSEVIER SCIENCE LTD"
+    },
+    {
+      "title": "Interactive activity recognition using pose-based spatio-temporal relation features and four-level Pachinko Allocation Model",
+      "date": "2016.11",
+      "journal": "INFORMATION SCIENCES",
+      "publisher": "ELSEVIER SCIENCE INC"
+    },
+    {
+      "title": "공간 중심의 사물정보통신 기반 리타게팅광고를 위한 헤도닉모델 연구",
+      "date": "2016.09",
+      "journal": "한국위성정보통신학회논문지",
+      "publisher": "사단법인 한국위성정보통신학회"
+    },
+    {
+      "title": "Data integration for clinical decision support",
+      "date": "2016.08",
+      "journal": "International Conference on Ubiquitous and Future Networks, ICUFN",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "행동 패턴 기반 범죄 예측 모델 연구",
+      "date": "2016.03",
+      "journal": "한국위성정보통신학회논문지",
+      "publisher": "사단법인 한국위성정보통신학회"
+    },
+    {
+      "title": "Monitoring senior wellness status using multimodal biosensors",
+      "date": "2016.03",
+      "journal": "2016 International Conference on Big Data and Smart Computing, BigComp 2016",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "Architecture of 4-way tensor factorization for context-aware recommendations",
+      "date": "2016.03",
+      "journal": "2016 International Conference on Big Data and Smart Computing (BigComp)",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "Energy savings in processor based on prediction technique",
+      "date": "2016.03",
+      "journal": "2016 International Conference on Information Networking (ICOIN)",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Semantic relationship of contents using tensor factorization for self-growth social broadcasting",
+      "date": "2016.03",
+      "journal": "International Conference on Information Networking",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Multi-level assessment model for wellness service based on human mental stress level",
+      "date": "2016.03",
+      "journal": "MULTIMEDIA TOOLS AND APPLICATIONS",
+      "publisher": "Springer New York LLC"
+    },
+    {
+      "title": "유연성 다중 회귀 모델을 활용한 보행자이상 행동 예측 모델 연구",
+      "date": "2016.01",
+      "journal": "한국데이터정보과학회지",
+      "publisher": "한국데이터정보과학회"
+    },
+    {
+      "title": "Flexible multi-level regression model for prediction of pedestrian abnormal behavior",
+      "date": "2016.01",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "An interactive activity recognition approach using articulated-body estimation and pose-based features",
+      "date": "2016.01",
+      "journal": "IMCOM 2016: Proceedings of the 10th International Conference on Ubiquitous Information Management and Communication",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "EAP: Energy-Awareness Predictor in Multicore CPU",
+      "date": "2015.12",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Gaussian process for predicting CPU utilization and its application to energy efficiency",
+      "date": "2015.12",
+      "journal": "APPLIED INTELLIGENCE",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Interactive activity recognition using articulated-pose features on spatio-temporal relation",
+      "date": "2015.12",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Flexible multi-level model for prediction of abnormal behavior",
+      "date": "2015.10",
+      "journal": "BigDAS '15: Proceedings of the 2015 International Conference on Big Data Applications and Services",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "Complexity reduction for Gaussian process regression in spatio-temporal prediction",
+      "date": "2015.10",
+      "journal": "International Conference on Advanced Technologies for Communications",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "Background subtraction with neighbor-based intensity correction algorithm",
+      "date": "2015.10",
+      "journal": "2015 International Conference on Advanced Technologies for Communications (ATC)",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Wellness contents recommendation based on human emotional and health status using EM",
+      "date": "2015.08",
+      "journal": "2015 Seventh International Conference on Ubiquitous and Future Networks",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Traffic behavior recognition using the pachinko allocation model",
+      "date": "2015.07",
+      "journal": "Sensors",
+      "publisher": "MDPI AG"
+    },
+    {
+      "title": "Ontology model for wellness contents recommendation based on risk ratio em",
+      "date": "2015.06",
+      "journal": "Procedia Computer Science",
+      "publisher": "Elsevier B.V."
+    },
+    {
+      "title": "스마트 단말기 상의 기능적 지원을 위한 협업 서비스 모델 연구",
+      "date": "2015.05",
+      "journal": "정보처리학회논문지. 컴퓨터 및 통신시스템",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "멀티디바이스 환경을 위한 모빌리티 프로세스 오케스트레이션",
+      "date": "2015.03",
+      "journal": "정보처리학회논문지. 컴퓨터 및 통신시스템",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "User-defined social community model for collaboration based on participant preferences",
+      "date": "2015.02",
+      "journal": "International Journal of Software Engineering and its Applications",
+      "publisher": "보안공학연구지원센터"
+    },
+    {
+      "title": "Media synchronization model based on relation flow for Multi-Screen service",
+      "date": "2015.01",
+      "journal": "2015 International Conference on Information Networking",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Prediction model for mental and physical health condition using risk ratio EM",
+      "date": "2015.01",
+      "journal": "International Conference on Information Networking",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "A novel watermarking scheme for image authentication in social networks",
+      "date": "2015.01",
+      "journal": "ACM IMCOM 2015 - Proceedings",
+      "publisher": "Association for Computing Machinery, Inc"
+    }
+  ]
+}

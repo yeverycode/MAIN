@@ -1,0 +1,362 @@
+{
+  "id": "park-hwajin",
+  "name": "박화진",
+  "role": "교수",
+  "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28054_1742615112000.do",
+  "phone": "02-710-9204",
+  "email": "hwajinpk@sm.ac.kr",
+  "office": "새힘관 510호",
+
+  "interests": [
+    "컴퓨터 그래픽스",
+    "가상현실",
+    "게임·인터랙티브 미디어"
+  ],
+
+  "history": [
+    {
+      "period": "2014.03",
+      "text": "한국디지털콘텐츠학회 부회장"
+    },
+    {
+      "period": "2010.03",
+      "text": "한국그래픽스학회 부회장"
+    },
+    {
+      "period": "2008.03",
+      "text": "한국디지털콘텐츠학회 논문편집위원장"
+    },
+    {
+      "period": "2000.03 ~ 현재",
+      "text": "숙명여자대학교 교수"
+    }
+  ],
+
+    "courses": [
+    {
+      "term": "2025년 1학기",
+      "list": [
+        { "code": "", "name": "컴퓨터 그래픽스" },
+        { "code": "", "name": "프로그래밍 입문 (파이썬)" }
+      ]
+    },
+    {
+      "term": "2024년 2학기",
+      "list": [
+        { "code": "", "name": "VR/AR 응용 (캡스톤)" },
+        { "code": "", "name": "공학수학 1" }
+      ]
+    },
+    {
+      "term": "2024년 1학기",
+      "list": [
+        { "code": "", "name": "컴퓨터 그래픽스" },
+        { "code": "", "name": "프로그래밍 입문 (파이썬)" },
+        { "code": "", "name": "스마트서비스(캡스톤)" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "OSMU를 위한 웹 기반 게임세계관 창작 지원 서비스",
+      "date": "2018.12",
+      "journal": "한국디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "ARgun을 활용한 실감형 콘텐츠 구현",
+      "date": "2018.12",
+      "journal": "한국디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "개발도상국의 여성능력향상을 위한 ICT교육현황분석 및 정책 제언- 인도네시아 UHP 대학을 중심으로",
+      "date": "2018.02",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "맞춤형 ICT역량강화 콘텐츠개발을 위한 정보화 실태조사- 캄보디아 라이프대학을 중심으로",
+      "date": "2016.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "산업 안전 서비스를 위한 셰퍼드 기반의 SIP 환경",
+      "date": "2016.02",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "투시적 깊이를 활용한 중첩된 객체의 관계추적",
+      "date": "2015.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "Object relation tracking for abnormal behavior recognition from non-overlapped multi-camera",
+      "date": "2015.12",
+      "journal": "ASIA LIFE SCIENCES",
+      "publisher": "ASIA LIFE SCIENCES"
+    },
+    {
+      "title": "CCTV에서 폭력 행위 감지 시스템 연구",
+      "date": "2015.02",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "A Hybrid Load Balancing Scheme for Games in Wireless Networks",
+      "date": "2014.05",
+      "journal": "INTERNATIONAL JOURNAL OF DISTRIBUTED SENSOR NETWORKS",
+      "publisher": "SAGE PUBLICATIONS INC"
+    },
+    {
+      "title": "A study on surveillance system of object's abnormal behavior by blob composition analysis",
+      "date": "2014.03",
+      "journal": "International Journal of Security and its Applications",
+      "publisher": "Science and Engineering Research Support Society"
+    },
+    {
+      "title": "A study on CCTV-based dangerous behavior monitoring system",
+      "date": "2013.12",
+      "journal": "Advanced Science and technology Letters",
+      "publisher": "Science & Engineering Research Support Society"
+    },
+    {
+      "title": "다중 객체의 위험 행동 감시 시스템 연구",
+      "date": "2013.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "객체 추적을 통한 이상 행동 감시 시스템 연구",
+      "date": "2013.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "An Efficient Gaming User Oriented Load Balancing Scheme for MMORPGs",
+      "date": "2013.11",
+      "journal": "WIRELESS PERSONAL COMMUNICATIONS",
+      "publisher": "Springer"
+    },
+    {
+      "title": "Guidelines of serious game accessibility for the disabled",
+      "date": "2013.08",
+      "journal": "2013 International Conference on Information Science and Applications, ICISA 2013",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "Designing a model for context awareness based reliable auction-recommending system (CARARS) by utilizing advanced information",
+      "date": "2012.12",
+      "journal": "Lecture Notes in Electrical Engineering",
+      "publisher": "Springer Nature"
+    },
+    {
+      "title": "캐릭터스티커 기능을 활용한 창의력 증진용 모바일 e-동화 웹앱 구현",
+      "date": "2012.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "장애우 및 고령자 측면에서의 모바일 SNS 앱접근성 평가",
+      "date": "2012.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "동적 경로 선정을 위한 효율적인 탐색 기법",
+      "date": "2012.09",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "스마트폰 환경에서 상황인식기반 경매매물 정보시스템에 대한 연구",
+      "date": "2011.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "청각장애인을 위한 청능훈련 서비스모델 및 기능성 게임콘텐츠 설계",
+      "date": "2011.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "뮤직 팩토리: 웹 데이터베이스를 기반으로 한 작곡 및 청음 시스템",
+      "date": "2010.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "인도네시아의 정보화를 위한 한국의 지역정보화 성공모델 적용에 관한 연구",
+      "date": "2010.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "소셜 서비스를 위한 시공간 모델링 방안",
+      "date": "2010.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "가상현실에서 스테레오 타입 방식으로 추출한 실물 객체 3D 정보를 이용한 객체간 충돌처리 연구",
+      "date": "2010.06",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "증강현실 시스템에서 몰입감 증대를 위한 가상 및 실물 객체간의 충돌 처리 기법 개발",
+      "date": "2009.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "한자 에듀테인먼트 콘텐츠를 위한 한자쓰기인식기능개발",
+      "date": "2009.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "신뢰성 기반의 전세위험진단 시스템 개발에 관한 연구",
+      "date": "2009.09",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "V-Killer: 검색과 랭킹을 이용한 모바일 기반의 영어 단어 맞추기 게임",
+      "date": "2009.03",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "Hybrid shading model based on device performance for LOD adaptive service",
+      "date": "2008.12",
+      "journal": "Lecture Notes in Computer Science",
+      "publisher": "Springer"
+    },
+    {
+      "title": "하이브리드 렌더링을 위한 단말기 성능분석 방법",
+      "date": "2008.12",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "LOD(Level of Detail)를 지원하는 하이브리드 렌더링 모델",
+      "date": "2008.09",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "Reference algorithm for 3D mesh model in service rendering middleware",
+      "date": "2008.05",
+      "journal": "Proceedings - 2008 International Conference on Multimedia and Ubiquitous Engineering, MUE 2008",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "3D 그래픽 콘텐츠의 적응적 서비스를 위한 미들웨어에서의 서비스 렌더링 연구",
+      "date": "2007.10",
+      "journal": "정보처리학회논문지A",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Adaptation method for level of detail (LOD) of 3D contents",
+      "date": "2007.09",
+      "journal": "Proceedings - 2007 IFIP International Conference on Network and Parallel Computing Workshops, NPC 2007",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "유비쿼터스 환경에서 다중레벨 3D 그래픽 콘텐츠의 적응 서비스를 위한 미들웨어 연구",
+      "date": "2007.06",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "포인트 샘플링으로 표현된 3차원 객체를 위한 하이브리드 앤티앨리어싱 방법",
+      "date": "2007.03",
+      "journal": "디지털콘텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "부가가치화된 부동산 종합정보시스템 개발에 대한 연구",
+      "date": "2006.12",
+      "journal": "한국디지털컨텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "Service rendering middleware (SRM) based on the intelligent LOD algorithm",
+      "date": "2006.09",
+      "journal": "UBIQUITOUS INTELLIGENCE AND COMPUTING, PROCEEDINGS",
+      "publisher": "Springer-Verlag Berlin"
+    },
+    {
+      "title": "코드랭스 도메인 기법을 이용한 ABS 모델링",
+      "date": "2006.09",
+      "journal": "한국컴퓨터정보학회논문지",
+      "publisher": "한국컴퓨터정보학회"
+    },
+    {
+      "title": "Empty space BSP트리를 이용한 3D게임 렌더링 엔진 설계",
+      "date": "2005.07",
+      "journal": "한국컴퓨터정보학회논문지",
+      "publisher": "한국컴퓨터정보학회"
+    },
+    {
+      "title": "3차원 임플리시트 곡면 렌더링을 위한 시프트(shifted) 멀티 Z-버퍼 앤티 앨리어싱 연구",
+      "date": "2005.02",
+      "journal": "멀티미디어학회논문지",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "복셀로 표현된 임플리시트 곡면을 위한 시프트(shifted) 더블 Z-버퍼 앤티 앨리어싱",
+      "date": "2004.01",
+      "journal": "멀티미디어학회논문지",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "주문형 전자카드 서비스 방법 및 시스템설계에 관한 연구",
+      "date": "2003.06",
+      "journal": "디지턴컨텐츠학회논문지",
+      "publisher": "한국디지텉컨텐츠학회"
+    },
+    {
+      "title": "Multiperiodic 함수를 이용한 Smooth Genus N객체의 텍스쳐매핑",
+      "date": "2002.02",
+      "journal": "멀티미디어학회논문지",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Cyber대학을 위한 web기반 컨텐츠 설계",
+      "date": "2001.12",
+      "journal": "디지털컨텐츠학회논문지",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "하이퍼볼릭 평면에서의 지역적 MQ 보간법",
+      "date": "2001.12",
+      "journal": "한국정보처리학회논문지A",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Interactive Design of Smooth Genus N objects using multiperiodic functions and applications",
+      "date": "1999.12",
+      "journal": "International Journal of Shape Modeling",
+      "publisher": "World Scientific Publishing Co"
+    },
+    {
+      "title": "Seamless Bump Mapping on the Genus N object using a multiperiodic function",
+      "date": "1998.12",
+      "journal": "평택대학교 논문집",
+      "publisher": "평택대학교"
+    },
+    {
+      "title": "Subdivision over the hyperbolic plane",
+      "date": "1998.05",
+      "journal": "평택대학교논문집",
+      "publisher": "평택대학교"
+    }
+  ]
+}

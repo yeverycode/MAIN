@@ -11,14 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadProfessor(id) {
+  const safeId = id.replace(/[^a-z0-9-]/gi, '');
+
+  if (!safeId) {
+    renderError('잘못된 교수 ID입니다.');
+    return;
+  }
+
   try {
-    const response = await fetch('/data/8_tomato_professor.json', { cache: 'no-cache' });
+    const response = await fetch(`/data/professor/8_tomato_${safeId}.json`, { cache: 'no-cache' });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    const data = await response.json();
-    const prof = data[id];
+    const prof = await response.json();
 
     if (!prof) {
       renderError('교수 정보를 찾을 수 없습니다.');
@@ -122,28 +128,7 @@ function renderProfessor(prof) {
   }
 
   // 논문 게재
-  const pubTable = document.querySelector('#prof-pubs');
-  if (pubTable) {
-    pubTable.innerHTML = '';
-    if (Array.isArray(prof.publications) && prof.publications.length > 0) {
-      prof.publications.forEach((pub) => {
-        const tr = document.createElement('tr');
-        tr.className = 'prof-table__row';
-
-        tr.append(
-          createCell('prof-table__cell prof-table__cell--title', pub.title || ''),
-          createCell('prof-table__cell prof-table__cell--meta', pub.date || ''),
-          createCell('prof-table__cell prof-table__cell--meta', pub.journal || ''),
-          createCell('prof-table__cell prof-table__cell--meta', pub.publisher || ''),
-          createCell('prof-table__cell prof-table__cell--meta', pub.articleNumber || '')
-        );
-
-        pubTable.appendChild(tr);
-      });
-    } else {
-      appendEmptyRow(pubTable, '논문 정보가 없습니다.', 5);
-    }
-  }
+  renderPublications(prof.publications);
 }
 
 function setText(selector, value) {
@@ -181,4 +166,67 @@ function appendEmptyRow(tbody, message, colspan) {
 
   tr.appendChild(td);
   tbody.appendChild(tr);
+}
+
+function renderPublications(publications) {
+  const pubTable = document.querySelector('#prof-pubs');
+  const pagination = document.querySelector('#prof-pub-pagination');
+  const status = document.querySelector('#prof-pub-page-status');
+  const btnPrev = pagination?.querySelector('[data-dir="prev"]');
+  const btnNext = pagination?.querySelector('[data-dir="next"]');
+
+  if (!pubTable) return;
+
+  const list = Array.isArray(publications) ? publications : [];
+
+  if (list.length === 0) {
+    pubTable.innerHTML = '';
+    appendEmptyRow(pubTable, '논문 정보가 없습니다.', 3);
+    if (pagination) pagination.style.display = 'none';
+    return;
+  }
+
+  const PER_PAGE = 10;
+  const totalPages = Math.ceil(list.length / PER_PAGE);
+  let currentPage = 1;
+
+  const updateButtons = () => {
+    if (btnPrev) btnPrev.disabled = currentPage === 1;
+    if (btnNext) btnNext.disabled = currentPage === totalPages;
+    if (status) status.textContent = `${currentPage} / ${totalPages}`;
+    if (pagination) pagination.style.display = totalPages > 1 ? 'flex' : 'none';
+  };
+
+  const renderPage = () => {
+    pubTable.innerHTML = '';
+    const start = (currentPage - 1) * PER_PAGE;
+    const end = start + PER_PAGE;
+    list.slice(start, end).forEach((pub) => {
+      const tr = document.createElement('tr');
+      tr.className = 'prof-table__row';
+      tr.append(
+        createCell('prof-table__cell prof-table__cell--meta', pub.date || ''),
+        createCell('prof-table__cell prof-table__cell--meta', pub.title || pub.journal || ''),
+        createCell('prof-table__cell prof-table__cell--meta', pub.publisher || '')
+      );
+      pubTable.appendChild(tr);
+    });
+    updateButtons();
+  };
+
+  btnPrev?.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      renderPage();
+    }
+  });
+
+  btnNext?.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage += 1;
+      renderPage();
+    }
+  });
+
+  renderPage();
 }

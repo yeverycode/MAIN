@@ -126,14 +126,18 @@
   const rail = document.querySelector('.rail');
   const trigger = document.querySelector('.rail-trigger');
   const scrollBtn = document.querySelector('.rail-scroll');
+  const collapseBtn = document.querySelector('.rail-collapse');
   if (!rail || !trigger || !scrollBtn) return;
 
-  const toggleRail = () => {
-    const isOpen = rail.classList.toggle('is-open');
-    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  const setRailState = (open) => {
+    rail.classList.toggle('is-open', open);
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
 
+  const toggleRail = () => setRailState(!rail.classList.contains('is-open'));
+
   trigger.addEventListener('click', toggleRail);
+  collapseBtn?.addEventListener('click', () => setRailState(false));
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const scrollToBottom = () =>

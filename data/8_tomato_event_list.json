@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "title": "신입생 OT",
+    "description": "새내기들이 학부와 학생회 활동을 처음으로 소개받는 환영 프로그램",
+    "periodText": "기간 : 2025.02.19 ~ 2025.02.19",
+    "startDate": "2025-02-19",
+    "endDate": "2025-02-19",
+    "image": "",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 2,
+    "title": "1학기 개강총회",
+    "description": "새 학기의 주요 일정과 학부 소식, 학생회 활동을 안내하는 공식 모임",
+    "periodText": "기간 : 2025.03.13 ~ 2025.03.13",
+    "startDate": "2025-03-13",
+    "endDate": "2025-03-13",
+    "image": "https://i.postimg.cc/J7pXzVFj/gaegangchonghoe1.png",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 3,
+    "title": "학부연구실 설명회",
+    "description": "교수님들의 연구실과 연구 주제를 소개받고 진로 방향을 탐색하는 행사",
+    "periodText": "기간 : 2025.03.27 ~ 2025.03.27",
+    "startDate": "2025-03-27",
+    "endDate": "2025-03-27",
+    "image": "/assets/events/lab-info.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 4,
+    "title": "1학기 졸업 전시회",
+    "description": "졸업생들의 프로젝트와 연구 결과물을 전시하는 축하 행사",
+    "periodText": "기간 : 2025.04.17 ~ 2025.04.17",
+    "startDate": "2025-04-17",
+    "endDate": "2025-04-17",
+    "image": "/assets/events/grad-1st.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 5,
+    "title": "총 MT",
+    "description": "구성원 전체가 함께 참여하는 친목·교류 중심의 학부 대표 MT",
+    "periodText": "기간 : 2025.05.09 ~ 2025.05.10",
+    "startDate": "2025-05-09",
+    "endDate": "2025-05-10",
+    "image": "/assets/events/mt.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 6,
+    "title": "스승의 날",
+    "description": "교수님들께 감사의 마음을 전하는 학부 기념 행사",
+    "periodText": "기간 : 2025.05.13 ~ 2025.05.13",
+    "startDate": "2025-05-13",
+    "endDate": "2025-05-13",
+    "image": "/assets/events/teachers-day.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 7,
+    "title": "전공 박람회",
+    "description": "학부 내 다양한 전공 분야와 진로 정보를 소개받는 온·오프라인 박람회",
+    "periodText": "기간 : 2025.05.19 ~ 2025.05.20",
+    "startDate": "2025-05-19",
+    "endDate": "2025-05-20",
+    "image": "/assets/events/major-fair.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 8,
+    "title": "IPS 대회",
+    "description": "AI·SW 기반 문제 해결 능력을 겨루는 학부 공식 경진대회",
+    "periodText": "기간 : 2025.05.30 ~ 2025.05.30",
+    "startDate": "2025-05-30",
+    "endDate": "2025-05-30",
+    "image": "/assets/events/ips.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 9,
+    "title": "1학기 종강총회",
+    "description": "한 학기를 마무리하며 일정 공유 및 회고를 진행하는 종강 행사",
+    "periodText": "기간 : 2025.06.17 ~ 2025.06.17",
+    "startDate": "2025-06-17",
+    "endDate": "2025-06-17",
+    "image": "/assets/events/end-1st.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 10,
+    "title": "2학기 개강총회",
+    "description": "2학기 시작과 함께 새 일정·활동 계획을 소개하는 공식 모임",
+    "periodText": "기간 : 2025.09.04 ~ 2025.09.04",
+    "startDate": "2025-09-04",
+    "endDate": "2025-09-04",
+    "image": "/assets/events/opening-2nd.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 11,
+    "title": "공과대학 10주년 학술제",
+    "description": "공과대학 창립 10주년을 기념해 연구 성과를 발표·공유하는 학술 행사",
+    "periodText": "기간 : 2025.09.11 ~ 2025.09.11",
+    "startDate": "2025-09-11",
+    "endDate": "2025-09-11",
+    "image": "/assets/events/eng-10th.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 12,
+    "title": "진로콘서트",
+    "description": "현업 전문가와 선배들의 경험을 들으며 진로 인사이트를 얻는 강연형 행사",
+    "periodText": "기간 : 2025.09.29 ~ 2025.09.29",
+    "startDate": "2025-09-29",
+    "endDate": "2025-09-29",
+    "image": "/assets/events/career-concert.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 13,
+    "title": "2학기 졸업 전시회",
+    "description": "2학기 졸업생들의 작품과 프로젝트를 전시하는 학기말 행사",
+    "periodText": "기간 : 2025.10.16 ~ 2025.10.16",
+    "startDate": "2025-10-16",
+    "endDate": "2025-10-16",
+    "image": "/assets/events/grad-2nd.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 14,
+    "title": "Uni-D",
+    "description": "여러 대학이 함께 참여하는 대규모 연합 AI·SW 해커톤/축제",
+    "periodText": "기간 : 2025.11.15 ~ 2025.11.16",
+    "startDate": "2025-11-15",
+    "endDate": "2025-11-16",
+    "image": "/assets/events/uni-d.jpg",
+    "link": "#",
+    "bannerImages": []
+  },
+  {
+    "id": 15,
+    "title": "AI인의 밤",
+    "description": "한 해의 학부 활동을 돌아보고 교류하며 기념하는 연말 대표 행사",
+    "periodText": "기간 : 2025.12.17 ~ 2025.12.17",
+    "startDate": "2025-12-17",
+    "endDate": "2025-12-17",
+    "image": "https://i.postimg.cc/BnwDKmdx/AIin-uibam-list.png",
+    "link": "#",
+    "bannerImages": ["https://i.postimg.cc/rmzqtJ2R/AIin-uibambaeneo.png"]
+  }
+]

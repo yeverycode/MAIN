@@ -1,14 +1,389 @@
 {
   "id": "kim-byungkyu",
   "name": "김병규",
-  "role": "",
+  "role": "교수",
   "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28058_1742616676000.do",
   "phone": "02-2077-7293",
   "email": "bg.kim@sm.ac.kr",
   "office": "새힘관 102호",
 
-  "interests": [],
-  "history": [],
+  "interests": [
+    "신호처리",
+    "의료·헬스케어",
+    "지능형 네트워크"
+  ],
+
+  "history": [
+    {
+      "period": "2025.11 ~ 2027.10",
+      "text": "한국연구재단 전문위원 (인공지능 응용)"
+    },
+    {
+      "period": "2025.01 ~ 2026.12",
+      "text": "(사) 한국멀티미디어학회 회장"
+    },
+    {
+      "period": "2018.01 ~ 2024.12",
+      "text": "Journal of Multimedia Information System Editor-in-Chief"
+    },
+    {
+      "period": "2014.05 ~ 2024.12",
+      "text": "Journal of Supercomputing Associate Editor"
+    }
+  ],
+
   "courses": [],
-  "publications": []
+
+  "publications": [
+    {
+      "title": "Machine learning-based efficient audio production separation method",
+      "date": "2025.11",
+      "publisher": "SPRINGER HEIDELBERG"
+    },
+    {
+      "title": "Temporal Behavior Analysis and Synthesis for Safety-Critical Transportation Cyber-Physical Systems: A Compositional Approach",
+      "date": "2025.09",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Zero-Trust Blockchain-Enabled Secure Next-Generation Healthcare Communication Network",
+      "date": "2025.08",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Editorial: Transformer models for multi-source visual fusion and understanding",
+      "date": "2025.08",
+      "publisher": "Elsevier B.V."
+    },
+    {
+      "title": "Optimizing Deep Neuro-fuzzy Network for ECG Medical Big Data through Integration of Multiscale Features",
+      "date": "2025.07",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Leveraging Generative AI for Essential Predictive Maintenance in Industrial Consumer Electronics",
+      "date": "2025.05",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Federated Learning With Local Differential Privacy for Autonomous Electronic Vehicles: Enhancing Security and Performance",
+      "date": "2025.05",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Explainable AI for Medical Image Analysis in Medical Cyber-Physical Systems: Enhancing Transparency and Trustworthiness of IoMT",
+      "date": "2025.04",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Cooperative Digital Healthcare Task Scheduling and Resource Management in Edge Intelligence Systems",
+      "date": "2025.04",
+      "publisher": "TSINGHUA UNIV PRESS"
+    },
+    {
+      "title": "Low-Complexity Beamforming Design for Green Near-Field Communications in 6G Ultra-Massive Multiple-Input-Multiple-Output",
+      "date": "2025.03",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Large model-driven hyperscale healthcare data fusion analysis in complex multi-sensors",
+      "date": "2025.03",
+      "publisher": "ELSEVIER"
+    },
+    {
+      "title": "Large Models for Cooperative Control of Connected and Autonomous Vehicles",
+      "date": "2025.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Zero Trust Consumer IoT With Robust Federated Learning Over Main-Side Blockchain",
+      "date": "2025.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Exploring Multimodal Multiscale Features for Sentiment Analysis Using Fuzzy-Deep Neural Network Learning",
+      "date": "2025.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "ERLNEIL-MDP: Evolutionary reinforcement learning with novelty-driven exploration for medical data processing",
+      "date": "2024.12",
+      "publisher": "ELSEVIER"
+    },
+    {
+      "title": "Neural Networks Meet Neural Activity: Utilizing EEG for Mental Workload Estimation",
+      "date": "2024.12",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "Pixel Embedding for Fractional Interpolation in Video Coding",
+      "date": "2024.12",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "Multi-Level Feature Exploration Using LSTM-Based Variational Autoencoder Network for Fall Detection",
+      "date": "2024.12",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "Augmented Intelligence of Things for Priority-Aware Task Offloading in Vehicular Edge Computing",
+      "date": "2024.11",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Temporal-spatial correlation and graph attention-guided network for micro-expression recognition in English learning livestreams",
+      "date": "2024.11",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Generative Adversarial Privacy for Multimedia Analytics Across the IoT-Edge Continuum",
+      "date": "2024.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "A Self-Powered Wireless Temperature Sensor Platform for Foot Ulceration Monitoring",
+      "date": "2024.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Analysis of Inverter Efficiency Using Photovoltaic Power Generation Element Parameters",
+      "date": "2024.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Interactions with 3D virtual objects in augmented reality using natural gestures",
+      "date": "2024.09",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Deep Inter Prediction for Versatile Video Coding (VVC)",
+      "date": "2024.09",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "DewMetrics: Demystification of the Dew Computing in Sustainable Internet of Things",
+      "date": "2024.09",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "EMOVA: Emotion-driven neural volumetric avatar",
+      "date": "2024.06",
+      "publisher": "Elsevier Ltd"
+    },
+    {
+      "title": "Attention-based scale sequence network for small object detection",
+      "date": "2024.06",
+      "publisher": "CELL PRESS"
+    },
+    {
+      "title": "Artificial Intelligence Blockchain Based Fake News Discrimination",
+      "date": "2024.04",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Privacy-Preserving AI Framework for 6G-Enabled Consumer Electronics",
+      "date": "2024.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition",
+      "date": "2024.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Heuristic green computing based energy management with security enhancement using hybrid greedy secure optimal routing protocol",
+      "date": "2023.12",
+      "publisher": "Elsevier Ltd"
+    },
+    {
+      "title": "Gesture Recognition and Hand Tracking for Anti-Counterfeit Palmvein Recognition",
+      "date": "2023.11",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Proposal of a Token-Based Node Selection Mechanism for Node Distribution of Mobility IoT Blockchain Nodes",
+      "date": "2023.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Raw Electroencephalogram-Based Cognitive Workload Classification Using Directed and Nondirected Functional Connectivity Analysis and Deep Learning",
+      "date": "2023.08",
+      "publisher": "MARY ANN LIEBERT, INC"
+    },
+    {
+      "title": "Deep Learning-based Sequence Labeling Tools for Nepali",
+      "date": "2023.08",
+      "publisher": "ASSOC COMPUTING MACHINERY"
+    },
+    {
+      "title": "Blockchain-Based Privacy Preservation for IoT-Enabled Healthcare System",
+      "date": "2023.08",
+      "publisher": "ASSOC COMPUTING MACHINERY"
+    },
+    {
+      "title": "HiRN: Hierarchical recurrent neural network for video super-resolution (VSR) using two-stage feature evolution",
+      "date": "2023.08",
+      "publisher": "Elsevier Ltd"
+    },
+    {
+      "title": "Breast cancer classification using Deep Q Learning (DQL) and gorilla troops optimization (GTO)",
+      "date": "2023.07",
+      "publisher": "Elsevier Ltd"
+    },
+    {
+      "title": "Few-shot learning for facial expression recognition: a comprehensive survey",
+      "date": "2023.06",
+      "publisher": "SPRINGER HEIDELBERG"
+    },
+    {
+      "title": "DeepFake detection algorithm based on improved vision transformer",
+      "date": "2023.04",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "ssFPN: Scale Sequence (S2) Feature-Based Feature Pyramid Network for Object Detection",
+      "date": "2023.04",
+      "publisher": "Multidisciplinary Digital Publishing Institute (MDPI)"
+    },
+    {
+      "title": "Attention-Based Bi-Prediction Network for Versatile Video Coding (VVC) over 5G Network",
+      "date": "2023.03",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Handwriting Recognition Using Wasserstein Metric in Adversarial Learning",
+      "date": "2023.01",
+      "publisher": "Springer"
+    },
+    {
+      "title": "Group-based bi-directional recurrent wavelet neural network for efficient video super-resolution (VSR)",
+      "date": "2022.12",
+      "publisher": "Elsevier B.V."
+    },
+    {
+      "title": "Data Hiding of Multicompressed Images Based on Shamir Threshold Sharing",
+      "date": "2022.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Video based exercise recognition and correct pose detection",
+      "date": "2022.09",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "A Survey for 3D Object Detection Algorithms from Images",
+      "date": "2022.09",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Artificial Intelligence for Multimedia Signal Processing",
+      "date": "2022.08",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Throughput optimization of interference limited cognitive radio-based Internet of Things (CR-IoT) network",
+      "date": "2022.07",
+      "publisher": "Elsevier B.V. on behalf of King Saud University"
+    },
+    {
+      "title": "Enhancing object detection in aerial images",
+      "date": "2022.05",
+      "publisher": "AMER INST MATHEMATICAL SCIENCES-AIMS"
+    },
+    {
+      "title": "Reinforced Palmprint Reconstruction Attacks in Biometric Systems",
+      "date": "2022.01",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Time Classification Algorithm Based on Windowed-Color Histogram Matching",
+      "date": "2021.12",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "A Robust Facial Expression Recognition Algorithm Based on Multi-Rate Feature Fusion Scheme",
+      "date": "2021.11",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Aspect-Based Sentiment Analysis in Hindi Language by Ensembling Pre-Trained mBERT Models",
+      "date": "2021.11",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Subject-Specific Cognitive Workload Classification Using EEG-Based Functional Connectivity and Deep Learning",
+      "date": "2021.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Reduction of Compression Artifacts Using a Densely Cascading Image Restoration Network",
+      "date": "2021.09",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "CNN-based Fast Split Mode Decision Algorithm for Versatile Video Coding (VVC) Inter Prediction",
+      "date": "2021.09",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "딥러닝 기반 손 그림 심리분석 알고리즘 연구",
+      "date": "2021.09",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "Medical image compression method using lightweight multi-layer perceptron for mobile healthcare applications",
+      "date": "2021.09",
+      "publisher": "Tech Science Press"
+    },
+    {
+      "title": "Residual-Based Graph Convolutional Network for Emotion Recognition in Conversation for Smart Internet of Things",
+      "date": "2021.08",
+      "publisher": "MARY ANN LIEBERT, INC"
+    },
+    {
+      "title": "심층학습 기법을 활용한 효과적인 타이어 마모도 분류 및 손상 부위 검출 알고리즘",
+      "date": "2021.08",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Efficient and Robust Image Communication Techniques for 5G Applications in Smart Cities",
+      "date": "2021.07",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Real-Time Multimodal Biometric Authentication of Human Using Face Feature Analysis",
+      "date": "2021.07",
+      "publisher": "TECH SCIENCE PRESS"
+    },
+    {
+      "title": "Frontal Face Generation Algorithm from Multi-view Images Based on Generative Adversarial Network",
+      "date": "2021.06",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Two-Dimensional Audio Compression Method Using Video Coding Schemes",
+      "date": "2021.05",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Enhanced Single Image Super Resolution Method Using Lightweight Multi-Scale Channel Dense Network",
+      "date": "2021.05",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "3D Avatar Approach for Continuous Sign Movement Using Speech/Text",
+      "date": "2021.04",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "An Efficient Sign Language Recognition (SLR) System Using Camshift Tracker and Hidden Markov Model (HMM)",
+      "date": "2021.04",
+      "publisher": "Springer"
+    },
+    {
+      "title": "Efficient Depth Data Coding Method Based on Plane Modeling for Intra Prediction",
+      "date": "2021.02",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    }
+  ]
 }

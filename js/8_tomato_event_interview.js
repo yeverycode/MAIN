@@ -28,7 +28,7 @@
 
   const params = new URLSearchParams(window.location.search);
   const eventId = params.get("id") || "1";
-  const jsonPath = `/data/event_interview/${eventId}.json`;
+  const jsonPath = `/data/event_interview/8_tomato_${eventId}.json`;
   const fallbackPath = "/data/8_tomato_event_interview.json";
 
   fetch(jsonPath)

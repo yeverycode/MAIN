@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">2학기 중간고사 간식 배부 포스터</title>
+  <desc id="desc">어두운 파란 배경 위에 눈 결정 모양과 행사 정보가 배치된 포스터</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C1D64"/>
+      <stop offset="50%" stop-color="#0C2F99"/>
+      <stop offset="100%" stop-color="#092456"/>
+    </linearGradient>
+    <linearGradient id="flake" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9E3FF"/>
+      <stop offset="100%" stop-color="#9CB4F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <g fill="url(#flake)" opacity="0.8" transform="translate(200 180)">
+    <path d="M120 0 143 70 216 70 157 114 179 184 120 140 61 184 83 114 24 70 97 70Z"/>
+    <path d="M120 32 136 77 183 77 144 105 160 150 120 121 80 150 96 105 57 77 104 77Z" opacity="0.55"/>
+  </g>
+  <g fill="#A9C7FF">
+    <circle cx="110" cy="500" r="3"/>
+    <circle cx="140" cy="520" r="3"/>
+    <circle cx="120" cy="540" r="3"/>
+    <circle cx="510" cy="110" r="2.5"/>
+    <circle cx="490" cy="130" r="2.5"/>
+    <circle cx="515" cy="150" r="2.5"/>
+  </g>
+  <text x="60" y="90" font-size="22" font-weight="700" fill="#65A6FF" font-family="Pretendard, 'Noto Sans KR', sans-serif" letter-spacing="0.08em">2025학년도 인공지능공학부</text>
+  <text x="60" y="150" font-size="44" font-weight="800" fill="#FFFFFF" font-family="Pretendard, 'Noto Sans KR', sans-serif">2학기 중간고사</text>
+  <text x="60" y="200" font-size="44" font-weight="800" fill="#FFFFFF" font-family="Pretendard, 'Noto Sans KR', sans-serif">간식 배부</text>
+  <text x="60" y="460" font-size="18" font-weight="700" fill="#DCE6FF" font-family="Pretendard, 'Noto Sans KR', sans-serif">인공지능공학부 학생회 MAIN()</text>
+</svg>

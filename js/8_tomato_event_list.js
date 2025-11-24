@@ -103,15 +103,21 @@ function startBannerRotation(status) {
 function createEventCard(event) {
   const status = getStatus(event.startDate, event.endDate);
   const dday = getDDayLabel(event.startDate, event.endDate);
+  const detailHref = event.id
+    ? `/pages/event/8_tomato_event_apply.html?id=${event.id}`
+    : event.link || "#";
+  const imageSrc =
+    event.image ||
+    "https://placehold.co/600x400/0B50D0/FFFFFF?text=EVENT";
 
   const article = document.createElement("article");
   article.className = "event-card";
   article.dataset.status = status;
 
   article.innerHTML = `
-    <a href="${event.link}" class="event-card__link">
+    <a href="${detailHref}" class="event-card__link">
       <div class="event-card__thumb">
-        <img src="${event.image}" alt="${event.title} 포스터" />
+        <img src="${imageSrc}" alt="${event.title} 포스터" />
       </div>
       <div class="event-card__body">
         <h3 class="event-card__title">${event.title}</h3>

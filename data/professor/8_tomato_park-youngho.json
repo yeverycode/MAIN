@@ -1,14 +1,388 @@
 {
   "id": "park-youngho",
   "name": "박영호",
-  "role": "",
+  "role": "교수",
   "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28057_1742615609000.do",
   "phone": "02-2077-7297",
   "email": "yhpark@sm.ac.kr",
   "office": "새힘관 508호",
 
-  "interests": [],
-  "history": [],
+  "interests": [
+    "데이터 분석",
+    "쿼리",
+    "영상 기반 이상 상황 탐지"
+  ],
+
+  "history": [
+    {
+      "period": "2021.03 ~ 2032.02",
+      "text": "숙명여자대학교 인공지능공학부 정교수"
+    },
+    {
+      "period": "2006.03 ~ 2021.02",
+      "text": "숙명여자대학교 IT공학과 정교수"
+    },
+    {
+      "period": "1993.08 ~ 1999.02",
+      "text": "한국전자통신연구원(ETRI) 실시간OS/DBMS 연구실 선임연구원"
+    },
+    {
+      "period": "1999.03 ~ 2005.08",
+      "text": "한국과학기술원(KAIST) 전산학과 박사과정"
+    },
+    {
+      "period": "1992.03 ~ 2020.02",
+      "text": "한국디지털콘텐츠학회 이사, 임원"
+    }
+  ],
+
   "courses": [],
-  "publications": []
+
+  "publications": [
+    {
+      "title": "Self-Supervised Anomalous Pose Detection in Multi-View Human Pose Estimation for Smart Manufacturing With Non-Calibrated Cameras",
+      "date": "2025.09",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Convex Feature Embedding for Face and Voice Association",
+      "date": "2024.07",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "The Prediction of Dry Weight for Chronic Hemodialysis Athletes Using a Machine Learning Approach: Sports Health Implications",
+      "date": "2024.03",
+      "publisher": "Sociedad Revista de Psicologia del Deporte"
+    },
+    {
+      "title": "An Emotion Analysis Method Building Love Emotion Emoji Dictionary(LED) Using Deep Neural Network",
+      "date": "2024.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "AWS 기반 행위와 객체 인식을 통한 위협 상황 판단 시스템",
+      "date": "2023.04",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "UB-H: an unbalanced-hierarchical layer binary-wise construction method for high-dimensional data",
+      "date": "2023.03",
+      "publisher": "SPRINGER WIEN"
+    },
+    {
+      "title": "SAAnnot-C3Pap: 반자동 주석화 방법을 적용한연주 자세의 그라운드 트루스 수집 기법",
+      "date": "2022.10",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "A Deep Learning Approach to Analyze Airline Customer Propensities: The Case of South Korea",
+      "date": "2022.02",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "KNN-SC: Novel Spectral Clustering Algorithm Using k-Nearest Neighbors",
+      "date": "2021.11",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "An analytic method for improving the reliability of models based on a histogram for prediction of companion dogs’ behaviors",
+      "date": "2021.11",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "농산물 단가와 산지 기상의 상관관계 분석 연구",
+      "date": "2021.08",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "교통사고 심각 정도 예측을 위한 TATI 모델 제안",
+      "date": "2021.08",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Multi-time Scale Features for Anomaly Detection from Surveillance Videos",
+      "date": "2021.04",
+      "publisher": "Springer Science and Business Media Deutschland GmbH"
+    },
+    {
+      "title": "A Technique of Recursive Reliability-Based Missing Data Imputation for Collaborative Filtering",
+      "date": "2021.04",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "객체 탐지와 행동인식을 이용한 영상내의 비정상적인 상황 탐지 네트워크",
+      "date": "2021.02",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "A policy knowledge- and reasoning-based method for data-analytic city policymaking",
+      "date": "2021.01",
+      "publisher": "ROUTLEDGE JOURNALS, TAYLOR & FRANCIS LTD"
+    },
+    {
+      "title": "Audio-Visual Tensor Fusion Network for Piano Player Posture Classification",
+      "date": "2020.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Identifying customer interest from surveillance camera based on deep learning",
+      "date": "2020.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "RC카 시뮬레이터를 이용한 바닥 탐지 응용 설계 및 구현",
+      "date": "2019.12",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Skip-Gram-KR: Korean Word Embedding for Semantic Clustering",
+      "date": "2019.04",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "SilverLinker: IoT 센서 기반 독거노인 케어 플랫폼",
+      "date": "2018.11",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "토픽 모델을 사용한 베스트셀러 서적 단문 의미 분석 연구",
+      "date": "2018.10",
+      "publisher": "동국대학교 영상문화콘텐츠연구원"
+    },
+    {
+      "title": "Analysis of Market Trajectory Data using k-NN",
+      "date": "2018.09",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Analysis of Traffic Accident using Association Rule Model",
+      "date": "2018.06",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Point-of-Interest 추천을 위한 매장 간 상관관계 분석 및 선호도 예측 연구",
+      "date": "2018.05",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "WV-BTM: SNS 단문의 주제 분석을 위한 토픽 모델 정확도 개선 기법",
+      "date": "2018.01",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "기계학습 알고리즘을 사용한 스포츠 경기장 방문객 마케팅 적용 방안",
+      "date": "2018.01",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "An Indexing Method to Construct Unbalanced Layers for High-Dimensional Data in Mobile Environments",
+      "date": "2017.11",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "A Variable Impacts Measurement in Random Forest for Mobile Cloud Computing",
+      "date": "2017.09",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "영어 학습을 위한 상황인지 기반 추천 시스템",
+      "date": "2017.08",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "A two-phase data space partitioning for efficient skyline computation",
+      "date": "2017.08",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "학습자 상황인지 기반 외국어 학습 모바일 어플리케이션 시스템 설계 및 구현",
+      "date": "2017.07",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "감성 객관화를 위한 활력징후 활용 연구",
+      "date": "2017.06",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "융복합 연구를 통한 교양외국어교육 현실체감 EXALL 콘텐츠 개발 제안",
+      "date": "2017.06",
+      "publisher": "한국교양교육학회"
+    },
+    {
+      "title": "공연에 대한 고객감동 평가를 위한 감성데이터 활용 방안",
+      "date": "2017.02",
+      "publisher": "한국디지털콘텐츠학회"
+    },
+    {
+      "title": "위험정보를 공유하기 위한 안드로이드 응용 구현",
+      "date": "2016.12",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "A feasibility study of ballet education using measurement and analysis on partial features of still scenes",
+      "date": "2016.12",
+      "publisher": "SAGE PUBLICATIONS INC"
+    },
+    {
+      "title": "Message from EDB 2016 program chairs",
+      "date": "2016.10",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "A ballet posture education using it techniques: A comparative study",
+      "date": "2016.10",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "Adaptive convex skyline: a threshold-based project partitioned layer-based index for efficient-processing top-k queries in entrepreneurship applications",
+      "date": "2016.08",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "와인추천 모바일 어플리케이션 설계 및 구현",
+      "date": "2016.02",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Multi Player: 사용자 캘린더 기반 안드로이드 음성 녹음 애플리케이션 설계 및 구현",
+      "date": "2015.12",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "A kinect-based piano education system for correction of pianist posture",
+      "date": "2015.12",
+      "publisher": "ASIA LIFE SCIENCES"
+    },
+    {
+      "title": "앙뜨러프러너쉽 과정에서 IoT기술 창업을 위한 외국어 교육 모바일 콘텐츠 구현",
+      "date": "2015.12",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "해외여행자를 위한 정보 관리 및 네트워크 프리 그린네비게이션 응용 구현",
+      "date": "2015.10",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "An implementation of a skyline method over a crime dataset for top-K queries",
+      "date": "2015.10",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "키넥트를 활용한 피드백 중심의 피아노 교육 방안 연구",
+      "date": "2015.09",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "A design of wireless sensor networks based on fuzzy modeling for comfortable human life",
+      "date": "2015.07",
+      "publisher": "ASIA LIFE SCIENCES"
+    },
+    {
+      "title": "맞춤형 감성 뮤직 플레이어를 위한 음악 분류 및 추천 기법 구현",
+      "date": "2015.04",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "ShareShot: 편리한 그룹 사진공유를 위한 안드로이드 응용 구현",
+      "date": "2014.12",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "A person identification method in CUG using voice pitch analysis",
+      "date": "2014.12",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "On exploiting tag information for community detection on flickr",
+      "date": "2014.10",
+      "publisher": "International Information Institute Ltd."
+    },
+    {
+      "title": "Erratum: Fast density-based clustering using graphics processing units",
+      "date": "2014.07",
+      "publisher": "Institute of Electronics, Information and Communication Engineers (IEICE)"
+    },
+    {
+      "title": "A survey on disk-based genome sequence indexing",
+      "date": "2014.05",
+      "publisher": "Hikari Ltd."
+    },
+    {
+      "title": "Grid-PPPS: A Skyline Method for Efficiently Handling Top-k Queries in Internet of Things",
+      "date": "2014.05",
+      "publisher": "HINDAWI LTD"
+    },
+    {
+      "title": "Approximate convex skyline: A partitioned layer-based index for efficient processing top-k queries",
+      "date": "2014.05",
+      "publisher": "ELSEVIER"
+    },
+    {
+      "title": "Fast Density-Based Clustering Using Graphics Processing Units",
+      "date": "2014.05",
+      "publisher": "IEICE-INST ELECTRONICS INFORMATION COMMUNICATIONS ENG"
+    },
+    {
+      "title": "Internet of things for smart crime detection",
+      "date": "2014.05",
+      "publisher": "Hikari Ltd."
+    },
+    {
+      "title": "가상 윈도우 서브시퀀스 매칭 방법의 확장 알고리즘",
+      "date": "2014.04",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "A database design for pre-ordering system based on prediction of customer arrival time",
+      "date": "2014.04",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "An Efficient Index Building Algorithm for Selection of Aggregator Nodes in Wireless Sensor Networks",
+      "date": "2014.04",
+      "publisher": "SAGE PUBLICATIONS INC"
+    },
+    {
+      "title": "A study on music genre recognition and classification techniques",
+      "date": "2014.04",
+      "publisher": "보안공학연구지원센터"
+    },
+    {
+      "title": "A histogram-based method for efficient detection of rewriting attacks in simple object access protocol messages",
+      "date": "2014.03",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "가상 윈도우 기반 인스턴스 레벨 서브시퀀스 매칭 방안",
+      "date": "2014.02",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "고객 도달예측 선주문 시스템의 설계 및 구현",
+      "date": "2013.12",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "Efficient duality-based subsequent matching on time-series data in green computing",
+      "date": "2013.11",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "App analytic: A study on correlation analysis of app ranking data",
+      "date": "2013.09",
+      "publisher": "IEEE"
+    },
+    {
+      "title": "Skyline-Based Aggregator Node Selection in Wireless Sensor Networks",
+      "date": "2013.09",
+      "publisher": "SAGE PUBLICATIONS INC"
+    },
+    {
+      "title": "Visual analytics for big data using R",
+      "date": "2013.09",
+      "publisher": "IEEE"
+    }
+  ]
 }

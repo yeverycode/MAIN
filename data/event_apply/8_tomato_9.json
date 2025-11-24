@@ -1,0 +1,29 @@
+{
+  "id": "9",
+  "title": "1학기 종강총회",
+  "headline": "1학기 종강총회 신청 안내",
+  "applyPeriod": "2025.06.10 (화) 12:00 ~ 06.15 (일) 23:59",
+  "target": "인공지능공학부 제1전공생",
+  "location": "명신관 702호 / 마포구이마당",
+  "applyMethod": "선착순 60명 신청폼 제출",
+  "posterImages": [
+    "https://i.postimg.cc/sg3HGRT6/001.png",
+    "https://i.postimg.cc/nhnS9t3y/002.png",
+    "https://i.postimg.cc/L8mQgMxr/003.png",
+    "https://i.postimg.cc/8zTXfVZx/004.png"
+  ],
+  "posterAlt": "1학기 종강총회 포스터",
+  "payment": {
+    "fee": "과학생회비 납부자 무료 / 미납부자 5,000원",
+    "account": "카카오뱅크 79421308866 (예금주: 인공지능공학부 학생회)"
+  },
+  "notices": [
+    "1차·2차 전 일정 참여를 기본으로 진행됩니다.",
+    "좌석 배치와 식사 예약을 위해 신청 후 불참 시 꼭 사전 취소를 요청드립니다.",
+    "행사 3일 전까지 입금이 확인되지 않으면 대기자에게 순차 배정됩니다."
+  ],
+  "cta": {
+    "label": "신청하기",
+    "link": "#"
+  }
+}

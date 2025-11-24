@@ -161,7 +161,7 @@
 .event-content-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 40px;
   margin-bottom: 56px;
 }
@@ -173,7 +173,7 @@
 .event-filter {
   display: inline-flex;
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 48px;
   align-items: center;
 }
 
@@ -370,6 +370,7 @@
 @media (max-width: 1200px) {
   .event-content-header {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .event-content-header__text {

@@ -17,7 +17,7 @@
     "periodText": "기간 : 2025.03.13 ~ 2025.03.13",
     "startDate": "2025-03-13",
     "endDate": "2025-03-13",
-    "image": "https://i.postimg.cc/J7pXzVFj/gaegangchonghoe1.png",
+    "image": "",
     "link": "#",
     "bannerImages": []
   },
@@ -41,7 +41,7 @@
     "endDate": "2025-04-17",
     "image": "/assets/events/grad-1st.jpg",
     "link": "#",
-    "bannerImages": []
+    "bannerImages": ["https://i.postimg.cc/bwjKPwsy/25-1-jol-eobjeonsihoe-hyeonsumag-001.jpg"]
   },
   {
     "id": 5,
@@ -118,7 +118,7 @@
     "endDate": "2025-09-11",
     "image": "/assets/events/eng-10th.jpg",
     "link": "#",
-    "bannerImages": []
+    "bannerImages": ["https://i.postimg.cc/sg9bgChk/공과대학_학술제_현수막_001.jpg"]
   },
   {
     "id": 12,
@@ -162,6 +162,6 @@
     "endDate": "2025-12-17",
     "image": "https://i.postimg.cc/BnwDKmdx/AIin-uibam-list.png",
     "link": "#",
-    "bannerImages": ["https://i.postimg.cc/rmzqtJ2R/AIin-uibambaeneo.png"]
+    "bannerImages": ["https://i.postimg.cc/QdkvdZTS/AI-ITin-ui-bam-myeongpae-dijain-001.jpg"]
   }
 ]

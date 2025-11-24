@@ -3,7 +3,7 @@
     "id": "freshman-ot",
     "title": "신입생 OT",
     "date": "2025.02.19 (수)",
-    "image": "/assets/events/ot.jpg",
+    "image": "https://i.postimg.cc/gjcDhcY1/sin-ibsaeng-OT.png",
     "alt": "신입생 OT 사진"
   },
   {
@@ -17,35 +17,28 @@
     "id": "lab-info",
     "title": "학부연구실 설명회",
     "date": "2025.03.27 (목)",
-    "image": "/assets/events/lab-info.jpg",
+    "image": "https://i.postimg.cc/bwk8pnmT/hagbuyeongusil1.png",
     "alt": "학부연구실 설명회 사진"
-  },
-  {
-    "id": "mid-1st-snack",
-    "title": "1학기 중간고사 간식 배부",
-    "date": "2025.04.09 (수) ~ 2025.04.10 (목)",
-    "image": "/assets/events/mid-1st-snack.jpg",
-    "alt": "1학기 중간고사 간식 배부 사진"
   },
   {
     "id": "grad-1st",
     "title": "1학기 졸업 전시회",
     "date": "2025.04.17 (목)",
-    "image": "/assets/events/grad-1st.jpg",
+    "image": "https://i.postimg.cc/c1bFhbdR/1haggi-joljeon-3.png",
     "alt": "1학기 졸업 전시회 사진"
   },
   {
     "id": "mt-total",
     "title": "총 MT",
     "date": "2025.05.09 (금) ~ 2025.05.10 (토)",
-    "image": "/assets/events/mt.jpg",
+    "image": "https://i.postimg.cc/2SWPRf0x/chong-MT-4.png",
     "alt": "총 MT 사진"
   },
   {
     "id": "teachers-day",
     "title": "스승의 날",
     "date": "2025.05.13 (화)",
-    "image": "/assets/events/teachers-day.jpg",
+    "image": "https://i.postimg.cc/25cd014k/seuseung-uinal-2.png",
     "alt": "스승의 날 사진"
   },
   {
@@ -54,13 +47,6 @@
     "date": "2025.05.19 (월) ~ 2025.05.20 (화)",
     "image": "/assets/events/major-fair.jpg",
     "alt": "전공 박람회 사진"
-  },
-  {
-    "id": "final-1st-snack",
-    "title": "1학기 기말고사 간식배부",
-    "date": "2025.06.04 (수) ~ 2025.06.05 (목)",
-    "image": "/assets/events/final-1st-snack.jpg",
-    "alt": "1학기 기말고사 간식배부 사진"
   },
   {
     "id": "ips",
@@ -80,35 +66,28 @@
     "id": "opening-2nd",
     "title": "2학기 개강총회",
     "date": "2025.09.04 (목)",
-    "image": "/assets/events/opening-2nd.jpg",
+    "image": "https://i.postimg.cc/X7KN5JGm/2haggigaegangchonghoe-4.png",
     "alt": "2학기 개강총회 사진"
   },
   {
     "id": "eng-10th",
     "title": "공과대학 10주년 학술제",
     "date": "2025.09.11 (목)",
-    "image": "/assets/events/eng-10th.jpg",
+    "image": "https://i.postimg.cc/sxgPWX32/gongdaehagsulje-1.jpg",
     "alt": "공과대학 10주년 학술제 사진"
   },
   {
     "id": "career-concert",
     "title": "진로콘서트",
     "date": "2025.09.29 (월)",
-    "image": "/assets/events/career-concert.jpg",
+    "image": "https://i.postimg.cc/90LVQxQg/jinlokonseoteu-1.png",
     "alt": "진로콘서트 사진"
-  },
-  {
-    "id": "mid-2nd-snack",
-    "title": "2학기 중간고사 간식 배부",
-    "date": "2025.09.30 (화)",
-    "image": "/assets/events/mid-2nd-snack.jpg",
-    "alt": "2학기 중간고사 간식 배부 사진"
   },
   {
     "id": "grad-2nd",
     "title": "2학기 졸업 전시회",
     "date": "2025.10.16 (목)",
-    "image": "/assets/events/grad-2nd.jpg",
+    "image": "https://i.postimg.cc/kX7vrTST/2haggijol-eobjeonsihoe-2.png",
     "alt": "2학기 졸업 전시회 사진"
   },
   {

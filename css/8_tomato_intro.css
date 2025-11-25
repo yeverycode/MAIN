@@ -1,0 +1,265 @@
+/***********************************************
+ * INTRO PAGE BASE
+ ***********************************************/
+
+/* INT HERO TAB (공통과 겹치지 않는 부분만 유지) */
+.page-hero--intro .page-hero__subnav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  column-gap: clamp(32px, 6vw, 60px);
+}
+
+.intro-hero-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+/***********************************************
+ * TRACK SECTION (3가지 트랙 카드)
+ ***********************************************/
+.intro-track {
+  margin-top: 80px;
+  margin-left: clamp(40px, 6vw, 80px);
+  margin-bottom: 220px;
+}
+
+.intro-track h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.intro-track p {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 60px;
+  color: var(--white);
+}
+/* 초기 상태 (숨김 + 아래로 이동) */
+.intro-track h2,
+.intro-track p {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 등장 상태 */
+.intro-track.show h2,
+.intro-track.show p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.track-card {
+  background: #2d2d2d;
+  padding: 32px;
+  min-height: 200px;
+  position: relative;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.track-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 좌측 상단 파란 박스 */
+.track-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 18px;
+  background: var(--blue);
+}
+
+.track-card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* 카드 내부 회색 라인 */
+.track-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 1px;
+  background: var(--gray-muted);
+}
+
+.track-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--white);
+}
+
+
+
+/***********************************************
+ * MAIN CONTENT AREA
+ ***********************************************/
+.intro-content {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+/***********************************************
+ * SECTION WRAPPERS
+ ***********************************************/
+.intro-section-wrapper {
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.intro-section-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/***********************************************
+ * FULL-WIDTH SECTION LINE
+ ***********************************************/
+.intro-section-line {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  width: 100vw;
+  height: 0.3px;
+  background: var(--gray-muted);
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease 0.3s;
+}
+
+.intro-section-wrapper.show .intro-section-line {
+  opacity: 1;
+}
+
+/***********************************************
+ * INDIVIDUAL SECTION CONTENT
+ ***********************************************/
+.intro-section {
+  position: relative;
+  margin-bottom: 220px;
+  margin-left: clamp(40px, 6vw, 80px);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.intro-section-wrapper.show .intro-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECTION 02만 더 오른쪽 */
+.intro-section.intro-02 {
+  margin-left: clamp(120px, 14vw, 220px);
+}
+
+/***********************************************
+ * NUMBER + DOT (01 / 02 / 03)
+ ***********************************************/
+.intro-top-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-number {
+  font-size: clamp(150px, 9vw, 110px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--blue);
+  z-index: 2;
+}
+
+.section-dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 40px;
+  background: var(--blue);
+  z-index: 2;
+}
+
+/***********************************************
+ * TEXT BLOCK
+ ***********************************************/
+.intro-text {
+  padding-left: 160px;
+}
+
+.intro-text h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--white);
+}
+
+.intro-text p {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.7;
+  color: var(--white);
+  max-width: 750px;
+}
+
+/***********************************************
+ * LOGO ROW (ETRI 등)
+ ***********************************************/
+.intro-job-list h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 50px 0 18px;
+  color: var(--white);
+}
+
+.logo-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* 로고 */
+.logo-row img {
+  width: 180px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: var(--white);
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-row img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}

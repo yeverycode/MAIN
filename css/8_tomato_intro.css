@@ -37,6 +37,21 @@
   margin-bottom: 60px;
   color: var(--white);
 }
+/* 초기 상태 (숨김 + 아래로 이동) */
+.intro-track h2,
+.intro-track p {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 등장 상태 */
+.intro-track.show h2,
+.intro-track.show p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .track-grid {
   display: grid;
@@ -52,9 +67,15 @@
   width: 90%;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
+.track-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* 좌측 상단 파란 박스 */
 .track-card::before {
   content: "";
@@ -92,6 +113,8 @@
   color: var(--white);
 }
 
+
+
 /***********************************************
  * MAIN CONTENT AREA
  ***********************************************/
@@ -124,7 +147,7 @@
   top: 95px;
   left: 50%;
   width: 100vw;
-  height: 1px;
+  height: 0.3px;
   background: var(--gray-muted);
   transform: translateX(-50%);
   z-index: 0;

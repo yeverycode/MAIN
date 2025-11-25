@@ -2,23 +2,7 @@
  * INTRO PAGE BASE
  ***********************************************/
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
- .intro-content {
-  background: var(--white);
-  color: var(--black);
-  padding: 64px 0 120px;
-}
-
-/***********************************************
- * PAGE HERO (공통 스타일 기반 + Intro용 강화)
- ***********************************************/
-
- /* 히어로 탭: 한 줄 유지 */
+/* INT HERO TAB (공통과 겹치지 않는 부분만 유지) */
 .page-hero--intro .page-hero__subnav ul {
   display: flex;
   flex-wrap: nowrap;
@@ -31,40 +15,47 @@
   margin-bottom: 64px;
 }
 
-
+/***********************************************
+ * TRACK SECTION (3가지 트랙 카드)
+ ***********************************************/
 .intro-track {
   margin-top: 80px;
-  margin-left: clamp(40px, 6vw, 80px);  /* 01, 03 공통 */
+  margin-left: clamp(40px, 6vw, 80px);
   margin-bottom: 220px;
 }
-.intro-track h3 {
-  font-size: 22px;
+
+.intro-track h2 {
+  font-size: 30px;
+  font-weight: 700;
   margin-bottom: 14px;
-  color:var(--white);
+  color: var(--white);
 }
 
 .intro-track p {
-  color: var(--white);
+  font-size: 20px;
+  font-weight: 100;
   margin-bottom: 60px;
+  color: var(--white);
 }
 
 .track-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
+  gap: 28px;
 }
 
 .track-card {
   background: #2d2d2d;
   padding: 32px;
-  transition: all 0.3s ease;
+  min-height: 200px;
   position: relative;
-  min-height: 200px; /* ★ 세 카드 동일한 높이 */
   width: 90%;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
 }
 
+/* 좌측 상단 파란 박스 */
 .track-card::before {
   content: "";
   position: absolute;
@@ -72,18 +63,19 @@
   left: 0;
   width: 24px;
   height: 18px;
-  background: var(--blue); /* 파란색 */
+  background: var(--blue);
 }
 
 .track-card h3 {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   margin-bottom: 16px;
-  color:var(--white);
+  color: var(--white);
   position: relative;
   padding-bottom: 20px;
 }
 
+/* 카드 내부 회색 라인 */
 .track-card h3::after {
   content: "";
   position: absolute;
@@ -95,15 +87,13 @@
 }
 
 .track-card p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--white);
 }
 
-
-
 /***********************************************
- * MAIN CONTENT LAYOUT
+ * MAIN CONTENT AREA
  ***********************************************/
 .intro-content {
   width: 100%;
@@ -111,143 +101,120 @@
   padding: 0 20px;
 }
 
-.intro-overview p {
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 100px;
-  margin-top: 50px;
-  color: var(--white);
-  line-height: 1.6;
-
-}
-
 /***********************************************
- * SECTION NUMBER (01 / 02 / 03)
+ * SECTION WRAPPERS
  ***********************************************/
-.section-number {
-  font-size: clamp(70px, 10vw, 110px);
-  font-weight: 900;
-  color: var(--blue);
-  margin-bottom: 20px;
-}
-
-/***********************************************
- * INTRO SECTIONS
- ***********************************************/
-/***********************************************
- * INTRO SECTION — LEFT BOX + NUMBER + LINE
- ***********************************************/
-
-.intro-layout {
-  display: grid;
-  grid-template-columns: 60px auto 1fr;
-  align-items: start;
-  column-gap: 40px;
+.intro-section-wrapper {
   position: relative;
-  padding: 60px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
+.intro-section-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /***********************************************
- * SECTION NUMBER + DOT + LINE
+ * FULL-WIDTH SECTION LINE
+ ***********************************************/
+.intro-section-line {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: var(--gray-muted);
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease 0.3s;
+}
+
+.intro-section-wrapper.show .intro-section-line {
+  opacity: 1;
+}
+
+/***********************************************
+ * INDIVIDUAL SECTION CONTENT
+ ***********************************************/
+.intro-section {
+  position: relative;
+  margin-bottom: 220px;
+  margin-left: clamp(40px, 6vw, 80px);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.intro-section-wrapper.show .intro-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECTION 02만 더 오른쪽 */
+.intro-section.intro-02 {
+  margin-left: clamp(120px, 14vw, 220px);
+}
+
+/***********************************************
+ * NUMBER + DOT (01 / 02 / 03)
  ***********************************************/
 .intro-top-row {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 40px;
-}
-
-/* 회색 라인을 배경처럼 전체 폭에 깔기 */
-.intro-top-row::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-   width: 100vw;      
-  height: 1px;
-  background: var(--gray-muted);
-  transform: translateY(-50%);
-  z-index: 0; /* 라인 뒤로 */
-}
-
-/* 숫자 */
-.section-number,
-.section-dot {
   position: relative;
-  z-index: 2; /* 라인 위로 */
 }
-
-
-
-/* 공통 섹션 오른쪽 이동 */
-.intro-section {
-  margin-left: clamp(40px, 6vw, 80px);  /* 01, 03 공통 */
-  margin-bottom: 220px;
-}
-
-
-
-/* 02번은 더 안쪽(더 오른쪽) */
-.intro-section.intro-02 {
-  margin-left: clamp(80px, 10vw, 140px);
-}
-
 
 .section-number {
   font-size: clamp(150px, 9vw, 110px);
   font-weight: 900;
-  color: var(--blue);
   line-height: 1;
-}
-.section-number.active {
   color: var(--blue);
-  transform: scale(1.04);
-  transition: 0.3s ease;
+  z-index: 2;
 }
 
-/* 파란 점 */
 .section-dot {
   width: 10px;
   height: 10px;
+  margin-top: 40px;
   background: var(--blue);
-  display: inline-block;
+  z-index: 2;
 }
 
-
 /***********************************************
- * 텍스트 블록
+ * TEXT BLOCK
  ***********************************************/
-
 .intro-text {
   padding-left: 160px;
 }
+
 .intro-text h2 {
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 18px;
   color: var(--white);
 }
 
 .intro-text p {
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 100;
   line-height: 1.7;
   color: var(--white);
-  max-width: 720px;
+  max-width: 750px;
 }
 
-
-
-
 /***********************************************
- * LOGO ROW (ETRI Logo)
+ * LOGO ROW (ETRI 등)
  ***********************************************/
 .intro-job-list h3 {
   font-size: 22px;
+  font-weight: 500;
   margin: 50px 0 18px;
-  font-weight: 700;
   color: var(--white);
 }
 
@@ -258,14 +225,14 @@
   margin-bottom: 30px;
 }
 
+/* 로고 */
 .logo-row img {
   width: 180px;
-  height: auto;
+  padding: 14px 20px;
+  border-radius: 10px;
   background: var(--white);
   filter: grayscale(100%);
   opacity: 0.7;
-  padding: 14px 20px;
-  border-radius: 10px;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
@@ -273,40 +240,3 @@
   filter: grayscale(0%);
   opacity: 1;
 }
-
-
-
-/***********************************************
- * RESPONSIVE / 모바일 대응
- ***********************************************/
-@media (max-width: 1024px) {
-  .track-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-
-  .page-hero--intro {
-    padding: 120px 0 60px;
-  }
-
-  .page-hero--intro .page-hero__headline h1 {
-    font-size: 42px;
-    letter-spacing: 0.03em;
-  }
-
-  .page-hero--intro .page-hero__subnav ul {
-    column-gap: 30px;
-  }
-
-  .track-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intro-section {
-    margin-bottom: 120px;
-  }
-}
-
-

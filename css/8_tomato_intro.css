@@ -55,7 +55,7 @@
 .track-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 28px;
+  gap: 39px;
   justify-content: center;   /* 그리드 자체를 중앙 정렬 */
 }
 

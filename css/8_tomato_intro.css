@@ -19,9 +19,8 @@
  * TRACK SECTION (3가지 트랙 카드)
  ***********************************************/
 .intro-track {
-  margin-top: 80px;
-  margin-left: clamp(40px, 6vw, 80px);
-  margin-bottom: 220px;
+  margin: 80px auto 220px;   /* 자동 마진으로 중앙 배치 */
+  max-width: 1400px;         /* 섹션 전체 폭 */
 }
 
 .intro-track h2 {
@@ -55,8 +54,9 @@
 
 .track-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 28px;
+  justify-content: center;   /* 그리드 자체를 중앙 정렬 */
 }
 
 .track-card {
@@ -64,7 +64,7 @@
   padding: 32px;
   min-height: 200px;
   position: relative;
-  width: 90%;
+  width:100%;
   display: flex;
   flex-direction: column;
   opacity: 0;

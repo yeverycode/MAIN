@@ -1,14 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro | 인공지능공학부</title>
-
-    <link rel="stylesheet" href="/css/8_tomato_common.css" />
-    <link rel="stylesheet" href="/css/8_tomato_intro.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro | 인공지능공학부</title>
+  <link rel="stylesheet" href="/css/8_tomato_common.css" />
+  <link rel="stylesheet" href="/css/8_tomato_intro.css" />
 </head>
-<body ㅣclass="intro-page">
+
+<body class="intro-page">
+
+  <div class="site-header-backdrop" aria-hidden="true"></div>
+  <header class="site-header" aria-label="주요 탐색">
+    <nav class="nav" role="navigation">
+
+      <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+        <img
+          src="/assets/8_tomato_home_white.png"
+          alt="MAIN 홈"
+          class="nav__logo"
+          data-logo-dark="/assets/8_tomato_home_white.png"
+          data-logo-light="/assets/8_tomato_home_black.png"
+        >
+      </a>
+
+      <div class="nav__item">
+        <a href="/pages/8_tomato_intro.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">학과 소개</a>
+        <div class="dropdown" role="menu">
+          <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
+          <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
+          <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학생회 소개</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">행사소개</a>
+        <div class="dropdown" role="menu">
+          <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
+          <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
+          <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
+          <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+        <div class="dropdown" role="menu">
+          <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
+          <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
+        </div>
+      </div>
+
+      <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
+      <a href="/pages/8_tomato_recruit.html" class="nav__link">RECRUIT</a>
+    </nav>
+  </header>
+  
+  <section class="page-hero page-hero--intro" aria-label="학과 소개 헤더">
+    <div class="page-hero__headline">
+     <h1>AI ENGINEERING</h1>
+    </div>
+    <nav class="page-hero__subnav" aria-label="학과소개 탭">
+    <ul>
+      <li class="is-active">
+        <a href="/pages/8_tomato_intro.html"  aria-current="page">학과 소개</a>
+      </li>
+      <li>
+        <a href="/pages/8_tomato_curriculum.html">커리큘럼</a>
+      </li>
+      <li>
+        <a href="/pages/8_tomato_academy.html">학생회 소개</a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+  <!-- MAIN CONTENT -->
+<selection class="content intro-content">
     
+    <selection class="intro-overview">
+        <p>인공지능공학부는 인간 중심의 사고를 바탕으로<br>인공지능 기술의 새로운 가능성을 발굴하고 창의적 해결책을 모색하는 응용 AI 개발자 양성을 지향합니다.</p>
+    </selection> 
+
+
+    <!-- SECTION 01 -->
+    <section class="intro-section intro-01">
+
+    <div class="intro-top-row">
+        <span class="section-number">01</span>
+        <span class="section-dot"></span>
+        <span class="section-line"></span>
+    </div>
+
+    <div class="intro-text">
+        <h2>인공지능공학부에서는 무엇을 배울까요?</h2>
+        <p>
+        컴퓨터 프로그래밍 기술 관련 과목, 소프트웨어 개발 관련 지식, IT 기기 관련 기술을 배웁니다.<br>
+        특화된 스마트 기기 솔루션, 데이터 공학, 감성 컴퓨팅 등의 내용을 학습한 후<br>
+        6개월 실무 인턴, 졸업 프로젝트 등을 통해 실력을 쌓게 됩니다.
+        </p>
+    </div>
+
+    </section>
+
+    <!-- SECTION 02 -->
+    <section class="intro-section intro-02">
+    <div class="intro-top-row">
+        <span class="section-number">02</span>
+        <span class="section-dot"></span>
+        <span class="section-line"></span>
+    </div>
+    
+    <div class="intro-text">
+        <h2>내가 졸업하면?</h2>
+        <p>
+        IT 기술 개발 분야뿐 아니라 스마트 기기 서비스, 콘텐츠 개발, IT 융합 분야의 대기업, 중소기업, 연구소 등 다양한 기관으로 진출할 수 있습니다.
+        </p>
+    </div>
+    </section>
+
+    <!-- SECTION 03 -->
+    <section class="intro-section intro-03">
+    <div class="intro-top-row">
+        <span class="section-number">03</span>
+        <span class="section-dot"></span>
+        <span class="section-line"></span>
+    </div>
+
+    <div class="intro-text">
+        <h2>선배들의 선택은?</h2>
+        <div class="intro-job-list">
+        <h3>대학원 진학 / IT 공학 연구소</h3>
+        <div class="logo-row">
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+        </div>
+
+        <h3>전통적 IT 서비스 산업</h3>
+        <div class="logo-row">
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+        </div>
+
+        <h3>산업기기 개발 / 임베디드 산업</h3>
+        <div class="logo-row">
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg"alt="ETRI" />
+    
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+        </div>
+
+        <h3>스마트 콘텐츠 솔루션 산업</h3>
+        <div class="logo-row">
+          <img src="/img/8_tomato_ETRI.svg"alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg"alt="ETRI" />
+
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+        </div>
+
+        <h3>IT 융합 분야 서비스 산업</h3>
+        <div class="logo-row">
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+          <img src="/img/8_tomato_ETRI.svg" alt="ETRI" />
+        </div>
+      </div> 
+    </div>
+    </section>
+
+
+    <!-- SECTION 04 – 3개의 트랙 소개 -->
+    <section class="intro-track">
+      <h2>인공지능공학부는 3가지 트랙을 제공합니다.</h2>
+      <p>여러분의 진로와 흥미에 맞춰 균형 있게 성장할 수 있도록 구성된 프로그램입니다.</p>
+
+      <div class="track-grid">
+
+        <div class="track-card">
+          <h3>AI 엔지니어링 트랙</h3>
+          <p>
+            딥러닝 AI 모델 설계 및 성능 최적화,<br>
+            데이터 엔지니어링, AIOps 구축
+          </p>
+        </div>
+
+        <div class="track-card">
+          <h3>AI SW 솔루션 트랙</h3>
+          <p>
+            AI 소프트웨어 아키텍쳐 설계,<br>
+            AI 서비스 기획 및 개발,<br>
+            영상 처리 & 컴퓨터 비전
+          </p>
+        </div>
+
+        <div class="track-card">
+          <h3>AI 감성 컴퓨팅 트랙</h3>
+          <p>
+            감성 인식 기술, 인지적 인터페이스, UX/UI 기반 지능형 서비스
+          </p>
+        </div>
+
+      </div>
+    </section>
+</selection>
+
+</body>
+<!-- 푸터  -->
+<footer class="footer-section" aria-label="하단 정보">
+  <div class="footer-toggle">
+    <label class="theme-toggle" for="themeSwitch">
+      <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
+      <span class="theme-toggle__track" aria-hidden="true">
+        <span class="theme-toggle__thumb"></span>
+        <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+      </span>
+      <span class="theme-toggle__text">다크 모드</span>
+    </label>
+  </div>
+  <div class="brand">
+    <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+    MAIN
+  </div>
+  <address class="addr">
+    <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
+    <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
+    <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
+  </address>
+  <p class="copy">
+    COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
+  </p>
+</footer>
+
+<!-- js (나중에 분리하라하면 따로 분리) -->
+<script src="/js/8_tomato_main.js" defer></script>
+
 </body>
 </html>
+

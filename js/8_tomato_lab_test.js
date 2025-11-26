@@ -1,27 +1,3 @@
-// 테마 토글 + 로고 전환
-(function initTheme() {
-  const html = document.documentElement;
-  const logo = document.querySelector('.nav__logo');
-  const themeToggle = document.querySelector('#themeSwitch');
-  const applyTheme = (theme) => {
-    html.setAttribute('data-theme', theme);
-    if (themeToggle) {
-      themeToggle.checked = theme === 'dark';
-    }
-    if (logo) {
-      const nextLogo = theme === 'dark' ? logo.dataset.logoDark : logo.dataset.logoLight;
-      if (nextLogo) logo.src = nextLogo;
-    }
-  };
-  const saved = localStorage.getItem('theme') || 'dark';
-  applyTheme(saved);
-  themeToggle?.addEventListener('change', (e) => {
-    const next = e.target.checked ? 'dark' : 'light';
-    applyTheme(next);
-    localStorage.setItem('theme', next);
-  });
-})();
-
 // 분야/연구실 데이터
 const FIELDS = {
   aiData: {
@@ -52,7 +28,7 @@ const FIELDS = {
     title: '시스템·네트워크·보안·그래픽스',
     fullTitle: '시스템·네트워크·보안·그래픽스형',
     desc: '시스템, 네트워크, 보안, 그래픽스를 다루며 견고한 인프라와 시각 기술을 연구합니다.',
-    color: '#EF4444',
+    color: 'var(--blue)',
     labs: [
       { name: '스마트 분산시스템 연구실', prof: '윤용익', room: '새힘관 512호', url: 'http://mm.sookmyung.ac.kr/~yiyoon' },
       { name: '지능형 시스템 소프트웨어 연구실', prof: '이종우', room: '새힘관 509호', url: 'https://sites.google.com/view/jwleelab' },
@@ -209,31 +185,25 @@ function showResult(key) {
   const resultContainer = document.getElementById('resultContainer');
 
   resultContainer.innerHTML = `
-    <div class="result-header">
-      <div class="result-badge">당신의 AI 분야는</div>
+    <section class="result-hero" style="--accent-color:${field.color}">
+      <p class="result-kicker">당신에게 맞는 AI 분야는</p>
       <h2 class="result-title">${field.fullTitle}</h2>
-      <p class="result-desc">${field.desc}</p>
-    </div>
+      <p class="result-subtitle">${field.desc}</p>
+    </section>
 
-    <div class="result-labs">
-      <h3 class="result-labs-title">추천 연구실</h3>
-      <div class="labs-list">
+    <section class="result-labs" style="--accent-color:${field.color}">
+      <div class="result-cards-grid">
         ${field.labs.map(lab => `
-          <div class="lab-item">
-            <div class="lab-item-header">
-              <h4 class="lab-name">${lab.name}</h4>
-              <a href="${lab.url}" target="_blank" rel="noopener" class="lab-link">
-                홈페이지 →
-              </a>
-            </div>
-            <div class="lab-info">
-              <span class="lab-prof">지도교수 ${lab.prof}</span>
-              <span class="lab-room">${lab.room}</span>
-            </div>
-          </div>
+          <article class="info-card lab-card">
+            <span class="card-dot" aria-hidden="true"></span>
+            <div class="card-eyebrow">${field.title}</div>
+            <div class="card-line" aria-hidden="true"></div>
+            <h3 class="card-title">${lab.name}</h3>
+            <a class="card-more" href="${lab.url}" target="_blank" rel="noopener">+ MORE</a>
+          </article>
         `).join('')}
       </div>
-    </div>
+    </section>
 
     <div class="result-score">
       <h4>세부 점수</h4>

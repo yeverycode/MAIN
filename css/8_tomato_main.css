@@ -51,15 +51,6 @@
   line-height: clamp(120px, 12vw, 220px);
 }
 
-html[data-theme="light"] .fyig-hero {
-  background: var(--white);
-}
-
-html[data-theme="light"] .fyig-title {
-  color: var(--black);
-  text-shadow: none;
-}
-
 /* 이미지 슬롯 공통 */
 .ani,
 .gif {
@@ -692,10 +683,6 @@ html[data-theme="light"] .fyig-title {
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-html[data-theme="dark"] .info-card {
-  background: var(--card-bg);
-}
-
 .info-card::before {
   content: "";
   position: absolute;
@@ -856,10 +843,6 @@ html[data-theme="dark"] .info-card {
   flex-direction: column;
   gap: 56px;
   min-height: 198px;
-}
-
-html[data-theme="dark"] .event-content {
-  background: var(--card-bg);
 }
 
 .event-title {
@@ -1195,22 +1178,12 @@ html[data-theme="dark"] .event-content {
   background: linear-gradient(
     90deg, 
     var(--bg) 0%, 
-    rgba(255, 255, 255, 0) 40%, 
-    rgba(255, 255, 255, 0) 60%, 
-    var(--bg) 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-html[data-theme="dark"] .scroll-wrapper:after {
-  background: linear-gradient(
-    90deg, 
-    var(--bg) 0%, 
     rgba(255, 255, 255, 0) 45%, 
     rgba(255, 255, 255, 0) 55%, 
     var(--bg) 100%
   );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .scroll-content {

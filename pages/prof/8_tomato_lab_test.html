@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,18 +13,16 @@
 <div class="site-header-backdrop" aria-hidden="true"></div>
 <header class="site-header" aria-label="주요 탐색">
   <nav class="nav" role="navigation">
-    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="홈버튼">
       <img
         src="/assets/8_tomato_home_white.png"
-        alt="MAIN 홈"
+        alt="홈버튼"
         class="nav__logo"
-        data-logo-dark="/assets/8_tomato_home_white.png"
-        data-logo-light="/assets/8_tomato_home_black.png"
       >
     </a>
 
     <div class="nav__item">
-      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">ABOUT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
         <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
@@ -33,7 +31,7 @@
     </div>
 
     <div class="nav__item">
-      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">행사소개</a>
+      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">EVENT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
         <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
@@ -42,14 +40,14 @@
       </div>
     </div>
     <div class="nav__item">
-      <a href="/pages/prof/8_tomato_professors.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">교수님 소개</a>
+      <a href="/pages/prof/8_tomato_professors.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">PROF</a>
       <div class="dropdown" role="menu">
         <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
         <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem" aria-current="page">연구실 테스트</a>
       </div>
     </div>
     <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
-    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECUIT</a>
+    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECRUIT</a>
   </nav>
 </header>
 
@@ -132,50 +130,11 @@
       </div>
     </section>
 
-    <!-- 연구실 로고 그리드 -->
-    <section class="content labs-overview" id="labs" aria-labelledby="labs-title">
-      <div class="labs-layout">
-        <div class="labs-overview__head">
-          <h2 id="labs-title" class="labs-title">Labs</h2>
-          <p class="labs-sub">로고를 클릭해 더 많은 정보를 확인해보세요.</p>
-        </div>
-        <div class="lab-logo-grid lab-logo-grid--cards">
-          <div class="lab-logo-card" aria-label="지능형비전처리 연구실">
-            <img src="/assets/lab_logo/color/8_tomato_bgkim_logo.png" alt="지능형비전처리 연구실 로고">
-          </div>
-          <div class="lab-logo-card" aria-label="인간 중심 인공지능 연구실">
-            <img src="/assets/lab_logo/color/8_tomato_sykim_logo.png" alt="인간 중심 인공지능 연구실 로고">
-          </div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-          <div class="lab-logo-card" aria-label="연구실 로고 자리"></div>
-        </div>
-      </div>
-    </section>
-
   </div>
 </main>
 
 <!-- 푸터 -->
 <footer class="footer-section" aria-label="하단 정보">
-  <div class="footer-toggle">
-    <label class="theme-toggle" for="themeSwitch">
-      <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
-      <span class="theme-toggle__track" aria-hidden="true">
-        <span class="theme-toggle__thumb"></span>
-        <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
-        <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
-      </span>
-      <span class="theme-toggle__text">다크 모드</span>
-    </label>
-  </div>
   <div class="brand">
     <img src="/img/8_tomato_main_logo.png" alt="MAIN 로고" />
     MAIN

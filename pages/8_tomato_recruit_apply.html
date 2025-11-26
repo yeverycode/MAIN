@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RECRUIT | 숙명여자대학교 인공지능공학부</title>
+    <link rel="stylesheet" href="/css/8_tomato_common.css" />
+    <link rel="stylesheet" href="/css/8_tomato_recruit.css" />
+    <link rel="stylesheet" href="/css/8_tomato_recruit_apply.css" />
+    <script type="text/javascript" 
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d4ad756ae280edccc5445439c2e060f9&libraries=services&autoload=false">
+    </script>
+
+    <script src="/js/8_tomato_recruit_apply.js" defer></script> </head>
+<body>
+
+    <div class="site-header-backdrop" aria-hidden="true"></div>
+
+<header class="site-header" aria-label="주요 탐색">
+    <nav class="nav" role="navigation">
+        <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+            <img
+                src="/assets/8_tomato_home_white.png"
+                alt="MAIN 홈"
+                class="nav__logo"
+                data-logo-dark="/assets/8_tomato_home_white.png"
+                data-logo-light="/assets/8_tomato_home_black.png"
+            >
+        </a>
+
+        <div class="nav__item">
+            <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+            <div class="dropdown" role="menu">
+                <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
+                <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem" aria-current="page">커리큘럼</a>
+                <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학생회 소개</a>
+            </div>
+        </div>
+
+        <div class="nav__item">
+            <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">행사소개</a>
+            <div class="dropdown" role="menu">
+                <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
+                <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
+                <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
+                <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
+            </div>
+        </div>
+        <div class="nav__item">
+            <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+            <div class="dropdown" role="menu">
+                <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
+                <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
+            </div>
+        </div>
+        <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
+        <a href="/pages/8_tomato_recruit.html" class="nav__link">RECRUIT</a>
+    </nav>
+</header>
+
+<section class="form-section" role="main" aria-labelledby="form-title">
+    <div class="apply-container">
+        <h1 id="form-title" class="apply-title">지원서 작성하기</h1>
+
+        <form id="recruitment-form">
+            <div class="form-group">
+                <label for="name">이름*</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="student-id">학번*</label>
+                <input type="text" id="student-id" name="student-id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">전화번호*</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="self-introduction">자기소개*</label>
+                <span class="char-limit">200자 이내</span>
+                <textarea id="self-introduction" name="self-introduction" maxlength="200" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="strengths-weaknesses">자신의 장단점*</label>
+                <span class="char-limit">300자 이내</span>
+                <textarea id="strengths-weaknesses" name="strengths-weaknesses" maxlength="300" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="why-apply">재정사무부를 지원한 이유*</label>
+                <span class="char-limit">150자 이내</span>
+                <textarea id="why-apply" name="why-apply" maxlength="150" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>면접 가능 시간*</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="interview-time" value="1:00 PM - 2:00 PM">
+                        1:00 PM - 2:00 PM
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interview-time" value="2:00 PM - 3:00 PM" checked>
+                        2:00 PM - 3:00 PM
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interview-time" value="3:00 PM - 4:00 PM">
+                        3:00 PM - 4:00 PM
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="portfolio-file">포트폴리오 (파일)</label>
+                <div class="file-dropdown" id="file-dropdown-label">
+                    파일을 선택해주세요.
+                    <input type="file" id="portfolio-file" name="portfolio-file" accept=".pdf, .zip, .docx">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="portfolio-link">포트폴리오 (링크)</label>
+                <input type="text" id="portfolio-link" name="portfolio-link" placeholder="https://">
+            </div>
+
+            <button type="submit" class="submit-button">
+                제출하기
+            </button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer-section" aria-label="하단 정보">
+    <div class="footer-toggle">
+        <label class="theme-toggle" for="themeSwitch">
+            <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
+            <span class="theme-toggle__track" aria-hidden="true">
+                <span class="theme-toggle__thumb"></span>
+                <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+                <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+            </span>
+            <span class="theme-toggle__text">다크 모드</span>
+        </label>
+    </div>
+    <div class="brand">
+        <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+        MAIN
+    </div>
+    <address class="addr">
+        <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
+        <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
+        <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
+    </address>
+    <p class="copy">
+        COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
+    </p>
+</footer>
+
+</body>
+</html>

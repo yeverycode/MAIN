@@ -1,0 +1,226 @@
+/* ====================================
+   ** 섹션 1: 모집 공고 (RECRUIT) 스타일 **
+   ==================================== */
+
+/* 테마 변수 (theme variables) 설정 예시
+   - 실제 사용 시에는 common.css 등에서 정의되어 있어야 합니다. */
+:root {
+    --color-primary: #1a73e8; /* 주요 강조색 (파란색 계열) */
+    --color-accent: #333; /* 부서명 등 보조 강조색 */
+    --color-surface: #ffffff; /* 컨테이너 배경 (Light Mode) */
+    --color-background-secondary: #f0f0f0; /* 섹션 배경 (Light Mode) */
+    --color-background-tertiary: #e0e0e0; /* 지도 Placeholder 배경 (Light Mode) */
+    --color-text-primary: #333333;
+    --color-text-secondary: #777777;
+    --color-text-tertiary: #999999; /* 메모, 서브 텍스트 */
+    --color-border: #dddddd;
+    --border-radius-medium: 8px;
+    --border-radius-small: 4px;
+    --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 다크 모드 변수 오버라이드 (Dark Mode override) 예시 */
+[data-theme="dark"] {
+    --color-surface: #2c2c2c;
+    --color-background-secondary: #1e1e1e;
+    --color-background-tertiary: #444444;
+    --color-text-primary: #f0f0f0;
+    --color-text-secondary: #aaaaaa;
+    --color-text-tertiary: #777777;
+    --color-border: #444444;
+}
+
+/* 섹션 기본 컨테이너 */
+.recruit-section {
+    padding: 60px 20px;
+    background-color: var(--black);
+}
+
+.recruit-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* --------------------
+   1. 왼쪽 컨텐츠 (상세 내용)
+   -------------------- */
+.recruit-left {
+    flex: 2;
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+}
+
+.recruitment-intro {
+    margin-bottom: 30px;
+}
+
+.recruit-left h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.greeting, .description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+/* 모집 상세 리스트 */
+.detail-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detail-list li {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+}
+
+.detail-list strong {
+    font-size: 1.2em;
+    color: var(--color-text-primary); /* 강조색 */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.note {
+    color: var(--color-text-secondary);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+    line-height: 1.4;
+}
+
+/* 부서별 우대 사항 */
+.benefits-section h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.department h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+}
+
+.department-list {
+    list-style: disc;
+    padding-left: 20px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* --------------------
+   2. 오른쪽 사이드바 (지원 정보)
+   -------------------- */
+.recruit-right {
+    flex: 1;
+    max-width: 350px;
+    padding: 10px 25px 25px 25px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-small);
+    border-radius: var(--border-radius-medium);
+    height: fit-content;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-item:last-of-type {
+    border-bottom: none;
+}
+
+.sidebar-label {
+    font-weight: bold;
+    display: block;
+    width: 90px;
+    color: var(--color-text-secondary);
+    font-size: 0.9em;
+    flex-shrink: 0;
+}
+
+.sidebar-value {
+    font-size: 1em;
+    color: var(--color-text-primary);
+}
+
+.sub-text {
+    font-size: 0.9em;
+    color: var(--color-text-tertiary);
+    margin-top: 5px;
+    display: block;
+}
+
+/* 지도 및 버튼 */
+.map-container {
+    margin-top: 15px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 250px; 
+    background-color: var(--color-background-tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-tertiary);
+    font-size: 0.9em;
+}
+
+.apply-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: var(--color-primary); /* 고정 버튼 색상 */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: var(--border-radius-small);
+}
+
+.apply-button:hover {
+    background-color: #155cb8;
+}
+
+/* --------------------
+   3. 반응형 디자인 (Responsive Design)
+   -------------------- */
+@media (max-width: 900px) {
+    .recruit-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .recruit-right {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}

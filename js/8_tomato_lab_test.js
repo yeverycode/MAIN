@@ -26,7 +26,7 @@
 const FIELDS = {
   aiData: {
     title: '인공지능·데이터 사이언스',
-    fullTitle: '인공지능·데이터 사이언스형 (AI Modeling & Data Science)',
+    fullTitle: '인공지능·데이터 사이언스형',
     desc: 'AI 모델링, 비전, 추천, 데이터 중심 연구로 모델 성능과 데이터 가치를 끌어올립니다.',
     color: '#2563EB',
     labs: [
@@ -38,7 +38,7 @@ const FIELDS = {
   },
   iotHci: {
     title: '지능형 시스템·IoT·인간 중심 인터랙션',
-    fullTitle: '지능형 시스템·IoT·인간 중심 인터랙션형 (Intelligent Systems, IoT & HCI)',
+    fullTitle: '지능형 시스템·IoT·인간 중심 인터랙션형',
     desc: '에이전트·IoT·UX·BCI 중심으로 사람과 사물을 연결하는 지능형 시스템을 설계합니다.',
     color: '#10B981',
     labs: [
@@ -50,7 +50,7 @@ const FIELDS = {
   },
   systems: {
     title: '시스템·네트워크·보안·그래픽스',
-    fullTitle: '시스템·네트워크·보안·그래픽스형 (Systems, Network Security & Graphics)',
+    fullTitle: '시스템·네트워크·보안·그래픽스형',
     desc: '시스템, 네트워크, 보안, 그래픽스를 다루며 견고한 인프라와 시각 기술을 연구합니다.',
     color: '#EF4444',
     labs: [
@@ -68,27 +68,27 @@ const QUESTIONS = [
     id: 1,
     question: '가장 흥미로운 주제는?',
     options: [
-      { text: '그래프·비전·추천 같은 AI 모델링', score: 'aiData', icon: '🧠' },
-      { text: 'IoT/에이전트와 UX, BCI 결합', score: 'iotHci', icon: '🤝' },
-      { text: '네트워크·보안·그래픽스 같은 시스템', score: 'systems', icon: '🛡️' }
+      { text: '그래프·비전·추천 같은 AI 모델링', score: 'aiData' },
+      { text: 'IoT/에이전트와 UX, BCI 결합', score: 'iotHci' },
+      { text: '네트워크·보안·그래픽스', score: 'systems' }
     ]
   },
   {
     id: 2,
-    question: '어떤 환경을 선호하나요?',
+    question: '어떤 분야를 선호하나요?',
     options: [
-      { text: '데이터를 모으고 모델 성능을 높이는 환경', score: 'aiData', icon: '🧠' },
-      { text: '센서·사용자와 실시간으로 상호작용하는 환경', score: 'iotHci', icon: '🤝' },
-      { text: '안정성·성능이 핵심인 시스템/보안 환경', score: 'systems', icon: '🛡️' }
+      { text: '데이터 수집 · 모델 성능을 높이기', score: 'aiData'},
+      { text: '센서·사용자와 실시간으로 상호작용하는 환경', score: 'iotHci'},
+      { text: '시스템/보안 환경', score: 'systems'}
     ]
   },
   {
     id: 3,
     question: '나의 강점은?',
     options: [
-      { text: '데이터 분석과 모델 튜닝', score: 'aiData', icon: '🧠' },
-      { text: '사람/기기 경험 설계와 연결성', score: 'iotHci', icon: '🤝' },
-      { text: '문제 해결과 시스템 최적화', score: 'systems', icon: '🛡️' }
+      { text: '데이터 분석과 모델 튜닝', score: 'aiData'},
+      { text: '사람/기기 경험 설계와 연결성', score: 'iotHci'},
+      { text: '문제 해결과 시스템 최적화', score: 'systems'}
     ]
   }
 ];
@@ -131,7 +131,6 @@ function renderQuestion() {
             data-score="${opt.score}"
             data-question="${q.id}"
           >
-            <span class="option-icon">${opt.icon}</span>
             <span class="option-text">${opt.text}</span>
             <span class="option-check">✓</span>
           </button>

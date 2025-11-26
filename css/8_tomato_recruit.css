@@ -203,7 +203,6 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-radius: var(--border-radius-small);
 }
 
 .apply-button:hover {

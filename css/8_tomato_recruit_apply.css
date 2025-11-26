@@ -13,7 +13,7 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 40px 20px;
-    background-color: var(--surface);
+    background-color: color-mix(in srgb, var(--surface) 8%, transparent);
     border-radius: 12px;
     box-shadow: var(--shadow-card);
 }
@@ -176,11 +176,6 @@
 }
 
 /* 다크 모드에서의 폼 스타일 조정 */
-html[data-theme="dark"] .apply-container {
-    background-color: color-mix(in srgb, var(--surface) 8%, transparent);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
 /* 모바일 반응형 */
 @media (max-width: 650px) {
     .apply-title {

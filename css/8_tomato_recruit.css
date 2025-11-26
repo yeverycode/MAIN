@@ -7,27 +7,16 @@
 :root {
     --color-primary: #1a73e8; /* 주요 강조색 (파란색 계열) */
     --color-accent: #333; /* 부서명 등 보조 강조색 */
-    --color-surface: #ffffff; /* 컨테이너 배경 (Light Mode) */
-    --color-background-secondary: #f0f0f0; /* 섹션 배경 (Light Mode) */
-    --color-background-tertiary: #e0e0e0; /* 지도 Placeholder 배경 (Light Mode) */
-    --color-text-primary: #333333;
-    --color-text-secondary: #777777;
-    --color-text-tertiary: #999999; /* 메모, 서브 텍스트 */
-    --color-border: #dddddd;
-    --border-radius-medium: 8px;
-    --border-radius-small: 4px;
-    --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-/* 다크 모드 변수 오버라이드 (Dark Mode override) 예시 */
-[data-theme="dark"] {
     --color-surface: #2c2c2c;
     --color-background-secondary: #1e1e1e;
     --color-background-tertiary: #444444;
     --color-text-primary: #f0f0f0;
     --color-text-secondary: #aaaaaa;
-    --color-text-tertiary: #777777;
+    --color-text-tertiary: #777777; /* 메모, 서브 텍스트 */
     --color-border: #444444;
+    --border-radius-medium: 8px;
+    --border-radius-small: 4px;
+    --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* 섹션 기본 컨테이너 */

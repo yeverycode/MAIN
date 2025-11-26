@@ -1,35 +1,3 @@
-// 테마 전환 및 로고/이미지 스위칭
-(function initTheme() {
-  const html = document.documentElement;
-  const logo = document.querySelector('.nav__logo');
-  const themeImages = document.querySelectorAll('[data-theme-dark][data-theme-light]');
-  const themeToggle = document.querySelector('#themeSwitch');
-
-  const applyTheme = (theme) => {
-    html.setAttribute('data-theme', theme);
-    if (themeToggle) {
-      themeToggle.checked = theme === 'dark';
-    }
-    if (logo) {
-      const nextLogo = theme === 'dark' ? logo.dataset.logoDark : logo.dataset.logoLight;
-      if (nextLogo) logo.src = nextLogo;
-    }
-    themeImages.forEach((img) => {
-      const nextSrc = theme === 'dark' ? img.dataset.themeDark : img.dataset.themeLight;
-      if (nextSrc) img.setAttribute('src', nextSrc);
-    });
-  };
-
-  const saved = localStorage.getItem('theme') || 'dark';
-  applyTheme(saved);
-
-  themeToggle?.addEventListener('change', (e) => {
-    const next = e.target.checked ? 'dark' : 'light';
-    applyTheme(next);
-    localStorage.setItem('theme', next);
-  });
-})();
-
 // 스크롤 등장 애니메이션
 (function initReveal() {
   const html = document.documentElement;

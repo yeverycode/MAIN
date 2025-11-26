@@ -74,7 +74,6 @@
       const details = document.createElement('details');
       details.className = 'faq-item';
       details.dataset.category = item.category;
-      if (index === 0) details.open = true;
 
       const summary = document.createElement('summary');
       summary.className = 'faq-question';

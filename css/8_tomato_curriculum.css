@@ -204,8 +204,8 @@
 
 .curriculum-card__dot {
   position: absolute;
-  left: 22px;
-  top: 22px;
+  left: 0px;
+  top: 0px;
   width: 26.5px;
   height: 26.5px;
   background: var(--accent);

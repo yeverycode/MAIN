@@ -85,7 +85,7 @@
         </p>
         <div class="intro-stats">
           <div class="stat-item">
-            <div class="stat-number">6</div>
+            <div class="stat-number">3</div>
             <div class="stat-label">AI 분야</div>
           </div>
           <div class="stat-divider"></div>
@@ -137,28 +137,39 @@
     <!-- 연구실 한눈에 보기 -->
     <section class="content labs-overview" id="labs" aria-labelledby="labs-title">
       <div class="section-header">
-        <h2 id="labs-title" class="sec-title">AI 분야별 연구실</h2>
-        <p class="sec-subtitle">6가지 AI 분야와 각 분야의 연구실을 소개합니다</p>
+        <h2 id="labs-title" class="sec-title">연구실 카테고리</h2>
+        <p class="sec-subtitle">3개 카테고리를 대표 키워드로 한눈에 볼 수 있어요</p>
       </div>
-      <div class="lab-carousel-wrapper">
-        <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="이전 슬라이드">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
-        <div class="lab-carousel">
-          <div class="lab-carousel-track" id="carouselTrack">
-            <!-- 연구실 카드들이 동적으로 렌더링됩니다 -->
+      <div class="lab-logo-grid">
+        <div class="lab-logo-block">
+          <h3 class="lab-logo-title">인공지능·데이터 사이언스</h3>
+          <div class="logo-row logo-row--chips">
+            <span class="logo-chip">AI 모델링</span>
+            <span class="logo-chip">비전</span>
+            <span class="logo-chip">추천</span>
+            <span class="logo-chip">데이터</span>
           </div>
         </div>
-        <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="다음 슬라이드">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
-      <div class="carousel-indicators" id="carouselIndicators">
-        <!-- 인디케이터들이 동적으로 렌더링됩니다 -->
+
+        <div class="lab-logo-block">
+          <h3 class="lab-logo-title">지능형 시스템·IoT·인간 중심 인터랙션</h3>
+          <div class="logo-row logo-row--chips">
+            <span class="logo-chip">에이전트</span>
+            <span class="logo-chip">IoT</span>
+            <span class="logo-chip">UX</span>
+            <span class="logo-chip">BCI</span>
+          </div>
+        </div>
+
+        <div class="lab-logo-block">
+          <h3 class="lab-logo-title">시스템·네트워크·보안·그래픽스</h3>
+          <div class="logo-row logo-row--chips">
+            <span class="logo-chip">시스템</span>
+            <span class="logo-chip">네트워크</span>
+            <span class="logo-chip">보안</span>
+            <span class="logo-chip">그래픽스</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -190,462 +201,7 @@
   <p class="copy">COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.</p>
 </footer>
 
-<!-- JS -->
-<script>
-  // 테마 토글 + 로고 전환
-  (function initTheme(){
-    const html = document.documentElement;
-    const logo = document.querySelector('.nav__logo');
-    const themeToggle = document.querySelector('#themeSwitch');
-    const applyTheme = (theme) => {
-      html.setAttribute('data-theme', theme);
-      if (themeToggle) {
-        themeToggle.checked = theme === 'dark';
-      }
-      if (logo) {
-        const nextLogo = theme === 'dark' ? logo.dataset.logoDark : logo.dataset.logoLight;
-        if (nextLogo) logo.src = nextLogo;
-      }
-    };
-    const saved = localStorage.getItem('theme') || 'dark';
-    applyTheme(saved);
-    themeToggle?.addEventListener('change', (e) => {
-      const next = e.target.checked ? 'dark' : 'light';
-      applyTheme(next);
-      localStorage.setItem('theme', next);
-    });
-  })();
-
-  // 분야/연구실 데이터
-  const FIELDS = {
-    agent: {
-      title: '지능형 시스템·에이전트',
-      fullTitle: '지능형 시스템·에이전트형 (Intelligent System & Autonomous AI)',
-      desc: '자율적으로 학습·판단하는 지능형 시스템 및 IoT 기반 에이전트 연구.',
-      color: '#0B4F9F',
-      labs: [
-        { name: '지능형 시스템 연구실', prof: '임유진', room: '새힘관 104호', url: 'https://sites.google.com/view/yujin91' },
-        { name: '스마트 분산시스템 연구실', prof: '윤용익', room: '새힘관 512호', url: 'http://mm.sookmyung.ac.kr/~yiyoon' },
-        { name: '지능형 시스템 소프트웨어 연구실', prof: '이종우', room: '새힘관 509호', url: 'https://sites.google.com/view/jwleelab' }
-      ]
-    },
-    data: {
-      title: '데이터·분석',
-      fullTitle: '데이터·분석형 (Data Analytics & Information Engineering)',
-      desc: '데이터의 저장, 검색, 분석을 통한 정보처리 중심 연구.',
-      color: '#2563EB',
-      labs: [
-        { name: '데이터 분석 연구실', prof: '박영호', room: '새힘관 508호', url: 'https://sites.google.com/site/dbsook/professor' },
-        { name: '지식 및 정보공학 연구실', prof: '김철연', room: '새힘관 103호', url: 'https://kie.sookmyung.ac.kr/' }
-      ]
-    },
-    vision: {
-      title: '비전·그래픽스·메타버스',
-      fullTitle: '비전·그래픽스형 (Vision, Graphics & Metaverse AI)',
-      desc: '이미지·영상 인식, 3D 그래픽스, 가상현실 등 시각적 AI 기술 연구.',
-      color: '#7C3AED',
-      labs: [
-        { name: '지능형비전처리 연구실 (IVPL)', prof: '김병규', room: '새힘관 102호', url: 'http://ivpl.sookmyung.ac.kr' },
-        { name: '컴퓨터 그래픽스/가상현실 연구실', prof: '박화진', room: '새힘관 510호', url: 'https://sites.google.com/sookmyung.ac.kr/cgvr/home' },
-        { name: '3차원 인공지능 유니버스 연구실', prof: '강지우', room: '명신관 618호', url: 'http://www.aiunilab.com/' }
-      ]
-    },
-    genai: {
-      title: '언어·추천·생성',
-      fullTitle: '언어·추천·생성형 (Language, Graph & Generative AI)',
-      desc: 'LLM, 그래프 신경망, 추천 시스템 등 텍스트·지식 기반 생성형 AI 연구.',
-      color: '#DB2777',
-      labs: [
-        { name: '그래프·추천·언어 모델 연구실', prof: '최윤혁', room: '수련교수회관 202호', url: 'https://choiyoonhyuk.github.io/' }
-      ]
-    },
-    human: {
-      title: '인간 중심 AI',
-      fullTitle: '인간 중심 AI형 (Human-centered & Responsible AI)',
-      desc: '인간의 감정·맥락을 이해하는 상호작용형 AI, 책임성과 공정성을 강조하는 연구.',
-      color: '#10B981',
-      labs: [
-        { name: '인간 중심 인공지능 연구실', prof: '김상연', room: '명신관 511호', url: 'https://sangyeonk.com' },
-        { name: '인간 컴퓨터 상호작용 연구실', prof: '동서연', room: '새힘관 604호', url: 'https://sites.google.com/site/sydonglab/' }
-      ]
-    },
-    security: {
-      title: '보안·시스템',
-      fullTitle: '보안·시스템형 (System & Network Security AI)',
-      desc: '딥러닝을 활용한 보안 위협 탐지, 침입 차단, 시스템 취약점 분석 등 AI 기반 보안 연구.',
-      color: '#EF4444',
-      labs: [
-        { name: '시스템 네트워크 보안 연구실', prof: '정성훈', room: '명신관 508A호', url: 'https://www.snsec.net' }
-      ]
-    }
-  };
-
-  // 질문 데이터
-  const QUESTIONS = [
-    {
-      id: 1,
-      question: '가장 흥미로운 주제는?',
-      options: [
-        { text: 'IoT와 자율 에이전트', score: 'agent', icon: '🤖' },
-        { text: '3D 그래픽스/비전', score: 'vision', icon: '👁️' },
-        { text: '생성형 언어모델', score: 'genai', icon: '💬' },
-        { text: '인간-AI 인터랙션', score: 'human', icon: '🤝' },
-        { text: '보안·네트워크', score: 'security', icon: '🔒' },
-        { text: '데이터/DB/검색', score: 'data', icon: '📊' }
-      ]
-    },
-    {
-      id: 2,
-      question: '어떤 환경을 선호하나요?',
-      options: [
-        { text: '데이터 중심 분석 환경', score: 'data', icon: '📊' },
-        { text: '시각적 결과가 즉시 보이는 프로젝트', score: 'vision', icon: '👁️' },
-        { text: 'IoT/시스템 통합 프로젝트', score: 'agent', icon: '🤖' },
-        { text: '사용자 중심 UX 환경', score: 'human', icon: '🤝' },
-        { text: '안전/위협 모델링이 중요한 환경', score: 'security', icon: '🔒' }
-      ]
-    },
-    {
-      id: 3,
-      question: '나의 강점은?',
-      options: [
-        { text: '문제를 깊게 파는 분석력', score: 'security', icon: '🔒' },
-        { text: '공간적 사고·시각화', score: 'vision', icon: '👁️' },
-        { text: '텍스트/추천 알고리즘 설계', score: 'genai', icon: '💬' },
-        { text: '공감·인터페이스 감각', score: 'human', icon: '🤝' },
-        { text: '시스템 오케스트레이션', score: 'agent', icon: '🤖' },
-        { text: '자료구조·성능 최적화', score: 'data', icon: '📊' }
-      ]
-    }
-  ];
-
-  // 상태 관리
-  let currentQuestion = 0;
-  let answers = {};
-  let scores = { agent: 0, data: 0, vision: 0, genai: 0, human: 0, security: 0 };
-
-  // 요소 참조
-  const welcomeScreen = document.getElementById('welcomeScreen');
-  const quizScreen = document.getElementById('quizScreen');
-  const resultScreen = document.getElementById('resultScreen');
-  const startBtn = document.getElementById('startBtn');
-  const questionContainer = document.getElementById('questionContainer');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const progressFill = document.getElementById('progressFill');
-  const currentStepEl = document.getElementById('currentStep');
-
-  // 시작 버튼
-  startBtn.addEventListener('click', () => {
-    welcomeScreen.style.display = 'none';
-    quizScreen.style.display = 'block';
-    renderQuestion();
-    updateProgress();
-  });
-
-  // 질문 렌더링
-  function renderQuestion() {
-    const q = QUESTIONS[currentQuestion];
-    questionContainer.innerHTML = `
-      <div class="question-card">
-        <div class="question-number">질문 ${q.id}/3</div>
-        <h3 class="question-text">${q.question}</h3>
-        <div class="options-grid">
-          ${q.options.map((opt, idx) => `
-            <button 
-              class="option-card ${answers[q.id] === opt.score ? 'selected' : ''}" 
-              data-score="${opt.score}"
-              data-question="${q.id}"
-            >
-              <span class="option-icon">${opt.icon}</span>
-              <span class="option-text">${opt.text}</span>
-              <span class="option-check">✓</span>
-            </button>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
-    // 옵션 클릭 이벤트
-    document.querySelectorAll('.option-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const score = card.dataset.score;
-        const qId = parseInt(card.dataset.question);
-        
-        // 이전 선택 제거
-        document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        
-        // 답변 저장
-        answers[qId] = score;
-        
-        // 다음 버튼 활성화
-        nextBtn.disabled = false;
-      });
-    });
-
-    // 버튼 상태 업데이트
-    updateButtons();
-  }
-
-  // 진행 바 업데이트
-  function updateProgress() {
-    const progress = ((currentQuestion + 1) / QUESTIONS.length) * 100;
-    progressFill.style.width = `${progress}%`;
-    currentStepEl.textContent = currentQuestion + 1;
-  }
-
-  // 버튼 상태 업데이트
-  function updateButtons() {
-    prevBtn.style.visibility = currentQuestion > 0 ? 'visible' : 'hidden';
-    nextBtn.disabled = !answers[QUESTIONS[currentQuestion].id];
-    nextBtn.textContent = currentQuestion === QUESTIONS.length - 1 ? '결과 보기' : '다음';
-  }
-
-  // 이전 버튼
-  prevBtn.addEventListener('click', () => {
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      renderQuestion();
-      updateProgress();
-    }
-  });
-
-  // 다음 버튼
-  nextBtn.addEventListener('click', () => {
-    if (currentQuestion < QUESTIONS.length - 1) {
-      currentQuestion++;
-      renderQuestion();
-      updateProgress();
-    } else {
-      // 결과 계산
-      calculateResult();
-    }
-  });
-
-  // 결과 계산
-  function calculateResult() {
-    // 점수 초기화
-    scores = { agent: 0, data: 0, vision: 0, genai: 0, human: 0, security: 0 };
-    
-    // 답변 기반 점수 계산
-    Object.values(answers).forEach(answer => {
-      scores[answer]++;
-    });
-
-    // 최고 점수 분야
-    const topKey = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
-    
-    // 결과 화면 표시
-    showResult(topKey);
-  }
-
-  // 결과 표시
-  function showResult(key) {
-    quizScreen.style.display = 'none';
-    resultScreen.style.display = 'block';
-
-    const field = FIELDS[key];
-    const resultContainer = document.getElementById('resultContainer');
-
-    resultContainer.innerHTML = `
-      <div class="result-header">
-        <div class="result-badge">당신의 AI 분야는</div>
-        <h2 class="result-title">${field.fullTitle}</h2>
-        <p class="result-desc">${field.desc}</p>
-      </div>
-
-      <div class="result-labs">
-        <h3 class="result-labs-title">추천 연구실</h3>
-        <div class="labs-list">
-          ${field.labs.map(lab => `
-            <div class="lab-item">
-              <div class="lab-item-header">
-                <h4 class="lab-name">${lab.name}</h4>
-                <a href="${lab.url}" target="_blank" rel="noopener" class="lab-link">
-                  홈페이지 →
-                </a>
-              </div>
-              <div class="lab-info">
-                <span class="lab-prof">지도교수 ${lab.prof}</span>
-                <span class="lab-room">${lab.room}</span>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-
-      <div class="result-score">
-        <h4>세부 점수</h4>
-        <div class="score-bars">
-          ${Object.entries(scores).map(([key, score]) => `
-            <div class="score-bar-item">
-              <div class="score-bar-label">${FIELDS[key].title}</div>
-              <div class="score-bar-track">
-                <div class="score-bar-fill" style="width: ${(score / 3) * 100}%; background: ${FIELDS[key].color}"></div>
-              </div>
-              <div class="score-bar-value">${score}/3</div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-
-      <div class="result-actions">
-        <button class="btn btn--primary" id="restartBtn">다시 테스트하기</button>
-        <button class="btn btn--ghost" id="shareBtn">결과 공유하기</button>
-      </div>
-    `;
-
-    // 다시 하기 버튼
-    document.getElementById('restartBtn').addEventListener('click', () => {
-      currentQuestion = 0;
-      answers = {};
-      scores = { agent: 0, data: 0, vision: 0, genai: 0, human: 0, security: 0 };
-      
-      resultScreen.style.display = 'none';
-      welcomeScreen.style.display = 'block';
-    });
-
-    // 공유 버튼
-    document.getElementById('shareBtn').addEventListener('click', () => {
-      const shareText = `나의 AI 분야는 "${field.title}"입니다!\n숙명여대 AI공학부 적성 테스트에서 확인하세요.`;
-      
-      if (navigator.share) {
-        navigator.share({
-          title: 'AI 분야 적성 테스트',
-          text: shareText,
-          url: window.location.href
-        }).catch(() => {});
-      } else {
-        // 클립보드 복사
-        navigator.clipboard.writeText(shareText + '\n' + window.location.href)
-          .then(() => alert('결과가 클립보드에 복사되었습니다!'))
-          .catch(() => {});
-      }
-    });
-
-    // 결과 화면으로 스크롤
-    resultScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  // 연구실 캐러셀
-  const carouselTrack = document.getElementById('carouselTrack');
-  const carouselPrev = document.getElementById('carouselPrev');
-  const carouselNext = document.getElementById('carouselNext');
-  const carouselIndicators = document.getElementById('carouselIndicators');
-
-  let currentSlide = 0;
-  const fieldsArray = Object.values(FIELDS);
-  const isMobile = window.innerWidth <= 1024;
-  const slidesPerView = isMobile ? 1 : 2;
-  const totalSlides = Math.ceil(fieldsArray.length / slidesPerView);
-
-  // 연구실 카드 렌더링
-  (function renderLabCarousel() {
-    const cards = fieldsArray.map(f => {
-      const labsHtml = f.labs.map(l => `
-        <li>
-          <b>${l.name}</b><br>
-          <span class="lab-meta">지도교수 ${l.prof} · ${l.room}</span><br>
-          <a href="${l.url}" target="_blank" rel="noopener">홈페이지</a>
-        </li>
-      `).join('');
-      
-      return `
-        <article class="lab-card">
-          <div class="lab-card-head">
-            <h3 class="lab-title">${f.fullTitle}</h3>
-          </div>
-          <p class="lab-desc">${f.desc}</p>
-          <ul class="lab-ul">${labsHtml}</ul>
-        </article>
-      `;
-    });
-    
-    carouselTrack.innerHTML = cards.join('');
-
-    // 인디케이터 생성
-    const indicators = Array.from({ length: totalSlides }, (_, i) => 
-      `<button class="carousel-indicator ${i === 0 ? 'active' : ''}" data-slide="${i}" aria-label="슬라이드 ${i + 1}로 이동"></button>`
-    ).join('');
-    carouselIndicators.innerHTML = indicators;
-
-    // 인디케이터 클릭 이벤트
-    document.querySelectorAll('.carousel-indicator').forEach(indicator => {
-      indicator.addEventListener('click', () => {
-        const slide = parseInt(indicator.dataset.slide);
-        goToSlide(slide);
-      });
-    });
-  })();
-
-  // 슬라이드 이동
-  function goToSlide(index) {
-    currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
-    
-    const cardWidth = carouselTrack.children[0].offsetWidth;
-    const gap = 28;
-    const offset = -(currentSlide * slidesPerView) * (cardWidth + gap);
-    
-    carouselTrack.style.transform = `translateX(${offset}px)`;
-    
-    // 버튼 상태 업데이트
-    carouselPrev.disabled = currentSlide === 0;
-    carouselNext.disabled = currentSlide === totalSlides - 1;
-    
-    // 인디케이터 업데이트
-    document.querySelectorAll('.carousel-indicator').forEach((indicator, i) => {
-      indicator.classList.toggle('active', i === currentSlide);
-    });
-  }
-
-  // 버튼 이벤트
-  carouselPrev.addEventListener('click', () => {
-    goToSlide(currentSlide - 1);
-  });
-
-  carouselNext.addEventListener('click', () => {
-    goToSlide(currentSlide + 1);
-  });
-
-  // 초기 버튼 상태
-  goToSlide(0);
-
-  // 리사이즈 이벤트
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      goToSlide(0); // 리사이즈 시 첫 슬라이드로
-    }, 250);
-  });
-
-  // 터치 스와이프 지원 (모바일)
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  carouselTrack.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  carouselTrack.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-      // 왼쪽으로 스와이프
-      goToSlide(currentSlide + 1);
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      // 오른쪽으로 스와이프
-      goToSlide(currentSlide - 1);
-    }
-  }
-
-</script>
+<script src="/js/8_tomato_lab_test.js"></script>
 
 </body>
 </html>

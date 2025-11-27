@@ -10,6 +10,51 @@
   const params = new URLSearchParams(window.location.search);
   const currentId = params.get("id") || DEFAULT_ID;
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  function normalizeStatus(status) {
+    const val = (status || "").toString().toLowerCase();
+    if (["open", "closed", "finished"].includes(val)) return val;
+    return null;
+  }
+
+  function getStatus(startStr, endStr) {
+    if (!startStr && !endStr) return null;
+    const start = startStr ? new Date(startStr) : null;
+    const end = endStr ? new Date(endStr) : null;
+    if (start) start.setHours(0, 0, 0, 0);
+    if (end) end.setHours(0, 0, 0, 0);
+
+    if (end && end < today) return "past";
+    if (start && start > today) return "ongoing";
+    if (start && today >= start && (!end || today <= end)) return "ongoing";
+    return null;
+  }
+
+  function getListStatus(event) {
+    if (!event) return null;
+    const explicit = normalizeStatus(event.status);
+    if (explicit === "finished") return "past";
+    if (explicit === "open" || explicit === "closed") return "ongoing";
+    return getStatus(event.startDate, event.endDate);
+  }
+
+  function setSubnavActive(status) {
+    if (!status) return;
+    const tabs = document.querySelectorAll(".page-hero__subnav [data-status]");
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.status === status;
+      const parent = tab.closest("li");
+      if (parent) parent.classList.toggle("is-active", isActive);
+      if (isActive) {
+        tab.setAttribute("aria-current", "page");
+      } else {
+        tab.removeAttribute("aria-current");
+      }
+    });
+  }
+
   Promise.all([fetchJson(LIST_URL), loadApplyDetail(currentId)])
     .then(([listData, applyDetail]) => handleData(listData, applyDetail))
     .catch((err) => {
@@ -67,12 +112,14 @@
 
     const eventData =
       applyDetail || (listItem ? buildFallbackDetail(listItem) : null);
+    const status = getListStatus(listItem);
 
     if (!eventData) {
       showError("해당 이벤트 데이터를 찾을 수 없습니다.");
       return;
     }
 
+    setSubnavActive(status || "ongoing");
     renderEvent(eventData);
     setPager(manifest, eventData.id);
   }
@@ -125,6 +172,7 @@
     setText("apply-meta-title", event.title || "");
     setText("apply-headline", event.headline || event.title || "");
     setText("apply-period", event.applyPeriod || "");
+    renderEventDate(event.eventDate);
     setText("apply-target", event.target || "");
     setText("apply-location", event.location || "-");
     setText("apply-method", event.applyMethod || "");
@@ -135,11 +183,40 @@
     renderPoster();
     bindPosterControls();
 
-    setText("payment-fee", event.payment?.fee || "-");
-    setText("payment-account", event.payment?.account || "-");
+    renderPayment(event.payment);
 
     renderNotices(event.notices);
     renderCTA(event.cta);
+  }
+
+  function renderEventDate(eventDate) {
+    const cell = document.getElementById("apply-event-date");
+    const hasDate = typeof eventDate === "string" && eventDate.trim().length > 0;
+
+    if (cell) cell.textContent = hasDate ? eventDate : "";
+  }
+
+  function renderPayment(payment) {
+    const panel = document.getElementById("payment-panel");
+    const feeCell = document.getElementById("payment-fee");
+    const accountCell = document.getElementById("payment-account");
+
+    const fee = typeof payment?.fee === "string" ? payment.fee.trim() : "";
+    const account = typeof payment?.account === "string" ? payment.account.trim() : "";
+    const hasFee = fee && fee !== "-";
+    const hasAccount = account && account !== "-";
+    const shouldShow = hasFee || hasAccount;
+
+    if (panel) panel.hidden = !shouldShow;
+
+    if (!shouldShow) {
+      if (feeCell) feeCell.textContent = "";
+      if (accountCell) accountCell.textContent = "";
+      return;
+    }
+
+    setText("payment-fee", hasFee ? payment.fee : "-");
+    setText("payment-account", hasAccount ? payment.account : "-");
   }
 
   function renderNotices(notices) {
@@ -285,7 +362,6 @@
 
     if (pager) {
       pager.classList.toggle("pager--single", hasPrev !== hasNext);
-      pager.classList.toggle("pager--next-only", !hasPrev && hasNext);
       pager.classList.toggle("pager--prev-only", hasPrev && !hasNext);
     }
 

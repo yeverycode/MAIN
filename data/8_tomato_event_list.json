@@ -74,7 +74,12 @@
     "endDate": "2025-04-13",
     "image": "https://i.postimg.cc/k59L3Sf1/2025-IPS-bonseon-PPT-001.jpg",
     "link": "#",
-    "bannerImages": []
+    "bannerImages": [],
+    "capacity": 80,
+    "appliedCount": 80,
+    "waitingCount": 12,
+    "waitingAvailable": true,
+    "status": "open"
   },
   {
     "id": 9,
@@ -146,13 +151,14 @@
     "id": 15,
     "title": "AI인의 밤",
     "description": "한 해의 학부 활동을 돌아보고 교류하며 기념하는 연말 대표 행사",
-    "periodText": "신청 기간 : 2025.11.28 ~ 2025.11.28",
+    "periodText": "신청 기간 : 2025.11.28 ~ 2025.12.17",
     "startDate": "2025-11-28",
-    "endDate": "2025-11-28",
+    "endDate": "2025-12-17",
     "image": "https://i.postimg.cc/vTY6JbKL/AI인의밤_초대장.jpg",
     "link": "#",
     "bannerImages": ["https://i.postimg.cc/fyz0GDPd/2025_AI인의_밤_현수막.jpg"],
-        "capacity": 100,
+    "capacity": 100,
+    "appliedCount": 60,
     "waitingAvailable": true,
     "status": "open"
   }

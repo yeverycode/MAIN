@@ -2,10 +2,49 @@
 
 let eventsData = [];
 let bannerIntervalId = null;
+const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
 
 // 오늘 날짜(00:00 기준)
 const today = new Date();
 today.setHours(0, 0, 0, 0);
+
+function pickNumber(...candidates) {
+  for (const value of candidates) {
+    if (Number.isFinite(value)) return value;
+    if (typeof value === "string" && value.trim() !== "" && !Number.isNaN(Number(value))) {
+      return Number(value);
+    }
+  }
+  return null;
+}
+
+function loadApplyState() {
+  try {
+    const raw = localStorage.getItem(APPLY_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (err) {
+    console.warn("apply storage load error", err);
+    return {};
+  }
+}
+
+function mergeStoredCounts(event) {
+  if (!event?.id) return event;
+  const state = loadApplyState();
+  const stored = state[String(event.id)];
+  if (!stored) return event;
+
+  const mergedApplied = pickNumber(stored.applied, stored.appliedCount, event.appliedCount);
+  const mergedCapacity = pickNumber(stored.capacity, event.capacity);
+  const mergedWaiting = pickNumber(stored.waitingCount, event.waitingCount);
+
+  return {
+    ...event,
+    appliedCount: mergedApplied ?? event.appliedCount,
+    capacity: mergedCapacity ?? event.capacity,
+    waitingCount: mergedWaiting ?? event.waitingCount
+  };
+}
 
 // 진행중 / 지난 상태 계산
 function normalizeStatus(status) {
@@ -38,46 +77,67 @@ function getDDayLabel(startStr, endStr) {
 }
 
 function getListStatus(event) {
+  const calc = getStatus(event.startDate, event.endDate);
+  if (calc === "past") return "past"; // 날짜가 지나면 무조건 종료
+
   const explicit = normalizeStatus(event.status);
   if (explicit === "finished") return "past";
   if (explicit === "open" || explicit === "closed") return "ongoing";
-  return getStatus(event.startDate, event.endDate);
+
+  return calc;
 }
 
-function getStatusLabel(event) {
+function getStatusLabel(event, listStatus) {
+  if (listStatus === "past") return "종료";
+
   const explicit = normalizeStatus(event.status);
   if (explicit === "open") return "접수 중";
   if (explicit === "closed") return "마감";
   if (explicit === "finished") return "종료";
-  const calc = getStatus(event.startDate, event.endDate);
-  return calc === "ongoing" ? "진행" : "종료";
+  return "진행";
 }
 
-function getCapacityLabel(event, status) {
-  if (status !== "ongoing") return "";
-  const { capacity, waitingAvailable } = event || {};
+function getCapacityInfo(event, status) {
+  if (status !== "ongoing") return null;
+
+  const { capacity, appliedCount, waitingCount, waitingAvailable } = event || {};
+  const total = Number.isFinite(capacity) ? capacity : null;
+  const applied = Number.isFinite(appliedCount) ? appliedCount : null;
+  const waiting = Number.isFinite(waitingCount) ? waitingCount : null;
+
+  // 정원과 현재 신청 인원이 모두 있으면 60/100 형태로 표시
+  if (total !== null && applied !== null) {
+    if (applied < total) {
+      return {
+        label: `${applied}/${total} 신청`,
+        modifier: "",
+      };
+    }
+
+    const waitingLabel =
+      waiting !== null
+        ? ` · 대기 ${waiting}명`
+        : waitingAvailable === true
+        ? " · 대기 가능"
+        : "";
+
+    return {
+      label: `정원 ${total}명 마감${waitingLabel}`,
+      modifier: "event-card__capacity--full",
+    };
+  }
+
+  // 기존 데이터 호환: 총원만 있거나 대기 가능 여부만 있는 경우
   const parts = [];
+  if (total !== null) parts.push(`선착순 ${total}명 신청`);
+  if (waitingAvailable === true) parts.push("대기 가능");
 
-  const parsedCapacity =
-    typeof capacity === "number" && Number.isFinite(capacity)
-      ? capacity
-      : typeof capacity === "string" && capacity.trim()
-      ? capacity.trim()
-      : null;
+  if (parts.length === 0) return null;
 
-  if (parsedCapacity !== null) {
-    const capacityText =
-      typeof parsedCapacity === "number"
-        ? `선착순 ${parsedCapacity}명 신청`
-        : `${parsedCapacity} 신청`;
-    parts.push(capacityText);
-  }
-
-  if (waitingAvailable === true) {
-    parts.push("대기 가능");
-  }
-
-  return parts.join(" / ");
+  return {
+    label: parts.join(" / "),
+    modifier: "",
+  };
 }
 
 function getDetailHref(event) {
@@ -142,6 +202,13 @@ function startBannerRotation(status) {
 
   const applyFrame = () => {
     const current = items[index];
+    const handleLoad = () => {
+      imageEl.classList.remove("is-changing");
+      imageEl.removeEventListener("load", handleLoad);
+    };
+
+    imageEl.classList.add("is-changing");
+    imageEl.addEventListener("load", handleLoad);
     imageEl.src = current.src;
     imageEl.alt = `${current.title} 배너`;
     currentHref = current.href || "#";
@@ -170,13 +237,33 @@ function startBannerRotation(status) {
 function createEventCard(event) {
   const status = getListStatus(event);
   const dday = getDDayLabel(event.startDate, event.endDate);
-  const statusLabel = getStatusLabel(event);
-  const capacityLabel = getCapacityLabel(event, status);
-  const showStatus = status !== "past";
+  const statusLabel = getStatusLabel(event, status);
+  const capacityInfo = getCapacityInfo(event, status);
+  const isPast = status === "past";
+  const showStatus = !isPast;
   const detailHref = getDetailHref(event);
   const imageSrc =
     event.image ||
     "https://placehold.co/600x400/0B50D0/FFFFFF?text=EVENT";
+
+  const metaParts = [];
+
+  if (isPast) {
+    metaParts.push(
+      `<span class="event-card__status event-card__status--past">종료</span>`
+    );
+  } else {
+    metaParts.push(`<span class="event-card__period">${event.periodText}</span>`);
+    metaParts.push(`<span class="event-card__dday">${dday}</span>`);
+    if (showStatus) {
+      metaParts.push(`<span class="event-card__status">${statusLabel}</span>`);
+    }
+    if (capacityInfo?.label) {
+      metaParts.push(
+        `<span class="event-card__capacity${capacityInfo.modifier ? ` ${capacityInfo.modifier}` : ""}">${capacityInfo.label}</span>`
+      );
+    }
+  }
 
   const article = document.createElement("article");
   article.className = "event-card";
@@ -190,12 +277,7 @@ function createEventCard(event) {
       <div class="event-card__body">
         <h3 class="event-card__title">${event.title}</h3>
         <p class="event-card__desc">${event.description}</p>
-        <div class="event-card__meta">
-          <span class="event-card__period">${event.periodText}</span>
-          <span class="event-card__dday">${dday}</span>
-          ${showStatus ? `<span class="event-card__status">${statusLabel}</span>` : ""}
-          ${capacityLabel ? `<span class="event-card__capacity">${capacityLabel}</span>` : ""}
-        </div>
+        <div class="event-card__meta">${metaParts.join("")}</div>
       </div>
     </a>
   `;
@@ -262,7 +344,8 @@ async function loadEvents() {
   try {
     const res = await fetch("/data/8_tomato_event_list.json");
     if (!res.ok) throw new Error("이벤트 데이터를 불러오지 못했습니다.");
-    eventsData = await res.json();
+    const data = await res.json();
+    eventsData = Array.isArray(data) ? data.map((ev) => mergeStoredCounts(ev)) : [];
   } catch (err) {
     console.error(err);
     const listEl = document.getElementById("eventList");

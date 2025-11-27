@@ -1,0 +1,33 @@
+{
+  "id": "12",
+  "title": "2025 인공지능공학부 진로 콘서트",
+  "headline": "2025 인공지능공학부 진로 콘서트 안내",
+
+  "eventDate": "2025.09.29 (월) 18:00 ~ 21:00",
+  "applyPeriod": "2025.09.16 (월) 12:00 ~",
+  "target": "숙명여대 인공지능공학부 및 IT공학전공 재/휴학생",
+  "location": "명신관 505호 / Zoom 동시 진행",
+
+  "applyMethod": "현장 및 온라인 참여 (신청자 대상 링크 제공)",
+
+  "posterImages": ["https://i.postimg.cc/bJ6QNX8Q/001.png","https://i.postimg.cc/2yVn1H8Q/002.png","https://i.postimg.cc/7hfS5BY7/003.png","https://i.postimg.cc/BbX2jhQc/004.png","https://i.postimg.cc/GtHv4Mhv/005.png"],
+  "posterAlt": "진로 콘서트 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "행사 장소가 미래창조관 101호에서 명신관 505호로 변경되었습니다.",
+    "Zoom 참여는 17:50 이후부터 입장 가능합니다.",
+    "1부: 강지우 교수님 특강 (학년별 진로 방향성, 졸업 후 진로, 질의응답)",
+    "2부: 인공지능공학부 선배들과의 대화 및 질의응답",
+    "신청 후 불참 시 다음 학부 행사 (AI인의 밤) 참여 제한 1회 적용됩니다. (인공지능공학부·IT공학 제1전공생)"
+  ],
+
+  "cta": {
+    "label": "비대면 참여(ZOOM)",
+    "link": "https://sookmyung-ac-kr.zoom.us/j/82332904966?pwd=sxMnYDX66f3CAwpmlFWXB87mLfvgqp.1"
+  }
+}

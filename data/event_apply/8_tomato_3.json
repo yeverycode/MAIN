@@ -1,0 +1,39 @@
+{
+  "id": "3",
+  "title": "학부연구실 설명회",
+  "headline": "학부연구실 설명회 신청 안내",
+
+  "eventDate": "2025.03.27 (목) 18:00 ~ 20:00",
+  "applyPeriod": "2025.03.19 (수) ~ 2025.03.24 (월) 18:00",
+  "target": "인공지능공학부 / IT공학전공 연구실에 관심 있는 숙명여대 학생 누구나",
+  "location": "명신관 702호 / 실시간 Zoom 송출",
+
+  "applyMethod": "신청폼 제출",
+
+  "posterImages": [
+    "https://i.postimg.cc/3Ndp6yg4/001.png",
+    "https://i.postimg.cc/j2LN9WzP/002.png",
+    "https://i.postimg.cc/RhNf83cw/003.png",
+    "https://i.postimg.cc/QCw5rXb9/004.png",
+    "https://i.postimg.cc/zv6W1Jjy/005.png"
+  ],
+  "posterAlt": "학부연구실 설명회 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "설명회는 정시에 시작되므로 10분 전 입장을 권장합니다.",
+    "교수님별 발표 시간이 정해져 있어 중간 입·퇴장은 제한됩니다.",
+    "해당 행사는 인공지능공학부 / IT공학부 대학원 설명회와 함께 진행됩니다.",
+    "참여 연구실이 모두 학부연구생을 모집하는 것은 아니며, 정보 제공이 본 행사의 목적입니다.",
+    "행사 관련 자료는 신청자에게 추후 공유될 예정입니다."
+  ],
+
+  "cta": {
+    "label": "신청하기",
+    "link": "https://forms.gle/9WL5AixbAM9b6zjH7"
+  }
+}

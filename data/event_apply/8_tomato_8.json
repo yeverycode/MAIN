@@ -1,0 +1,35 @@
+{
+  "id": "8",
+  "title": "2025 제5회 IPS 대회",
+  "headline": "2025 제5회 IPS 대회 신청 안내",
+
+  "eventDate": "2025.05.30 (금)",
+  "applyPeriod": "2025.04.04 (금) 12:00 ~ 2025.04.13 (일) 20:00",
+  "target": "인공지능공학부 제1전공 25-1 재학생(휴학생, 수료생 제외)",
+  "location": "백주년기념관 삼성컨벤션센터",  
+
+  "applyMethod": "신청폼 제출 + 예선 기획안 제출",
+
+  "posterImages": [
+    "https://i.postimg.cc/cHvpXSDL/jemog-eul-iblyeoghaejuseyo-001.png","https://i.postimg.cc/vZzwmX1v/001.png","https://i.postimg.cc/zGjYfpLP/002.png"
+  ],
+  "posterAlt": "2025 제5회 IPS 대회 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "대회 참가 자격은 인공지능공학부 제1전공 25-1 재학생으로 한정됩니다.",
+    "팀 구성은 개인 또는 2~5인 단위로 가능합니다.",
+    "대회 주제는 ‘커스터마이징 인공지능 모델 기반 서비스’입니다.",
+    "예선 기획안 제출을 포함해야 신청이 완료됩니다.",
+    "본선 진출팀 발표는 안내된 공지를 통해 공유됩니다."
+  ],
+
+  "cta": {
+    "label": "신청하기",
+    "link": "#"
+  }
+}

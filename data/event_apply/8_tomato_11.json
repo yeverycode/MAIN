@@ -1,24 +1,32 @@
 {
   "id": "11",
   "title": "공과대학 10주년 학술제",
-  "headline": "공과대학 10주년 학술제 참여 안내",
-  "applyPeriod": "2025.09.01 (월) 09:00 ~ 09.08 (월) 18:00",
-  "target": "공과대학 소속 학부생 및 행사 참가자",
-  "location": "숙명여자대학교 제2캠퍼스 눈꽃광장홀",
-  "applyMethod": "온라인 사전등록 후 현장 QR 체크인",
-  "posterImage": "https://i.postimg.cc/sxgPWX32/gongdaehagsulje-1.jpg",
+  "headline": "공과대학 10주년 학술제 인공지능공학부 부스 안내",
+
+  "eventDate": "2025.09.11 (목) 11:00 ~ 17:00",
+  "applyPeriod": "-",
+  "target": "숙명여대 학우 누구나 (전공/학번 무관)",
+  "location": "제2캠퍼스 눈꽃광장홀 야외 부스",
+
+  "applyMethod": "현장 참여",
+
+  "posterImages": ["https://i.postimg.cc/Vk6Pdnj0/001.png","https://i.postimg.cc/QCsRsTXz/002.png","https://i.postimg.cc/d3vzvyqz/003.png","https://i.postimg.cc/8cDqD6pg/004.png"],
   "posterAlt": "공과대학 10주년 학술제 포스터",
+
   "payment": {
-    "fee": "무료",
-    "account": "사전등록 후 행사장 입장 가능"
+    "fee": "-",
+    "account": "-"
   },
+
   "notices": [
-    "부스 체험은 사전등록자 우선으로 운영됩니다.",
-    "체험 완료 후 기념품 수령 시 학생증 또는 신분증 확인이 필요합니다.",
-    "혼잡 시간대(11:30~14:00)에는 대기열이 길어질 수 있습니다."
+    "모든 부스 체험은 인공지능공학부 학생회가 직접 기획 및 개발한 웹사이트를 기반으로 운영됩니다.",
+    "체험 완료 후 기념품은 소진 시까지 제공됩니다.",
+    "학술제 운영 시간 중 자유롭게 방문하여 참여할 수 있습니다.",
+    "혼잡 시간대(11:30~14:00)에는 대기 시간이 길어질 수 있습니다."
   ],
+
   "cta": {
-    "label": "사전등록",
+    "label": "-",
     "link": "#"
   }
 }

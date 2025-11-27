@@ -78,12 +78,6 @@
   <div class="apply-detail__inner">
 
     <section class="apply-detail__header" aria-label="신청 안내 상단 요약">
-      <div class="apply-detail__header-top-line" aria-hidden="true"></div>
-      <div class="apply-detail__meta-row">
-        <div class="apply-detail__meta-label">제목</div>
-        <div class="apply-detail__meta-value" id="apply-meta-title"></div>
-      </div>
-      <div class="apply-detail__header-bottom-line" aria-hidden="true"></div>
     </section>
 
     <section class="apply-detail__headline" aria-label="신청 안내 제목">
@@ -97,14 +91,14 @@
           <tr>
             <th scope="row">신청 기간</th>
             <td id="apply-period"></td>
-            <th scope="row">장소</th>
-            <td id="apply-location"></td>
+            <th scope="row">행사 일시</th>
+            <td id="apply-event-date"></td>
           </tr>
           <tr>
             <th scope="row">참여 대상</th>
             <td id="apply-target"></td>
-            <th scope="row">신청 방법</th>
-            <td id="apply-method"></td>
+            <th scope="row">장소</th>
+            <td id="apply-location"></td>
           </tr>
         </tbody>
       </table>
@@ -127,7 +121,7 @@
       </figure>
 
       <div class="apply-detail__info-panels">
-        <article class="apply-panel" aria-label="입금 정보">
+        <article class="apply-panel" id="payment-panel" aria-label="입금 정보">
           <h2 class="apply-panel__title">입금 정보</h2>
           <div class="apply-panel__line--bold" aria-hidden="true"></div>
           <table class="apply-table apply-panel__list">
@@ -154,36 +148,6 @@
 
     <div class="apply-detail__cta">
       <a id="apply-cta-button" class="apply-detail__cta-button" href="#">신청하기</a>
-    </div>
-
-    <nav class="apply-detail__pager" aria-label="다른 행사 신청 안내로 이동">
-      <a href="#" class="apply-detail__pager-link" id="apply-prev-link">
-        <span class="apply-detail__pager-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false">
-            <path d="M15.5 4.5 8 12l7.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="apply-detail__pager-label">이전글</span>
-        <span class="apply-detail__pager-title" id="apply-prev-title">이전 글이 없습니다.</span>
-      </a>
-
-      <div class="apply-detail__pager-divider" aria-hidden="true"></div>
-
-      <a href="#" class="apply-detail__pager-link apply-detail__pager-link--right" id="apply-next-link">
-        <span class="apply-detail__pager-label">다음글</span>
-        <span class="apply-detail__pager-title" id="apply-next-title">다음 글이 없습니다.</span>
-        <span class="apply-detail__pager-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false">
-            <path d="M8.5 4.5 16 12l-7.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </a>
-    </nav>
-
-    <div class="apply-detail__button-wrap">
-      <a href="/pages/event/8_tomato_event_list.html#ongoing" class="apply-detail__list-button">
-        목록
-      </a>
     </div>
   </div>
 </main>

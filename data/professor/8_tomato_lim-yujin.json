@@ -1,14 +1,389 @@
 {
   "id": "lim-yujin",
   "name": "임유진",
-  "role": "",
+  "role": "교수",
   "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28060_1742617332000.do",
   "phone": "02-2077-7305",
   "email": "yujin91@sm.ac.kr",
   "office": "새힘관 602호",
 
-  "interests": [],
-  "history": [],
+  "interests": [
+    "에이젠틱 AI (AI 에이전트)",
+    "강화학습",
+    "인공지능"
+  ],
+
+  "history": [
+    {
+      "period": "2016.03 ~ ",
+      "text": "숙명여자대학교 인공지능공학부 교수"
+    },
+    {
+      "period": "2004.09 ~ 2016.02",
+      "text": "수원대학교 정보미디어학과 교수"
+    },
+    {
+      "period": "2003.10 ~ 2004.08",
+      "text": "삼성종합기술원 전문연구원"
+    },
+    {
+      "period": "2002.09 ~ 2003.08",
+      "text": "캘리포니아대학교 박사후연구원"
+    }
+  ],
+
   "courses": [],
-  "publications": []
+
+  "publications": [
+    {
+      "title": "Optimizing Energy Storage Systems Using Deep Reinforcement Learning in Smart Grids",
+      "date": "2025.04",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Optimizing Traffic Signal Control Using LLM-Driven Reward Weight Adjustment in Reinforcement Learning",
+      "date": "2025.03",
+      "publisher": "Korea Information Processing Soc"
+    },
+    {
+      "title": "Deep Reinforcement Learning-Based Task Partitioning Ratio Decision Mechanism in High-Speed Rail Environments with Mobile Edge Computing Server",
+      "date": "2025.01",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Client Selection for Federated Learning in Vehicular Edge Computing: A Deep Reinforcement Learning Approach",
+      "date": "2024.09",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "추천 시스템에서의 선형 모델과 비선형 모델의 성능 비교 연구",
+      "date": "2024.08",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "지진으로 인한 건물 손상 예측 모델의 효율성 분석",
+      "date": "2024.05",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Computation Offloading with Resource Allocation Based on DDPG in MEC",
+      "date": "2024.04",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Routing Control Optimization for Autonomous Vehicles in Mixed Traffic Flow Based on Deep Reinforcement Learning",
+      "date": "2024.03",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Real-Time Trajectory Control for Vehicle based on Deep Reinforcement Learning",
+      "date": "2024.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "딥러닝기반 감정인식에서 데이터 불균형이 미치는 영향 분석",
+      "date": "2023.08",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Federated-Learning-Based Energy-Efficient Load Balancing for UAV-Enabled MEC System in Vehicular Networks",
+      "date": "2023.03",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Deep Reinforcement Learning for Edge Caching with Mobility Prediction in Vehicular Networks",
+      "date": "2023.02",
+      "publisher": "Multidisciplinary Digital Publishing Institute (MDPI)"
+    },
+    {
+      "title": "Bio-Inspired Sleep Control for Improving the Energy Efficiency of a MEC System",
+      "date": "2023.02",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Federated Deep Reinforcement Learning Based Task Offloading with Power Control in Vehicular Edge Computing",
+      "date": "2022.12",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Deep Reinforcement Learning-Based Edge Caching in Heterogeneous Networks",
+      "date": "2022.12",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "차량 엣지 컴퓨팅 네트워크에서 로드 밸런싱을 위한UAV-MEC 오프로딩 및 마이그레이션 결정 알고리즘",
+      "date": "2022.12",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Online Service-Time Allocation Strategy for Balancing Energy Consumption and Queuing Delay of a MEC Server",
+      "date": "2022.05",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "MEC 시스템에서 태스크 파티셔닝 기법의 성능 비교",
+      "date": "2022.05",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Task Migration with Partitioning for Load Balancing in Collaborative Edge Computing",
+      "date": "2022.02",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "이종 셀룰러 네트워크 환경에서사용자 이동성을 고려한 엣지 캐싱 기법",
+      "date": "2022.02",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "A Cluster-Based Optimal Computation Offloading Decision Mechanism Using RL in the IIoT Field",
+      "date": "2022.01",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Intelligent Traffic Signal Phase Distribution System Using Deep Q-Network",
+      "date": "2022.01",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "협력적인 차량 엣지 컴퓨팅에서의 태스크 마이그레이션",
+      "date": "2021.12",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Deep Reinforcement Learning Based Resource Allocation with Radio Remote Head Grouping and Vehicle Clustering in 5G Vehicular Networks",
+      "date": "2021.12",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Traffic Signal Time Optimization Based on Deep Q-Network",
+      "date": "2021.11",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "산업용 IoT 환경에서 MEC 기반의에너지 효율적인 오프로딩 결정 알고리즘",
+      "date": "2021.11",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "Task Partitioning for Migration with Collaborative Edge Computing in Vehicular Networks",
+      "date": "2021.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Intelligent Traffic Signal Control System using Deep Q-network",
+      "date": "2021.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Optimal Task Offloading Decision in IIoT Enviornments Using Reinforcement Learning",
+      "date": "2021.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Balancing Loads among MEC Servers by Task Redirection to Enhance the Resource Efficiency of MEC Systems",
+      "date": "2021.08",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Task Migration Based on Reinforcement Learning in Vehicular Edge Computing",
+      "date": "2021.05",
+      "publisher": "Hindawi Limited"
+    },
+    {
+      "title": "모바일 엣지 컴퓨팅 환경에서 종속 태스크를 위한 다중 목적 계산 오프로딩 알고리즘",
+      "date": "2021.02",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "차량 엣지 컴퓨팅 환경에서 강화학습 기반의 서비스 마이그레이션",
+      "date": "2021.02",
+      "publisher": "한국정보과학회"
+    },
+    {
+      "title": "사용자 유사도 기반 Cooperative MEC 콘텐츠 캐싱",
+      "date": "2020.12",
+      "publisher": "한국통신학회"
+    },
+    {
+      "title": "Reinforcement Learning for Energy Optimization with 5G Communications in Vehicular Social Networks",
+      "date": "2020.04",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Traffic signal control for smart cities using reinforcement learning",
+      "date": "2020.03",
+      "publisher": "ELSEVIER"
+    },
+    {
+      "title": "다중 교차로환경에서 강화학습기반 분산 교통신호 제어",
+      "date": "2020.02",
+      "publisher": "한국통신학회"
+    },
+    {
+      "title": "초밀집 모바일 네트워크에서 강화학습기반 기지국 전력제어 기법",
+      "date": "2020.02",
+      "publisher": "한국통신학회"
+    },
+    {
+      "title": "Reinforcement Learning for Traffic Signal Timing Optimization",
+      "date": "2020.01",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Adaptive Power Control using Reinforcement Learning in 5G Mobile Networks",
+      "date": "2020.01",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Energy Efficient Wireless Networks",
+      "date": "2019.06",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "Analysis of Electric Vehicle Route Optimization",
+      "date": "2019.04",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "A Markov-Based Prediction Algorithm for User Mobility at Heterogeneous Cloud Radio Access Network",
+      "date": "2019.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Energy-Effective Power Control Algorithm with Mobility Prediction for 5G Heterogeneous Cloud Radio Access Network",
+      "date": "2018.09",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Ant Colony Optimized Routing Strategy for Electric Vehicles",
+      "date": "2018.09",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "Random-Access Control Method for MTC in an LTE System Inspired by the Minority Game",
+      "date": "2018.09",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "기지국 상태 조정을 위한 강화 학습 기법 분석",
+      "date": "2018.02",
+      "publisher": "사단법인 인문사회과학기술융합학회"
+    },
+    {
+      "title": "비 신호 교차로에서 CIM을 위한 지능형 차량 제어기법 분석",
+      "date": "2018.02",
+      "publisher": "사단법인 인문사회과학기술융합학회"
+    },
+    {
+      "title": "Overload Control Technique for MTC Communications in Wireless Cellular Networks",
+      "date": "2018.01",
+      "publisher": "LIBRARY & INFORMATION CENTER, NAT DONG HWA UNIV"
+    },
+    {
+      "title": "Efficient Data Forwarding for Machine Type Communications in Internet of Things Networks",
+      "date": "2017.12",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "Performance analysis of energy consumption in machine-type communication",
+      "date": "2017.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Challenges for the Future Mobile Communication Systems",
+      "date": "2017.05",
+      "publisher": "HINDAWI LTD"
+    },
+    {
+      "title": "A Reinforcement Learning Approach to Access Management in Wireless Cellular Networks",
+      "date": "2017.05",
+      "publisher": "WILEY-HINDAWI"
+    },
+    {
+      "title": "LTE-A 네트워크 환경에서 MTC를 위한 효율적인 접근관리 기법",
+      "date": "2017.01",
+      "publisher": "사단법인 인문사회과학기술융합학회"
+    },
+    {
+      "title": "Access control of MTC devices using reinforcement learning approach",
+      "date": "2017.01",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Optimal Load Shedding for Maximizing Satisfaction in an Islanded Microgrid",
+      "date": "2017.01",
+      "publisher": "MDPI AG"
+    },
+    {
+      "title": "WSN-Based Height Estimation of Moving Object in Surveillance Systems",
+      "date": "2016.10",
+      "publisher": "HINDAWI LTD"
+    },
+    {
+      "title": "Adaptive Access Class Barring Method for Machine Generated Communications",
+      "date": "2016.08",
+      "publisher": "HINDAWI LTD"
+    },
+    {
+      "title": "Device-to-device communications in wireless sensor networks",
+      "date": "2016.08",
+      "publisher": "SAGE PUBLICATIONS INC"
+    },
+    {
+      "title": "Optimization Approach for Resource Allocation on Cloud Computing for IoT",
+      "date": "2016.03",
+      "publisher": "Hindawi Publishing Corporation"
+    },
+    {
+      "title": "TE-Advanced 네트워크에서 자원관리 기법 성능 분석",
+      "date": "2016.01",
+      "publisher": "사단법인 인문사회과학기술융합학회"
+    },
+    {
+      "title": "클라우드 컴퓨팅을 위한 VM 스팟 인스턴스 입찰 최적화 전략",
+      "date": "2015.09",
+      "publisher": "한국통신학회"
+    },
+    {
+      "title": "Design of SLA-based VM Provisioning Mechanism for Cloud Computing",
+      "date": "2015.09",
+      "publisher": "International Information Institute"
+    },
+    {
+      "title": "Survey of Sensor Placement Methods for Structural Health Monitoring",
+      "date": "2015.08",
+      "publisher": "SERSC"
+    },
+    {
+      "title": "Networking Strategies for Structural Health Monitoring in Wireless Sensor Networks",
+      "date": "2015.06",
+      "publisher": "SERSC"
+    },
+    {
+      "title": "Reliable and Swift Message Broadcast Method in Vehicular Ad Hoc Networks",
+      "date": "2015.05",
+      "publisher": "HINDAWI PUBLISHING CORPORATION"
+    },
+    {
+      "title": "클라우드 컴퓨팅 환경에서 강화학습기반 자원할당 기법",
+      "date": "2015.04",
+      "publisher": "한국통신학회"
+    },
+    {
+      "title": "클라우드 환경에서 기대 값 기반의 동적 자원 예측 기법",
+      "date": "2015.03",
+      "publisher": "한국정보처리학회"
+    },
+    {
+      "title": "무선 센서 네트워크 환경에서 3차원 근사 위치추적 기법",
+      "date": "2014.09",
+      "publisher": "한국통신학회"
+    },
+    {
+      "title": "Design of Cost Function for VM Allocation in Cloud Computing",
+      "date": "2014.08",
+      "publisher": "SERSC"
+    }
+  ]
 }

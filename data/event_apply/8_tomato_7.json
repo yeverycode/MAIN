@@ -1,0 +1,33 @@
+{
+  "id": "7",
+  "title": "전공 박람회",
+  "headline": "전공 박람회 신청 안내",
+
+  "eventDate": "2025.05.19 (월) ~ 2025.05.20 (화) 오전 10시 ~ 오후 6시",
+  "applyPeriod": "2025.05.19 (월) ~ 2025.05.20 (화)",
+  "target": "인공지능공학부 재학생",
+  "location": "제2캠퍼스 눈꽃광장홀 C7 부스",
+
+  "applyMethod": "현장 참여",
+  
+  "posterImages": [
+    "https://i.postimg.cc/9QNwsPmf/001.jpg","https://i.postimg.cc/wByRztM6/002.jpg","https://i.postimg.cc/5tYQJHy6/003.jpg","https://i.postimg.cc/7LGJ4Ch5/004.jpg","https://i.postimg.cc/KYk3bKjM/005.jpg","https://i.postimg.cc/TPL5xy1m/006.jpg","https://i.postimg.cc/XvGBWZqK/007.jpg","https://i.postimg.cc/JhDH8y05/008.jpg","https://i.postimg.cc/JhDH8y0q/009.jpg","https://i.postimg.cc/W4BF12qZ/010.jpg","https://i.postimg.cc/yNMg8V3m/011.jpg","https://i.postimg.cc/CK3BxFnH/012.jpg","https://i.postimg.cc/LscY8HgV/013.jpg","https://i.postimg.cc/Dz9Jw24p/014.jpg","https://i.postimg.cc/R0k6ZMJD/015.jpg","https://i.postimg.cc/CK3BxFnX/016.jpg"
+  ],
+  "posterAlt": "전공 박람회 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "행사 운영 시간 내 자유롭게 방문 및 참여할 수 있습니다.",
+    "부스별 안내 사항은 행사 현장에서 별도 공지됩니다.",
+    "준비 중인 프로그램은 당일 상황에 따라 변경될 수 있습니다."
+  ],
+
+  "cta": {
+    "label": "신청하기",
+    "link": "#"
+  }
+}

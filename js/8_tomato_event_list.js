@@ -8,6 +8,12 @@ const today = new Date();
 today.setHours(0, 0, 0, 0);
 
 // 진행중 / 지난 상태 계산
+function normalizeStatus(status) {
+  const val = (status || "").toString().toLowerCase();
+  if (["open", "closed", "finished"].includes(val)) return val;
+  return null;
+}
+
 function getStatus(startStr, endStr) {
   const start = new Date(startStr);
   const end = new Date(endStr);
@@ -31,15 +37,68 @@ function getDDayLabel(startStr, endStr) {
   return "종료";
 }
 
+function getListStatus(event) {
+  const explicit = normalizeStatus(event.status);
+  if (explicit === "finished") return "past";
+  if (explicit === "open" || explicit === "closed") return "ongoing";
+  return getStatus(event.startDate, event.endDate);
+}
+
+function getStatusLabel(event) {
+  const explicit = normalizeStatus(event.status);
+  if (explicit === "open") return "접수 중";
+  if (explicit === "closed") return "마감";
+  if (explicit === "finished") return "종료";
+  const calc = getStatus(event.startDate, event.endDate);
+  return calc === "ongoing" ? "진행" : "종료";
+}
+
+function getCapacityLabel(event, status) {
+  if (status !== "ongoing") return "";
+  const { capacity, waitingAvailable } = event || {};
+  const parts = [];
+
+  const parsedCapacity =
+    typeof capacity === "number" && Number.isFinite(capacity)
+      ? capacity
+      : typeof capacity === "string" && capacity.trim()
+      ? capacity.trim()
+      : null;
+
+  if (parsedCapacity !== null) {
+    const capacityText =
+      typeof parsedCapacity === "number"
+        ? `선착순 ${parsedCapacity}명 신청`
+        : `${parsedCapacity} 신청`;
+    parts.push(capacityText);
+  }
+
+  if (waitingAvailable === true) {
+    parts.push("대기 가능");
+  }
+
+  return parts.join(" / ");
+}
+
+function getDetailHref(event) {
+  return event?.id
+    ? `/pages/event/8_tomato_event_apply.html?id=${event.id}`
+    : event?.link || "#";
+}
+
 // 상태별 배너 이미지 수집
 function getBannerItemsByStatus(status) {
   const items = [];
 
   eventsData.forEach((ev) => {
-    if (getStatus(ev.startDate, ev.endDate) !== status) return;
-    const banners = ev.bannerImages && ev.bannerImages.length
-      ? ev.bannerImages
-      : ev.image
+    if (getListStatus(ev) !== status) return;
+    const hasBannerField = Object.prototype.hasOwnProperty.call(ev, "bannerImages");
+    const banners =
+      Array.isArray(ev.bannerImages) && ev.bannerImages.length
+        ? ev.bannerImages
+        : hasBannerField
+        ? []
+        : ev.image
         ? [ev.image]
         : [];
 
@@ -47,6 +106,7 @@ function getBannerItemsByStatus(status) {
       items.push({
         src,
         title: ev.title || "이벤트",
+        href: getDetailHref(ev),
       });
     });
   });
@@ -78,15 +138,22 @@ function startBannerRotation(status) {
 
   const items = getBannerItemsByStatus(status);
   let index = 0;
+  let currentHref = items[0]?.href || "#";
 
   const applyFrame = () => {
     const current = items[index];
     imageEl.src = current.src;
     imageEl.alt = `${current.title} 배너`;
+    currentHref = current.href || "#";
     renderBannerDots(dotsEl, items.length, index);
   };
 
   applyFrame();
+
+  imageEl.style.cursor = "pointer";
+  imageEl.onclick = () => {
+    if (currentHref) window.location.href = currentHref;
+  };
 
   if (bannerIntervalId) clearInterval(bannerIntervalId);
   bannerIntervalId = null;
@@ -101,11 +168,12 @@ function startBannerRotation(status) {
 
 // 카드 DOM 생성
 function createEventCard(event) {
-  const status = getStatus(event.startDate, event.endDate);
+  const status = getListStatus(event);
   const dday = getDDayLabel(event.startDate, event.endDate);
-  const detailHref = event.id
-    ? `/pages/event/8_tomato_event_apply.html?id=${event.id}`
-    : event.link || "#";
+  const statusLabel = getStatusLabel(event);
+  const capacityLabel = getCapacityLabel(event, status);
+  const showStatus = status !== "past";
+  const detailHref = getDetailHref(event);
   const imageSrc =
     event.image ||
     "https://placehold.co/600x400/0B50D0/FFFFFF?text=EVENT";
@@ -125,6 +193,8 @@ function createEventCard(event) {
         <div class="event-card__meta">
           <span class="event-card__period">${event.periodText}</span>
           <span class="event-card__dday">${dday}</span>
+          ${showStatus ? `<span class="event-card__status">${statusLabel}</span>` : ""}
+          ${capacityLabel ? `<span class="event-card__capacity">${capacityLabel}</span>` : ""}
         </div>
       </div>
     </a>
@@ -139,7 +209,7 @@ function renderEvents(filterStatus = "ongoing") {
   listEl.innerHTML = "";
 
   const filtered = eventsData.filter(
-    (ev) => getStatus(ev.startDate, ev.endDate) === filterStatus
+    (ev) => getListStatus(ev) === filterStatus
   );
 
   if (filtered.length === 0) {
@@ -207,6 +277,12 @@ async function loadEvents() {
 function setupStatusTabs(defaultStatus = "ongoing") {
   const tabs = document.querySelectorAll(".page-hero__subnav [data-status]");
 
+  const parseHashStatus = () => {
+    const hash = (window.location.hash || "").replace("#", "");
+    if (hash === "past" || hash === "ongoing") return hash;
+    return null;
+  };
+
   const activate = (status) => {
     tabs.forEach((tab) => {
       const isActive = tab.dataset.status === status;
@@ -226,6 +302,11 @@ function setupStatusTabs(defaultStatus = "ongoing") {
 
   activate(defaultStatus);
 
+  window.addEventListener("hashchange", () => {
+    const hashStatus = parseHashStatus();
+    if (hashStatus) activate(hashStatus);
+  });
+
   tabs.forEach((tab) => {
     tab.addEventListener("click", (e) => {
       e.preventDefault();
@@ -240,7 +321,7 @@ function getDefaultStatus() {
   const hash = (window.location.hash || "").replace("#", "");
   if (hash === "past" || hash === "ongoing") return hash;
   const hasOngoing = eventsData.some(
-    (ev) => getStatus(ev.startDate, ev.endDate) === "ongoing"
+    (ev) => getListStatus(ev) === "ongoing"
   );
   return hasOngoing ? "ongoing" : "past";
 }

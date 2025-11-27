@@ -3,15 +3,109 @@
   const APPLY_DETAIL_BASE = "/data/event_apply";
   const LIST_URL = "/data/8_tomato_event_list.json";
   const DEFAULT_ID = "10";
+  const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
   let posterImages = [];
   let posterIndex = 0;
   let posterAlt = "";
+  let currentEvent = null;
 
   const params = new URLSearchParams(window.location.search);
   const currentId = params.get("id") || DEFAULT_ID;
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
+  function pickNumber(...candidates) {
+    for (const value of candidates) {
+      if (Number.isFinite(value)) return value;
+      if (typeof value === "string" && value.trim() !== "" && !Number.isNaN(Number(value))) {
+        return Number(value);
+      }
+    }
+    return null;
+  }
+
+  function loadApplyState() {
+    try {
+      const raw = localStorage.getItem(APPLY_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (err) {
+      console.warn("apply storage load error", err);
+      return {};
+    }
+  }
+
+  function saveApplyState(state) {
+    try {
+      localStorage.setItem(APPLY_STORAGE_KEY, JSON.stringify(state));
+    } catch (err) {
+      console.warn("apply storage save error", err);
+    }
+  }
+
+  function getStoredCounts(id) {
+    const state = loadApplyState();
+    return state?.[String(id)] || null;
+  }
+
+  function mergeStoredCounts(event) {
+    if (!event?.id) return event;
+    const stored = getStoredCounts(event.id);
+    if (!stored) return event;
+
+    const mergedApplied = pickNumber(stored.applied, stored.appliedCount, event.appliedCount);
+    const mergedCapacity = pickNumber(stored.capacity, event.capacity);
+    const mergedWaiting = pickNumber(stored.waitingCount, event.waitingCount);
+
+    return {
+      ...event,
+      appliedCount: mergedApplied ?? event.appliedCount,
+      capacity: mergedCapacity ?? event.capacity,
+      waitingCount: mergedWaiting ?? event.waitingCount
+    };
+  }
+
+  function primeApplyState(listArr) {
+    if (!Array.isArray(listArr) || !listArr.length) return;
+    const state = loadApplyState();
+    let mutated = false;
+
+    listArr.forEach((ev) => {
+      const id = String(ev.id || "");
+      if (!id || state[id]) return;
+      state[id] = {
+        applied: pickNumber(ev.appliedCount),
+        capacity: pickNumber(ev.capacity),
+        waitingCount: pickNumber(ev.waitingCount),
+        waitingAvailable: ev.waitingAvailable === true
+      };
+      mutated = true;
+    });
+
+    if (mutated) saveApplyState(state);
+  }
+
+  function recordApplication(event) {
+    if (!event?.id) return null;
+    const id = String(event.id);
+    const state = loadApplyState();
+    const prev = state[id] || {};
+
+    const baseApplied = pickNumber(prev.applied, prev.appliedCount, event.appliedCount) || 0;
+    const nextApplied = baseApplied + 1;
+
+    const updated = {
+      applied: nextApplied,
+      capacity: pickNumber(prev.capacity, event.capacity),
+      waitingCount: pickNumber(prev.waitingCount, event.waitingCount),
+      waitingAvailable: prev.waitingAvailable ?? event.waitingAvailable === true,
+      updatedAt: new Date().toISOString()
+    };
+
+    state[id] = updated;
+    saveApplyState(state);
+    return updated;
+  }
 
   function normalizeStatus(status) {
     const val = (status || "").toString().toLowerCase();
@@ -34,10 +128,20 @@
 
   function getListStatus(event) {
     if (!event) return null;
+    const calc = getStatus(event.startDate, event.endDate);
+    if (calc === "past") return "past";
+
     const explicit = normalizeStatus(event.status);
     if (explicit === "finished") return "past";
     if (explicit === "open" || explicit === "closed") return "ongoing";
-    return getStatus(event.startDate, event.endDate);
+    return calc;
+  }
+
+  function isClosedEvent(status, event) {
+    const explicit = normalizeStatus(event?.status);
+    if (status === "past") return true;
+    if (explicit === "closed" || explicit === "finished") return true;
+    return false;
   }
 
   function setSubnavActive(status) {
@@ -85,6 +189,7 @@
 
   function handleData(listData, applyDetail) {
     const listArr = Array.isArray(listData) ? listData : [];
+    primeApplyState(listArr);
 
     if (!listArr.length && !applyDetail) {
       showError("준비된 신청 안내가 없습니다.");
@@ -113,15 +218,17 @@
     const eventData =
       applyDetail || (listItem ? buildFallbackDetail(listItem) : null);
     const status = getListStatus(listItem);
+    const mergedEvent = mergeStoredCounts(eventData);
 
-    if (!eventData) {
+    if (!mergedEvent) {
       showError("해당 이벤트 데이터를 찾을 수 없습니다.");
       return;
     }
 
     setSubnavActive(status || "ongoing");
-    renderEvent(eventData);
-    setPager(manifest, eventData.id);
+    currentEvent = mergedEvent;
+    renderEvent(mergedEvent, status);
+    setPager(manifest, mergedEvent.id);
   }
 
   function buildFallbackDetail(item) {
@@ -146,6 +253,11 @@
       target: "인공지능공학부 재학생",
       location: "-",
       applyMethod: "신청폼 제출",
+      capacity: pickNumber(item.capacity),
+      appliedCount: pickNumber(item.appliedCount),
+      waitingCount: pickNumber(item.waitingCount),
+      waitingAvailable: item.waitingAvailable === true,
+      status: item.status,
       posterImage: poster,
       posterAlt: `${title} 포스터`,
       payment: {
@@ -166,7 +278,77 @@
     return start || end || "";
   }
 
-  function renderEvent(event) {
+  function buildCapacityLabel(event) {
+    const total = pickNumber(event?.capacity);
+    const applied = pickNumber(event?.appliedCount);
+    const waiting = pickNumber(event?.waitingCount);
+    const waitingAvailable = event?.waitingAvailable === true;
+
+    if (total !== null && applied !== null) {
+      const isFull = applied >= total;
+      const tail = isFull
+        ? waiting !== null
+          ? ` · 대기 ${waiting}명`
+          : waitingAvailable
+          ? " · 대기 가능"
+          : ""
+        : "";
+
+      return {
+        text: isFull ? `정원 ${total}명 마감${tail}` : `${applied}/${total}`,
+        isFull
+      };
+    }
+
+    if (total !== null) {
+      return { text: `선착순 ${total}명 모집`, isFull: false };
+    }
+
+    if (waitingAvailable) {
+      return { text: "대기 신청 가능", isFull: false };
+    }
+
+    return { text: "", isFull: false };
+  }
+
+  function renderCapacity(event, status) {
+    const valueEl = document.getElementById("apply-capacity-value");
+    const wrap = document.querySelector(".apply-capacity");
+    const isClosed = isClosedEvent(status, event);
+    if (!valueEl || !event) return;
+
+    if (wrap) wrap.classList.toggle("is-closed", isClosed);
+
+    if (isClosed) {
+      valueEl.textContent = "신청이 마감되었습니다.";
+      valueEl.classList.remove("is-full");
+      return;
+    }
+
+    const { text, isFull } = buildCapacityLabel(event);
+    valueEl.textContent = text || "신청 현황 정보가 없습니다.";
+    valueEl.classList.toggle("is-full", Boolean(isFull));
+  }
+
+  function renderSelfNote(event, status) {
+    const noteEl = document.getElementById("apply-capacity-self");
+    const isClosed = isClosedEvent(status, event);
+    if (!noteEl || !event?.id) return;
+
+    if (isClosed) {
+      noteEl.textContent = "";
+      return;
+    }
+
+    const stored = getStoredCounts(event.id);
+    const baseCount = pickNumber(event.appliedCount);
+    const current = stored?.applied ?? baseCount ?? 0;
+    const nextCount = current + 1; // n+1번째 신청자 안내
+
+    noteEl.textContent = `신청폼을 제출하여 ${nextCount}번째 신청자가 되어주세요.`;
+  }
+
+  function renderEvent(event, status) {
     document.title = `${event.title || "이벤트 신청"} | 숙명여자대학교 인공지능공학부`;
 
     setText("apply-meta-title", event.title || "");
@@ -176,6 +358,8 @@
     setText("apply-target", event.target || "");
     setText("apply-location", event.location || "-");
     setText("apply-method", event.applyMethod || "");
+    renderCapacity(event, status);
+    renderSelfNote(event, status);
 
     posterAlt = event.posterAlt || event.headline || event.title || "이벤트 포스터";
     posterImages = buildPosterImages(event);
@@ -186,7 +370,7 @@
     renderPayment(event.payment);
 
     renderNotices(event.notices);
-    renderCTA(event.cta);
+    renderCTA(event, event.cta, status);
   }
 
   function renderEventDate(eventDate) {
@@ -243,19 +427,44 @@
     list.appendChild(frag);
   }
 
-  function renderCTA(cta) {
+  function renderCTA(event, cta, status) {
     const btn = document.getElementById("apply-cta-button");
+    const ctaWrap = document.querySelector(".apply-capacity__cta");
+    const isClosed = isClosedEvent(status, event);
     if (!btn) return;
 
     const label = cta?.label || "신청하기";
-    const link = cta?.link || "#";
+    const eventDateText = event?.eventDate || event?.applyPeriod || "";
+    const link = `/pages/event/8_tomato_event_form.html?id=${encodeURIComponent(
+      event?.id || currentId
+    )}&title=${encodeURIComponent(event?.title || "")}&eventDate=${encodeURIComponent(
+      eventDateText
+    )}`;
+    const isPast = status === "past";
 
-    btn.textContent = label;
-    btn.href = link;
+    if (ctaWrap) {
+      ctaWrap.style.display = isClosed ? "none" : "";
+    }
 
-    const isExternal = /^https?:\/\//i.test(link);
-    btn.target = isExternal ? "_blank" : "_self";
-    btn.rel = isExternal ? "noreferrer noopener" : "";
+    if (isPast || isClosed) {
+      btn.textContent = "신청 마감";
+      btn.href = "#";
+      btn.setAttribute("disabled", "true");
+      btn.setAttribute("aria-disabled", "true");
+      btn.classList.add("is-disabled");
+      btn.removeAttribute("target");
+      btn.rel = "";
+    } else {
+      btn.textContent = label;
+      btn.href = link;
+      btn.removeAttribute("disabled");
+      btn.removeAttribute("aria-disabled");
+      btn.classList.remove("is-disabled");
+
+      const isExternal = /^https?:\/\//i.test(link);
+      btn.target = isExternal ? "_blank" : "_self";
+      btn.rel = isExternal ? "noreferrer noopener" : "";
+    }
   }
 
   function buildPosterImages(event) {

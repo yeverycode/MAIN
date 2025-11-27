@@ -35,7 +35,6 @@
       <div class="dropdown" role="menu">
         <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
         <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem" aria-current="page">진행중인 이벤트</a>
-        <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
         <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
       </div>
     </div>
@@ -63,9 +62,6 @@
       </li>
       <li class="is-active">
         <a href="/pages/event/8_tomato_event_list.html" aria-current="page" data-status="ongoing">진행중인 이벤트</a>
-      </li>
-      <li>
-        <a href="/pages/event/8_tomato_event_interview.html">당첨자 발표</a>
       </li>
       <li>
         <a href="/pages/event/8_tomato_event_list.html#past" data-status="past">지난 이벤트</a>
@@ -146,9 +142,20 @@
       </div>
     </section>
 
-    <div class="apply-detail__cta">
-      <a id="apply-cta-button" class="apply-detail__cta-button" href="#">신청하기</a>
-    </div>
+    <section class="apply-capacity-row">
+      <div class="apply-capacity" aria-label="신청 현황" aria-live="polite">
+        <div class="apply-capacity__info">
+          <div class="apply-capacity__row">
+            <span class="apply-capacity__label">신청 현황 |</span>
+            <span class="apply-capacity__value" id="apply-capacity-value"></span>
+          </div>
+          <p class="apply-capacity__self" id="apply-capacity-self"></p>
+        </div>
+        <div class="apply-capacity__cta">
+          <a id="apply-cta-button" class="apply-detail__cta-button" href="#">신청하기</a>
+        </div>
+      </div>
+    </section>
   </div>
 </main>
 

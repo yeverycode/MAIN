@@ -435,11 +435,20 @@
 
     const label = cta?.label || "신청하기";
     const eventDateText = event?.eventDate || event?.applyPeriod || "";
-    const link = `/pages/event/8_tomato_event_form.html?id=${encodeURIComponent(
-      event?.id || currentId
-    )}&title=${encodeURIComponent(event?.title || "")}&eventDate=${encodeURIComponent(
-      eventDateText
-    )}`;
+    const baseApplied = pickNumber(event?.appliedCount);
+    const nextApplicant = baseApplied !== null ? baseApplied + 1 : null;
+
+    const params = new URLSearchParams({
+      id: event?.id || currentId,
+      title: event?.title || "",
+      eventDate: eventDateText
+    });
+
+    if (nextApplicant !== null) {
+      params.append("position", String(nextApplicant));
+    }
+
+    const link = `/pages/event/8_tomato_event_form.html?${params.toString()}`;
     const isPast = status === "past";
 
     if (ctaWrap) {

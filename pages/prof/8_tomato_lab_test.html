@@ -69,63 +69,82 @@
 
 <!-- 하단 흰색 콘텐츠 -->
 <main class="content" id="content">
-  <div class="container">
+  <section class="lab-scroll-section" aria-labelledby="lab-scroll-title">
+    <div class="lab-scroll-static">
+      <div class="container">
+        <div class="lab-scroll-header">
+          <h2 id="lab-scroll-title" class="lab-scroll-title">나와 어울리는 연구실 찾기</h2>
+          <p class="lab-scroll-subtitle">
+            3가지 질문으로 당신의 연구 성향에 맞는 AI 분야와 연구실을 추천해 드립니다.
+          </p>
+        </div>
+      </div>
 
-    <!-- 시작 화면 -->
-    <section class="content test-intro" id="welcomeScreen" aria-labelledby="test-intro-title">
-      <div class="test-intro-inner">
-        <h2 id="test-intro-title" class="test-title">나와 어울리는 연구실 찾기</h2>
-        <p class="test-desc">
-          3가지 질문으로 당신의 연구 성향에 맞는<br>
-          AI 분야와 연구실을 추천해 드립니다.
-        </p>
-        <div class="intro-stats intro-stats--panel" role="list">
-          <div class="stat-item">
-            <div class="stat-number">12</div>
-            <div class="stat-label">연구실</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3</div>
-            <div class="stat-label">질문</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">1분</div>
-            <div class="stat-label">소요시간</div>
+      <div class="lab-scroll-tracks" aria-hidden="true">
+        <div class="scroll-wrapper row-1">
+          <div class="scroll-content">
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_bgkim_logo.png" alt="B.G. Kim Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_jwlee_logo.png" alt="J.W. Lee Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_sykim_logo.png" alt="S.Y. Kim Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_bgkim_logo.png" alt="B.G. Kim Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_jwlee_logo.png" alt="J.W. Lee Lab Logo"></div>
           </div>
         </div>
+
+        <div class="scroll-wrapper row-2">
+          <div class="scroll-content">
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_cykim_logo.png" alt="C.Y. Kim Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_hjpark_logo.png" alt="H.J. Park Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_yhpark_logo.png" alt="Y.H. Park Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_cykim_logo.png" alt="C.Y. Kim Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_hjpark_logo.png" alt="H.J. Park Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_yhpark_logo.png" alt="Y.H. Park Lab Logo"></div>
+            <div class="lab-card"><img src="/assets/lab_logo/color/8_tomato_jwkang_logo.png" alt="J.W. Kang Lab Logo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container lab-test-shell">
+      <!-- 시작 화면 -->
+      <section class="content test-intro" id="welcomeScreen" aria-label="연구실 테스트 시작">
         <button class="btn btn--primary btn--large" id="startBtn">시작하기</button>
-      </div>
-    </section>
+      </section>
 
-    <!-- 퀴즈 화면 -->
-    <section class="content test-quiz" id="quizScreen" style="display: none;" aria-labelledby="quiz-title">
-      <!-- 진행 표시기 -->
-      <div class="progress-container">
-        <div class="progress-bar">
-          <div class="progress-fill" id="progressFill"></div>
+      <!-- 퀴즈 화면 -->
+      <section class="content test-quiz" id="quizScreen" style="display: none;" aria-labelledby="quiz-title">
+        <!-- 진행 표시기 -->
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
         </div>
-      </div>
 
-      <!-- 질문 컨테이너 -->
-      <div class="question-container" id="questionContainer">
-        <!-- 질문들이 동적으로 렌더링됩니다 -->
-      </div>
+        <!-- 질문 컨테이너 -->
+        <div class="question-container" id="questionContainer">
+          <!-- 질문들이 동적으로 렌더링됩니다 -->
+        </div>
 
-      <!-- 네비게이션 버튼 -->
-      <div class="quiz-navigation">
-        <button class="btn btn--ghost" id="prevBtn" style="visibility: hidden;">이전</button>
-        <button class="btn btn--primary" id="nextBtn" disabled>다음</button>
-      </div>
-    </section>
+        <!-- 네비게이션 버튼 -->
+        <div class="quiz-navigation">
+          <button class="btn btn--ghost" id="prevBtn" style="visibility: hidden;">이전</button>
+          <button class="btn btn--primary" id="nextBtn" disabled>다음</button>
+        </div>
+      </section>
 
-    <!-- 결과 화면 -->
-    <section class="content test-result" id="resultScreen" style="display: none;" aria-labelledby="result-title">
-      <div class="result-container" id="resultContainer">
-        <!-- 결과가 동적으로 렌더링됩니다 -->
-      </div>
-    </section>
+      <!-- 결과 화면 -->
+      <section class="content test-result" id="resultScreen" style="display: none;" aria-labelledby="result-title">
+        <div class="result-container" id="resultContainer">
+          <!-- 결과가 동적으로 렌더링됩니다 -->
+        </div>
+      </section>
+    </div>
+  </section>
 
-  </div>
 </main>
 
 <!-- 푸터 -->

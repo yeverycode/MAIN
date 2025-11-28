@@ -9,6 +9,8 @@
   "eventDate": "2025.12.17 (수) 18:00 ~ 21:30",
 
   "applyMethod": "신청폼 제출 (선착순 100명)",
+  "capacity": 100,
+  "appliedCount": 95,
   "posterImages": ["https://i.postimg.cc/RCgSxhMw/Kakao-Talk-Photo-2025-11-27-09-28-09.png"],
   "posterAlt": "AI인의 밤 안내 포스터",
 

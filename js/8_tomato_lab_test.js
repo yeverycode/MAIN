@@ -100,14 +100,18 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const progressFill = document.getElementById('progressFill');
 const currentStepEl = document.getElementById('currentStep');
+const labScrollStatic = document.querySelector('.lab-scroll-static');
 
 // 시작 버튼
-startBtn.addEventListener('click', () => {
-  welcomeScreen.style.display = 'none';
-  quizScreen.style.display = 'block';
-  renderQuestion();
-  updateProgress();
-});
+if (startBtn) {
+  startBtn.addEventListener('click', () => {
+    if (labScrollStatic) labScrollStatic.classList.add('is-hidden');
+    welcomeScreen.style.display = 'none';
+    quizScreen.style.display = 'block';
+    renderQuestion();
+    updateProgress();
+  });
+}
 
 // 질문 렌더링
 function renderQuestion() {
@@ -210,7 +214,7 @@ function showResult(key) {
     <section class="result-labs" style="--accent-color:${field.color}">
       <div class="result-cards-grid">
         ${field.labs.map(lab => `
-          <article class="info-card lab-card">
+          <article class="info-card">
             <span class="card-dot" aria-hidden="true"></span>
             <div class="card-eyebrow">${lab.englishName}</div>
             <div class="card-line" aria-hidden="true"></div>
@@ -246,9 +250,11 @@ function showResult(key) {
   document.getElementById('restartBtn').addEventListener('click', () => {
     currentQuestion = 0;
     answers = {};
-    scores = { aiData: 0, iotHci: 0, systems: 0 };
+    scores = initScores();
     resultScreen.style.display = 'none';
     welcomeScreen.style.display = 'block';
+    quizScreen.style.display = 'none';
+    if (labScrollStatic) labScrollStatic.classList.remove('is-hidden');
   });
 
   document.getElementById('shareBtn').addEventListener('click', () => {

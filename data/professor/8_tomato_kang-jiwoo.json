@@ -20,7 +20,7 @@
     },
     {
       "period": "2025.01 ~ ",
-      "text": "Journal of Multimedia Information System (JMIS) 편집위원장 (Editor in Chief)"
+      "text": "Journal of Multimedia Information System (JMIS) 편집위원장"
     },
     {
       "period": "2022.03 ~ ",
@@ -28,11 +28,51 @@
     },
     {
       "period": "2020.12 ~ 2022.02",
-      "text": "연세대학교 산학협력단 (Y-BASE 지능정보 교육연구사업단) 연구교수"
+      "text": "연세대학교 산학협력단 연구교수"
     }
   ],
 
-  "courses": [],
+  "courses": [
+    {
+      "term": "2025 Fall",
+      "list": [
+        { "code": "21100720", "name": "알고리즘입문" },
+        { "code": "21102529", "name": "센서프로그래밍" },
+        { "code": "21105627", "name": "첨단공학멘토링" },
+        { "code": "21003682", "name": "졸업프로젝트" }
+      ]
+    },
+    {
+      "term": "2025 Spring",
+      "list": [
+        { "code": "21105362", "name": "공학수학 II" }
+      ]
+    },
+    {
+      "term": "2024 Fall",
+      "list": [
+        { "code": "21100720", "name": "알고리즘입문" }
+      ]
+    },
+    {
+      "term": "2024 Spring",
+      "list": [
+        { "code": "21105362", "name": "공학수학 II" }
+      ]
+    },
+    {
+      "term": "2023 Fall",
+      "list": [
+        { "code": "21102532", "name": "데이터분석및활용" }
+      ]
+    },
+    {
+      "term": "2023 Spring",
+      "list": [
+        { "code": "21100720", "name": "알고리즘입문" }
+      ]
+    }
+  ],
 
   "publications": [
     {

@@ -15,14 +15,30 @@
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  function pickNumber(...candidates) {
-    for (const value of candidates) {
-      if (Number.isFinite(value)) return value;
-      if (typeof value === "string" && value.trim() !== "" && !Number.isNaN(Number(value))) {
-        return Number(value);
-      }
+  function toFiniteNumber(value) {
+    if (Number.isFinite(value)) return value;
+    if (typeof value === "string" && value.trim() !== "" && !Number.isNaN(Number(value))) {
+      return Number(value);
     }
     return null;
+  }
+
+  function pickNumber(...candidates) {
+    for (const value of candidates) {
+      const num = toFiniteNumber(value);
+      if (num !== null) return num;
+    }
+    return null;
+  }
+
+  function maxNumber(...candidates) {
+    let result = null;
+    candidates.forEach((value) => {
+      const num = toFiniteNumber(value);
+      if (num === null) return;
+      result = result === null ? num : Math.max(result, num);
+    });
+    return result;
   }
 
   function loadApplyState() {
@@ -53,9 +69,9 @@
     const stored = getStoredCounts(event.id);
     if (!stored) return event;
 
-    const mergedApplied = pickNumber(stored.applied, stored.appliedCount, event.appliedCount);
-    const mergedCapacity = pickNumber(stored.capacity, event.capacity);
-    const mergedWaiting = pickNumber(stored.waitingCount, event.waitingCount);
+    const mergedApplied = maxNumber(event.appliedCount, stored.applied, stored.appliedCount);
+    const mergedCapacity = maxNumber(event.capacity, stored.capacity);
+    const mergedWaiting = maxNumber(event.waitingCount, stored.waitingCount);
 
     return {
       ...event,
@@ -91,13 +107,13 @@
     const state = loadApplyState();
     const prev = state[id] || {};
 
-    const baseApplied = pickNumber(prev.applied, prev.appliedCount, event.appliedCount) || 0;
+    const baseApplied = maxNumber(event.appliedCount, prev.applied, prev.appliedCount) || 0;
     const nextApplied = baseApplied + 1;
 
     const updated = {
       applied: nextApplied,
-      capacity: pickNumber(prev.capacity, event.capacity),
-      waitingCount: pickNumber(prev.waitingCount, event.waitingCount),
+      capacity: maxNumber(event.capacity, prev.capacity),
+      waitingCount: maxNumber(event.waitingCount, prev.waitingCount),
       waitingAvailable: prev.waitingAvailable ?? event.waitingAvailable === true,
       updatedAt: new Date().toISOString()
     };

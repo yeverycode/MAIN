@@ -23,7 +23,6 @@
   color: #FFFFFF;
   text-align: center;
   font-feature-settings: 'liga' off, 'clig' off;
-  font-family: Pretendard, "Noto Sans KR", Inter, system-ui, -apple-system, sans-serif;
   font-size: clamp(120px, 12vw, 240px);
   font-style: normal;
   font-weight: 900;

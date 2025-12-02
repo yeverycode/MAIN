@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "year": 2025,
+    "month": 10,
+    "monthNumber": "10",
+    "monthLabel": "OCTOBER",
+    "legend": {
+      "academic": "학사 일정",
+      "department": "학과 일정",
+      "event": "학과 행사"
+    }
+  },
+  "events": [
+    {
+      "id": "e1",
+      "title": "9월 학생회비 장부 공개",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-01",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e2",
+      "title": "제 4회 MEIT",
+      "type": "event",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-10-02",
+      "endDate": "2025-10-02",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e3",
+      "title": "중간 수업 평가",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-05",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e4",
+      "title": "제 5회 Uni-D 해커톤/데이터톤 신청 기간",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-10-06",
+      "endDate": "2025-10-12",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e5",
+      "title": "25-2 졸업전시회",
+      "type": "event",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-10-11",
+      "endDate": "2025-10-14",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e6",
+      "title": "2학기 중간고사",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-10-20",
+      "endDate": "2025-10-26",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e7",
+      "title": "수강 철회 기간",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-10-08",
+      "endDate": "2025-10-10",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e9",
+      "title": "전공/복수전공 신청 안내",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-10-28",
+      "endDate": "2025-10-31",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    }
+  ]
+}

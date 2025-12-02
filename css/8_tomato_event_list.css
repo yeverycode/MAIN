@@ -369,8 +369,13 @@
 /* 캘린더 */
 
 .event-calendar {
-  padding: 40px 0;
-  text-align: center;
+  padding: 40px 0 0;
+}
+
+.event-calendar .page-calendar-section {
+  max-width: 1245px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .event-calendar__placeholder {

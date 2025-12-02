@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>학사 일정 캘린더 | AI Engineering</title>
+
+  <!-- 공통 CSS가 있다면 위에 추가하고, 이 파일은 캘린더 전용 -->
+  <link rel="stylesheet" href="/css/8_tomato_calendar.css" />
+  <script defer src="/js/8_tomato_calendar.js"></script>
+</head>
+<body class="page page-calendar">
+
+  <!-- 메인 캘린더 -->
+  <main class="page-content container">
+    <section id="ai-calendar" class="page-calendar-section">
+      <header class="calendar-header">
+  <!-- 상단: 월/연도 + 이전/다음 버튼 -->
+        <div class="calendar-header-top">
+          <div class="calendar-title">
+            <div class="calendar-title__month-number" id="calendarMonthNumber">11</div>
+            <div class="calendar-title__text">
+              <div class="calendar-title__year" id="calendarYear">2025</div>
+              <div class="calendar-title__month-label" id="calendarMonthLabel">NOVEMBER</div>
+            </div>
+          </div>
+
+          <div class="calendar-month-nav">
+            <button type="button" id="calendarPrevMonth" aria-label="이전 달">&lt;</button>
+            <button type="button" id="calendarNextMonth" aria-label="다음 달">&gt;</button>
+          </div>
+        </div>
+
+        <!-- 하단: 필터 + 범례 (그대로) -->
+        <div class="calendar-controls">
+          <div class="calendar-filter-segment">
+            <button type="button" class="filter-chip is-active" data-type="all">전체</button>
+            <button type="button" class="filter-chip" data-type="academic">학사 일정</button>
+            <button type="button" class="filter-chip" data-type="department">학과 일정</button>
+            <button type="button" class="filter-chip" data-type="event">학과 행사</button>
+          </div>
+
+          <div class="calendar-legend">
+            <div class="legend-item legend-academic">학사 일정</div>
+            <div class="legend-item legend-department">학과 일정</div>
+            <div class="legend-item legend-event">학과 행사</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="calendar-weekdays">
+        <div>SUN</div><div>MON</div><div>TUE</div>
+        <div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
+
+      <div id="calendarDetail" class="calendar-detail">
+        <div class="calendar-detail__date" id="detailDateText">
+          2025년 11월 일정
+        </div>
+        <div id="detailEventList" class="calendar-detail__events"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

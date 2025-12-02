@@ -166,6 +166,30 @@
       "time": "",
       "location": "",
       "description": ""
+    },
+    {
+      "id": "e14",
+      "title": "학과 멘토링 데이",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-06",
+      "endDate": "2025-11-06",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e15",
+      "title": "동계 계절학기 등록금 납부",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-11-18",
+      "endDate": "2025-11-20",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
     }
   ]
 }

@@ -36,6 +36,7 @@ body.page-calendar {
 
 .calendar-title__year {
   font-size: 16px;
+  text-align: left;
   font-weight: 600;
 }
 
@@ -219,11 +220,6 @@ body.page-calendar {
   color: #b91c1c;
 }
 
-/* 멀티데이: 이제 폭/모양은 기본 pill과 동일하게 */
-.calendar-event-pill.calendar-range-seg {
-  /* 별도 폭/여백 설정 필요 없음 – 기본 pill과 동일 */
-}
-
 /* start/middle/end 에서도 모서리 깎지 않고 기본 모양 유지 */
 .calendar-range-seg--start,
 .calendar-range-seg--middle,
@@ -243,8 +239,6 @@ body.page-calendar {
   padding: 16px 20px;
   background: #ffffff;
   border-radius: 5px;
-  box-shadow:
-    0 0 0 1px rgba(148, 163, 184, 0.35);
 }
 
 .calendar-detail__date {

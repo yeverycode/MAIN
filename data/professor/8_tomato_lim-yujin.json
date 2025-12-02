@@ -32,7 +32,26 @@
     }
   ],
 
-  "courses": [],
+  "courses": [
+    {
+      "term": "2025 Fall",
+      "list": [
+        { "code": "21105586", "name": "딥러닝원리와응용" }
+      ]
+    },
+    {
+      "term": "2023 Fall",
+      "list": [
+        { "code": "21102534", "name": "클라우드컴퓨팅" }
+      ]
+    },
+    {
+      "term": "2023 Fall",
+      "list": [
+        { "code": "21104552", "name": "인공지능과기계학습" }
+      ]
+    }
+  ],
 
   "publications": [
     {

@@ -36,7 +36,21 @@
     }
   ],
 
-  "courses": [],
+  "courses": [
+    {
+      "term": "2025 Fall",
+      "list": [
+        { "code": "21102538", "name": "데이터베이스" }
+      ]
+    },
+    {
+      "term": "2025 Spring",
+      "list": [
+        { "code": "21003066", "name": "데이터구조" },
+        { "code": "21105363", "name": "데이터패턴인식" }
+      ]
+    }
+  ],
 
   "publications": [
     {

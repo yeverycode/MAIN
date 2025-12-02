@@ -195,7 +195,6 @@
 .curriculum-card {
   position: relative;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
   padding: 72px 38px 70px;
   display: flex;
   flex-direction: column;

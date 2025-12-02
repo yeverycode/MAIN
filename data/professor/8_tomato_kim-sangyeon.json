@@ -24,23 +24,21 @@
       {
         "term": "2025 Fall",
         "list": [
-          { "code": "21105365", "name": "Web Programming(1)" },
-          { "code": "21105365", "name": "Web Programming(2)" }
+          { "code": "21105365", "name": "웹프로그래밍" }
         ]
       },
       {
         "term": "2025 Spring",
         "list": [
           { "code": "21105587", "name": "UI/UX" },
-          { "code": "21104552", "name": "Artificial Intelligence & Machine Learning" }
+          { "code": "21104552", "name": "인공지능과 기계학습" }
         ]
       },
       {
         "term": "2024 Fall",
         "list": [
-          { "code": "21105365", "name": "Web Programming(1)" },
-          { "code": "21105365", "name": "Web Programming(2)" },
-          { "code": "21105364", "name": "Introduction to Artificial Intelligence" }
+          { "code": "21105365", "name": "웹프로그래밍" },
+          { "code": "21105364", "name": "인공지능입문" }
         ]
       }
     ],

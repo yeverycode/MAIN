@@ -1,0 +1,351 @@
+/* 8_tomato_calendar.css */
+
+/* 전체 기본 */
+body.page-calendar {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222;
+  background: #ffffff;
+}
+
+/* ===== 캘린더 영역 ===== */
+
+.page-calendar-section {
+  margin-top: 32px;
+}
+
+/* 상단 월/연도 + 필터 */
+.calendar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.calendar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendar-title__month-number {
+  font-size: 50px;
+  font-weight: 800;
+  color: #1857ff;
+}
+
+.calendar-title__year {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.calendar-title__month-label {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* 필터 + 범례 */
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+
+/* 필터 버튼 */
+.calendar-filter-segment {
+  background: #e4ebff;
+  border-radius: 5px;
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.filter-chip {
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #334155;
+}
+
+.filter-chip.is-active {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(24,87,255,0.3);
+  color: #1857ff;
+}
+
+/* 범례 */
+.calendar-legend {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  align-items: center;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(148,163,184,0.4);
+}
+
+.legend-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.legend-academic::before {
+  background: #94c7ff;
+}
+
+.legend-department::before {
+  background: #b4e28d;
+}
+
+.legend-event::before {
+  background: #ffb3b3;
+}
+
+/* 요일 줄 */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #64748b;
+}
+
+/* 날짜 그리드 */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow:
+    0 18px 33px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(148, 163, 184, 0.35);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 날짜 칸 */
+.calendar-day {
+  min-height: 76px;
+  border-right: 1px solid rgba(226, 232, 240, 0.9);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 4px 4px 6px;
+  position: relative;
+  font-size: 11px;
+}
+
+.calendar-day:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-day:nth-last-child(-n + 7) {
+  border-bottom: none;
+}
+
+.calendar-day.is-empty {
+  background: #f9fbff;
+}
+
+/* 날짜 숫자 기본 상태 */
+.calendar-day__number {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+/* 선택된 날짜 – 색만 변경 */
+.calendar-day.is-selected .calendar-day__number {
+  background: #1857ff;
+  color: #ffffff;
+}
+
+/* 날짜 안 pill 들 */
+.calendar-day__events {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;        /* pill 사이 간격 통일 */
+  margin-top: 4px;
+}
+
+/* =======================
+   pill 기본 (전부 같은 크기 + 네모)
+   ======================= */
+.calendar-event-pill {
+  display: block;
+  width: calc(100% + 8px);  /* 멀티데이랑 단일 이벤트 모두 셀 전체 폭 */
+  margin: 0 -4px;           /* .calendar-day padding 보정 */
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.4;
+  box-sizing: border-box;
+  border-radius: 0px;
+}
+
+/* 타입별 색상 */
+.calendar-event-pill--academic {
+  background: rgba(148, 196, 255, 0.32);
+  color: #1857ff;
+}
+
+.calendar-event-pill--department {
+  background: rgba(194, 240, 154, 0.52);
+  color: #166534;
+}
+
+.calendar-event-pill--event {
+  background: rgba(255, 182, 182, 0.5);
+  color: #b91c1c;
+}
+
+/* 멀티데이: 이제 폭/모양은 기본 pill과 동일하게 */
+.calendar-event-pill.calendar-range-seg {
+  /* 별도 폭/여백 설정 필요 없음 – 기본 pill과 동일 */
+}
+
+/* start/middle/end 에서도 모서리 깎지 않고 기본 모양 유지 */
+.calendar-range-seg--start,
+.calendar-range-seg--middle,
+.calendar-range-seg--end {
+  border-radius: inherit;
+}
+
+/* 중간/끝 칸에서는 텍스트만 숨김 */
+.calendar-range-seg--ghost {
+  color: transparent;
+}
+
+/* ===== 아래 상세 카드 ===== */
+
+.calendar-detail {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow:
+    0 0 0 1px rgba(148, 163, 184, 0.35);
+}
+
+.calendar-detail__date {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.calendar-detail__events {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calendar-detail__empty {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.calendar-detail-card {
+  border-radius: 5px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calendar-detail-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.detail-badge {
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+.detail-badge--academic {
+  background: rgba(148, 196, 255, 0.2);
+  color: #1857ff;
+}
+
+.detail-badge--department {
+  background: rgba(194, 240, 154, 0.35);
+  color: #166534;
+}
+
+.detail-badge--event {
+  background: rgba(255, 182, 182, 0.35);
+  color: #b91c1c;
+}
+
+.calendar-detail-card__title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.calendar-detail-card__desc {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* 멀티데이 트랙 자리 유지용 더미 (공간만 차지, 보이지 않음) */
+.calendar-range-spacer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* 상단 제목 + 월 이동 버튼 묶음 */
+.calendar-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 월 이동 화살표 */
+.calendar-month-nav {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.calendar-month-nav button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+}
+
+.calendar-month-nav button:hover {
+  background: #eef2ff;
+  border-color: #1857ff;
+}

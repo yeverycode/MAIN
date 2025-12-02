@@ -19,7 +19,7 @@
     display: inline-block; 
 
     /* ★ 마진 애니메이션 추가 (4초 동안 실행) */
-    animation: margin-grow 4s ease-in-out forwards;
+    animation: margin-grow 3s ease-in-out forwards;
 }
 
 /* 2.1. 차오르는 효과를 위한 ::before 가상 요소 */
@@ -39,7 +39,7 @@
     clip-path: inset(100% 0 0 0); 
 
     /* 차오름 애니메이션 (4초 동안 실행) */
-    animation: rise-up 4s ease-in-out forwards;
+    animation: rise-up 3s ease-in-out forwards;
 }
 
 /* AI 텍스트 차오름 키프레임 */
@@ -64,13 +64,214 @@
         margin-right: 0;
     }
     /* 40%~60%: AI가 차오르는 동안 양쪽으로 10px 확장하여 M과 N을 밀어냄 */
-    40%, 60% {
+    80%, 100% {
         margin-left: 5px; 
         margin-right: 5px; 
     }
-    /* 80%~100%: 원위치로 돌아옴 */
-    80%, 100% {
-        margin-left: 0;
-        margin-right: 0;
+}
+
+/* ================================================= */
+/* 8_tomato_council.css (스크롤 비례 애니메이션 최종 스타일) */
+/* ================================================= */
+
+/* 가상 CSS 변수 정의 (필요에 따라 root에 정의) */
+:root {
+    --text-muted: #777;  /* 기본 텍스트 색상 (미채워졌을 때) */
+    --white: #FFFFFF;    /* 채워지는 텍스트 색상 */
+    --blue: #007bff;     /* main() 강조 색상 */
+}
+
+/* 섹션 컨테이너 기본 스타일 */
+.council-intro-section {
+    max-width: 1200px;
+    margin: 80px auto; 
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* 문단(줄) 기본 스타일 */
+.council-intro-line {
+    margin-bottom: 40px; 
+    position: relative;
+}
+
+/* 8_tomato_council.css 파일 내 .word-unit 규칙 수정 */
+
+.word-unit {
+    display: inline-block; 
+    position: relative;
+    /* margin-right 제거 상태 유지: 띄어쓰기 처리는 JS가 담당 */
+    
+    color: var(--text-muted, #777); 
+}
+
+/* ::before 가상 요소: 채워지는 텍스트의 실시간 애니메이션 */
+.word-unit::before {
+    content: attr(data-word); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* 💡 JS가 계산하여 설정하는 CSS 변수 사용 (스크롤 비례) */
+    width: var(--fill-width, 0%); 
+    
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap; 
+    
+    /* 채워질 때의 색상: var(--white) */
+    color: var(--white, #fff); 
+    
+    /* JS가 실시간으로 width를 변경하므로 transition 제거 */
+    transition: none; 
+    z-index: 1; 
+}
+
+/* 'main()' 특수 색상 처리 */
+.word-unit .main-blue {
+    /* 애니메이션 전 main() 글자 색상: var(--blue) */
+    color: var(--blue, #007bff); 
+    position: relative;
+    z-index: 0; 
+}
+
+/* ================================================= */
+/* 💡 수직선 무한 채우기 애니메이션 스타일 추가 */
+/* ================================================= */
+
+/* 수직선 컨테이너 */
+.vertical-line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* 선의 총 높이 */
+    margin-top: -40px;
+}
+
+/* 실제 수직선 */
+.vertical-line {
+    width: 1.5px; /* 선의 두께 */
+    height: 100%;
+    background-color: var(--text-muted); /* 채워지기 전/후의 기본 색상 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 채우기 애니메이션 */
+.vertical-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white); /* 채워지는 색상 */
+    
+    /* 초기 높이는 0%에서 시작하도록 설정 */
+    transform: translateY(100%); 
+    
+    /* 애니메이션 정의: line-fill 키프레임을 3초 동안 무한 반복 */
+    animation: line-fill 2s linear infinite;
+}
+
+/* 키프레임 정의: 위에서 아래로 채워진 후 다시 위로 사라지는 무한 반복 */
+@keyframes line-fill {
+    0% {
+        transform: translateY(-100%); /* 아래에서 시작 */
     }
+    100% {
+        transform: translateY(0%); /* 위로 채워짐 */
+    }
+}
+
+/* --white 및 기타 변수는 최상단에 정의되었다고 가정합니다. */
+/* 예: :root { --white: #fff; --text-muted: #777; } */
+
+.carousel-container:hover {
+    /* 💡 경로가 정확한지 확인하세요. */
+    cursor: url('/assets/cursor.png'), auto;
+}
+
+/* ================================================= */
+/* 캐러셀 섹션 스타일 */
+/* ================================================= */
+
+.year-carousel-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--black); /* 섹션 구분을 위한 예시 배경색 */
+}
+
+.year-carousel-section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--white, #fff);
+}
+
+.carousel-container {
+    display: flex;
+    /* 좌우 스크롤 가능하게 설정 */
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* ❌ scroll-snap 관련 속성 제거 */
+    padding: 0 50px; /* 양쪽 여백 */
+    gap: 100px; /* 아이템 간 간격 */
+    user-select: none; /* 표준 */
+    
+    /* 드래그 중 커서 변경을 위한 클래스 */
+    /* .active-dragging 클래스가 추가되면 이 커서가 적용됩니다. */
+}
+
+.carousel-item {
+    /* 각 아이템의 크기 고정 */
+    flex: 0 0 350px; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    background-color: var(--black); /* 아이템 배경색 추가 */
+    margin: 30px 0px 100px 0px;
+    color: var(--white); /* 아이템 내용 색상 */
+}
+
+.carousel-item h3 {
+    color: var(--white);
+    margin-top: 0px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.carousel-item .role {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 기존 CSS (스크롤바 숨김) 코드를 제거하세요: 
+.carousel-container::-webkit-scrollbar {
+    display: none; 
+}
+*/
+
+/* ================================================= */
+/* 💡 스크롤바 커스텀 */
+/* ================================================= */
+
+/* 1. 스크롤바 전체 스타일 */
+.carousel-container::-webkit-scrollbar {
+    height: 5px; /* 스크롤바의 높이 (가로 스크롤이므로) */
+}
+
+/* 2. 스크롤바 트랙 (배경) 스타일 */
+.carousel-container::-webkit-scrollbar-track {
+    background: var(--black); 
+    border-radius: 6px;
+}
+
+/* 3. 스크롤바 엄지 (드래그 가능한 부분) 스타일 */
+.carousel-container::-webkit-scrollbar-thumb {
+    background: var(--blue); /* 눈에 띄는 색상 */
 }

@@ -1,14 +1,279 @@
 {
   "id": "kang-jiwoo",
   "name": "강지우",
-  "role": "",
+  "role": "조교수",
   "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28062_1742617493000.do",
   "phone": "02-2077-7445",
   "email": "jwkang@sm.ac.kr",
   "office": "새힘관 605호",
 
-  "interests": [],
-  "history": [],
-  "courses": [],
-  "publications": []
+  "interests": [
+      "3차원 · 생성형 · 멀티모달 AI",
+      "영상 처리",
+      "인공지능"
+  ],
+
+  "history": [
+    {
+      "period": "2025.01 ~ ",
+      "text": "(사)한국멀티미디어학회 부회장"
+    },
+    {
+      "period": "2025.01 ~ ",
+      "text": "Journal of Multimedia Information System (JMIS) 편집위원장"
+    },
+    {
+      "period": "2022.03 ~ ",
+      "text": "숙명여자대학교 인공지능공학부 조교수"
+    },
+    {
+      "period": "2020.12 ~ 2022.02",
+      "text": "연세대학교 산학협력단 연구교수"
+    }
+  ],
+
+  "courses": [
+    {
+      "term": "2025 Fall",
+      "list": [
+        { "code": "21100720", "name": "알고리즘입문" },
+        { "code": "21102529", "name": "센서프로그래밍" },
+        { "code": "21105627", "name": "첨단공학멘토링" },
+        { "code": "21003682", "name": "졸업프로젝트" }
+      ]
+    },
+    {
+      "term": "2025 Spring",
+      "list": [
+        { "code": "21105362", "name": "공학수학 II" }
+      ]
+    },
+    {
+      "term": "2024 Fall",
+      "list": [
+        { "code": "21100720", "name": "알고리즘입문" }
+      ]
+    },
+    {
+      "term": "2024 Spring",
+      "list": [
+        { "code": "21105362", "name": "공학수학 II" }
+      ]
+    },
+    {
+      "term": "2023 Fall",
+      "list": [
+        { "code": "21102532", "name": "데이터분석및활용" }
+      ]
+    },
+    {
+      "term": "2023 Spring",
+      "list": [
+        { "code": "21100720", "name": "알고리즘입문" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "Convolutional neural shading for high-quality 3D reconstruction from multi-view images",
+      "date": "2025.08",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Collaborative feature aggregation for face super-resolution and robust re-identification",
+      "date": "2025.08",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Face and voice cross-modal association with learning convex feature embedding",
+      "date": "2025.07",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "SinWaveFusion: Learning a single image diffusion model in wavelet domain",
+      "date": "2025.06",
+      "publisher": "ELSEVIER"
+    },
+    {
+      "title": "3D Facial Shape Similarity with Deep Perceptual Representations",
+      "date": "2025.06",
+      "publisher": "ASSOC COMPUTING MACHINERY"
+    },
+    {
+      "title": "A Novel Intelligent Video Surveillance System Using Low-Traffic Scene-Preserving Video Anonymization",
+      "date": "2025.04",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "3D-PSSIM: Projective Structural Similarity for 3D Mesh Quality Assessment Robust to Topological Irregularities",
+      "date": "2024.12",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Original Paper Continual Learning Based Personalized Abnormal Behavior Recognition Alarm System",
+      "date": "2024.10",
+      "publisher": "NOW PUBLISHERS INC"
+    },
+    {
+      "title": "Real-time Abnormal Behavior Recognition for Patient Monitoring in Hospitals",
+      "date": "2024.09",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Convex Feature Embedding for Face and Voice Association",
+      "date": "2024.07",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "EMOVA: Emotion-driven neural volumetric avatar",
+      "date": "2024.06",
+      "publisher": "Elsevier Ltd"
+    },
+    {
+      "title": "Single-Image 3-D Reconstruction: Rethinking Point Cloud Deformation",
+      "date": "2024.05",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Detection-Free Object Tracking for Multiple Occluded Targets in Plenoptic Video",
+      "date": "2024.02",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Deep Transformer Based Video Inpainting Using Fast Fourier Tokenization",
+      "date": "2024.02",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Double reverse diffusion for realistic garment reconstruction from images",
+      "date": "2024.01",
+      "publisher": "Pergamon Press Ltd."
+    },
+    {
+      "title": "Aerial View 3D Human Pose Estimation Using Double Vector Quantized-Variational AutoEncoders",
+      "date": "2024.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Double Discrete Representation for 3D Human Pose Estimation from Head-mounted Camera",
+      "date": "2024.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition",
+      "date": "2024.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Audio-visual Neural Face Generation with Emotional Stimuli",
+      "date": "2023.12",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Stabilized Temporal 3D Face Alignment Using Landmark Displacement Learning",
+      "date": "2023.09",
+      "publisher": "MDPI AG"
+    },
+    {
+      "title": "Video-Based Stabilized 3D Face Alignment Using Temporal Multi-Discrimination",
+      "date": "2023.09",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "High-resolution 3D Reconstruction with Neural Mesh Shading",
+      "date": "2023.07",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "Unlocking Potential of 3D-aware GAN for More Expressive Face Generation",
+      "date": "2023.06",
+      "publisher": "Association for Computing Machinery, Inc"
+    },
+    {
+      "title": "Temporal Facial Alignment with Triple Discriminators",
+      "date": "2023.06",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "ssFPN: Scale Sequence (S2) Feature-Based Feature Pyramid Network for Object Detection",
+      "date": "2023.04",
+      "publisher": "Multidisciplinary Digital Publishing Institute (MDPI)"
+    },
+    {
+      "title": "A Selective Expression Manipulation with Parametric 3D Facial Model",
+      "date": "2023.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Self-Updatable Database System Based on Human Motion Assessment Framework",
+      "date": "2022.10",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Competitive Learning of Facial Fitting and Synthesis Using UV Energy",
+      "date": "2022.05",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Technical Consideration towards Robust 3D Reconstruction with Multi-View Active Stereo Sensors",
+      "date": "2022.05",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "A Comparison and Evaluation of Stereo Matching on Active Stereo Images",
+      "date": "2022.05",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Gradient Flow Evolution for 3D Fusion From a Single Depth Sensor",
+      "date": "2022.04",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+    },
+    {
+      "title": "A Photo Identification Framework to Prevent Copyright Infringement with Manipulations",
+      "date": "2021.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Multiple Sensor Synchronization with theRealSense RGB-D Camera",
+      "date": "2021.09",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "A Greedy Pursuit Approach for Fitting 3D Facial Expression Models",
+      "date": "2020.11",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Local Spherical Harmonics for Facial Shape and Albedo Estimation",
+      "date": "2020.09",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "3D Active Vessel Tracking Using an Elliptical Prior",
+      "date": "2018.12",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Optimal Flow Rate Control for SDN-Based Naval Systems",
+      "date": "2017.12",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Enhanced particle-filtering framework for vessel segmentation and tracking",
+      "date": "2017.09",
+      "publisher": "ELSEVIER IRELAND LTD"
+    },
+    {
+      "title": "Implementation of Multimodal Interactive Continuous Scoring for 3D Quality of Experience",
+      "date": "2015.09",
+      "publisher": "SPRINGER"
+    },
+    {
+      "title": "Multimodal Interactive Continuous Scoring of Subjective 3D Video Quality of Experience",
+      "date": "2014.02",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    }
+  ]
 }

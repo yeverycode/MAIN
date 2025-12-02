@@ -11,7 +11,7 @@
     "interests": [
       "인간-중심 인공지능",
       "인간-인공지능 상호작용",
-      "지능형 사용자 인터페이스"
+      "사용자 인터페이스"
     ],
 
     "history": [
@@ -24,23 +24,21 @@
       {
         "term": "2025 Fall",
         "list": [
-          { "code": "21105365", "name": "Web Programming(1)" },
-          { "code": "21105365", "name": "Web Programming(2)" }
+          { "code": "21105365", "name": "웹프로그래밍" }
         ]
       },
       {
         "term": "2025 Spring",
         "list": [
           { "code": "21105587", "name": "UI/UX" },
-          { "code": "21104552", "name": "Artificial Intelligence & Machine Learning" }
+          { "code": "21104552", "name": "인공지능과 기계학습" }
         ]
       },
       {
         "term": "2024 Fall",
         "list": [
-          { "code": "21105365", "name": "Web Programming(1)" },
-          { "code": "21105365", "name": "Web Programming(2)" },
-          { "code": "21105364", "name": "Introduction to Artificial Intelligence" }
+          { "code": "21105365", "name": "웹프로그래밍" },
+          { "code": "21105364", "name": "인공지능입문" }
         ]
       }
     ],

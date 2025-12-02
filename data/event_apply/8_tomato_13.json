@@ -1,0 +1,32 @@
+{
+  "id": "13",
+  "title": "2학기 졸업작품 전시회",
+  "headline": "2학기 졸업작품 전시회 안내",
+
+  "eventDate": "2025.10.16 (목) 10:00 ~ 15:00",
+  "applyPeriod": "-",
+  "target": "인공지능공학부 재학생",
+  "location": "명신관 501호 / 503호",
+
+  "applyMethod": "현장 관람",
+
+  "posterImages": ["https://i.postimg.cc/Y9g4Gj5Q/1_최종_수정본.png","https://i.postimg.cc/SRhnWk46/2_최종_수정본.png","https://i.postimg.cc/PJjCmTHm/3_최종_수정본.png","https://i.postimg.cc/3NTkgYhj/4_최종_수정본.png","https://i.postimg.cc/vTs4Wbyv/5_최종_수정본.png","https://i.postimg.cc/7hk5gw4m/6_최종_수정본.png","https://i.postimg.cc/2yD14rY0/7_최종_수정본.png","https://i.postimg.cc/Vv8JjmwG/8_최종_수정본.png"],
+  "posterAlt": "2학기 졸업작품 전시회 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "졸업생들이 준비한 졸업 작품을 자유롭게 관람하실 수 있습니다.",
+    "전시 작품 보호를 위해 안내된 동선에 따라 이동해 주세요.",
+    "혼잡 시간대에는 입장 대기가 발생할 수 있습니다.",
+    "사진 촬영은 각 팀 안내에 따라 허용 범위 내에서만 진행해 주세요."
+  ],
+
+  "cta": {
+    "label": "-",
+    "link": "#"
+  }
+}

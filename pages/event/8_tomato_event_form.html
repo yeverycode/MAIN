@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>이벤트 신청서 | 숙명여자대학교 인공지능공학부</title>
+
+  <link rel="stylesheet" href="/css/8_tomato_common.css" />
+  <link rel="stylesheet" href="/css/8_tomato_event_form.css" />
+  <script src="/js/8_tomato_event_form.js" defer></script>
+</head>
+<body>
+
+  <div class="site-header-backdrop" aria-hidden="true"></div>
+  <header class="site-header" aria-label="주요 탐색">
+    <nav class="nav" role="navigation">
+      <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="홈버튼">
+        <img
+          src="/assets/8_tomato_home_white.png"
+          alt="홈버튼"
+          class="nav__logo"
+        >
+      </a>
+
+      <div class="nav__item">
+        <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">ABOUT</a>
+        <div class="dropdown" role="menu">
+          <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
+          <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
+          <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학생회 소개</a>
+        </div>
+      </div>
+
+      <div class="nav__item">
+        <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">EVENT</a>
+        <div class="dropdown" role="menu">
+          <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
+          <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
+          <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">PROF</a>
+        <div class="dropdown" role="menu">
+          <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
+          <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
+        </div>
+      </div>
+      <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
+      <a href="/pages/8_tomato_recruit.html" class="nav__link">RECRUIT</a>
+    </nav>
+  </header>
+
+  <section class="form-section" role="main" aria-labelledby="form-title">
+    <div class="apply-container">
+      <h2 id="form-title" class="apply-title">이벤트 신청폼</h2>
+
+      <form id="event-form" novalidate>
+        <div class="form-group">
+          <label for="apply-name">이름<span aria-hidden="true">*</span></label>
+          <input type="text" id="apply-name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="apply-student-id">학번<span aria-hidden="true">*</span></label>
+          <input type="text" id="apply-student-id" name="student-id" inputmode="numeric" pattern="[0-9]{7}" maxlength="7" required>
+          <span class="form-helper">예) 2400000</span>
+        </div>
+
+        <div class="form-group">
+          <label for="apply-phone">전화번호<span aria-hidden="true">*</span></label>
+          <input type="tel" id="apply-phone" name="phone" inputmode="tel" placeholder="010-1234-5678" required>
+        </div>
+
+        <button type="submit" class="submit-button">
+          신청서 제출하기
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer-section" aria-label="하단 정보">
+    <div class="brand">
+      <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+      MAIN
+    </div>
+    <address class="addr">
+      <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
+      <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
+      <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
+    </address>
+    <p class="copy">
+      COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "id": "1",
+  "title": "신입생 OT",
+  "headline": "신입생 OT 신청 안내",
+
+  "eventDate": "2025.02.19 (수) 15:30 ~ 18:30",
+  "applyPeriod": "2025.02.07 (금) 16:00 ~ 2025.02.14 (금) 23:59",
+  "target": "인공지능공학부 25학번 신입생",
+  "location": "프라임관 201호",
+
+  "applyMethod": "신청폼 제출",
+
+  "posterImages": [
+    "https://i.postimg.cc/15hLyDjV/001.png",
+    "https://i.postimg.cc/NfqWQRzk/002.png",
+    "https://i.postimg.cc/tCQL9FM5/003.png",
+    "https://i.postimg.cc/NfqWQRz7/004.png"
+  ],
+  "posterAlt": "신입생 OT 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "행사 일정은 공과대학 OT 및 학생지원센터 행사 이후 진행됩니다.",
+    "중도 퇴장 및 재입장은 불가합니다.",
+    "인공지능공학부 25학번 신입생만 참여 가능합니다.",
+    "대표단(과대표·부과대표) 선출이 진행될 예정입니다.",
+    "원활한 진행을 위해 행사 시작 10~15분 전에 입장해 주세요."
+  ],
+
+  "cta": {
+    "label": "신청하기",
+    "link": "https://forms.gle/pD6U9i243Ajr2juh6"
+  }
+}

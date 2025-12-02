@@ -24,7 +24,8 @@ async function loadProfessor(id) {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    const prof = await response.json();
+    const raw = await response.json();
+    const prof = raw?.id ? raw : raw?.[safeId]; // 일부 데이터 파일은 id로 중첩되어 있음
 
     if (!prof) {
       renderError('교수 정보를 찾을 수 없습니다.');

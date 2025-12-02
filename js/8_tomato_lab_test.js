@@ -1,42 +1,55 @@
 // 분야/연구실 데이터
 const FIELDS = {
-  aiData: {
-    title: '인공지능·데이터 사이언스',
-    fullTitle: '인공지능·데이터 사이언스형',
-    desc: 'AI 모델링, 비전, 추천, 데이터 중심 연구로 모델 성능과 데이터 가치를 끌어올립니다.',
+  systemsNetwork: {
+    title: '시스템·네트워크',
+    fullTitle: '시스템·네트워크형',
+    desc: '분산 시스템, 시스템 소프트웨어, 네트워크 보안 전반을 다루며 견고한 인프라를 설계합니다.',
+    color: '#1D4ED8',
+    labs: [
+      { englishName: 'Smart Distributed System Lab.', koreanName: '스마트 분산시스템 연구실', prof: '윤용익', room: '새힘관 512호', url: 'http://mm.sookmyung.ac.kr/~yiyoon', logo: '/assets/lab_logo/color/8_tomato_yiyoon_logo.png' },
+      { englishName: 'Smart System Software Lab.', koreanName: '지능형 시스템 소프트웨어 연구실', prof: '이종우', room: '새힘관 509호', url: 'https://sites.google.com/view/jwleelab', logo: '/assets/lab_logo/color/8_tomato_jwlee_logo.png' },
+      { englishName: 'System and Network Security Lab.', koreanName: '시스템 네트워크 보안 연구실', prof: '정성훈', room: '명신관 508A호', url: 'https://www.snsec.net', logo: '/assets/lab_logo/color/8_tomato_shjeong_logo.png' }
+    ]
+  },
+  visionGraphics: {
+    title: '비전·그래픽스·VR/AR',
+    fullTitle: '비전·그래픽스·VR/AR형',
+    desc: '컴퓨터 비전과 3D 그래픽스, VR/AR을 중심으로 시각 지능과 몰입 경험을 연구합니다.',
     color: '#2563EB',
     labs: [
-      { name: '그래프·추천·언어 모델 연구실', prof: '최윤혁', room: '수련교수회관 202호', url: 'https://choiyoonhyuk.github.io/' },
-      { name: '지능형비전처리 연구실 (IVPL)', prof: '김병규', room: '새힘관 102호', url: 'http://ivpl.sookmyung.ac.kr' },
-      { name: '3차원 인공지능 유니버스 연구실', prof: '강지우', room: '명신관 618호', url: 'http://www.aiunilab.com/' },
-      { name: '데이터 분석 연구실', prof: '박영호', room: '새힘관 508호', url: 'https://sites.google.com/site/dbsook/professor' }
+      { englishName: 'CG/VR Lab.', koreanName: '컴퓨터 그래픽스/가상현실 연구실', prof: '박화진', room: '새힘관 510호', url: 'https://sites.google.com/sookmyung.ac.kr/cgvr/home', logo: '/assets/lab_logo/color/8_tomato_hjpark_logo.png' },
+      { englishName: 'IVPL (Intelligent Vision Processing Lab.)', koreanName: '지능형 비전처리 연구실', prof: '김병규', room: '새힘관 102호', url: 'http://ivpl.sookmyung.ac.kr', logo: '/assets/lab_logo/color/8_tomato_bgkim_logo.png' },
+      { englishName: '3D AI Universe Lab.', koreanName: '3차원 인공지능 유니버스 연구실', prof: '강지우', room: '명신관 618호', url: 'http://www.aiunilab.com/', logo: '/assets/lab_logo/color/8_tomato_jwkang_logo.png' }
     ]
   },
-  iotHci: {
-    title: '지능형 시스템·IoT·인간 중심 인터랙션',
-    fullTitle: '지능형 시스템·IoT·인간 중심 인터랙션형',
-    desc: '에이전트·IoT·UX·BCI 중심으로 사람과 사물을 연결하는 지능형 시스템을 설계합니다.',
+  dataInfoGraph: {
+    title: '데이터·정보·그래프',
+    fullTitle: '데이터·정보·그래프형',
+    desc: '데이터 분석, 정보공학, 그래프·추천·언어 모델링으로 데이터 기반 지능을 구현합니다.',
+    color: '#0EA5E9',
+    labs: [
+      { englishName: 'Data Analytics Lab.', koreanName: '데이터 분석 연구실', prof: '박영호', room: '새힘관 508호', url: 'https://sites.google.com/site/dbsook/professor', logo: '/assets/lab_logo/color/8_tomato_yhpark_logo.png' },
+      { englishName: 'Knowledge and Information Engineering Lab.', koreanName: '지식 및 정보 공학 연구실', prof: '김철연', room: '새힘관 103호', url: 'https://kie.sookmyung.ac.kr/', logo: '/assets/lab_logo/color/8_tomato_cykim_logo.png' },
+      { englishName: 'Graph·Recommender·LLM Lab.', koreanName: '그래프·추천·언어 모델 연구실', prof: '최윤혁', room: '수련교수회관 202호', url: 'https://choiyoonhyuk.github.io/', logo: '/assets/lab_logo/color/8_tomato_yhchoi_logo.png' }
+    ]
+  },
+  humanAI: {
+    title: '인간 중심 AI·인터페이스',
+    fullTitle: '인간 중심 AI·인터페이스형',
+    desc: 'HCI, 지능형 시스템, 인간 중심 AI로 사람과 기술의 상호작용을 연구합니다.',
     color: '#10B981',
     labs: [
-      { name: '지능형 시스템 연구실', prof: '임유진', room: '새힘관 104호', url: 'https://sites.google.com/view/yujin91' },
-      { name: '지식 및 정보공학 연구실', prof: '김철연', room: '새힘관 103호', url: 'https://kie.sookmyung.ac.kr/' },
-      { name: '인간 중심 인공지능 연구실', prof: '김상연', room: '명신관 511호', url: 'https://sangyeonk.com' },
-      { name: '인간 컴퓨터 상호작용 연구실', prof: '동서연', room: '새힘관 604호', url: 'https://sites.google.com/site/sydonglab/' }
-    ]
-  },
-  systems: {
-    title: '시스템·네트워크·보안·그래픽스',
-    fullTitle: '시스템·네트워크·보안·그래픽스형',
-    desc: '시스템, 네트워크, 보안, 그래픽스를 다루며 견고한 인프라와 시각 기술을 연구합니다.',
-    color: 'var(--blue)',
-    labs: [
-      { name: '스마트 분산시스템 연구실', prof: '윤용익', room: '새힘관 512호', url: 'http://mm.sookmyung.ac.kr/~yiyoon' },
-      { name: '지능형 시스템 소프트웨어 연구실', prof: '이종우', room: '새힘관 509호', url: 'https://sites.google.com/view/jwleelab' },
-      { name: '시스템 네트워크 보안 연구실', prof: '정성훈', room: '명신관 508A호', url: 'https://www.snsec.net' },
-      { name: '컴퓨터 그래픽스/가상현실 연구실', prof: '박화진', room: '새힘관 510호', url: 'https://sites.google.com/sookmyung.ac.kr/cgvr/home' }
+      { englishName: 'Intelligent System Lab.', koreanName: '지능형 시스템 연구실', prof: '임유진', room: '새힘관 104호', url: 'https://sites.google.com/view/yujin91', logo: '/assets/lab_logo/color/8_tomato_yjlim_logo.png' },
+      { englishName: 'Human Computer Interaction Lab.', koreanName: '인간 컴퓨터 상호작용 연구실', prof: '동서연', room: '새힘관 604호', url: 'https://sites.google.com/site/sydonglab/', logo: '/assets/lab_logo/color/8_tomato_sydong_logo.png' },
+      { englishName: 'Human-centered AI Lab.', koreanName: '인간 중심 인공지능 연구실', prof: '김상연', room: '명신관 511호', url: 'https://sangyeonk.com', logo: '/assets/lab_logo/color/8_tomato_sykim_logo.png' }
     ]
   }
 };
+
+const initScores = () => Object.keys(FIELDS).reduce((acc, key) => {
+  acc[key] = 0;
+  return acc;
+}, {});
 
 // 질문 데이터
 const QUESTIONS = [
@@ -44,27 +57,30 @@ const QUESTIONS = [
     id: 1,
     question: '가장 흥미로운 주제는?',
     options: [
-      { text: '그래프·비전·추천 같은 AI 모델링', score: 'aiData' },
-      { text: 'IoT/에이전트와 UX, BCI 결합', score: 'iotHci' },
-      { text: '네트워크·보안·그래픽스', score: 'systems' }
+      { text: '분산 시스템·네트워크·보안', score: 'systemsNetwork' },
+      { text: '비전·그래픽스·VR/AR', score: 'visionGraphics' },
+      { text: '데이터 분석·정보공학·그래프/추천', score: 'dataInfoGraph' },
+      { text: 'HCI·인간 중심 AI·지능형 시스템', score: 'humanAI' }
     ]
   },
   {
     id: 2,
-    question: '어떤 분야를 선호하나요?',
+    question: '어떤 유형의 문제를 풀고 싶나요?',
     options: [
-      { text: '데이터 수집 · 모델 성능을 높이기', score: 'aiData'},
-      { text: '센서·사용자와 실시간으로 상호작용하는 환경', score: 'iotHci'},
-      { text: '시스템/보안 환경', score: 'systems'}
+      { text: '안정적 인프라, 네트워크/보안 최적화', score: 'systemsNetwork'},
+      { text: '시각 지능과 몰입형 경험', score: 'visionGraphics'},
+      { text: '데이터 기반 인사이트와 추천/LLM', score: 'dataInfoGraph'},
+      { text: '사용자 경험과 인터페이스 설계', score: 'humanAI'}
     ]
   },
   {
     id: 3,
     question: '나의 강점은?',
     options: [
-      { text: '데이터 분석과 모델 튜닝', score: 'aiData'},
-      { text: '사람/기기 경험 설계와 연결성', score: 'iotHci'},
-      { text: '문제 해결과 시스템 최적화', score: 'systems'}
+      { text: '시스템 설계·보안 사고력', score: 'systemsNetwork'},
+      { text: '시각/3D 처리와 구현', score: 'visionGraphics'},
+      { text: '데이터 분석과 모델링', score: 'dataInfoGraph'},
+      { text: '사용자·인터랙션 설계', score: 'humanAI'}
     ]
   }
 ];
@@ -72,7 +88,7 @@ const QUESTIONS = [
 // 상태 관리
 let currentQuestion = 0;
 let answers = {};
-let scores = { aiData: 0, iotHci: 0, systems: 0 };
+let scores = initScores();
 
 // 요소 참조
 const welcomeScreen = document.getElementById('welcomeScreen');
@@ -84,14 +100,18 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const progressFill = document.getElementById('progressFill');
 const currentStepEl = document.getElementById('currentStep');
+const labScrollStatic = document.querySelector('.lab-scroll-static');
 
 // 시작 버튼
-startBtn.addEventListener('click', () => {
-  welcomeScreen.style.display = 'none';
-  quizScreen.style.display = 'block';
-  renderQuestion();
-  updateProgress();
-});
+if (startBtn) {
+  startBtn.addEventListener('click', () => {
+    if (labScrollStatic) labScrollStatic.classList.add('is-hidden');
+    welcomeScreen.style.display = 'none';
+    quizScreen.style.display = 'block';
+    renderQuestion();
+    updateProgress();
+  });
+}
 
 // 질문 렌더링
 function renderQuestion() {
@@ -136,7 +156,7 @@ function renderQuestion() {
 function updateProgress() {
   const progress = ((currentQuestion + 1) / QUESTIONS.length) * 100;
   progressFill.style.width = `${progress}%`;
-  currentStepEl.textContent = currentQuestion + 1;
+  if (currentStepEl) currentStepEl.textContent = currentQuestion + 1;
 }
 
 // 버튼 상태 업데이트
@@ -168,7 +188,7 @@ nextBtn.addEventListener('click', () => {
 
 // 결과 계산
 function calculateResult() {
-  scores = { aiData: 0, iotHci: 0, systems: 0 };
+  scores = initScores();
   Object.values(answers).forEach(answer => {
     scores[answer]++;
   });
@@ -194,11 +214,12 @@ function showResult(key) {
     <section class="result-labs" style="--accent-color:${field.color}">
       <div class="result-cards-grid">
         ${field.labs.map(lab => `
-          <article class="info-card lab-card">
+          <article class="info-card">
             <span class="card-dot" aria-hidden="true"></span>
-            <div class="card-eyebrow">${field.title}</div>
+            <div class="card-eyebrow">${lab.englishName}</div>
             <div class="card-line" aria-hidden="true"></div>
-            <h3 class="card-title">${lab.name}</h3>
+            <h3 class="card-title">${lab.koreanName}</h3>
+            <img class="card-logo" src="${lab.logo}" alt="${lab.englishName} logo" loading="lazy">
             <a class="card-more" href="${lab.url}" target="_blank" rel="noopener">+ MORE</a>
           </article>
         `).join('')}
@@ -229,9 +250,11 @@ function showResult(key) {
   document.getElementById('restartBtn').addEventListener('click', () => {
     currentQuestion = 0;
     answers = {};
-    scores = { aiData: 0, iotHci: 0, systems: 0 };
+    scores = initScores();
     resultScreen.style.display = 'none';
     welcomeScreen.style.display = 'block';
+    quizScreen.style.display = 'none';
+    if (labScrollStatic) labScrollStatic.classList.remove('is-hidden');
   });
 
   document.getElementById('shareBtn').addEventListener('click', () => {

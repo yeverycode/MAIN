@@ -1,0 +1,76 @@
+/* -------------------------------------- */
+/* 1. M, AI, N을 감싸는 <h1>의 기본 스타일 */
+/* -------------------------------------- */
+.page-hero__headline h1 {
+    /* 텍스트 요소가 인라인(inline)으로 배열되도록 유지 */
+    display: inline-block; 
+}
+
+/* -------------------------------------- */
+/* 2. AI 텍스트 (차오름 & 스켈레톤 & 마진) 스타일 */
+/* -------------------------------------- */
+.rising-text {
+    position: relative;
+    /* 1. 스켈레톤 효과: 차오르기 전, 기본 텍스트 색상을 var(--text-muted)로 설정 */
+    color: var(--text-muted, grey); 
+    font-size: inherit; 
+    font-weight: inherit;
+    /* margin 애니메이션 적용을 위해 필수 */
+    display: inline-block; 
+
+    /* ★ 마진 애니메이션 추가 (4초 동안 실행) */
+    animation: margin-grow 4s ease-in-out forwards;
+}
+
+/* 2.1. 차오르는 효과를 위한 ::before 가상 요소 */
+.rising-text::before {
+    /* data-text 속성 값을 content로 사용 ('AI' 텍스트 복제) */
+    content: attr(data-text); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 차오르는 색상 */
+    color: var(--blue, blue); 
+
+    /* ★ clip-path로 처음에는 텍스트 전체를 가림 (100%부터 시작) */
+    clip-path: inset(100% 0 0 0); 
+
+    /* 차오름 애니메이션 (4초 동안 실행) */
+    animation: rise-up 4s ease-in-out forwards;
+}
+
+/* AI 텍스트 차오름 키프레임 */
+@keyframes rise-up {
+    0% { 
+        /* 시작: 완전히 가려져서 아래 스켈레톤 색상만 보임 */
+        clip-path: inset(100% 0 0 0); 
+    } 
+    100% { 
+        /* 끝: 완전히 드러나서 파란색이 됨 */
+        clip-path: inset(0 0 0 0); 
+    } 
+}
+
+/* -------------------------------------- */
+/* 3. AI 텍스트의 마진 증가/감소 키프레임 */
+/* -------------------------------------- */
+@keyframes margin-grow {
+    /* 0%~20%: 스켈레톤 단계, 움직이지 않음 */
+    0%, 20% {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /* 40%~60%: AI가 차오르는 동안 양쪽으로 10px 확장하여 M과 N을 밀어냄 */
+    40%, 60% {
+        margin-left: 5px; 
+        margin-right: 5px; 
+    }
+    /* 80%~100%: 원위치로 돌아옴 */
+    80%, 100% {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

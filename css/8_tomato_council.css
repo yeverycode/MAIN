@@ -129,14 +129,6 @@
     z-index: 1; 
 }
 
-/* 'main()' 특수 색상 처리 */
-.word-unit .main-blue {
-    /* 애니메이션 전 main() 글자 색상: var(--blue) */
-    color: var(--blue, #007bff); 
-    position: relative;
-    z-index: 0; 
-}
-
 /* ================================================= */
 /* 💡 수직선 무한 채우기 애니메이션 스타일 추가 */
 /* ================================================= */
@@ -243,11 +235,33 @@
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
     margin-bottom: 15px;
+    display: flex;
+}
+
+.carousel-item h3 .year-text {
+    /* 💥 핵심: 왼쪽 마진을 자동으로 설정하여 가능한 한 멀리 오른쪽으로 밀어냅니다. */
+    margin-left: auto; 
+    
+    /* <h3>의 마진과 겹치지 않도록 수직 정렬을 맞춥니다. */
+    align-self: center; 
+    font-weight: 400;
+    /* <h3>와 폰트 크기를 맞춥니다. */
+    font-size: 1rem; /* <h3> 내부이므로 1em이 <h3>와 동일한 크기입니다. */
+    
+    /* <span>은 인라인 요소이므로, 크기 제어를 위해 필요할 경우 display: block 또는 inline-block을 사용할 수 있습니다. */
+    /* display: inline-block; */
+}
+
+/* 추가: <h3>의 기본 마진을 초기화하여 상단 정렬을 깔끔하게 합니다. */
+.carousel-item h3 {
+    margin-top: 0;
+    margin-bottom: 0; 
 }
 
 .carousel-item .role {
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 /* 기존 CSS (스크롤바 숨김) 코드를 제거하세요: 
@@ -274,4 +288,82 @@
 /* 3. 스크롤바 엄지 (드래그 가능한 부분) 스타일 */
 .carousel-container::-webkit-scrollbar-thumb {
     background: var(--blue); /* 눈에 띄는 색상 */
+}
+
+/***********************************************
+ * TRACK SECTION (3가지 트랙 카드)
+ ***********************************************/
+.intro-track {
+  margin: 80px auto 220px;   /* 자동 마진으로 중앙 배치 */
+  max-width: 1400px;         /* 섹션 전체 폭 */
+}
+
+.intro-track h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--white);
+}
+
+.intro-track p {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 60px;
+  color: var(--white);
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 39px;
+  justify-content: center;   /* 그리드 자체를 중앙 정렬 */
+}
+
+.track-card {
+    background: #2d2d2d;
+    padding: 32px;
+    min-height: 200px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 1; 
+    position: relative;
+}
+
+/* 좌측 상단 파란 박스 */
+.track-card::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 24px;
+    height: 18px;
+    background: var(--blue);
+}
+
+.track-card h3 {
+  font-size: 20px;
+  font-weight: 1000;
+  margin-bottom: 16px;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* 카드 내부 회색 라인 */
+.track-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 1px;
+  background: var(--gray-muted);
+}
+
+.track-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--white);
+  font-weight: 500;
 }

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const segmentDuration = 1 / totalWords; 
 
         // 💡 수정: 스크롤 범위 (애니메이션이 끝까지 완료되는 지점을 화면 중앙 근처로 설정)
-        const startOffset = viewportHeight * 0.8; // 화면 하단 90% 지점에서 시작 (이전과 동일)
+        const startOffset = viewportHeight * 0.88; // 화면 하단 90% 지점에서 시작 (이전과 동일)
         const endOffset = viewportHeight * 0.3;   // 화면 중앙 50% 지점에서 완료 (수정됨)
         
         allWords.forEach((word, index) => { 

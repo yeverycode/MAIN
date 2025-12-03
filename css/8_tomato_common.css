@@ -10,6 +10,9 @@
   --gray-strong: #BFB9B9;
   --gray-muted: #666666;
   --header-height: 84px;
+  --rail-fab-size: 68px;
+  --rail-fab-spacing: 14px;
+  --rail-bottom-gap: clamp(14px, 4vh, 26px);
   --font-base: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
@@ -272,6 +275,191 @@ button {
 
 .nav__link--main.is-active {
   color: var(--accent);
+}
+
+/* 플로팅 레일 & FAB */
+.rail {
+  --rail-top: calc(var(--header-height) + 20px);
+  --rail-bottom: calc(var(--rail-bottom-gap) + var(--rail-fab-size) + var(--rail-fab-spacing));
+  position: fixed;
+  right: 26px;
+  bottom: var(--rail-bottom);
+  width: var(--rail-fab-size);
+  padding: 18px 12px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink, #111);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.55s ease, opacity 0.55s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(10px);
+  max-height: calc(100dvh - var(--rail-top) - var(--rail-bottom));
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 50;
+}
+
+.rail.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  top: var(--rail-top);
+  bottom: var(--rail-bottom);
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail-collapse {
+  display: none;
+  width: 52px;
+  height: 52px;
+  border: none;
+  background: transparent;
+  color: var(--ink, #111);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.rail-collapse svg {
+  width: 26px;
+  height: 26px;
+}
+
+.rail.is-open .rail-collapse {
+  display: inline-flex;
+}
+
+.rail-collapse:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.rail__icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.rail .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  display: grid;
+  place-items: center;
+  transition: 200ms ease;
+}
+
+.rail .icon:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.icon__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.rail__label {
+  writing-mode: vertical-rl;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: var(--ink, #111);
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+.rail.is-open + .rail-fab .rail-trigger,
+.rail.is-open + .rail-fab .rail-trigger img {
+  display: none;
+}
+
+.rail-fab {
+  position: fixed;
+  right: 24px;
+  bottom: var(--rail-bottom-gap);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--rail-fab-spacing);
+  z-index: 51;
+}
+
+.rail-trigger,
+.rail-scroll {
+  width: var(--rail-fab-size);
+  height: var(--rail-fab-size);
+  border-radius: 50%;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  opacity: 80%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.rail-trigger img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.rail-scroll {
+  color: #156adf;
+  backdrop-filter: blur(8px);
+}
+
+.rail-scroll svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.rail-trigger:hover,
+.rail-scroll:hover {
+  transform: translateY(-2px);
+}
+
+.rail-scroll.is-up svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --rail-fab-size: 72px;
+    --rail-bottom-gap: clamp(12px, 5vh, 22px);
+  }
+
+  .rail {
+    right: 12px;
+    width: var(--rail-fab-size);
+  }
+
+  .rail-fab {
+    right: 16px;
+  }
 }
 
 .nav__link--main:hover {

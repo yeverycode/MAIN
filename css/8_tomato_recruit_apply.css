@@ -85,7 +85,7 @@
     padding: 12px 14px;
     padding-right: 38px; /* 화살표 공간 확보 */
 
-    background-color: #000;
+    background-color: var(--black);
     color: #fff;
 
     border: 1px solid #fff;

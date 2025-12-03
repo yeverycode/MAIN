@@ -238,7 +238,7 @@
 
 .prof-table__cell--empty {
   text-align: center;
-  color: #666666;
+  color: var(--gray-muted);
   font-weight: 500;
   padding: 14px 0;
 }
@@ -296,7 +296,7 @@
   height: 2px;
   width: 100%;
   max-width: 360px;
-  background: #000000;
+  background: var(--black);
   margin-bottom: 12px;
 }
 

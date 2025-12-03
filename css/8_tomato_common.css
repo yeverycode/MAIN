@@ -618,7 +618,7 @@ html:not(.reveal-ready) .reveal-height {
   animation: fadeInUp 1s ease-out both;
   animation-timeline: view();
   animation-range: entry 0% entry 50%;
-  margin-top: 80px;
+  margin-top: 5px;
   flex-shrink: 0;
   display: grid;
   grid-template-columns: 1fr auto;

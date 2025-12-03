@@ -289,14 +289,14 @@
   font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 800;
   font-size: 20px;
-  color: #000;
+  color: var(--black);
 }
 
 .prof-card__lab {
   font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  color: #000;
+  color: var(--black);
   z-index: 2;
 }
 
@@ -310,7 +310,7 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 1.4;
-  color: #000;
+  color: var(--black);
 
   opacity: 0;
   transform: translateY(-12px);

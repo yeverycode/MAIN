@@ -21,6 +21,17 @@
   column-gap: clamp(32px, 6vw, 60px);
 }
 
+/* ABOUT 타이틀 O 이미지 사이즈 맞춤 */
+.page-hero--curriculum .title-img {
+  width: clamp(72px, 9vw, 135px);
+  height: clamp(72px, 9vw, 135px);
+}
+
+.page-hero--curriculum .title-img-wrap {
+  margin-left: 9px;
+  margin-right: 7px;
+}
+
 .curriculum-hero-title {
   text-align: left;
   margin-bottom: 64px;
@@ -118,17 +129,18 @@
   display: flex;
   align-items: stretch;
   gap: 0;
-  border: 0.3px solid #000;
+  border: 0.3px solid var(--black);
   border-radius: 5px;
   overflow: hidden;
   background: #ffffff;
-  width: clamp(320px, 28vw, 520px);
+  width: 620px;
+  max-width: 100%;
   margin-left: auto;
 }
 
 .curriculum-search__select {
   min-width: 140px;
-  border-right: 0.3px solid #000;
+  border-right: 0.3px solid var(--black);
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -172,7 +184,7 @@
   align-items: center;
   justify-content: center;
   width: 48px;
-  background: #000;
+  background: var(--black);
   border: none;
   cursor: pointer;
 }
@@ -189,7 +201,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 28px;
-  margin-top: 48px;
+  margin-top: 72px;
 }
 
 .curriculum-card {

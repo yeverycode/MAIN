@@ -26,7 +26,7 @@
       <div class="dropdown" role="menu">
         <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
         <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
-        <a href="/pages/8_tomato_academy.html" class="dropdown__item" role="menuitem">학생회 소개</a>
+        <a href="/pages/8_tomato_council.html" class="dropdown__item" role="menuitem">학생회 소개</a>
       </div>
     </div>
 
@@ -159,21 +159,58 @@
   </div>
 </main>
 
+
+<!-- 플로팅 레일 / 스크롤 버튼 -->
+<aside class="rail" aria-label="빠른 링크 및 레이블">
+  <button class="rail-collapse" type="button" aria-label="패널 닫기">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="rail__icons">
+    <a href="https://www.sookmyung.ac.kr" class="icon" aria-label="숙명여대 홈페이지" target="_blank" rel="noopener">
+      <img src="/assets/8_tomato_sookmyung_logo.png" alt="" width="35" height="35">
+    </a>
+    <a href="https://www.instagram.com/smwu_ai/" class="icon" aria-label="Instagram" target="_blank" rel="noopener">
+      <img src="/assets/8_tomato_instagram.svg" alt="" width="25" height="25">
+    </a>
+    <a href="https://www.youtube.com/@smwu_ai" class="icon" aria-label="YouTube" target="_blank" rel="noopener">
+      <img src="/assets/8_tomato_youtube.svg" alt="" width="30" height="30">
+    </a>
+    <a href="http://pf.kakao.com/_LJMjn" class="icon" aria-label="KakaoTalk" target="_blank" rel="noopener">
+      <img src="/assets/8_tomato_kakao.svg" alt="" width="30" height="30">
+    </a>
+  </div>
+
+  <div class="rail__label" aria-hidden="true">
+    SOOKMYUNG<br/>AI ENGINEERING
+  </div>
+</aside>
+
+<div class="rail-fab" aria-live="polite">
+  <button class="rail-trigger quick_btn" type="button" aria-label="빠른 링크 열기" aria-expanded="false">
+    <img src="/assets/8_tomato_main_logo_black.png" alt="" />
+  </button>
+  <button class="rail-scroll" type="button" aria-label="맨 아래로 이동">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
 <footer class="footer-section" aria-label="하단 정보">
   <div class="brand">
-    <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+    <img src="/assets/8_tomato_main_logo_white.png" alt="MAIN 로고" />
     MAIN
   </div>
   <address class="addr">
     <p>(04310) 서울특별시 용산구 청파로47길 100 (청파동2가) 숙명여자대학교 공과대학 인공지능공학부</p>
     <p>TEL | 02-710-9379 &nbsp;&nbsp; FAX | 02-710-9704 &nbsp;&nbsp; E-MAIL : ai@sookmyung.ac.kr / itdept@sookmyung.ac.kr</p>
     <p>카카오톡 플러스친구 운영 시간 : 월-금 09:00-18:00</p>
-  </address>
-  <p class="copy">
-    COPYRIGHT© SOOKMYUNG WOMEN'S UNIVERSITY 2025. ALL RIGHTS RESERVED.
-  </p>
-</footer>
+  </address></footer>
 
 <script src="/js/8_tomato_event_apply.js" defer></script>
+  <script src="/js/8_tomato_common.js" defer></script>
+
 </body>
 </html>

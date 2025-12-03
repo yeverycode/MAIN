@@ -435,6 +435,7 @@ function getCalendarEventsFromList() {
         _trackIndex: null,
         type: getEventType(ev) || "event",
         categoryLabel: ev.categoryLabel || "학과 행사",
+        fromEventList: true,
       };
     })
     .filter(Boolean);
@@ -478,6 +479,7 @@ async function loadAcademicDepartmentEvents() {
           _startDate: start,
           _endDate: end,
           _trackIndex: null,
+          fromEventList: false,
           categoryLabel: ev.categoryLabel || (ev.type === "academic" ? "학사 일정" : "학과 일정"),
         });
       });
@@ -593,9 +595,8 @@ function renderCalendarDetail() {
   }
 
   events.forEach((ev) => {
-    const status = getListStatus(ev);
-    const statusLabel = getStatusLabel(ev, status);
     const typeMod = ev.type === "academic" || ev.type === "department" ? ev.type : "event";
+    const isDepartmentEvent = typeMod === "event" && ev.fromEventList === true && !!ev.id;
 
     const card = document.createElement("article");
     card.className = "calendar-detail-card";
@@ -607,11 +608,6 @@ function renderCalendarDetail() {
     badge.className = `detail-badge detail-badge--${typeMod}`;
     badge.textContent = ev.categoryLabel || "학과 행사";
     metaRow.appendChild(badge);
-
-    const period = document.createElement("span");
-    period.className = "detail-time";
-    period.textContent = `${ev.periodText || `${ev.startDate} ~ ${ev.endDate}`} · ${statusLabel}`;
-    metaRow.appendChild(period);
 
     const title = document.createElement("h3");
     title.className = "calendar-detail-card__title";
@@ -625,13 +621,25 @@ function renderCalendarDetail() {
       title.textContent = ev.title;
     }
 
+    const bodyRow = document.createElement("div");
+    bodyRow.className = "calendar-detail-card__body";
+
     const desc = document.createElement("p");
     desc.className = "calendar-detail-card__desc";
     desc.textContent = ev.description || "";
+    bodyRow.appendChild(desc);
+
+    if (isDepartmentEvent) {
+      const applyLink = document.createElement("a");
+      applyLink.className = "detail-apply";
+      applyLink.href = `/pages/event/8_tomato_event_apply.html?id=${ev.id}`;
+      applyLink.textContent = "+APPLY";
+      bodyRow.appendChild(applyLink);
+    }
 
     card.appendChild(metaRow);
     card.appendChild(title);
-    card.appendChild(desc);
+    card.appendChild(bodyRow);
 
     detailList.appendChild(card);
   });

@@ -21,6 +21,17 @@
   column-gap: clamp(32px, 6vw, 60px);
 }
 
+/* ABOUT 타이틀 O 이미지 사이즈 맞춤 */
+.page-hero--curriculum .title-img {
+  width: clamp(72px, 9vw, 135px);
+  height: clamp(72px, 9vw, 135px);
+}
+
+.page-hero--curriculum .title-img-wrap {
+  margin-left: 9px;
+  margin-right: 7px;
+}
+
 .curriculum-hero-title {
   text-align: left;
   margin-bottom: 64px;

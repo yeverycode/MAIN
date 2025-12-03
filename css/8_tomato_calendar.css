@@ -76,7 +76,6 @@ body.page-calendar {
 
 .filter-chip.is-active {
   background: #ffffff;
-  box-shadow: 0 0 0 1px rgba(24,87,255,0.3);
   color: #1857ff;
 }
 
@@ -95,7 +94,6 @@ body.page-calendar {
   padding: 4px 8px;
   border-radius: 5px;
   background: #ffffff;
-  box-shadow: 0 0 0 1px rgba(148,163,184,0.4);
 }
 
 .legend-item::before {
@@ -133,9 +131,6 @@ body.page-calendar {
   grid-template-columns: repeat(7, 1fr);
   background: #ffffff;
   border-radius: 5px;
-  box-shadow:
-    0 18px 33px rgba(15, 23, 42, 0.06),
-    0 0 0 1px rgba(148, 163, 184, 0.35);
   overflow: hidden;
   position: relative;
 }
@@ -159,7 +154,7 @@ body.page-calendar {
 }
 
 .calendar-day.is-empty {
-  background: #f9fbff;
+  background: var(--gray);
 }
 
 /* 날짜 숫자 기본 상태 */
@@ -271,7 +266,14 @@ body.page-calendar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   font-size: 11px;
+}
+
+.calendar-detail-card__body {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
 }
 
 .detail-badge {
@@ -295,6 +297,18 @@ body.page-calendar {
   color: #b91c1c;
 }
 
+.detail-apply {
+  font-size: 12px;
+  font-family: Pretendard;
+  font-weight: 200;
+  color: var(--black);
+  margin-left: auto;
+  align-self: flex-end;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
 .calendar-detail-card__title {
   font-size: 13px;
   font-weight: 600;
@@ -303,6 +317,7 @@ body.page-calendar {
 .calendar-detail-card__desc {
   font-size: 12px;
   color: #64748b;
+  flex: 1;
 }
 
 /* 멀티데이 트랙 자리 유지용 더미 (공간만 차지, 보이지 않음) */
@@ -327,19 +342,9 @@ body.page-calendar {
 .calendar-month-nav button {
   width: 28px;
   height: 28px;
+  border: 1px solid #d6d6d6;
   border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: #ffffff;
-  font-size: 16px;
-  line-height: 1;
+  background: #fff;
+  font-size: 14px;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #0f172a;
-}
-
-.calendar-month-nav button:hover {
-  background: #eef2ff;
-  border-color: #1857ff;
 }

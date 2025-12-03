@@ -19,6 +19,45 @@
     --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.page-hero--recruit .page-hero__headline h1 {
+    white-space: nowrap;
+}
+
+.page-hero__logo-letter-wrap {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 0;
+    width: clamp(30px, 8vw, 120px);
+    height: clamp(60px, 8vw, 120px);
+}
+
+.page-hero__logo-letter {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    animation: titleFloat 3s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+    0% {
+        transform: translate(-50%, -55%);
+    }
+    50% {
+        transform: translate(-50%, -45%);
+    }
+    100% {
+        transform: translate(-50%, -55%);
+    }
+}
+
 /* 섹션 기본 컨테이너 */
 .recruit-section {
     padding: 0px 20px 0px;

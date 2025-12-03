@@ -363,7 +363,6 @@
 .rail-trigger:hover,
 .rail-scroll:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px var(--card-border);
 }
 
 .rail-scroll.is-up svg {
@@ -870,7 +869,6 @@
 
 .event-more {
   font-size: 20px;
-  font-family: "YiSunShin Dotum L", Pretendard;
   font-weight: 400;
   color: var(--accent);
   margin-top: auto;

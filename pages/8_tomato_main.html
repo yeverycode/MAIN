@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,18 +13,16 @@
 <div class="site-header-backdrop" aria-hidden="true"></div>
 <header class="site-header" aria-label="주요 탐색">
   <nav class="nav" role="navigation">
-    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="홈버튼">
       <img
         src="/assets/8_tomato_home_white.png"
-        alt="MAIN 홈"
+        alt="홈버튼"
         class="nav__logo"
-        data-logo-dark="/assets/8_tomato_home_white.png"
-        data-logo-light="/assets/8_tomato_home_black.png"
       >
     </a>
 
     <div class="nav__item">
-      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">ABOUT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
         <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
@@ -33,16 +31,15 @@
     </div>
 
     <div class="nav__item">
-      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">행사소개</a>
+      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">EVENT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
         <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
-        <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
         <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
       </div>
     </div>
     <div class="nav__item">
-      <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+      <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">PROF</a>
       <div class="dropdown" role="menu">
         <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
         <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
@@ -67,8 +64,6 @@
             alt=""
             aria-hidden="true"
             class="ani-img"
-            data-theme-dark="/assets/8_tomato_black_rocket.png"
-            data-theme-light="/assets/8_tomato_white_rocket.png"
           >
         </span>R&nbsp;YOUR
       </span>
@@ -86,8 +81,6 @@
               alt=""
               aria-hidden="true"
               class="gif-img"
-              data-theme-dark="/assets/8_tomato_black_A.png"
-              data-theme-light="/assets/8_tomato_white_A.png"
             >
           </span>T
           <span class="gif gif-i">
@@ -97,8 +90,6 @@
               alt=""
               aria-hidden="true"
               class="gif-img"
-              data-theme-dark="/assets/8_tomato_black_I.png"
-              data-theme-light="/assets/8_tomato_white_I.png"
             >
           </span>VE
         </span>
@@ -111,8 +102,6 @@
               alt=""
               aria-hidden="true"
               class="gif-img"
-              data-theme-dark="/assets/8_tomato_black_A.png"
-              data-theme-light="/assets/8_tomato_white_A.png"
             >
           </span>T
           <span class="gif gif-i">
@@ -122,8 +111,6 @@
               alt=""
               aria-hidden="true"
               class="gif-img"
-              data-theme-dark="/assets/8_tomato_black_I.png"
-              data-theme-light="/assets/8_tomato_white_I.png"
             >
           </span>VE
         </span>
@@ -135,8 +122,6 @@
               alt=""
               aria-hidden="true"
               class="gif-img"
-              data-theme-dark="/assets/8_tomato_black_A.png"
-              data-theme-light="/assets/8_tomato_white_A.png"
             >
           </span>CADEM
           <span class="gif gif-i">
@@ -146,8 +131,6 @@
               alt=""
               aria-hidden="true"
               class="gif-img"
-              data-theme-dark="/assets/8_tomato_black_I.png"
-              data-theme-light="/assets/8_tomato_white_I.png"
             >
           </span>C
         </span>
@@ -165,8 +148,6 @@
             alt=""
             aria-hidden="true"
             class="ani-img"
-            data-theme-dark="/assets/8_tomato_black_infinite.png"
-            data-theme-light="/assets/8_tomato_white_infinite.png"
           >
         </span>WTH
       </span>
@@ -214,34 +195,35 @@
 
     <div class="cards-grid">
       <!-- Card 1 -->
-      <article class="info-card reveal" data-reveal="up">
+       <article class="info-card reveal" data-reveal="up" style="--i:2">
+        <span class="card-dot" aria-hidden="true"></span>
+        <div class="card-eyebrow">INTRO</div>
+        <h3 class="card-title">인공지능공학부 소개</h3>
+        <div class="card-line" aria-hidden="true"></div>
+        <p class="card-desc">미래 기술을 선도할 AI 인재를<br/>양성하기 위한 교육과 환경을 제공합니다.</p>
+        <a class="card-more" href="/pages/8_tomato_intro.html">+ MORE</a>
+      </article>
+
+      <!-- Card 2 -->
+       <article class="info-card reveal" data-reveal="up">
         <span class="card-dot" aria-hidden="true"></span>
         <div class="card-eyebrow">CURRICULUM</div>
         <h3 class="card-title">인공지능공학부 커리큘럼</h3>
         <div class="card-line" aria-hidden="true"></div>
         <p class="card-desc">입문부터 심화 전공까지,<br/>단계별로 체계적인 커리큘럼을 제공합니다.</p>
-        <a class="card-more" href="#">+ MORE</a>
+        <a class="card-more" href="/pages/8_tomato_curriculum.html">+ MORE</a>
       </article>
-
-      <!-- Card 2 -->
-      <article class="info-card reveal" data-reveal="up" style="--i:1">
+    
+      <!-- Card 3 -->
+       <article class="info-card reveal" data-reveal="up" style="--i:1">
         <span class="card-dot" aria-hidden="true"></span>
         <div class="card-eyebrow">DEPT</div>
-        <h3 class="card-title">학생회 부서 소개</h3>
+        <h3 class="card-title">학생회 소개</h3>
         <div class="card-line" aria-hidden="true"></div>
-        <p class="card-desc">입문부터 심화 전공까지,<br/>단계별로 체계적인 커리큘럼을 제공합니다.</p>
+        <p class="card-desc">학생들이 직접 참여하며 만들어가는<br/>학생회의 다양한 활동과 부서를 소개합니다.</p>
         <a class="card-more" href="#">+ MORE</a>
       </article>
-
-      <!-- Card 3 -->
-      <article class="info-card reveal" data-reveal="up" style="--i:2">
-        <span class="card-dot" aria-hidden="true"></span>
-        <div class="card-eyebrow">INTRO</div>
-        <h3 class="card-title">인공지능공학부 소개</h3>
-        <div class="card-line" aria-hidden="true"></div>
-        <p class="card-desc">입문부터 심화 전공까지,<br/>단계별로 체계적인 커리큘럼을 제공합니다.</p>
-        <a class="card-more" href="#">+ MORE</a>
-      </article>
+      
     </div>
   </div>
 </section>
@@ -388,7 +370,7 @@
 
     </div>
     
-    <a class="btn-cta" href="#">테스트하러 가기</a>
+    <a class="btn-cta" href="/pages/prof/8_tomato_lab_test.html">테스트하러 가기</a>
   </div>
 </section>
 
@@ -421,7 +403,7 @@
 
 <div class="rail-fab" aria-live="polite">
   <button class="rail-trigger quick_btn" type="button" aria-label="빠른 링크 열기" aria-expanded="false">
-    <img src="/assets/8_tomato_main_logo.png" alt="" />
+    <img src="/assets/8_tomato_main_logo_black.png" alt="" />
   </button>
   <button class="rail-scroll" type="button" aria-label="맨 아래로 이동">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -432,19 +414,8 @@
 
 <!-- 푸터  -->
 <footer class="footer-section" aria-label="하단 정보">
-  <div class="footer-toggle">
-    <label class="theme-toggle" for="themeSwitch">
-      <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
-      <span class="theme-toggle__track" aria-hidden="true">
-        <span class="theme-toggle__thumb"></span>
-        <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
-        <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
-      </span>
-      <span class="theme-toggle__text">다크 모드</span>
-    </label>
-  </div>
   <div class="brand">
-    <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
+    <img src="/assets/8_tomato_main_logo_white.png" alt="MAIN 로고" />
     MAIN
   </div>
   <address class="addr">

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,18 +14,16 @@
 <div class="site-header-backdrop" aria-hidden="true"></div>
 <header class="site-header" aria-label="주요 탐색">
   <nav class="nav" role="navigation">
-    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="홈버튼">
       <img
         src="/assets/8_tomato_home_white.png"
-        alt="MAIN 홈"
+        alt="홈버튼"
         class="nav__logo"
-        data-logo-dark="/assets/8_tomato_home_white.png"
-        data-logo-light="/assets/8_tomato_home_black.png"
       >
     </a>
 
     <div class="nav__item">
-      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">ABOUT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
         <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
@@ -34,23 +32,22 @@
     </div>
 
     <div class="nav__item">
-      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">행사소개</a>
+      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">EVENT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
         <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
-        <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
         <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
       </div>
     </div>
     <div class="nav__item">
-      <a href="/pages/prof/8_tomato_professors.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">교수님 소개</a>
+      <a href="/pages/prof/8_tomato_professors.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">PROF</a>
       <div class="dropdown" role="menu">
         <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem" aria-current="page">교수님 소개</a>
         <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
       </div>
     </div>
     <a href="/pages/8_tomato_faq.html" class="nav__link">FAQ</a>
-    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECUIT</a>
+    <a href="/pages/8_tomato_recruit.html" class="nav__link">RECRUIT</a>
   </nav>
 </header>
 
@@ -65,7 +62,7 @@
         <a href="/pages/prof/8_tomato_professors.html" aria-current="page">교수님 소개</a>
       </li>
       <li>
-        <a href="/pages/prof/8_tomato_lab_test.html">연구실 소개</a>
+        <a href="/pages/prof/8_tomato_lab_test.html">연구실 테스트</a>
       </li>
     </ul>
   </nav>
@@ -88,356 +85,8 @@
     </div>
 
     <!-- 교수 카드 그리드 -->
-    <div class="prof-grid">
-
-      <!-- 1. 윤용익 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">윤용익</h2>
-          <span class="prof-card__lab">| 스마트 분산시스템 연구실</span>
-        </div>
-
-        <p class="prof-card__desc"></p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_yiyoon.png"
-               alt="윤용익 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="yoon-yongik"
-                aria-label="윤용익 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 2. 박화진 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">박화진</h2>
-          <span class="prof-card__lab">| 컴퓨터 그래픽스/가상현실 연구실</span>
-        </div>
-
-        <p class="prof-card__desc"></p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_hjpark.png"
-               alt="박화진 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="park-hwajin"
-                aria-label="박화진 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 3. 이종우 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">이종우</h2>
-          <span class="prof-card__lab">| 지능형 시스템 소프트웨어 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          운영체제 및 시스템 소프트웨어<br>
-          전산 금융<br>
-          기계학습 응용
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_jwlee.png"
-               alt="이종우 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="lee-jongwoo"
-                aria-label="이종우 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 4. 박영호 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">박영호</h2>
-          <span class="prof-card__lab">| 데이터 분석 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          AI-메타러닝<br>
-          데이터분석<br>
-          데이터베이스
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_yhpark.png"
-               alt="박영호 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="park-youngho"
-                aria-label="박영호 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 5. 김병규 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">김병규</h2>
-          <span class="prof-card__lab">| 지능형비전처리 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          영상 및 비디오 신호처리<br>
-          비전 딥러닝 모델 설계 및 이론<br>
-          비디오 신호 압축 표준
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_bgkim.png"
-               alt="김병규 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="kim-byungkyu"
-                aria-label="김병규 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 6. 김철연 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">김철연</h2>
-          <span class="prof-card__lab">| 지식 및 정보 공학 연구실</span>
-        </div>
-
-        <p class="prof-card__desc"></p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_cykim.png"
-               alt="김철연 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="kim-chulyeon"
-                aria-label="김철연 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 7. 임유진 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">임유진</h2>
-          <span class="prof-card__lab">| 지능형 시스템 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          에이젠틱 AI (AI 에이전트)<br>
-          강화학습<br>
-          인공지능
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_yjlim.png"
-               alt="임유진 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="lim-yujin"
-                aria-label="임유진 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 8. 동서연 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">동서연</h2>
-          <span class="prof-card__lab">| 인간 컴퓨터 상호작용 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          뇌-컴퓨터 인터페이스<br>
-          헬스케어<br>
-          인공지능
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_sydong.png"
-               alt="동서연 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="dong-seoyeon"
-                aria-label="동서연 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 9. 강지우 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">강지우</h2>
-          <span class="prof-card__lab">| 3차원 인공지능 유니버스 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          3차원 · 생성형 · 멀티모달 AI<br>
-          컴퓨터 그래픽스 · 컴퓨터 비전<br>
-          영상 처리 · 인공지능
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_jwkang.png"
-               alt="강지우 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="kang-jiwoo"
-                aria-label="강지우 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 10. 김상연 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">김상연</h2>
-          <span class="prof-card__lab">| 인간 중심 인공지능 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          인간중심인공지능<br>
-          인간-인공지능 상호작용<br>
-          책임있는인공지능
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_sykim.png"
-               alt="김상연 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="kim-sangyeon"
-                aria-label="김상연 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 11. 정성훈 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">정성훈</h2>
-          <span class="prof-card__lab">| 시스템 네트워크 보안 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          데이터중심보안<br>
-          시스템보안<br>
-          네트워크보안
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_shjeong.png"
-               alt="정성훈 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="jung-seonghoon"
-                aria-label="정성훈 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
-      <!-- 12. 최윤혁 -->
-      <article class="prof-card">
-        <div class="prof-card__name-row">
-          <h2 class="prof-card__name">최윤혁</h2>
-          <span class="prof-card__lab">| 그래프·추천·언어 모델 연구실</span>
-        </div>
-
-        <p class="prof-card__desc">
-          대규모 언어 모델<br>
-          그래프 신경망<br>
-          추천 시스템
-        </p>
-
-        <div class="prof-card__image-wrap">
-          <img class="prof-card__avatar"
-               src="/assets/8_tomato_yhchoi.png"
-               alt="최윤혁 교수님 사진">
-          <div class="prof-card__image-mask transition-opacity duration-500" aria-hidden="true"></div>
-        </div>
-
-        <button class="prof-card__plus"
-                type="button"
-                data-prof-id="choi-yoonhyuk"
-                aria-label="최윤혁 교수님 상세 보기">
-          <svg class="prof-card__plus-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </button>
-      </article>
-
+    <div class="prof-grid" data-prof-grid>
+      <!-- JS 로드 시 교수 카드가 정렬되어 렌더링됩니다. -->
     </div>
   </div>
 </section>

@@ -1,0 +1,46 @@
+{
+  "id": "4",
+  "title": "1학기 졸업작품 전시회",
+  "headline": "1학기 졸업작품 전시회 신청 안내",
+
+  "eventDate": "2025.04.17 (목)",
+  "applyPeriod": "2025.04.17 (목)",
+  "target": "인공지능공학부 재학생",
+  "location": "명신관 501호 / 503호",
+
+  "applyMethod": "신청폼 제출",
+
+  "posterImages": [
+    "https://i.postimg.cc/nh2Fjnjz/001.jpg",
+    "https://i.postimg.cc/Gppcv6GT/002.jpg",
+    "https://i.postimg.cc/YSSpQTY0/003.jpg",
+    "https://i.postimg.cc/wBB6DnLy/004.jpg",
+    "https://i.postimg.cc/hGGSVNTh/005.jpg",
+    "https://i.postimg.cc/9ffWysZG/006.jpg",
+    "https://i.postimg.cc/HLLpbFXX/007.jpg",
+    "https://i.postimg.cc/7LLxSj01/008.jpg",
+    "https://i.postimg.cc/wBB6DnLV/009.jpg",
+    "https://i.postimg.cc/YSSpQTYy/010.jpg",
+    "https://i.postimg.cc/3wb319FC/011.jpg",
+    "https://i.postimg.cc/KYsmfQD7/012.jpg",
+    "https://i.postimg.cc/xdF95g36/013.jpg",
+    "https://i.postimg.cc/CK6w7Js6/014.jpg"
+  ],
+  "posterAlt": "1학기 졸업작품 전시회 포스터",
+
+  "payment": {
+    "fee": "-",
+    "account": "-"
+  },
+
+  "notices": [
+    "전시 작품 보호를 위해 안내된 동선에 따라 관람해 주세요.",
+    "혼잡 방지를 위해 신청자 우선 입장 후 일반 관람객이 입장합니다.",
+    "전시회 자료는 행사 종료 후 신청자에게 공유될 예정입니다."
+  ],
+
+  "cta": {
+    "label": "신청하기",
+    "link": "#"
+  }
+}

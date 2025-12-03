@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "year": 2025,
+    "month": 12,
+    "monthNumber": "12",
+    "monthLabel": "DECEMBER",
+    "legend": {
+      "academic": "학사 일정",
+      "department": "학과 일정",
+      "event": "학과 행사"
+    }
+  },
+  "events": [
+    {
+      "id": "e1",
+      "title": "11월 학생회비 장부 공개",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-01",
+      "endDate": "2025-12-01",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e2",
+      "title": "AI인의 밤 참여 신청 기간",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-01",
+      "endDate": "2025-12-04",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e3",
+      "title": "기말 수업 평가",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-01",
+      "endDate": "2025-12-07",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e4",
+      "title": "AI인의 밤 확정 명단 발표",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-05",
+      "endDate": "2025-12-05",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e5",
+      "title": "2학기 보강 및 기말고사 기간",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-08",
+      "endDate": "2025-12-21",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e6",
+      "title": "AI인의 밤",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-12-17",
+      "endDate": "2025-12-17",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e7",
+      "title": "겨울 계절 학기",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-22",
+      "endDate": "2025-12-31",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e8",
+      "title": "성적 조회 및 이의 신청 기간",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-29",
+      "endDate": "2025-12-31",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e9",
+      "title": "동계 계절학기 등록금 납부",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-12",
+      "endDate": "2025-12-13",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "e10",
+      "title": "학부 겨울방학 OT",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-23",
+      "endDate": "2025-12-23",
+      "allDay": true,
+      "time": "",
+      "location": "",
+      "description": ""
+    }
+  ]
+}

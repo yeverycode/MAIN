@@ -4,7 +4,6 @@
  * 1. 전역 변수 선언: map, marker 객체
  * 2. initKakaoMap(): 카카오맵 초기화 및 마커 표시
  * 3. 문서 로드 후 실행되는 일반 UI 스크립트:
- * - Theme Toggler: 다크/라이트 모드 전환
  * - Rail & Scroll: 빠른 링크 레일 및 스크롤 버튼 동작
  */
 
@@ -91,8 +90,6 @@ function initKakaoMap() {
 document.addEventListener('DOMContentLoaded', () => {
     
     // DOM 요소 캐싱
-    const themeSwitch = document.getElementById('themeSwitch');
-    const html = document.documentElement;
     const rail = document.querySelector('.rail');
     const railTrigger = document.querySelector('.rail-trigger');
     const railCollapse = document.querySelector('.rail-collapse');
@@ -113,39 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // -----------------------------------------------
-    // 2. 테마 토글러 (Theme Toggler)
-    // -----------------------------------------------
-    const savedTheme = localStorage.getItem('theme') || 'dark'; 
-    html.setAttribute('data-theme', savedTheme);
-    if (themeSwitch) {
-        themeSwitch.checked = savedTheme === 'dark';
-    }
-
-    if (themeSwitch) {
-        themeSwitch.addEventListener('change', () => {
-            const isDark = themeSwitch.checked;
-            html.setAttribute('data-theme', isDark ? 'dark' : 'light');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            
-            // 로고 이미지 경로 업데이트
-            document.querySelectorAll('.nav__logo').forEach(logo => {
-                logo.src = isDark ? logo.getAttribute('data-logo-dark') : logo.getAttribute('data-logo-light');
-            });
-
-            // 맵 스타일/크기 변경이 필요하면 여기서 map.setOptions() 또는 map.relayout() 호출
-        });
-    }
-
-    // 초기 로고 이미지 설정
-    const initialTheme = html.getAttribute('data-theme');
-    document.querySelectorAll('.nav__logo').forEach(logo => {
-        const isDark = initialTheme === 'dark';
-        logo.src = isDark ? logo.getAttribute('data-logo-dark') : logo.getAttribute('data-logo-light');
-    });
-
-
-    // -----------------------------------------------
-    // 3. 플로팅 레일 및 스크롤 동작 (Rail & Scroll)
+    // 2. 플로팅 레일 및 스크롤 동작 (Rail & Scroll)
     // -----------------------------------------------
     
     // 레일 토글 기능

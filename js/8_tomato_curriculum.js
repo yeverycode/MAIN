@@ -79,9 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('article');
       card.className = 'curriculum-card';
 
+      const syllabusLink = course.syllabusUrl
+        ? `<a class="curriculum-card__syllabus" href="${course.syllabusUrl}" target="_blank" rel="noopener noreferrer">강의 계획서</a>`
+        : '';
+
       card.innerHTML = `
         <span class="curriculum-card__dot" aria-hidden="true"></span>
-        <h3 class="curriculum-card__title">${course.title}</h3>
+        <div class="curriculum-card__title-row">
+          <h3 class="curriculum-card__title">${course.title}</h3>
+          ${syllabusLink}
+        </div>
         <div class="curriculum-card__line" aria-hidden="true"></div>
         <p class="curriculum-card__subtitle">${course.subtitle}</p>
         <p class="curriculum-card__desc">${course.description}</p>

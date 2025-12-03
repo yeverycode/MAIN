@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="/css/8_tomato_common.css" />
   <!-- 이벤트 전용 스타일 -->
   <link rel="stylesheet" href="/css/8_tomato_event_list.css" />
+  <!-- 캘린더 스타일 -->
+  <link rel="stylesheet" href="/css/8_tomato_calendar.css" />
 </head>
 
 <body>
@@ -17,18 +19,16 @@
 <div class="site-header-backdrop" aria-hidden="true"></div>
 <header class="site-header" aria-label="주요 탐색">
   <nav class="nav" role="navigation">
-    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+    <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="홈버튼">
       <img
         src="/assets/8_tomato_home_white.png"
-        alt="MAIN 홈"
+        alt="홈버튼"
         class="nav__logo"
-        data-logo-dark="/assets/8_tomato_home_white.png"
-        data-logo-light="/assets/8_tomato_home_black.png"
       >
     </a>
 
     <div class="nav__item">
-      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+      <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">ABOUT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
         <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem">커리큘럼</a>
@@ -37,16 +37,15 @@
     </div>
 
     <div class="nav__item">
-      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">행사소개</a>
+      <a href="/pages/event/8_tomato_annual_event.html" class="nav__link is-active" aria-haspopup="true" aria-expanded="false" aria-current="page">EVENT</a>
       <div class="dropdown" role="menu">
         <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
         <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem" aria-current="page">진행중인 이벤트</a>
-        <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
         <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
       </div>
     </div>
     <div class="nav__item">
-      <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+      <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">PROF</a>
       <div class="dropdown" role="menu">
         <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
         <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
@@ -69,9 +68,6 @@
       </li>
       <li class="is-active">
         <a href="/pages/event/8_tomato_event_list.html" aria-current="page" data-status="ongoing">진행중인 이벤트</a>
-      </li>
-      <li>
-        <a href="/pages/event/8_tomato_event_interview.html">당첨자 발표</a>
       </li>
       <li>
         <a href="/pages/event/8_tomato_event_list.html#past" data-status="past">지난 이벤트</a>
@@ -144,9 +140,48 @@
 
         <!-- 캘린더 뷰 (지금은 안내만) -->
         <div class="event-calendar" id="eventCalendar" data-view="calendar" hidden>
-          <p class="event-calendar__placeholder">
-            📅 캘린더 보기는 추후 업데이트될 예정입니다.
-          </p>
+          <section class="page-calendar-section" aria-label="학과 일정 캘린더">
+            <header class="calendar-header">
+              <div class="calendar-header-top">
+                <div class="calendar-title">
+                  <div class="calendar-title__month-number" id="calendarMonthNumber">--</div>
+                  <div class="calendar-title__text">
+                    <div class="calendar-title__year" id="calendarYear">--</div>
+                    <div class="calendar-title__month-label" id="calendarMonthLabel"></div>
+                  </div>
+                </div>
+                <div class="calendar-month-nav">
+                  <button type="button" id="calendarPrevMonth" aria-label="이전 달">&lt;</button>
+                  <button type="button" id="calendarNextMonth" aria-label="다음 달">&gt;</button>
+                </div>
+              </div>
+
+              <div class="calendar-controls">
+                <div class="calendar-filter-segment">
+                  <button type="button" class="filter-chip is-active" data-calendar-filter="all">전체</button>
+                  <button type="button" class="filter-chip" data-calendar-filter="ongoing">진행/예정</button>
+                  <button type="button" class="filter-chip" data-calendar-filter="past">종료</button>
+                </div>
+
+                <div class="calendar-legend">
+                  <div class="legend-item legend-academic">학사 일정</div>
+                  <div class="legend-item legend-department">학과 일정</div>
+                  <div class="legend-item legend-event">학과 행사</div>
+                </div>
+              </div>
+            </header>
+
+            <div class="calendar-weekdays" aria-hidden="true">
+              <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
+            </div>
+
+            <div id="calendarGrid" class="calendar-grid"></div>
+
+            <div id="calendarDetail" class="calendar-detail">
+              <div class="calendar-detail__date" id="detailDateText"></div>
+              <div id="detailEventList" class="calendar-detail__events"></div>
+            </div>
+          </section>
         </div>
       </section>
 

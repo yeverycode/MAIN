@@ -200,6 +200,7 @@
 }
 
 .event-detail__event-name {
+  margin-top: 20px;
   font-size: 24px;
   font-weight: 700;
 }
@@ -219,7 +220,6 @@
 }
 
 .event-detail__info-list {
-  margin-top: 12px;
   width: 100%;
   display: table;
   border-collapse: separate;
@@ -246,11 +246,13 @@
 .event-detail__info-item dt {
   font-weight: 700;
   width: 120px;
+  font-size: 16px;
   white-space: nowrap;
 }
 
 .event-detail__info-item dd {
   margin: 0;
+  font-size: 16px;
   color: var(--event-ink);
   display: block;
 }
@@ -365,15 +367,16 @@
 }
 
 .qa-entry__question {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.4;
 }
 
 .qa-entry__answer {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
-  color: #1f1f1f;
+  color: var(--black);
+  margin-top: 10px;
 }
 
 .is-hidden {

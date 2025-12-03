@@ -1,14 +1,221 @@
 {
   "id": "dong-seoyeon",
   "name": "동서연",
-  "role": "",
+  "role": "부교수",
   "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/28061_1742617401000.do",
   "phone": "02-2077-7120",
   "email": "sydong@sm.ac.kr",
   "office": "새힘관 604호",
 
-  "interests": [],
-  "history": [],
-  "courses": [],
-  "publications": []
+  "interests": [
+    "뇌-컴퓨터 인터페이스",
+    "헬스케어",
+    "인공지능"
+  ],
+
+  "history": [
+    {
+      "period": "2020.03 ~ ",
+      "text": "숙명여자대학교 인공지능공학부 부교수"
+    },
+    {
+      "period": "2018.08 ~ 2020.02",
+      "text": "숙명여자대학교 조교수"
+    },
+    {
+      "period": "2016.03 ~ 2018.07",
+      "text": "KAIST / 의료·인지 신호처리 연구"
+    },
+    {
+      "period": "2014.03 ~ 2016.02",
+      "text": "IEEE / 뇌·생체신호 기반 AI 연구 프로젝트 참여"
+    }
+  ],
+
+  "courses": [
+    {
+      "term": "2024 Fall",
+      "list": [
+        { "code": "21003683", "name": "프로그래밍방법론" },
+        { "code": "21102531", "name": "HCI개론" }
+      ]
+    },
+    {
+      "term": "2024 Spring",
+      "list": [
+        { "code": "21104552", "name": "인공지능과기계학습" }
+      ]
+    },
+    {
+      "term": "2023 Fall",
+      "list": [
+        { "code": "21003683", "name": "프로그래밍방법론" },
+        { "code": "21102531", "name": "HCI개론" }
+      ]
+    },
+    {
+      "term": "2023 Spring",
+      "list": [
+        { "code": "21102536", "name": "데이터마이닝개론" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "Network-based alterations in task-induced functional connectivity in bipolar disorder: An functional near-infrared spectroscopy study",
+      "date": "2025.11",
+      "publisher": "Elsevier B.V."
+    },
+    {
+      "title": "Exploring Functional Connectivity in ADHD: A Functional Near-infrared Spectroscopy Study with Machine Learning Analysis",
+      "date": "2025.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "반려동물 상실 경험자의 정서적 회복을 위한 가상 반려동물 아바타 활용 연구",
+      "date": "2025.09",
+      "publisher": "한국에이치씨아이학회"
+    },
+    {
+      "title": "Enhancing Electroencephalogram-Based Prediction of PTSD Treatment Response Using Data Augmentation",
+      "date": "2025.08",
+      "publisher": "KOREAN NEUROPSYCHIATRIC ASSOC"
+    },
+    {
+      "title": "FNIRS Classification of Adults With ADHD Enhanced by Feature Selection",
+      "date": "2025.01",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Multi-Task Learning by Leveraging Non-Contact Heart Rate for Robust Facial Emotion Recognition",
+      "date": "2024.07",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Real-Time BCI System for Target Detection",
+      "date": "2024.02",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Classification of Companion Animals’ Ocular Diseases: Domain Adversarial Learning for Imbalanced Data",
+      "date": "2023.12",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Mixed-reality-based human-animal interaction can relieve mental stress",
+      "date": "2023.03",
+      "publisher": "FRONTIERS MEDIA SA"
+    },
+    {
+      "title": "반려동물 질병 진단 보조를 위한 딥러닝 프레임워크",
+      "date": "2022.12",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Self-supervised RGB-NIR Fusion Video Vision Transformer Framework for rPPG Estimation",
+      "date": "2022.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Deep learning-based self-induced emotion recognition using EEG",
+      "date": "2022.09",
+      "publisher": "FRONTIERS MEDIA SA"
+    },
+    {
+      "title": "Predictions of tDCS treatment response in PTSD patients using EEG based classification",
+      "date": "2022.06",
+      "publisher": "FRONTIERS MEDIA SA"
+    },
+    {
+      "title": "Mixed Reality-Based Interaction between Human and Virtual Cat for Mental Stress Management",
+      "date": "2022.02",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "딥러닝 기반의 모바일 얼굴 영상을 이용한 실시간 심박수 측정 시스템",
+      "date": "2021.11",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Prefrontal Functional Connectivity During the Verbal Fluency Task in Patients With Major Depressive Disorder",
+      "date": "2021.05",
+      "publisher": "FRONTIERS MEDIA SA"
+    },
+    {
+      "title": "시각 장애 학생을 위한 수학 그래프 설명 자동 생성 기술",
+      "date": "2021.03",
+      "publisher": "한국에이치씨아이학회"
+    },
+    {
+      "title": "fNIRS 기반 실시간 집중력 모니터링 모바일 애플리케이션",
+      "date": "2021.02",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "웹캠 기반 거북목 판별 알고리즘을 활용한 자세 교정 반응형 헬스케어 시스템",
+      "date": "2021.02",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Effects of Daily Stress in Mental State Classification",
+      "date": "2020.11",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "저시력자를 위한 모바일 보이스 웹 브라우저 개발",
+      "date": "2020.11",
+      "publisher": "한국멀티미디어학회"
+    },
+    {
+      "title": "Deep Cerebellar Low-Intensity Focused Ultrasound Stimulation Restores Interhemispheric Balance after Ischemic Stroke in Mice",
+      "date": "2020.09",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Effect of Daily Stress on Heart-Rate Variability during Stroop Color Word Task",
+      "date": "2020.08",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Deep Joint Spatiotemporal Network (DJSTN) for Efficient Facial Expression Recognition",
+      "date": "2020.03",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Ambulatory and Laboratory Stress Detection Based on Raw Electrocardiogram Signals Using a Convolutional Neural Network",
+      "date": "2019.10",
+      "publisher": "MDPI"
+    },
+    {
+      "title": "Neural Correlates of Variations in Human Trust in Human-like Machines",
+      "date": "2019.07",
+      "publisher": "NATURE PUBLISHING GROUP"
+    },
+    {
+      "title": "A Novel R Peak Detection Method for Mobile Environments",
+      "date": "2018.08",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "The Role of Heart-Rate Variability Parameters in Activity Recognition and Energy-Expenditure Estimation Using Wearable Sensors",
+      "date": "2017.07",
+      "publisher": "MDPI AG"
+    },
+    {
+      "title": "EEG-Based Classification of Implicit Intention During Self-Relevant Sentence Reading",
+      "date": "2016.11",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Hierarchical committee of deep convolutional neural networks for robust facial expression recognition",
+      "date": "2016.06",
+      "publisher": "Springer Verlag"
+    },
+    {
+      "title": "Implicit agreeing/disagreeing intention while reading self-relevant sentences: A human fMRI study",
+      "date": "2016.05",
+      "publisher": "Psychology Press"
+    }
+  ]
 }

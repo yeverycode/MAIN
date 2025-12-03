@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>RECRUIT | 숙명여자대학교 인공지능공학부</title>
+    <title>RECRUIT APPLY | 숙명여자대학교 인공지능공학부</title>
     <link rel="stylesheet" href="/css/8_tomato_common.css" />
-    <link rel="stylesheet" href="/css/8_tomato_recruit.css" />
     <link rel="stylesheet" href="/css/8_tomato_recruit_apply.css" />
-    <script type="text/javascript" 
-        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d4ad756ae280edccc5445439c2e060f9&libraries=services&autoload=false">
-    </script>
 
     <script src="/js/8_tomato_recruit_apply.js" defer></script> </head>
 <body>
@@ -18,18 +14,16 @@
 
 <header class="site-header" aria-label="주요 탐색">
     <nav class="nav" role="navigation">
-        <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="home">
+        <a href="/pages/8_tomato_main.html" class="nav__link nav__link--main" aria-label="홈버튼">
             <img
                 src="/assets/8_tomato_home_white.png"
-                alt="MAIN 홈"
+                alt="홈버튼"
                 class="nav__logo"
-                data-logo-dark="/assets/8_tomato_home_white.png"
-                data-logo-light="/assets/8_tomato_home_black.png"
             >
         </a>
 
         <div class="nav__item">
-            <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">학과 소개</a>
+            <a href="/pages/8_tomato_intro.html" class="nav__link" aria-haspopup="true" aria-expanded="false">ABOUT</a>
             <div class="dropdown" role="menu">
                 <a href="/pages/8_tomato_intro.html" class="dropdown__item" role="menuitem">학과소개</a>
                 <a href="/pages/8_tomato_curriculum.html" class="dropdown__item" role="menuitem" aria-current="page">커리큘럼</a>
@@ -38,16 +32,15 @@
         </div>
 
         <div class="nav__item">
-            <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">행사소개</a>
+            <a href="/pages/event/8_tomato_annual_event.html" class="nav__link" aria-haspopup="true" aria-expanded="false">EVENT</a>
             <div class="dropdown" role="menu">
                 <a href="/pages/event/8_tomato_annual_event.html" class="dropdown__item" role="menuitem">연간 행사</a>
                 <a href="/pages/event/8_tomato_event_list.html" class="dropdown__item" role="menuitem">진행중인 이벤트</a>
-                <a href="/pages/event/8_tomato_event_interview.html" class="dropdown__item" role="menuitem">당첨자 발표</a>
                 <a href="/pages/event/8_tomato_event_list.html#past" class="dropdown__item" role="menuitem">지난 이벤트</a>
             </div>
         </div>
         <div class="nav__item">
-            <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">교수님 소개</a>
+            <a href="/pages/prof/8_tomato_professors.html" class="nav__link" aria-haspopup="true" aria-expanded="false">PROF</a>
             <div class="dropdown" role="menu">
                 <a href="/pages/prof/8_tomato_professors.html" class="dropdown__item" role="menuitem">교수님 소개</a>
                 <a href="/pages/prof/8_tomato_lab_test.html" class="dropdown__item" role="menuitem">연구실 테스트</a>
@@ -79,21 +72,43 @@
             </div>
 
             <div class="form-group">
+                <label for="dept1">제1지망 부서*</label>
+                <div class="select-wrapper">
+                <select id="dept1" class="custom-select" required>
+                    <option value="">부서를 선택해주세요</option>
+                    <option value="재정사무부">재정사무부</option>
+                    <option value="홍보복지부">홍보복지부</option>
+                    <option value="미디어기획부">미디어기획부</option>
+                </select>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="dept2">제2지망 부서*</label>
+                <div class="select-wrapper">
+                <select id="dept2" class="custom-select" required>
+                    <option value="">부서를 선택해주세요</option>
+                    <option value="재정사무부">재정사무부</option>
+                    <option value="홍보복지부">홍보복지부</option>
+                    <option value="미디어기획부">미디어기획부</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label for="self-introduction">자기소개*</label>
-                <span class="char-limit">200자 이내</span>
-                <textarea id="self-introduction" name="self-introduction" maxlength="200" required></textarea>
+                <textarea id="self-introduction" name="self-introduction" maxlength="200" required placeholder="200자 이내"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="strengths-weaknesses">자신의 장단점*</label>
-                <span class="char-limit">300자 이내</span>
-                <textarea id="strengths-weaknesses" name="strengths-weaknesses" maxlength="300" required></textarea>
+                <textarea id="strengths-weaknesses" name="strengths-weaknesses" maxlength="300" required placeholder="300자 이내"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="why-apply">재정사무부를 지원한 이유*</label>
-                <span class="char-limit">150자 이내</span>
-                <textarea id="why-apply" name="why-apply" maxlength="150" required></textarea>
+                <textarea id="why-apply" name="why-apply" maxlength="150" required placeholder="150자 이내"></textarea>
             </div>
 
             <div class="form-group">
@@ -104,7 +119,7 @@
                         1:00 PM - 2:00 PM
                     </label>
                     <label>
-                        <input type="checkbox" name="interview-time" value="2:00 PM - 3:00 PM" checked>
+                        <input type="checkbox" name="interview-time" value="2:00 PM - 3:00 PM">
                         2:00 PM - 3:00 PM
                     </label>
                     <label>
@@ -135,17 +150,6 @@
 </section>
 
 <footer class="footer-section" aria-label="하단 정보">
-    <div class="footer-toggle">
-        <label class="theme-toggle" for="themeSwitch">
-            <input type="checkbox" id="themeSwitch" class="theme-toggle__input" aria-label="다크 모드 전환">
-            <span class="theme-toggle__track" aria-hidden="true">
-                <span class="theme-toggle__thumb"></span>
-                <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
-                <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
-            </span>
-            <span class="theme-toggle__text">다크 모드</span>
-        </label>
-    </div>
     <div class="brand">
         <img src="/assets/8_tomato_main_logo.png" alt="MAIN 로고" />
         MAIN

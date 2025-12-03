@@ -1,0 +1,146 @@
+[
+  {
+    "id": "kang-jiwoo",
+    "name": "강지우",
+    "lab": "3차원 인공지능 유니버스 연구실",
+    "desc": [
+      "3차원 · 생성형 · 멀티모달 AI",
+      "영상 처리",
+      "인공지능"
+    ],
+    "image": "/assets/8_tomato_jwkang.png",
+    "imageAlt": "강지우 교수님 사진"
+  },
+  {
+    "id": "kim-byungkyu",
+    "name": "김병규",
+    "lab": "지능형비전처리 연구실",
+    "desc": [
+      "신호처리",
+      "의료·헬스케어",
+      "지능형 네트워크"
+    ],
+    "image": "/assets/8_tomato_bgkim.png",
+    "imageAlt": "김병규 교수님 사진"
+  },
+  {
+    "id": "kim-sangyeon",
+    "name": "김상연",
+    "lab": "인간 중심 인공지능 연구실",
+    "desc": [
+      "인간-중심 인공지능",
+      "인간-인공지능 상호작용",
+      "사용자 인터페이스"
+    ],
+    "image": "/assets/8_tomato_sykim.png",
+    "imageAlt": "김상연 교수님 사진"
+  },
+  {
+    "id": "kim-chulyeon",
+    "name": "김철연",
+    "lab": "지식 및 정보 공학 연구실",
+    "desc": [
+      "휴먼-데이터 인터랙션",
+      "크라우드 소싱",
+      "핀테크"
+    ],
+    "image": "/assets/8_tomato_cykim.png",
+    "imageAlt": "김철연 교수님 사진"
+  },
+  {
+    "id": "dong-seoyeon",
+    "name": "동서연",
+    "lab": "인간 컴퓨터 상호작용 연구실",
+    "desc": [
+      "뇌-컴퓨터 인터페이스",
+      "헬스케어",
+      "인공지능"
+    ],
+    "image": "/assets/8_tomato_sydong.png",
+    "imageAlt": "동서연 교수님 사진"
+  },
+  {
+    "id": "park-youngho",
+    "name": "박영호",
+    "lab": "데이터 분석 연구실",
+    "desc": [
+      "데이터 분석",
+      "쿼리",
+      "영상 기반 이상 상황 탐지"
+    ],
+    "image": "/assets/8_tomato_yhpark.png",
+    "imageAlt": "박영호 교수님 사진"
+  },
+  {
+    "id": "park-hwajin",
+    "name": "박화진",
+    "lab": "컴퓨터 그래픽스/가상현실 연구실",
+    "desc": [
+      "컴퓨터 그래픽스",
+      "가상현실",
+      "게임·인터랙티브 미디어"
+    ],
+    "image": "/assets/8_tomato_hjpark.png",
+    "imageAlt": "박화진 교수님 사진"
+  },
+  {
+    "id": "yoon-yongik",
+    "name": "윤용익",
+    "lab": "스마트 분산시스템 연구실",
+    "desc": [
+      "자율주행",
+      "블록체인",
+      "빅데이터"
+    ],
+    "image": "/assets/8_tomato_yiyoon.png",
+    "imageAlt": "윤용익 교수님 사진"
+  },
+  {
+    "id": "lee-jongwoo",
+    "name": "이종우",
+    "lab": "지능형 시스템 소프트웨어 연구실",
+    "desc": [
+      "시각장애인 지원 기술",
+      "음성 기반 인터페이스",
+      "딥러닝"
+    ],
+    "image": "/assets/8_tomato_jwlee.png",
+    "imageAlt": "이종우 교수님 사진"
+  },
+  {
+    "id": "lim-yujin",
+    "name": "임유진",
+    "lab": "지능형 시스템 연구실",
+    "desc": [
+      "에이젠틱 AI (AI 에이전트)",
+      "강화학습",
+      "인공지능"
+    ],
+    "image": "/assets/8_tomato_yjlim.png",
+    "imageAlt": "임유진 교수님 사진"
+  },
+  {
+    "id": "jeong-seonghoon",
+    "name": "정성훈",
+    "lab": "시스템 네트워크 보안 연구실",
+    "desc": [
+      "데이터 중심 보안",
+      "시스템 보안",
+      "네트워크 보안"
+    ],
+    "image": "/assets/8_tomato_shjeong.png",
+    "imageAlt": "정성훈 교수님 사진"
+  },
+  {
+    "id": "choi-yoonhyuk",
+    "name": "최윤혁",
+    "lab": "그래프·추천·언어 모델 연구실",
+    "desc": [
+      "대규모 언어 모델",
+      "그래프 신경망",
+      "추천 시스템"
+    ],
+    "image": "/assets/8_tomato_yhchoi.png",
+    "imageAlt": "최윤혁 교수님 사진"
+  }
+]

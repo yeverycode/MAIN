@@ -23,7 +23,6 @@
   color: #FFFFFF;
   text-align: center;
   font-feature-settings: 'liga' off, 'clig' off;
-  font-family: Pretendard, "Noto Sans KR", Inter, system-ui, -apple-system, sans-serif;
   font-size: clamp(120px, 12vw, 240px);
   font-style: normal;
   font-weight: 900;
@@ -49,15 +48,6 @@
   gap: 0;
   height: 100%;
   line-height: clamp(120px, 12vw, 220px);
-}
-
-html[data-theme="light"] .fyig-hero {
-  background: var(--white);
-}
-
-html[data-theme="light"] .fyig-title {
-  color: var(--black);
-  text-shadow: none;
 }
 
 /* 이미지 슬롯 공통 */
@@ -203,12 +193,19 @@ html[data-theme="light"] .fyig-title {
    플로팅 레일 & FAB
    ========================= */
 
+:root {
+  --rail-fab-size: 68px;
+  --rail-fab-spacing: 14px;
+  --rail-bottom-gap: clamp(14px, 4vh, 26px);
+}
+
 .rail {
+  --rail-top: calc(var(--header-height) + 20px);
+  --rail-bottom: calc(var(--rail-bottom-gap) + var(--rail-fab-size) + var(--rail-fab-spacing));
   position: fixed;
   right: 26px;
-  bottom: 140px;
-  width: 68px;
-  min-height: 520px;
+  bottom: var(--rail-bottom);
+  width: var(--rail-fab-size);
   padding: 18px 12px 20px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.9);
@@ -219,6 +216,10 @@ html[data-theme="light"] .fyig-title {
   pointer-events: none;
   transition: transform 0.55s ease, opacity 0.55s ease, box-shadow 0.25s ease;
   backdrop-filter: blur(10px);
+  max-height: calc(100dvh - var(--rail-top) - var(--rail-bottom));
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -230,8 +231,12 @@ html[data-theme="light"] .fyig-title {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
-  top: calc(var(--header-height) + 20px);
-  bottom: calc(68px + 24px + 14px);
+  top: var(--rail-top);
+  bottom: var(--rail-bottom);
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
 }
 
 .rail-collapse {
@@ -296,7 +301,7 @@ html[data-theme="light"] .fyig-title {
 .rail__label {
   writing-mode: vertical-rl;
   text-align: left;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 300;
   letter-spacing: 1px;
   line-height: 1.2;
@@ -314,18 +319,18 @@ html[data-theme="light"] .fyig-title {
 .rail-fab {
   position: fixed;
   right: 24px;
-  bottom: 24px;
+  bottom: var(--rail-bottom-gap);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: var(--rail-fab-spacing);
   z-index: 51;
 }
 
 .rail-trigger,
 .rail-scroll {
-  width: 68px;
-  height: 68px;
+  width: var(--rail-fab-size);
+  height: var(--rail-fab-size);
   border-radius: 50%;
   border: none;
   display: inline-flex;
@@ -339,8 +344,8 @@ html[data-theme="light"] .fyig-title {
 
 
 .rail-trigger img {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -358,7 +363,7 @@ html[data-theme="light"] .fyig-title {
 .rail-trigger:hover,
 .rail-scroll:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 32px var(--card-border);
 }
 
 .rail-scroll.is-up svg {
@@ -366,16 +371,18 @@ html[data-theme="light"] .fyig-title {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --rail-fab-size: 72px;
+    --rail-bottom-gap: clamp(12px, 5vh, 22px);
+  }
+
   .rail {
     right: 12px;
-    bottom: 120px;
-    transform: translateY(100%);
-    width: 76px;
+    width: var(--rail-fab-size);
   }
 
   .rail-fab {
     right: 16px;
-    bottom: 16px;
   }
 }
 
@@ -692,10 +699,6 @@ html[data-theme="light"] .fyig-title {
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-html[data-theme="dark"] .info-card {
-  background: var(--card-bg);
-}
-
 .info-card::before {
   content: "";
   position: absolute;
@@ -856,10 +859,6 @@ html[data-theme="dark"] .info-card {
   flex-direction: column;
   gap: 56px;
   min-height: 198px;
-}
-
-html[data-theme="dark"] .event-content {
-  background: var(--card-bg);
 }
 
 .event-title {
@@ -1195,22 +1194,12 @@ html[data-theme="dark"] .event-content {
   background: linear-gradient(
     90deg, 
     var(--bg) 0%, 
-    rgba(255, 255, 255, 0) 40%, 
-    rgba(255, 255, 255, 0) 60%, 
-    var(--bg) 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-html[data-theme="dark"] .scroll-wrapper:after {
-  background: linear-gradient(
-    90deg, 
-    var(--bg) 0%, 
     rgba(255, 255, 255, 0) 45%, 
     rgba(255, 255, 255, 0) 55%, 
     var(--bg) 100%
   );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .scroll-content {

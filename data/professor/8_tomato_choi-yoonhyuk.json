@@ -1,14 +1,87 @@
 {
   "id": "choi-yoonhyuk",
   "name": "최윤혁",
-  "role": "",
+  "role": "조교수",
   "photo": "https://aie.sookmyung.ac.kr/app/board/attach/image/50065_1756803369000.do",
   "phone": "02-710-9438",
   "email": "chldbsgur123@sm.ac.kr",
   "office": "수련교수회관 501호",
 
-  "interests": [],
-  "history": [],
-  "courses": [],
-  "publications": []
+  "interests": [
+    "대규모 언어 모델",
+    "그래프 신경망",
+    "추천 시스템"
+  ],
+
+  "history": [
+    {
+      "period": "2025.09 ~ ",
+      "text": "숙명여자대학교 인공지능학부 조교수"
+    },
+    {
+      "period": "2024.10 ~ 2025.08",
+      "text": "삼성 SDS AI 선행랩 리서치사이언티스트"
+    },
+    {
+      "period": "2023.11 ~ 2024.09",
+      "text": "Arizona State University 박사후연구원"
+    },
+    {
+      "period": "2023.09 ~ 2023.11",
+      "text": "한국에너지공과대학교 박사후연구원"
+    }
+  ],
+
+  "courses": [
+    {
+      "term": "2025 Fall",
+      "list": [
+        { "code": "21003683", "name": "프로그래밍방법론" },
+        { "code": "21105364", "name": "인공지능입문" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "Beyond Binary: Improving Signed Message Passing in Graph Neural Networks for Multi-Class Graphs",
+      "date": "2025.11",
+      "publisher": "IEEE Computer Society"
+    },
+    {
+      "title": "Generalization of Knowledge Transfer with User Reviews for Cross-Domain Recommendation",
+      "date": "2025.10",
+      "publisher": "Institute of Electrical and Electronics Engineers Inc."
+    },
+    {
+      "title": "Selective blocking for message-passing neural networks on heterophilic graphs",
+      "date": "2025.07",
+      "publisher": "ML Research Press"
+    },
+    {
+      "title": "Beyond Message-Passing: Generalization of Graph Neural Networks via Feature Perturbation for Semi-Supervised Node Classification",
+      "date": "2025.06",
+      "publisher": "IEEE-INST ELECTRICAL ELECTRONICS ENGINEERS INC"
+    },
+    {
+      "title": "Review-Based Hyperbolic Cross-Domain Recommendation",
+      "date": "2025.03",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "Mitigating Overfitting in Graph Neural Networks via Feature and Hyperplane Perturbation",
+      "date": "2025.03",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "Review-Based Domain Disentanglement without Duplicate Users or Contexts for Cross-Domain Recommendation",
+      "date": "2022.10",
+      "publisher": "Association for Computing Machinery"
+    },
+    {
+      "title": "Finding Heterophilic Neighbors via Confidence-based Subgraph Matching for Semi-supervised Node Classification",
+      "date": "2022.10",
+      "publisher": "Association for Computing Machinery"
+    }
+  ]
 }

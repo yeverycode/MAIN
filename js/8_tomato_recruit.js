@@ -90,11 +90,6 @@ function initKakaoMap() {
 document.addEventListener('DOMContentLoaded', () => {
     
     // DOM 요소 캐싱
-    const rail = document.querySelector('.rail');
-    const railTrigger = document.querySelector('.rail-trigger');
-    const railCollapse = document.querySelector('.rail-collapse');
-    const railScroll = document.querySelector('.rail-scroll');
-    const railFab = document.querySelector('.rail-fab');
     const header = document.querySelector('.site-header');
 
     // -----------------------------------------------
@@ -107,52 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
             initKakaoMap();
         });
     }
-
-
-    // -----------------------------------------------
-    // 2. 플로팅 레일 및 스크롤 동작 (Rail & Scroll)
-    // -----------------------------------------------
-    
-    // 레일 토글 기능
-    if (railTrigger && rail) {
-        railTrigger.addEventListener('click', () => {
-            const isExpanded = railTrigger.getAttribute('aria-expanded') === 'true';
-            railTrigger.setAttribute('aria-expanded', !isExpanded);
-            rail.classList.toggle('is-open');
-        });
-    }
-    if (railCollapse && rail) {
-        railCollapse.addEventListener('click', () => {
-            rail.classList.remove('is-open');
-            if (railTrigger) {
-                railTrigger.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
-
-    // 맨 위로 스크롤 기능
-    if (railScroll) {
-        railScroll.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
     
     // 헤더/스크롤 스타일 변경 (스크롤 시)
     window.addEventListener('scroll', () => {
         const isScrolled = window.scrollY > 200;
 
-        // 스크롤 버튼 표시/숨김
-        if (railFab) {
-            if (isScrolled) {
-                railFab.classList.add('is-visible');
-            } else {
-                railFab.classList.remove('is-visible');
-            }
-        }
-        
         // 헤더 스타일 변경
         if (header) {
             if (isScrolled) {

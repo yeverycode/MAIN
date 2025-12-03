@@ -248,5 +248,46 @@
 <!-- JS 연결 -->
 <script src="/js/8_tomato_professor.js" defer></script>
 
+
+<!-- 플로팅 레일 / 스크롤 버튼 -->
+<aside class="rail" aria-label="빠른 링크 및 레이블">
+  <button class="rail-collapse" type="button" aria-label="패널 닫기">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="rail__icons">
+    <a href="https://www.sookmyung.ac.kr" class="icon" aria-label="숙명여대 홈페이지" target="_blank" rel="noopener">
+      <img src="/img/8_tomato_sookmyung_logo.png" alt="" width="35" height="35">
+    </a>
+    <a href="https://www.instagram.com/smwu_ai/" class="icon" aria-label="Instagram" target="_blank" rel="noopener">
+      <img src="/img/8_tomato_instagram.svg" alt="" width="25" height="25">
+    </a>
+    <a href="https://www.youtube.com/@smwu_ai" class="icon" aria-label="YouTube" target="_blank" rel="noopener">
+      <img src="/img/8_tomato_youtube.svg" alt="" width="30" height="30">
+    </a>
+    <a href="http://pf.kakao.com/_LJMjn" class="icon" aria-label="KakaoTalk" target="_blank" rel="noopener">
+      <img src="/img/8_tomato_kakao.svg" alt="" width="30" height="30">
+    </a>
+  </div>
+
+  <div class="rail__label" aria-hidden="true">
+    SOOKMYUNG<br/>AI ENGINEERING
+  </div>
+</aside>
+
+<div class="rail-fab" aria-live="polite">
+  <button class="rail-trigger quick_btn" type="button" aria-label="빠른 링크 열기" aria-expanded="false">
+    <img src="/assets/8_tomato_main_logo_black.png" alt="" />
+  </button>
+  <button class="rail-scroll" type="button" aria-label="맨 아래로 이동">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+  <script src="/js/8_tomato_common.js" defer></script>
+
 </body>
 </html>

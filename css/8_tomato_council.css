@@ -1,0 +1,362 @@
+/* -------------------------------------- */
+/* 1. M, AI, N을 감싸는 <h1>의 기본 스타일 */
+/* -------------------------------------- */
+.page-hero__headline h1 {
+    /* 텍스트 요소가 인라인(inline)으로 배열되도록 유지 */
+    display: inline-block; 
+}
+
+/* -------------------------------------- */
+/* 2. AI 텍스트 (차오름 & 스켈레톤 & 마진) 스타일 */
+/* -------------------------------------- */
+.rising-text {
+    position: relative;
+    /* 1. 스켈레톤 효과: 차오르기 전, 기본 텍스트 색상을 var(--text-muted)로 설정 */
+    color: var(--text-muted, grey); 
+    font-size: inherit; 
+    font-weight: inherit;
+    /* margin 애니메이션 적용을 위해 필수 */
+    display: inline-block; 
+
+    /* ★ 마진 애니메이션 추가 (4초 동안 실행) */
+    animation: margin-grow 3s ease-in-out forwards;
+}
+
+/* 2.1. 차오르는 효과를 위한 ::before 가상 요소 */
+.rising-text::before {
+    /* data-text 속성 값을 content로 사용 ('AI' 텍스트 복제) */
+    content: attr(data-text); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 차오르는 색상 */
+    color: var(--blue, blue); 
+
+    /* ★ clip-path로 처음에는 텍스트 전체를 가림 (100%부터 시작) */
+    clip-path: inset(100% 0 0 0); 
+
+    /* 차오름 애니메이션 (4초 동안 실행) */
+    animation: rise-up 3s ease-in-out forwards;
+}
+
+/* AI 텍스트 차오름 키프레임 */
+@keyframes rise-up {
+    0% { 
+        /* 시작: 완전히 가려져서 아래 스켈레톤 색상만 보임 */
+        clip-path: inset(100% 0 0 0); 
+    } 
+    100% { 
+        /* 끝: 완전히 드러나서 파란색이 됨 */
+        clip-path: inset(0 0 0 0); 
+    } 
+}
+
+/* -------------------------------------- */
+/* 3. AI 텍스트의 마진 증가/감소 키프레임 */
+/* -------------------------------------- */
+@keyframes margin-grow {
+    /* 0%~20%: 스켈레톤 단계, 움직이지 않음 */
+    0%, 20% {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /* 40%~60%: AI가 차오르는 동안 양쪽으로 10px 확장하여 M과 N을 밀어냄 */
+    80%, 100% {
+        margin-left: 5px; 
+        margin-right: 5px; 
+    }
+}
+
+/* ================================================= */
+/* 8_tomato_council.css (스크롤 비례 애니메이션 최종 스타일) */
+/* ================================================= */
+
+/* 섹션 컨테이너 기본 스타일 */
+.council-intro-section {
+    max-width: 1200px;
+    margin: 80px auto; 
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* 문단(줄) 기본 스타일 */
+.council-intro-line {
+    margin-bottom: 40px; 
+    position: relative;
+}
+
+/* 8_tomato_council.css 파일 내 .word-unit 규칙 수정 */
+
+.word-unit {
+    display: inline-block; 
+    position: relative;
+    /* margin-right 제거 상태 유지: 띄어쓰기 처리는 JS가 담당 */
+    
+    color: var(--text-muted, #777); 
+}
+
+/* ::before 가상 요소: 채워지는 텍스트의 실시간 애니메이션 */
+.word-unit::before {
+    content: attr(data-word); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* 💡 JS가 계산하여 설정하는 CSS 변수 사용 (스크롤 비례) */
+    width: var(--fill-width, 0%); 
+    
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap; 
+    
+    /* 채워질 때의 색상: var(--white) */
+    color: var(--white, #fff); 
+    
+    /* JS가 실시간으로 width를 변경하므로 transition 제거 */
+    transition: none; 
+    z-index: 1; 
+}
+
+/* ================================================= */
+/* 💡 수직선 무한 채우기 애니메이션 스타일 추가 */
+/* ================================================= */
+
+/* 수직선 컨테이너 */
+.vertical-line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* 선의 총 높이 */
+    margin-top: -40px;
+}
+
+/* 실제 수직선 */
+.vertical-line {
+    width: 1.5px; /* 선의 두께 */
+    height: 100%;
+    background-color: var(--text-muted); /* 채워지기 전/후의 기본 색상 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 채우기 애니메이션 */
+.vertical-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white); /* 채워지는 색상 */
+    
+    /* 초기 높이는 0%에서 시작하도록 설정 */
+    transform: translateY(100%); 
+    
+    /* 애니메이션 정의: line-fill 키프레임을 3초 동안 무한 반복 */
+    animation: line-fill 2s linear infinite;
+}
+
+/* 키프레임 정의: 위에서 아래로 채워진 후 다시 위로 사라지는 무한 반복 */
+@keyframes line-fill {
+    0% {
+        transform: translateY(-100%); /* 아래에서 시작 */
+    }
+    100% {
+        transform: translateY(0%); /* 위로 채워짐 */
+    }
+}
+
+/* --white 및 기타 변수는 최상단에 정의되었다고 가정합니다. */
+/* 예: :root { --white: #fff; --text-muted: #777; } */
+
+.carousel-container:hover {
+    /* 💡 경로가 정확한지 확인하세요. */
+    cursor: url('/assets/cursor.png'), auto;
+}
+
+/* ================================================= */
+/* 캐러셀 섹션 스타일 */
+/* ================================================= */
+
+.year-carousel-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--black); /* 섹션 구분을 위한 예시 배경색 */
+}
+
+.year-carousel-section h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--white, #fff);
+}
+
+.carousel-container {
+    display: flex;
+    /* 좌우 스크롤 가능하게 설정 */
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* ❌ scroll-snap 관련 속성 제거 */
+    padding: 0 50px; /* 양쪽 여백 */
+    gap: 100px; /* 아이템 간 간격 */
+    user-select: none; /* 표준 */
+    
+    /* 드래그 중 커서 변경을 위한 클래스 */
+    /* .active-dragging 클래스가 추가되면 이 커서가 적용됩니다. */
+}
+
+.carousel-item {
+    /* 각 아이템의 크기 고정 */
+    flex: 0 0 350px; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    background-color: var(--black); /* 아이템 배경색 추가 */
+    margin: 30px 0px 100px 0px;
+    color: var(--white); /* 아이템 내용 색상 */
+}
+
+.carousel-item h3 {
+    color: var(--white);
+    margin-top: 0px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.carousel-item h3 .year-text {
+    /* 💥 핵심: 왼쪽 마진을 자동으로 설정하여 가능한 한 멀리 오른쪽으로 밀어냅니다. */
+    margin-left: auto; 
+    
+    /* <h3>의 마진과 겹치지 않도록 수직 정렬을 맞춥니다. */
+    align-self: center; 
+    font-weight: 400;
+    /* <h3>와 폰트 크기를 맞춥니다. */
+    font-size: 1rem; /* <h3> 내부이므로 1em이 <h3>와 동일한 크기입니다. */
+    
+    /* <span>은 인라인 요소이므로, 크기 제어를 위해 필요할 경우 display: block 또는 inline-block을 사용할 수 있습니다. */
+    /* display: inline-block; */
+}
+
+/* 추가: <h3>의 기본 마진을 초기화하여 상단 정렬을 깔끔하게 합니다. */
+.carousel-item h3 {
+    margin-top: 0;
+    margin-bottom: 0; 
+}
+
+.carousel-item .role {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* 기존 CSS (스크롤바 숨김) 코드를 제거하세요: 
+.carousel-container::-webkit-scrollbar {
+    display: none; 
+}
+*/
+
+/* ================================================= */
+/* 💡 스크롤바 커스텀 */
+/* ================================================= */
+
+/* 1. 스크롤바 전체 스타일 */
+.carousel-container::-webkit-scrollbar {
+    height: 5px; /* 스크롤바의 높이 (가로 스크롤이므로) */
+}
+
+/* 2. 스크롤바 트랙 (배경) 스타일 */
+.carousel-container::-webkit-scrollbar-track {
+    background: var(--black); 
+    border-radius: 6px;
+}
+
+/* 3. 스크롤바 엄지 (드래그 가능한 부분) 스타일 */
+.carousel-container::-webkit-scrollbar-thumb {
+    background: var(--blue); /* 눈에 띄는 색상 */
+}
+
+/***********************************************
+ * TRACK SECTION (3가지 트랙 카드)
+ ***********************************************/
+.intro-track {
+  margin: 80px auto 220px;   /* 자동 마진으로 중앙 배치 */
+  max-width: 1400px;         /* 섹션 전체 폭 */
+}
+
+.intro-track h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--white);
+}
+
+.intro-track p {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 60px;
+  color: var(--white);
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 39px;
+  justify-content: center;   /* 그리드 자체를 중앙 정렬 */
+}
+
+.track-card {
+    background: #2d2d2d;
+    padding: 32px;
+    min-height: 200px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 1; 
+    position: relative;
+}
+
+/* 좌측 상단 파란 박스 */
+.track-card::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 24px;
+    height: 18px;
+    background: var(--blue);
+}
+
+.track-card h3 {
+  font-size: 20px;
+  font-weight: 1000;
+  margin-bottom: 16px;
+  color: var(--white);
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* 카드 내부 회색 라인 */
+.track-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 1px;
+  background: var(--gray-muted);
+}
+
+.track-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--white);
+  font-weight: 500;
+}

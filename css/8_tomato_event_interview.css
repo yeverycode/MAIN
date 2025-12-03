@@ -4,9 +4,9 @@
 
 :root {
   --event-bg: #ffffff;
-  --event-ink: #000000;
+  --event-ink: var(--black);
   --event-muted: #636363;
-  --event-border: #bfb9b9;
+  --event-border: var(--gray-strong);
   --event-blue: #0b50d0;
   --event-surface: #f6f6f6;
 }
@@ -110,7 +110,7 @@
 .event-detail__header-top-line,
 .event-detail__header-bottom-line {
   height: 1px;
-  background: #000;
+  background: var(--black);
 }
 
 .event-detail__header-bottom-line {

@@ -645,19 +645,19 @@
 
 .event-img {
   width: 100%;
-  aspect-ratio: 379/384;
+  height: 80%;
   overflow: hidden;
 }
 
 .event-img img {
   width: 100%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
 }
 
 .event-content {
   background: var(--gray);
-  padding: 45px 26px 52px;
+  padding: 30px 26px 52px;
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -691,34 +691,6 @@
 
 .event-card.reveal.is-inview:hover::before {
   content: none;
-}
-
-@media (max-width: 1280px) {
-  .events-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-}
-
-@media (max-width: 900px) {
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .events-header {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
-  }
-  
-  .viewmore {
-    justify-self: flex-start;
-  }
-  
-  .events-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* 섹션 5: 지수 (다른 사람 건드리지 말기!!) */

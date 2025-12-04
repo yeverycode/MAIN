@@ -1,5 +1,84 @@
 (function () {
-  const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
+  // 폼 타입별 로컬 스토리지 키 정의
+  const APPLY_STORAGE_KEY_EVENT = "tomato_event_apply_state_v1"; // 기존 이벤트 신청 키
+  const APPLY_STORAGE_KEY_RECRUIT = "tomato_recruit_apply_state_v1"; // 모집 전용 키
+
+  // ==========================================================
+  // 폼 유틸리티 함수 (전체 스코프에서 접근 가능하도록 상위에 정의)
+  // ==========================================================
+  
+  /** ID에 해당하는 input/textarea의 trim된 값을 가져옵니다. */
+  function getInputValue(id) {
+    const el = document.getElementById(id);
+    return el && typeof el.value === "string" ? el.value.trim() : "";
+  }
+  
+  /** ID에 해당하는 select 요소의 trim된 값을 가져옵니다. */
+  function getSelectValue(id) {
+    const el = document.getElementById(id);
+    return el && typeof el.value === "string" ? el.value.trim() : "";
+  }
+
+  /** 인자들 중 첫 번째 유효한 숫자 값을 찾습니다. */
+  function pickNumber(...candidates) {
+    for (const value of candidates) {
+      if (Number.isFinite(value)) return value;
+      if (typeof value === "string" && value.trim() !== "" && !Number.isNaN(Number(value))) {
+        return Number(value);
+      }
+    }
+    return null;
+  }
+
+  /** 로컬 스토리지에서 데이터를 로드합니다. */
+  function loadApplyState(key) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : {};
+    } catch (err) {
+      console.warn("apply storage load error", err);
+      return {};
+    }
+  }
+
+  /** 로컬 스토리지에 데이터를 저장합니다. */
+  function saveApplyState(key, state) {
+    try {
+      localStorage.setItem(key, JSON.stringify(state));
+    } catch (err) {
+      console.warn("apply storage save error", err);
+    }
+  }
+  
+  /**
+   * 신청/지원 기록을 저장하고 순번을 반환하는 핵심 로직.
+   * meta.id와 storageKey를 사용하여 데이터를 구분합니다.
+   */
+  function recordApplication(meta, storageKey) {
+    const id = meta.id || "default";
+    const state = loadApplyState(storageKey);
+    const prev = state[id] || {};
+
+    // 로컬 스토리지에 저장된 값이나 쿼리 파라미터 기반으로 순번을 계산
+    const baseApplied = pickNumber(
+      prev.applied,
+      prev.appliedCount,
+      meta.position ? meta.position - 1 : null
+    );
+    const nextApplied = (baseApplied ?? 0) + 1;
+
+    state[id] = {
+      ...prev,
+      applied: nextApplied,
+      updatedAt: new Date().toISOString()
+    };
+    saveApplyState(storageKey, state);
+    return nextApplied;
+  }
+  
+  // ==========================================================
+  // [1] 이벤트 신청 로직 (기존 로직)
+  // ==========================================================
 
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("event-form");
@@ -7,19 +86,20 @@
     const submitButton = form?.querySelector(".submit-button");
     const eventMeta = getEventMeta();
 
-    if (!form || !titleEl || !submitButton) return;
-
+    if (!form || !titleEl || !submitButton || !eventMeta) return; // 이벤트 폼 요소가 없으면 실행 중단
+      
     setTitleFromQuery(titleEl, eventMeta);
-
+      
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = getInputValue("apply-name");
       const phone = getInputValue("apply-phone");
-      const nextPosition = recordApplication(eventMeta);
-      showFinalState(name, phone, { ...eventMeta, position: nextPosition });
+      const nextPosition = recordApplication(eventMeta, APPLY_STORAGE_KEY_EVENT);
+      showEventFinalState(name, phone, { ...eventMeta, position: nextPosition });
     });
 
-    function showFinalState(nameValue, phoneValue, meta) {
+
+    function showEventFinalState(nameValue, phoneValue, meta) {
       const fallbackUrl = `/pages/event/8_tomato_event_apply.html${window.location.search || ""}`;
       const applicantName = nameValue || "신청자";
       const applicantPhone = phoneValue || "입력하신 번호";
@@ -62,13 +142,8 @@
     function setTitleFromQuery(el, meta) {
       const safeTitle = meta.title;
       const finalTitle = safeTitle ? `${safeTitle} 신청폼` : "이벤트 신청폼";
-      el.textContent = finalTitle;
+      if (el) el.textContent = finalTitle;
       document.title = `${finalTitle} | 숙명여자대학교 인공지능공학부`;
-    }
-
-    function getInputValue(id) {
-      const el = document.getElementById(id);
-      return el && typeof el.value === "string" ? el.value.trim() : "";
     }
 
     function getEventMeta() {
@@ -86,55 +161,117 @@
 
       return { id, title, eventDate, position };
     }
+  });
 
-    function pickNumber(...candidates) {
-      for (const value of candidates) {
-        if (Number.isFinite(value)) return value;
-        if (typeof value === "string" && value.trim() !== "" && !Number.isNaN(Number(value))) {
-          return Number(value);
+
+  // ==========================================================
+  // [2] 학생회 모집 로직 (새로 추가된 로직)
+  // ==========================================================
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const recruitForm = document.getElementById("recruitment-form");
+    const titleEl = document.getElementById("form-title");
+    
+    // 모집 관련 메타 데이터 설정
+    const recruitMeta = {
+      id: "smwu_ai_council_recruit_current",
+      title: "제N대 학생회 MAIN 모집",
+      eventDate: "면접 일정", 
+      position: null 
+    };
+
+    if (!recruitForm) return; // 모집 폼이 없으면 실행하지 않음
+
+    // 폼 제목 업데이트 (학생회 모집 페이지에서만 실행)
+    if (titleEl && document.title.includes("RECRUIT APPLY")) {
+        const finalTitle = "학생회 모집 지원서 작성";
+        titleEl.textContent = finalTitle;
+        document.title = `${finalTitle} | 숙명여자대학교 인공지능공학부`;
+    }
+    
+    // 부서 선택 시 레이블 업데이트 (학생회 모집 폼 전용)
+    function updateRecruitLabels() {
+        const dept1 = getSelectValue("dept1");
+        const dept2 = getSelectValue("dept2");
+        if (document.getElementById("dept1-reason-label")) {
+            document.getElementById("dept1-reason-label").textContent = `${dept1 || "1지망 부서"}를 지원한 이유*`;
         }
-      }
-      return null;
+        if (document.getElementById("dept2-reason-label")) {
+            document.getElementById("dept2-reason-label").textContent = `${dept2 || "2지망 부서"}를 지원한 이유*`;
+        }
     }
 
-    function loadApplyState() {
-      try {
-        const raw = localStorage.getItem(APPLY_STORAGE_KEY);
-        return raw ? JSON.parse(raw) : {};
-      } catch (err) {
-        console.warn("apply storage load error", err);
-        return {};
-      }
+    // 포트폴리오 파일 선택 시 파일명을 레이블에 표시
+    function updateFileLabel(e) {
+        const fileLabel = document.getElementById("file-dropdown-label");
+        if (fileLabel) {
+             // target.files가 배열일 수도 있으므로 [0]으로 첫 번째 파일명을 가져옵니다.
+             const fileName = e.target.files[0]?.name || "파일을 선택해주세요.";
+             fileLabel.textContent = fileName;
+        }
     }
 
-    function saveApplyState(state) {
-      try {
-        localStorage.setItem(APPLY_STORAGE_KEY, JSON.stringify(state));
-      } catch (err) {
-        console.warn("apply storage save error", err);
-      }
-    }
+    // 부서 선택 시 레이블 업데이트 리스너
+    document.getElementById("dept1")?.addEventListener("change", updateRecruitLabels);
+    document.getElementById("dept2")?.addEventListener("change", updateRecruitLabels);
 
-    function recordApplication(meta) {
-      const id = meta.id || "default";
-      const state = loadApplyState();
-      const prev = state[id] || {};
+    // 파일 선택 시 레이블 업데이트 리스너
+    document.getElementById("portfolio-file")?.addEventListener("change", updateFileLabel);
+    
+    // 초기 레이블 설정
+    updateRecruitLabels();
 
-      // 기본값을 position-1 또는 기존 기록/기본 JSON에서 가져옴
-      const baseApplied = pickNumber(
-        prev.applied,
-        prev.appliedCount,
-        meta.position ? meta.position - 1 : null
-      );
-      const nextApplied = (baseApplied ?? 0) + 1;
 
-      state[id] = {
-        ...prev,
-        applied: nextApplied,
-        updatedAt: new Date().toISOString()
-      };
-      saveApplyState(state);
-      return nextApplied;
+    recruitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      // 입력 값들을 폼 요소 ID에 맞게 가져옵니다.
+      const name = getInputValue("name");
+      const phone = getInputValue("phone");
+      const dept1 = getSelectValue("dept1");
+      const dept2 = getSelectValue("dept2");
+      
+      // 모집 전용 로직을 사용하여 기록합니다.
+      recordApplication(recruitMeta, APPLY_STORAGE_KEY_RECRUIT); 
+      
+      // 최종 상태 표시 함수 호출
+      showRecruitFinalState(name, phone, dept1, dept2, recruitMeta);
+    });
+
+    // 폼 제출 완료 후 보여줄 최종 상태 (학생회 모집 버전, 순번 메시지 제거)
+    function showRecruitFinalState(nameValue, phoneValue, dept1Value, dept2Value, meta) {
+      // 복귀 URL을 RECRUIT 페이지로 설정
+      const fallbackUrl = `/pages/8_tomato_recruit.html`; 
+      
+      const applicantName = nameValue || "지원자";
+      const applicantPhone = phoneValue || "입력하신 번호";
+      const eventTitle = meta.title || "학생회 모집";
+      
+      const deptText = dept1Value && dept2Value 
+        ? `${dept1Value} (1지망), ${dept2Value} (2지망)`
+        : dept1Value || dept2Value || "부서";
+
+      // 최종 메시지 내용을 학생회 모집에 맞게 HTML로 구성
+      recruitForm.innerHTML = `
+        <p class="form-final-message">
+          ${applicantName}님, **${eventTitle}** 지원이 완료되었습니다.<br>
+          지망 부서: **${deptText}**<br>
+          면접 일정 등 상세 안내사항은 추후 **${applicantPhone}**로 안내드립니다.<br>
+          **지원해주셔서 감사합니다.**
+        </p>
+      `;
+
+      // '돌아가기' 버튼 생성
+      const backButton = document.createElement("button");
+      backButton.type = "button";
+      backButton.className = "submit-button";
+      backButton.textContent = "돌아가기";
+      recruitForm.appendChild(backButton);
+
+      backButton.addEventListener("click", () => {
+        window.location.href = fallbackUrl; // 모집 페이지로 확실하게 이동
+      });
     }
   });
+
 })();

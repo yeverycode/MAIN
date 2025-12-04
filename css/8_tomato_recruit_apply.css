@@ -166,7 +166,7 @@
     border: 1px solid var(--border);
     background-color: var(--surface);
     padding: 14px;
-    color: var(--text-muted); /* 파일 선택 전 텍스트 */
+    color: var(--text-muted);
     cursor: pointer;
     display: flex;
     justify-content: space-between;

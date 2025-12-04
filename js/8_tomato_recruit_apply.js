@@ -73,5 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
     handleDeptChange();
 });
 
+const fileInput = document.getElementById("fileInput");
+const fileDropdown = document.getElementById("fileDropdown");
+
+fileInput.addEventListener("change", () => {
+    if (fileInput.files.length > 0) {
+        fileDropdown.childNodes[0].textContent = fileInput.files[0].name;
+        fileDropdown.style.color = "var(--white)";
+    } else {
+        fileDropdown.childNodes[0].textContent = "파일을 선택해주세요.";
+        fileDropdown.style.color = "var(--text-muted)";
+    }
+});
+
 //* 끝 *//
 

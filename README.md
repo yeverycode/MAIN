@@ -2,7 +2,7 @@
 with - [@yeverycode](https://github.com/yeverycode) [@24yp01](https://github.com/24yp01) [@seeoah](https://github.com/seeoah) [@judyjello](https://github.com/judyjello)
 
 ## 숙명여자대학교 인공지능공학부 웹사이트
-https://i.postimg.cc/fTzgmP7f/8-tomato-poster.png
+<img width="7016" height="9933" alt="Image" src="https://github.com/user-attachments/assets/ec974d23-5a20-4350-b866-dd3da8c50398" />
 
 학과·학생회 정보, 이벤트, 교수·연구실 소개, 적성 테스트 등을 담은 정적 멀티페이지 사이트입니다. 별도 빌드 없이 HTML/CSS/JS와 JSON 데이터로 구동하며, 페이지별 스크립트가 인터랙션과 필터링을 담당합니다.
 

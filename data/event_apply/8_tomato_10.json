@@ -17,7 +17,7 @@
 
   "payment": {
     "fee": "과학생회비 납부자 무료 / 미납부자 7,000원",
-    "account": "카카오뱅크 79421308866 (예금주: 인공지능공학부 학생회)"
+    "account": "카카오뱅크 79421308866 (예금주: 박지수)"
   },
 
   "notices": [
@@ -28,6 +28,6 @@
 
   "cta": {
     "label": "신청하기",
-    "link": "https://forms.gle/dZhbrxtXYBw6mSvH9"
+    "link": "/pages/event/8_tomato_event_form.html"
   }
 }

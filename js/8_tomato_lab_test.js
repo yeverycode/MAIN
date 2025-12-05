@@ -78,7 +78,35 @@ const nextBtn = document.getElementById('nextBtn');
 const progressFill = document.getElementById('progressFill');
 const currentStepEl = document.getElementById('currentStep');
 const labScrollStatic = document.querySelector('.lab-scroll-static');
+const labRow1 = document.getElementById('labRow1');
+const labRow2 = document.getElementById('labRow2');
 if (startBtn) startBtn.disabled = true;
+
+function renderLabLogos() {
+  if (!labRow1 || !labRow2 || !Object.keys(fields).length) return;
+
+  const labs = Object.values(fields).flatMap((field) => field.labs);
+  if (!labs.length) return;
+
+  const row1Labs = labs.slice(0, 6);
+  const row2Labs = labs.slice(6, 12);
+
+  const buildRow = (el, items) => {
+    const doubled = items.concat(items); // duplicate for seamless scroll animation
+    el.innerHTML = doubled
+      .map(
+        (lab) => `
+        <div class="lab-card">
+          <img src="${lab.logo}" alt="${lab.englishName} Lab Logo" loading="lazy">
+        </div>
+      `
+      )
+      .join('');
+  };
+
+  buildRow(labRow1, row1Labs);
+  buildRow(labRow2, row2Labs.length ? row2Labs : row1Labs);
+}
 
 async function loadFields() {
   try {
@@ -86,6 +114,7 @@ async function loadFields() {
     if (!response.ok) throw new Error(`Failed to load lab data: ${response.status}`);
     fields = await response.json();
     scores = initScores();
+    renderLabLogos();
     if (startBtn) startBtn.disabled = false;
   } catch (error) {
     console.error(error);

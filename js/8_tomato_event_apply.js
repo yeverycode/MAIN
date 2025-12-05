@@ -474,7 +474,18 @@
       params.append("position", String(nextApplicant));
     }
 
-    const link = `/pages/event/8_tomato_event_form.html?${params.toString()}`;
+    const DEFAULT_FORM_PATH = "/pages/event/8_tomato_event_form.html";
+    const rawCtaLink =
+      typeof cta?.link === "string" && cta.link.trim().length
+        ? cta.link.trim()
+        : "";
+    const baseLink = rawCtaLink || DEFAULT_FORM_PATH;
+    const isExternalLink = /^https?:\/\//i.test(baseLink);
+    const paramStr = params.toString();
+    const link =
+      !isExternalLink && paramStr
+        ? `${baseLink}${baseLink.includes("?") ? "&" : "?"}${paramStr}`
+        : baseLink;
     const isPast = status === "past";
 
     if (ctaWrap) {

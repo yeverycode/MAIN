@@ -75,8 +75,9 @@
       
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = getInputValue("apply-name");
-      const phone = getInputValue("apply-phone");
+      const validation = validateEventForm();
+      if (!validation) return;
+      const { name, phone } = validation;
       const nextPosition = recordApplication(eventMeta, APPLY_STORAGE_KEY_EVENT);
       showEventFinalState(name, phone, { ...eventMeta, position: nextPosition });
     });
@@ -127,6 +128,33 @@
       const finalTitle = safeTitle ? `${safeTitle} 신청폼` : "이벤트 신청폼";
       if (el) el.textContent = finalTitle;
       document.title = `${finalTitle} | 숙명여자대학교 인공지능공학부`;
+    }
+
+    function validateEventForm() {
+      const name = getInputValue("apply-name");
+      const studentId = getInputValue("apply-student-id");
+      const phone = getInputValue("apply-phone");
+
+      if (!name) {
+        alert("이름을 입력해 주세요.");
+        document.getElementById("apply-name")?.focus();
+        return null;
+      }
+
+      if (!/^[0-9]{7}$/.test(studentId)) {
+        alert("학번은 숫자 7자리로 입력해 주세요.");
+        document.getElementById("apply-student-id")?.focus();
+        return null;
+      }
+
+      const phoneRegex = /^01[0-9][- ]?(\\d{3,4})[- ]?(\\d{4})$/;
+      if (!phoneRegex.test(phone)) {
+        alert("전화번호를 010-1234-5678 형식으로 입력해 주세요.");
+        document.getElementById("apply-phone")?.focus();
+        return null;
+      }
+
+      return { name, studentId, phone };
     }
 
     function getEventMeta() {

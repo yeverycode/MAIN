@@ -346,7 +346,7 @@
 .event-card__title {
   font-size: 24px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .event-card__date {

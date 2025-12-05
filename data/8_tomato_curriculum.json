@@ -45,7 +45,7 @@
     "semester": 2,
     "title": "프로그래밍방법론 (필수)",
     "subtitle": "Programming Methodology",
-    "description": "C/C++로 기본기부터 객체지향 개념까지 이어 배우며 설계→구현 과정을 체득합니다.",
+    "description": "C/C++로 기본기부터 객체지향 개념까지 이어 배우며 설계부터 구현 과정을 체득합니다.",
     "tags": [
       "C",
       "C++",
@@ -139,7 +139,7 @@
     "semester": 2,
     "title": "인공지능입문 (필수)",
     "subtitle": "Introduction to Artificial Intelligence",
-    "description": "지식표현·탐색 등 AI의 토대를 정리하고 문제를 모델링하는 법을 배웁니다. 이후 ML·DL 학습을 위한 개념 발판을 놓습니다.",
+    "description": "지식표현·탐색 등 AI의 토대를 정리하고 문제를 모델링하는 법을 배웁니다.<br>이후 ML·DL 학습을 위한 개념 발판을 놓습니다.",
     "tags": [
       "지식표현",
       "탐색"
@@ -152,7 +152,7 @@
     "semester": 2,
     "title": "알고리즘입문",
     "subtitle": "Introduction to Algorithms",
-    "description": "복잡도 분석을 바탕으로 정렬·탐색·그래프·DP를 익힙니다. 빠르고 올바른 코드를 위한 사고법을 훈련합니다.",
+    "description": "복잡도 분석을 바탕으로 정렬·탐색·그래프·DP를 익힙니다.<br>빠르고 올바른 코드를 위한 사고법을 훈련합니다.",
     "tags": [
       "복잡도",
       "정렬/탐색",
@@ -166,7 +166,7 @@
     "semester": 2,
     "title": "모바일프로그래밍",
     "subtitle": "Mobile Applications and Programming",
-    "description": "안드로이드 기초부터 화면 구성, 데이터 처리, 간단한 앱 제작까지. 실습으로 실제 사용하는 모바일 앱을 직접 만들어 봅니다.",
+    "description": "안드로이드 기초부터 화면 구성, 데이터 처리, 간단한 앱 제작까지.<br>실습으로 실제 사용하는 모바일 앱을 직접 만들어 봅니다.",
     "tags": [
       "Android",
       "Java"
@@ -179,7 +179,7 @@
     "semester": 2,
     "title": "데이터베이스",
     "subtitle": "Databases",
-    "description": "모델링부터 SQL, 인덱스, 트랜잭션까지 데이터의 전 과정을 다룹니다. 작은 서비스용 DB 설계·구현을 직접 경험합니다.",
+    "description": "모델링부터 SQL, 인덱스, 트랜잭션까지 데이터의 전 과정을 다룹니다.<br>작은 서비스용 DB 설계·구현을 직접 경험합니다.",
     "tags": [
       "모델링",
       "SQL",
@@ -193,7 +193,7 @@
     "semester": 1,
     "title": "인공지능과기계학습",
     "subtitle": "AI and Machine Learning",
-    "description": "지도·비지도·생성·강화학습의 핵심 원리와 알고리즘을 폭넓게 다룹니다. 데이터로부터 일반화하는 모델의 본질을 이해합니다.",
+    "description": "지도·비지도·생성·강화학습의 핵심 원리와 알고리즘을 폭넓게 다룹니다.<br>데이터로부터 일반화하는 모델의 본질을 이해합니다.",
     "tags": [
       "지도/비지도",
       "신경망",
@@ -207,7 +207,7 @@
     "semester": 1,
     "title": "데이터패턴인식",
     "subtitle": "Data Pattern Recognition",
-    "description": "대규모 데이터에서 패턴을 찾고 분류·예측·클러스터링으로 이어갑니다. 실습을 통해 데이터에서 통찰을 뽑아내는 법을 익힙니다.",
+    "description": "대규모 데이터에서 패턴을 찾고 분류·예측·클러스터링으로 이어갑니다.<br>실습을 통해 데이터에서 통찰을 뽑아내는 법을 익힙니다.",
     "tags": [
       "분석",
       "예측",
@@ -221,7 +221,7 @@
     "semester": 1,
     "title": "컴퓨터그래픽프로그래밍",
     "subtitle": "Computer Graphic Programming",
-    "description": "카메라·조명·애니메이션 개념과 함께 OpenGL로 그래픽스를 구현합니다. 3D 씬을 설계하며 시각화의 기초를 잡습니다.",
+    "description": "카메라·조명·애니메이션 개념과 함께 OpenGL로 그래픽스를 구현합니다.<br>3D 씬을 설계하며 시각화의 기초를 잡습니다.",
     "tags": [
       "3D 모델링",
       "OpenGL"
@@ -234,7 +234,7 @@
     "semester": 1,
     "title": "영상처리와응용",
     "subtitle": "Image Processing and Applications",
-    "description": "필터링·변환 등 전처리 기법을 배우고 실제 이미지에 적용합니다. 비전 과목을 위한 필수 기초 체력을 기릅니다.",
+    "description": "필터링·변환 등 전처리 기법을 배우고 실제 이미지에 적용합니다.<br>비전 과목을 위한 필수 기초 체력을 기릅니다.",
     "tags": [
       "픽셀/영역 처리",
       "전처리"
@@ -247,7 +247,7 @@
     "semester": 1,
     "title": "UI/UX",
     "subtitle": "User Interface / User Experience",
-    "description": "요구·작업 분석부터 프로토타입, 사용성 평가까지 한 흐름으로 실습합니다. 사용자 관점에서 인터페이스를 설계합니다.",
+    "description": "요구·작업 분석부터 프로토타입, 사용성 평가까지 한 흐름으로 실습합니다.<br>사용자 관점에서 인터페이스를 설계합니다.",
     "tags": [
       "요구/작업분석",
       "프로토타입",
@@ -261,7 +261,7 @@
     "semester": 2,
     "title": "딥러닝원리와응용",
     "subtitle": "Introduction to Deep Learning",
-    "description": "신경망의 작동 원리와 표현력을 이해하고 최신 학습 기법을 다룹니다. 강화학습으로 의사결정 문제까지 확장해 봅니다.",
+    "description": "신경망의 작동 원리와 표현력을 이해하고 최신 학습 기법을 다룹니다.<br>강화학습으로 의사결정 문제까지 확장해 봅니다.",
     "tags": [
       "신경망",
       "함수공간",
@@ -275,7 +275,7 @@
     "semester": 2,
     "title": "운영체제원리",
     "subtitle": "Operating System Principles",
-    "description": "프로세스·메모리·파일·스케줄링을 중심으로 OS의 핵심을 파악합니다. 성능과 안정성을 좌우하는 내부 메커니즘을 이해합니다.",
+    "description": "프로세스·메모리·파일·스케줄링을 중심으로 OS의 핵심을 파악합니다.<br>성능과 안정성을 좌우하는 내부 메커니즘을 이해합니다.",
     "tags": [
       "프로세스/메모리",
       "디스크/입출력"
@@ -288,7 +288,7 @@
     "semester": 2,
     "title": "AR/VR게임프로그래밍",
     "subtitle": "AR/VR Game Programming",
-    "description": "가상세계 모델링과 상호작용 기법을 구현합니다. 실감형 콘텐츠가 만들어지는 과정을 프로젝트로 경험합니다.",
+    "description": "가상세계 모델링과 상호작용 기법을 구현합니다.<br>실감형 콘텐츠가 만들어지는 과정을 프로젝트로 경험합니다.",
     "tags": [
       "가상세계",
       "상호작용"
@@ -301,7 +301,7 @@
     "semester": 2,
     "title": "네트워크(캡스톤디자인)",
     "subtitle": "Multimedia Networks",
-    "description": "소켓 프로그래밍부터 클라이언트/서버 구조까지 직접 구현합니다. 분산 환경에서 멀티미디어 서비스가 동작하는 법을 배웁니다.",
+    "description": "소켓 프로그래밍부터 클라이언트/서버 구조까지 직접 구현합니다.<br>분산 환경에서 멀티미디어 서비스가 동작하는 법을 배웁니다.",
     "tags": [
       "UNIX 소켓",
       "서버/클라이언트"
@@ -314,7 +314,7 @@
     "semester": 2,
     "title": "센서프로그래밍",
     "subtitle": "Sensor Programming",
-    "description": "라즈베리파이·아두이노로 센서 제어와 데이터 수집을 실습합니다. 하드웨어와 소프트웨어를 연결하는 IoT 감각을 기릅니다.",
+    "description": "라즈베리파이·아두이노로 센서 제어와 데이터 수집을 실습합니다.<br>하드웨어와 소프트웨어를 연결하는 IoT 감각을 기릅니다.",
     "tags": [
       "Raspberry Pi",
       "Arduino"
@@ -327,7 +327,7 @@
     "semester": 1,
     "title": "IOT응용 (캡스톤 디자인)",
     "subtitle": "AI IoT Application – Capstone Design",
-    "description": "다양한 디바이스에서 데이터를 모으고 AI로 서비스를 만듭니다. 디지털 트윈·메타버스 등 최신 응용까지 팀 프로젝트로 구현합니다.",
+    "description": "다양한 디바이스에서 데이터를 모으고 AI로 서비스를 만듭니다.<br>디지털 트윈·메타버스 등 최신 응용까지 팀 프로젝트로 구현합니다.",
     "tags": [
       "DNA",
       "IoT",
@@ -336,30 +336,18 @@
     "syllabusUrl": "https://drive.google.com/file/d/1--JyESc3PK2dIguwgexj3biVTKd0Oh_I/view?usp=sharing"
   },
   {
-    "id": "hci-capstone",
+    "id": "ai-industry-special-lecture",
     "grade": 4,
     "semester": 1,
-    "title": "HCI개론 (캡스톤 디자인)",
-    "subtitle": "Introduction to HCI",
-    "description": "인간 중심 설계 원칙을 바탕으로 AI 상호작용 시스템을 기획·평가합니다. 연구방법과 프로토타입 제작을 함께 경험합니다.",
+    "title": "인공지능산업체특강",
+    "subtitle": "AI Industry Special Lecture",
+    "description": "산업체 전문가 특강을 통해 클라우드 기반 AI·ML 실무 기술을 학습합니다.<br>Azure 환경에서 데이터 분석·모델링을 직접 수행하며, 실제 현장에서 요구되는 문제 해결 능력을 강화합니다.",
     "tags": [
-      "상호작용",
-      "평가"
+      "AI실무",
+      "클라우드",
+      "Azure"
     ],
-    "syllabusUrl": ""
-  },
-  {
-    "id": "cloud-computing",
-    "grade": 4,
-    "semester": 1,
-    "title": "클라우드컴퓨팅",
-    "subtitle": "Cloud Computing",
-    "description": "서비스 모델과 아키텍처를 이해하고, 클라우드에서의 설계를 비교·분석합니다. 실무 사례로 비용·확장성 관점을 익힙니다.",
-    "tags": [
-      "아키텍처",
-      "모델/메커니즘"
-    ],
-    "syllabusUrl": ""
+    "syllabusUrl": "https://drive.google.com/file/d/17FyVG0vI2-2woDHHhycKd5UBQUMyW27r/view?usp=sharing"
   },
   {
     "id": "graduation-project-1",
@@ -367,12 +355,25 @@
     "semester": 1,
     "title": "졸업프로젝트 (캡스톤 디자인)",
     "subtitle": "Project for Graduation",
-    "description": "팀으로 기획→개발→검증 전 과정을 수행하는 실무형 프로젝트입니다. 협업과 문서화까지 끝까지 완성하는 힘을 키웁니다.",
+    "description": "팀으로 기획→개발→검증 전 과정을 수행하는 실무형 프로젝트입니다.<br>협업과 문서화까지 끝까지 완성하는 힘을 키웁니다.",
     "tags": [
       "팀 프로젝트",
       "기획/개발/관리"
     ],
-    "syllabusUrl": ""
+    "syllabusUrl": "https://drive.google.com/file/d/1J8_Gzok6K-5GYvl3ykIH7j9LwiB21SwM/view?usp=sharing"
+  },
+  {
+    "id": "hci-capstone",
+    "grade": 4,
+    "semester": 2,
+    "title": "HCI개론 (캡스톤 디자인)",
+    "subtitle": "Introduction to HCI",
+    "description": "인간 중심 설계 원칙을 바탕으로 AI 상호작용 시스템을 기획·평가합니다.<br>연구방법과 프로토타입 제작을 함께 경험합니다.",
+    "tags": [
+      "상호작용",
+      "평가"
+    ],
+    "syllabusUrl": "https://drive.google.com/file/d/16cLqAKE9jCzyhW-Mh4_iSK9FHW6OpY_Z/view?usp=sharing"
   },
   {
     "id": "language-processing",
@@ -380,13 +381,13 @@
     "semester": 2,
     "title": "지능형 언어처리",
     "subtitle": "Intelligent Language Processing",
-    "description": "전통 기법부터 딥러닝 기반 NLP까지 폭넓게 다룹니다. 번역·요약·QA·대화형 에이전트를 직접 구현해 봅니다.",
+    "description": "전통 기법부터 딥러닝 기반 NLP까지 폭넓게 다룹니다.<br>번역·요약·QA·대화형 에이전트를 직접 구현해 봅니다.",
     "tags": [
       "NLP",
       "요약/질의응답",
       "딥러닝"
     ],
-    "syllabusUrl": ""
+    "syllabusUrl": "https://drive.google.com/file/d/1pf8CQ-RZoZ1hiimp3zIeDBlhROZ0NR2o/view?usp=sharing"
   },
   {
     "id": "system-security",
@@ -394,27 +395,13 @@
     "semester": 2,
     "title": "시스템보안",
     "subtitle": "System Securities",
-    "description": "리눅스 관리와 보안 설정, 로그·IDS, 네트워크 보안을 실습합니다. 공격·방어 관점에서 시스템을 단단히 만드는 법을 배웁니다.",
+    "description": "리눅스 관리와 보안 설정, 로그·IDS, 네트워크 보안을 실습합니다.<br>공격·방어 관점에서 시스템을 단단히 만드는 법을 배웁니다.",
     "tags": [
       "Linux",
       "SELinux",
       "로그/IDS"
     ],
-    "syllabusUrl": ""
-  },
-  {
-    "id": "software-engineering",
-    "grade": 4,
-    "semester": 2,
-    "title": "IT소프트웨어공학",
-    "subtitle": "IT Software Engineering",
-    "description": "요구분석·설계·테스트·품질·프로젝트 관리까지 개발 프로세스를 아우릅니다. 유지보수 가능한 소프트웨어의 기준을 세웁니다.",
-    "tags": [
-      "요구/설계",
-      "테스트",
-      "프로젝트/품질"
-    ],
-    "syllabusUrl": ""
+    "syllabusUrl": "https://drive.google.com/file/d/1kWIUVPBwCij4-D8N6eiY3kJ8UkXldoIM/view?usp=sharing"
   },
   {
     "id": "computer-vision",
@@ -422,25 +409,12 @@
     "semester": 2,
     "title": "컴퓨터비전",
     "subtitle": "Computer Vision",
-    "description": "전처리부터 특징 기반 인식까지 이론과 OpenCV 실습으로 다룹니다. 이미지/영상 데이터를 이해하는 모델을 만듭니다.",
+    "description": "전처리부터 특징 기반 인식까지 이론과 OpenCV 실습으로 다룹니다.<br>이미지/영상 데이터를 이해하는 모델을 만듭니다.",
     "tags": [
       "전처리",
       "특징기반 해석",
       "OpenCV"
     ],
-    "syllabusUrl": ""
-  },
-  {
-    "id": "graduation-project-2",
-    "grade": 4,
-    "semester": 2,
-    "title": "졸업프로젝트 (캡스톤 디자인)",
-    "subtitle": "Project for Graduation",
-    "description": "현장 문제를 정의하고 해결하는 종합 프로젝트의 마무리 단계입니다. 결과물과 문서를 통해 학부 과정을 총정리합니다.",
-    "tags": [
-      "팀 프로젝트",
-      "현장 적용"
-    ],
-    "syllabusUrl": ""
+    "syllabusUrl": "https://drive.google.com/file/d/1_2ZYNsbh-MkAblvdApfNX4PGRdX4m4-9/view?usp=sharing"
   }
 ]

@@ -185,13 +185,13 @@
 
 .apply-detail__body {
   margin-top: 70px;
+  margin-bottom: 70px;
   display: flex;
   gap: 130px;
   align-items: center;
 }
 
 .apply-capacity-row {
-  margin: 32px 0 12px;
   display: flex;
   gap: 20px;
   align-items: center;
@@ -513,11 +513,4 @@
 
 .apply-detail__pager.pager--prev-only .apply-detail__pager-divider {
   display: none;
-}
-
-@media (max-width: 820px) {
-  .apply-detail__body {
-    flex-direction: column;
-    gap: 42px;
-  }
 }

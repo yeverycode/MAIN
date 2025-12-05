@@ -220,6 +220,8 @@ function renderBannerDots(dotsEl, count, activeIndex) {
 function startBannerRotation(status) {
   const imageEl = document.querySelector(".event-banner__image");
   const dotsEl = document.querySelector(".event-banner__dots");
+  const prevBtn = document.querySelector(".event-banner__arrow--prev");
+  const nextBtn = document.querySelector(".event-banner__arrow--next");
   if (!imageEl || !dotsEl) return;
 
   const items = getBannerItemsByStatus(status);
@@ -241,6 +243,24 @@ function startBannerRotation(status) {
     renderBannerDots(dotsEl, items.length, index);
   };
 
+  const restartInterval = () => {
+    if (bannerIntervalId) clearInterval(bannerIntervalId);
+    bannerIntervalId = null;
+
+    if (items.length > 1) {
+      bannerIntervalId = setInterval(() => {
+        index = (index + 1) % items.length;
+        applyFrame();
+      }, 4000);
+    }
+  };
+
+  const goTo = (nextIndex) => {
+    index = (nextIndex + items.length) % items.length;
+    applyFrame();
+    restartInterval();
+  };
+
   applyFrame();
 
   imageEl.style.cursor = "pointer";
@@ -248,15 +268,17 @@ function startBannerRotation(status) {
     if (currentHref) window.location.href = currentHref;
   };
 
-  if (bannerIntervalId) clearInterval(bannerIntervalId);
-  bannerIntervalId = null;
-
-  if (items.length > 1) {
-    bannerIntervalId = setInterval(() => {
-      index = (index + 1) % items.length;
-      applyFrame();
-    }, 4000);
+  const disableNav = items.length <= 1;
+  if (prevBtn) {
+    prevBtn.disabled = disableNav;
+    prevBtn.onclick = disableNav ? null : () => goTo(index - 1);
   }
+  if (nextBtn) {
+    nextBtn.disabled = disableNav;
+    nextBtn.onclick = disableNav ? null : () => goTo(index + 1);
+  }
+
+  restartInterval();
 }
 
 // 카드 DOM 생성
@@ -328,9 +350,17 @@ function renderEvents(filterStatus = "ongoing") {
     return;
   }
 
-  filtered
-    .sort((a, b) => new Date(b.startDate) - new Date(a.startDate)) // 최신순
-    .forEach((ev) => listEl.appendChild(createEventCard(ev)));
+  const sorted = filtered.sort((a, b) => {
+    if (filterStatus === "past") {
+      const aId = pickNumber(a?.id);
+      const bId = pickNumber(b?.id);
+      if (aId !== null && bId !== null) return bId - aId; // ID 내림차순
+      return String(b?.id ?? "").localeCompare(String(a?.id ?? ""));
+    }
+    return new Date(b.startDate) - new Date(a.startDate); // 진행/예정은 최신순
+  });
+
+  sorted.forEach((ev) => listEl.appendChild(createEventCard(ev)));
 }
 
 // 탭 클릭 설정
@@ -617,9 +647,6 @@ function prepareCalendarTracks(year, month) {
 }
 
 function getCalendarStartDate() {
-  const upcoming = calendarState.events.find((ev) => ev._endDate >= today);
-  if (upcoming) return upcoming._startDate;
-  if (calendarState.events.length) return calendarState.events[0]._startDate;
   const now = new Date();
   now.setHours(0, 0, 0, 0);
   return now;

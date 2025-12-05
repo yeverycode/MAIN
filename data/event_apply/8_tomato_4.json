@@ -41,6 +41,6 @@
 
   "cta": {
     "label": "신청하기",
-    "link": "#"
+    "link": "/pages/event/8_tomato_event_form.html"
   }
 }

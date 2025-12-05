@@ -2,7 +2,7 @@
   const APPLY_URL = "/data/8_tomato_event_apply.json";
   const APPLY_DETAIL_BASE = "/data/event_apply";
   const LIST_URL = "/data/8_tomato_event_calendar.json";
-  const DEFAULT_ID = "10";
+  const DEFAULT_ID = "1";
   const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
   let posterImages = [];
   let posterIndex = 0;

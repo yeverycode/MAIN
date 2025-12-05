@@ -1,15 +1,5 @@
-// js/8_tomato_calendar.js
-
-// 처음에 띄울 기본 월 (지금 2025년 11월)
 const INITIAL_YEAR = 2025;
-const INITIAL_MONTH = 11;
-
-// 파일 경로 생성: /data/calendar_2025_11.json 이런 형식
-function getCalendarUrl(year, month) {
-  return `/data/calendar_${year}_${String(month).padStart(2, "0")}.json`;
-}
-
-/* ===== 날짜 유틸 ===== */
+const INITIAL_MONTH = 12;
 
 function parseDate(str) {
   if (typeof str !== "string") return new Date(NaN);
@@ -27,8 +17,6 @@ function isSameDate(a, b) {
   );
 }
 
-/* ===== 상태 ===== */
-
 const state = {
   meta: null,
   events: [],
@@ -39,22 +27,16 @@ const state = {
   currentMonth: null
 };
 
-/* ===== 초기 로드 ===== */
-
 document.addEventListener("DOMContentLoaded", () => {
   initFilterButtons();
   initMonthNav();
   loadCalendar(INITIAL_YEAR, INITIAL_MONTH);
 });
 
-/* ===== 공통 필터 ===== */
-
 function passFilter(ev) {
   if (state.filterType === "all") return true;
   return ev.type === state.filterType;
 }
-
-/* ===== 월 데이터 로드 ===== */
 
 function loadCalendar(year, month) {
   const url = getCalendarUrl(year, month);
@@ -78,7 +60,7 @@ function loadCalendar(year, month) {
         _trackIndex: null
       }));
 
-      prepareMultiDayTracks(); // 멀티데이 트랙 배정
+      prepareMultiDayTracks();
       initHeader();
       renderCalendar();
       initDefaultSelection();
@@ -89,10 +71,7 @@ function loadCalendar(year, month) {
     });
 }
 
-/* ===== 멀티데이 트랙 계산 ===== */
-
 function prepareMultiDayTracks() {
-  // 초기화
   state.events.forEach((ev) => {
     ev._trackIndex = null;
   });
@@ -127,7 +106,6 @@ function prepareMultiDayTracks() {
 
   if (!multi.length) return;
 
-  // 시작 날짜 순 정렬
   multi.sort(
     (a, b) =>
       a.start - b.start ||
@@ -151,7 +129,6 @@ function prepareMultiDayTracks() {
   });
 }
 
-/* ===== 상단 헤더 ===== */
 
 function initHeader() {
   const { meta } = state;
@@ -166,7 +143,6 @@ function initHeader() {
   if (monthLabelEl) monthLabelEl.textContent = meta.monthLabel || "";
 }
 
-/* ===== 필터 버튼 ===== */
 
 function initFilterButtons() {
   const buttons = document.querySelectorAll(".filter-chip");
@@ -177,7 +153,6 @@ function initFilterButtons() {
 
       state.filterType = btn.dataset.type || "all";
 
-      // 필터 변경 시 트랙 재계산 + 렌더
       prepareMultiDayTracks();
       renderCalendar();
       renderDetailForSelectedDate();
@@ -185,7 +160,6 @@ function initFilterButtons() {
   });
 }
 
-/* ===== 월 이동 버튼 ===== */
 
 function initMonthNav() {
   const prevBtn = document.getElementById("calendarPrevMonth");
@@ -210,11 +184,8 @@ function changeMonth(delta) {
     y += 1;
   }
 
-  // 새 월 로드
   loadCalendar(y, m);
 }
-
-/* ===== 메인 달력 렌더 ===== */
 
 function renderCalendar() {
   const grid = document.getElementById("calendarGrid");
@@ -275,7 +246,6 @@ function renderCalendar() {
       }
     });
 
-    // 1) 멀티데이 막대 (이 날짜에 있는 트랙까지만)
     if (multiEvents.length > 0) {
       const maxTrack = Math.max(
         ...multiEvents.map((ev) =>
@@ -330,7 +300,6 @@ function renderCalendar() {
       }
     }
 
-    // 2) 하루짜리 이벤트는 멀티데이 아래에
     singleEvents.forEach((ev) => {
       const pill = document.createElement("div");
       pill.className =
@@ -353,8 +322,6 @@ function renderCalendar() {
 
   updateSelectedDayUI();
 }
-
-/* ===== 상세 패널 ===== */
 
 function getEventsForDate(dateStr) {
   const target = parseDate(dateStr);

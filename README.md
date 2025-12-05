@@ -1,4 +1,5 @@
 # 2025 Fall Web-Progamming 🍅Tomato Team Project🍅
+with - @yeverycode @24yp01 @seeoah @judyjello
 
 ## 숙명여자대학교 인공지능공학부 웹사이트
 
@@ -34,7 +35,7 @@
 
 ## 기술 스택 및 특이사항
 
-- 정적 HTML + 바닐라 JS + CSS (별도 빌드/의존성 없음).
+- HTML + JS + CSS
 - 로컬 스토리지로 이벤트 신청 인원, 퀴즈 답변 등을 기억합니다.
 - `prefers-reduced-motion` 대응 애니메이션, 접근성 속성(aria-label/role) 일부 적용.
 - 리크루트 페이지는 Kakao Maps SDK 스크립트를 사용합니다. 온라인 환경에서만 지도 로딩이 가능합니다.

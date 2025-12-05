@@ -1,6 +1,7 @@
 // /js/8_tomato_events.js
 
 let eventsData = [];
+let calendarSourceEvents = [];
 let bannerIntervalId = null;
 const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
 
@@ -66,7 +67,7 @@ function mergeStoredCounts(event) {
     ...event,
     appliedCount: mergedApplied ?? event.appliedCount,
     capacity: mergedCapacity ?? event.capacity,
-    waitingCount: mergedWaiting ?? event.waitingCount
+    waitingCount: mergedWaiting ?? event.waitingCount,
   };
 }
 
@@ -83,8 +84,8 @@ function getStatus(startStr, endStr) {
   start.setHours(0, 0, 0, 0);
   end.setHours(0, 0, 0, 0);
 
-  if (end < today) return "past";      // 기간 끝난 경우
-  return "ongoing";                    // 오늘 이후는 진행/예정
+  if (end < today) return "past"; // 기간 끝난 경우
+  return "ongoing"; // 오늘 이후는 진행/예정
 }
 
 // D-Day 라벨 (진행중이면 마감일까지 남은 일수)
@@ -165,8 +166,9 @@ function getCapacityInfo(event, status) {
 }
 
 function getDetailHref(event) {
-  return event?.id
-    ? `/pages/event/8_tomato_event_apply.html?id=${event.id}`
+  const targetId = event?.sourceId ?? event?.id;
+  return targetId
+    ? `/pages/event/8_tomato_event_apply.html?id=${targetId}`
     : event?.link || "#";
 }
 
@@ -267,8 +269,7 @@ function createEventCard(event) {
   const showStatus = !isPast;
   const detailHref = getDetailHref(event);
   const imageSrc =
-    event.image ||
-    "https://placehold.co/600x400/0B50D0/FFFFFF?text=EVENT";
+    event.image || "https://placehold.co/600x400/0B50D0/FFFFFF?text=EVENT";
 
   const metaParts = [];
 
@@ -314,9 +315,7 @@ function renderEvents(filterStatus = "ongoing") {
   const listEl = document.getElementById("eventList");
   listEl.innerHTML = "";
 
-  const filtered = eventsData.filter(
-    (ev) => getListStatus(ev) === filterStatus
-  );
+  const filtered = eventsData.filter((ev) => getListStatus(ev) === filterStatus);
 
   if (filtered.length === 0) {
     const empty = document.createElement("p");
@@ -365,11 +364,17 @@ function setupViewToggle() {
 
 // JSON 로드
 async function loadEvents() {
+  const LIST_URL = "/data/8_tomato_event_list.json";
+  const CALENDAR_URL = "/data/8_tomato_event_calendar.json";
+
   try {
-    const res = await fetch("/data/8_tomato_event_list.json");
-    if (!res.ok) throw new Error("이벤트 데이터를 불러오지 못했습니다.");
-    const data = await res.json();
-    eventsData = Array.isArray(data) ? data.map((ev) => mergeStoredCounts(ev)) : [];
+    // 리스트 전용 데이터
+    const listRes = await fetch(LIST_URL);
+    if (!listRes.ok) throw new Error("이벤트 리스트 데이터를 불러오지 못했습니다.");
+    const listData = await listRes.json();
+    eventsData = Array.isArray(listData)
+      ? listData.map((ev) => mergeStoredCounts(ev))
+      : [];
   } catch (err) {
     console.error(err);
     const listEl = document.getElementById("eventList");
@@ -378,12 +383,27 @@ async function loadEvents() {
         '<p class="event-list__empty">이벤트 데이터를 불러오는 중 오류가 발생했습니다.</p>';
     }
   }
+
+  // 캘린더용 전체 데이터(학사/학과 일정 포함)
+  try {
+    const calRes = await fetch(CALENDAR_URL);
+    if (!calRes.ok) throw new Error("캘린더 데이터를 불러오지 못했습니다.");
+    const calData = await calRes.json();
+    calendarSourceEvents = Array.isArray(calData?.events)
+      ? calData.events
+      : Array.isArray(calData)
+      ? calData
+      : [];
+  } catch (err) {
+    console.warn("캘린더 데이터 로드 오류", err);
+    calendarSourceEvents = [];
+  }
 }
 
 /* ===== 캘린더 (이벤트 리스트 전용) ===== */
 
 function getEventType(event) {
-  // event_list.json에는 type이 없으므로 기본 event로 매핑
+  // 타입 정보가 없으면 기본적으로 학과 행사(event)로 처리
   return event?.type || "event";
 }
 
@@ -404,6 +424,40 @@ function formatDateStr(date) {
   return `${y}-${m}-${d}`;
 }
 
+// "2025.11.15 (토) ~ 11.16 (일)" 형태의 행사 일정을 YYYY-MM-DD 범위로 변환
+function parseEventDateRange(eventDateStr) {
+  if (!eventDateStr || typeof eventDateStr !== "string") return null;
+
+  const first = eventDateStr.match(/(\d{4})\.\s*(\d{1,2})\.\s*(\d{1,2})/);
+  if (!first) return null;
+
+  const startYear = Number(first[1]);
+  const startMonth = Number(first[2]);
+  const startDay = Number(first[3]);
+
+  const start = new Date(startYear, startMonth - 1, startDay);
+  start.setHours(0, 0, 0, 0);
+
+  let end = start;
+  const range = eventDateStr.match(
+    /~\s*(?:(\d{4})\.\s*)?(\d{1,2})\.\s*(\d{1,2})/
+  );
+  if (range) {
+    const endYear = range[1] ? Number(range[1]) : startYear;
+    const endMonth = Number(range[2]);
+    const endDay = Number(range[3]);
+    end = new Date(endYear, endMonth - 1, endDay);
+    end.setHours(0, 0, 0, 0);
+  }
+
+  return {
+    startDate: formatDateStr(start),
+    endDate: formatDateStr(end),
+    _startDate: start,
+    _endDate: end,
+  };
+}
+
 function isSameDateLocal(a, b) {
   if (!(a instanceof Date) || !(b instanceof Date)) return false;
   return (
@@ -422,8 +476,85 @@ function passesCalendarFilter(event) {
   return true;
 }
 
+// 리스트에서 온 학과 행사인지 체크
+function isListEvent(ev) {
+  return ev && ev.fromEventList === true;
+}
+
+// 캘린더에 찍힐 라벨 결정
+function getCalendarLabel(ev, dateStr) {
+  // 신청기간 룰은 "학과 행사(이벤트)" + 리스트에서 온 애들만 적용
+  if (!isListEvent(ev)) {
+    return ev.title || "";
+  }
+
+  // endDate 전용 마커는 행사명만, 나머지는 신청기간 표기
+  if (ev.isEndMarker) {
+    return ev.title || "";
+  }
+
+  return `${ev.title} 신청기간`;
+}
+
 function getCalendarEventsFromList() {
-  return (eventsData || [])
+  const calendarEvents = Array.isArray(calendarSourceEvents)
+    ? calendarSourceEvents
+    : [];
+
+  const result = [];
+
+  calendarEvents.forEach((ev, idx) => {
+    if (!ev || (ev.type || "event") !== "event") return;
+
+    const start = parseDateLocal(ev.startDate);
+    const end = parseDateLocal(ev.endDate || ev.startDate);
+    if (!start || !end) return;
+
+    const baseId =
+      ev.id !== undefined && ev.id !== null ? ev.id : `cal-event-${idx}`;
+
+    // 신청 기간: 원래의 start~end 구간 전체를 표시
+    result.push({
+      ...ev,
+      id: `${baseId}-apply`,
+      sourceId: baseId,
+      type: "department",
+      sourceType: ev.type || "event",
+      categoryLabel: "학과 일정",
+      startDate: ev.startDate,
+      endDate: ev.endDate || ev.startDate,
+      _startDate: start,
+      _endDate: end,
+      _trackIndex: null,
+      fromEventList: true, // 신청기간 라벨 사용
+      isEndMarker: false,
+    });
+
+    // 행사 본 일정: eventDate 기반으로 별도 표시 (단일/범위 모두 지원)
+    const eventDateRange = parseEventDateRange(ev.eventDate);
+    if (eventDateRange) {
+      result.push({
+        ...ev,
+        id: `${baseId}-event`,
+        sourceId: baseId,
+        sourceType: ev.type || "event",
+        startDate: eventDateRange.startDate,
+        endDate: eventDateRange.endDate,
+        _startDate: eventDateRange._startDate,
+        _endDate: eventDateRange._endDate,
+        _trackIndex: null,
+        fromEventList: false,
+        isEndMarker: false,
+      });
+    }
+  });
+
+  return result;
+}
+
+function getCalendarOtherEvents() {
+  return (calendarSourceEvents || [])
+    .filter((ev) => ev && (ev.type === "academic" || ev.type === "department"))
     .map((ev) => {
       const start = parseDateLocal(ev.startDate);
       const end = parseDateLocal(ev.endDate);
@@ -433,62 +564,12 @@ function getCalendarEventsFromList() {
         _startDate: start,
         _endDate: end,
         _trackIndex: null,
-        type: getEventType(ev) || "event",
-        categoryLabel: ev.categoryLabel || "학과 행사",
-        fromEventList: true,
+        fromEventList: false,
+        categoryLabel:
+          ev.categoryLabel || (ev.type === "academic" ? "학사 일정" : "학과 일정"),
       };
     })
     .filter(Boolean);
-}
-
-function collectYearMonthsFromEvents() {
-  const set = new Set();
-  (eventsData || []).forEach((ev) => {
-    const start = parseDateLocal(ev.startDate);
-    const end = parseDateLocal(ev.endDate);
-    [start, end].forEach((d) => {
-      if (d instanceof Date && !Number.isNaN(d)) {
-        set.add(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`);
-      }
-    });
-  });
-  return Array.from(set).map((key) => {
-    const [y, m] = key.split("-").map(Number);
-    return { year: y, month: m };
-  });
-}
-
-async function loadAcademicDepartmentEvents() {
-  const targets = collectYearMonthsFromEvents();
-  const merged = [];
-
-  for (const { year, month } of targets) {
-    const url = `/data/calendar_${year}_${String(month).padStart(2, "0")}.json`;
-    try {
-      const res = await fetch(url);
-      if (!res.ok) continue;
-      const data = await res.json();
-      const list = Array.isArray(data.events) ? data.events : [];
-      list.forEach((ev) => {
-        if (ev.type !== "academic" && ev.type !== "department") return;
-        const start = parseDateLocal(ev.startDate);
-        const end = parseDateLocal(ev.endDate);
-        if (!start || !end) return;
-        merged.push({
-          ...ev,
-          _startDate: start,
-          _endDate: end,
-          _trackIndex: null,
-          fromEventList: false,
-          categoryLabel: ev.categoryLabel || (ev.type === "academic" ? "학사 일정" : "학과 일정"),
-        });
-      });
-    } catch (err) {
-      console.warn("캘린더 데이터 로드 실패", url, err);
-    }
-  }
-
-  return merged;
 }
 
 function prepareCalendarTracks(year, month) {
@@ -552,7 +633,9 @@ function updateCalendarHeader() {
 
   if (yearEl) yearEl.textContent = currentYear ?? "--";
   if (monthNumEl) monthNumEl.textContent = currentMonth ?? "--";
-  if (monthLabelEl) monthLabelEl.textContent = currentMonth ? CALENDAR_MONTH_LABELS[currentMonth - 1] || "" : "";
+  if (monthLabelEl)
+    monthLabelEl.textContent =
+      currentMonth ? CALENDAR_MONTH_LABELS[currentMonth - 1] || "" : "";
 }
 
 function updateCalendarSelectedDayUI() {
@@ -595,8 +678,10 @@ function renderCalendarDetail() {
   }
 
   events.forEach((ev) => {
-    const typeMod = ev.type === "academic" || ev.type === "department" ? ev.type : "event";
-    const isDepartmentEvent = typeMod === "event" && ev.fromEventList === true && !!ev.id;
+    const typeMod =
+      ev.type === "academic" || ev.type === "department" ? ev.type : "event";
+    const showApply =
+      (ev.sourceType || ev.type) === "event" && !!(ev.sourceId ?? ev.id);
 
     const card = document.createElement("article");
     card.className = "calendar-detail-card";
@@ -609,6 +694,9 @@ function renderCalendarDetail() {
     badge.textContent = ev.categoryLabel || "학과 행사";
     metaRow.appendChild(badge);
 
+    const titleRow = document.createElement("div");
+    titleRow.className = "calendar-detail-card__title-row";
+
     const title = document.createElement("h3");
     title.className = "calendar-detail-card__title";
     const href = getDetailHref(ev);
@@ -620,6 +708,16 @@ function renderCalendarDetail() {
     } else {
       title.textContent = ev.title;
     }
+    titleRow.appendChild(title);
+
+    if (showApply) {
+      const applyLink = document.createElement("a");
+      applyLink.className = "detail-apply detail-apply--title";
+      const targetId = ev.sourceId ?? ev.id;
+      applyLink.href = `/pages/event/8_tomato_event_apply.html?id=${targetId}`;
+      applyLink.textContent = "+APPLY";
+      titleRow.appendChild(applyLink);
+    }
 
     const bodyRow = document.createElement("div");
     bodyRow.className = "calendar-detail-card__body";
@@ -629,16 +727,8 @@ function renderCalendarDetail() {
     desc.textContent = ev.description || "";
     bodyRow.appendChild(desc);
 
-    if (isDepartmentEvent) {
-      const applyLink = document.createElement("a");
-      applyLink.className = "detail-apply";
-      applyLink.href = `/pages/event/8_tomato_event_apply.html?id=${ev.id}`;
-      applyLink.textContent = "+APPLY";
-      bodyRow.appendChild(applyLink);
-    }
-
     card.appendChild(metaRow);
-    card.appendChild(title);
+    card.appendChild(titleRow);
     card.appendChild(bodyRow);
 
     detailList.appendChild(card);
@@ -714,18 +804,21 @@ function renderCalendarGrid() {
         );
 
         if (ev) {
-          const typeMod = ev.type === "academic" || ev.type === "department" ? ev.type : "event";
+          const typeMod =
+            ev.type === "academic" || ev.type === "department" ? ev.type : "event";
           const isStart = isSameDateLocal(dateObj, ev._startDate);
           const isEnd = isSameDateLocal(dateObj, ev._endDate);
+
+          const label = getCalendarLabel(ev, dateStr);
 
           const pill = document.createElement("div");
           pill.className =
             `calendar-event-pill calendar-event-pill--${typeMod} calendar-range-seg`;
-          pill.textContent = ev.title;
-          pill.title = ev.title;
+          pill.textContent = label;
+          pill.title = label;
 
           if (isStart && isEnd) {
-            // 단일일정이지만 범위형으로 들어온 경우
+            // 단일 일정이지만 범위형으로 들어온 경우
           } else if (isStart) {
             pill.classList.add("calendar-range-seg--start");
           } else if (isEnd) {
@@ -752,11 +845,14 @@ function renderCalendarGrid() {
     }
 
     singleEvents.forEach((ev) => {
-      const typeMod = ev.type === "academic" || ev.type === "department" ? ev.type : "event";
+      const typeMod =
+        ev.type === "academic" || ev.type === "department" ? ev.type : "event";
+      const label = getCalendarLabel(ev, dateStr);
+
       const pill = document.createElement("div");
       pill.className = `calendar-event-pill calendar-event-pill--${typeMod}`;
-      pill.textContent = ev.title;
-      pill.title = ev.title;
+      pill.textContent = label;
+      pill.title = label;
       eventsWrapper.appendChild(pill);
     });
 
@@ -804,7 +900,8 @@ function changeCalendarMonth(delta) {
   calendarState.currentYear = y;
   calendarState.currentMonth = m;
 
-  const nextSelected = parseDateLocal(calendarState.selectedDate) || new Date(y, m - 1, 1);
+  const nextSelected =
+    parseDateLocal(calendarState.selectedDate) || new Date(y, m - 1, 1);
   const daysInMonth = new Date(y, m, 0).getDate();
   const adjustedDay = Math.min(nextSelected.getDate(), daysInMonth);
   const newSelected = new Date(y, m - 1, adjustedDay);
@@ -828,13 +925,14 @@ async function initEventCalendar() {
   if (!container) return;
 
   const baseEvents = getCalendarEventsFromList();
-  const extraEvents = await loadAcademicDepartmentEvents();
+  const extraEvents = getCalendarOtherEvents();
   calendarState.events = [...baseEvents, ...extraEvents].sort(
     (a, b) => a._startDate - b._startDate
   );
 
   if (!calendarState.events.length) {
-    container.innerHTML = '<p class="event-list__empty">캘린더에 표시할 이벤트가 없습니다.</p>';
+    container.innerHTML =
+      '<p class="event-list__empty">캘린더에 표시할 이벤트가 없습니다.</p>';
     return;
   }
 

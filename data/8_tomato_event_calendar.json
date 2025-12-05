@@ -1,0 +1,321 @@
+{
+  "meta": {
+    "year": 2025,
+    "legend": {
+      "academic": "학사 일정",
+      "department": "학과 일정",
+      "event": "학과 행사"
+    }
+  },
+  "events": [
+    {
+      "id": "cal-2025-10-e1",
+      "title": "9월 학생회비 장부 공개",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-01"
+    },
+    {
+      "id": "cal-2025-10-e2",
+      "title": "제 4회 MEIT",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-10-02",
+      "endDate": "2025-10-02"
+    },
+    {
+      "id": "cal-2025-10-e3",
+      "title": "중간 수업 평가",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-05"
+    },
+    {
+      "id": "cal-2025-10-e4",
+      "title": "2학기 중간고사",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-10-20",
+      "endDate": "2025-10-26"
+    },
+    {
+      "id": "cal-2025-11-e1",
+      "title": "10월 과학생회비 장부 공개",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-03",
+      "endDate": "2025-11-03"
+    },
+    {
+      "id": "cal-2025-11-e2",
+      "title": "학생회장단 후보 등록 및 추천인 서명",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-07",
+      "endDate": "2025-11-10"
+    },
+    {
+      "id": "cal-2025-11-e3",
+      "title": "겨울계절학기 본수강신청 기간",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-11-07",
+      "endDate": "2025-11-13"
+    },
+    {
+      "id": "cal-2025-11-e4",
+      "title": "학생회장단 후보자 확정",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-11",
+      "endDate": "2025-11-11"
+    },
+    {
+      "id": "cal-2025-11-e5",
+      "title": "학생회장단 후보자 선거 운동 기간",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-17",
+      "endDate": "2025-11-21"
+    },
+    {
+      "id": "cal-2025-11-e8",
+      "title": "25-2 기말고사 간식 배부",
+      "type": "event",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-25",
+      "endDate": "2025-11-27"
+    },
+    {
+      "id": "cal-2025-11-e9",
+      "title": "2026학년도 학생회장단 선거 투표",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-25",
+      "endDate": "2025-11-27"
+    },
+    {
+      "id": "cal-2025-11-e11",
+      "title": "회장단 당선 공고",
+      "type": "department",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-11-29",
+      "endDate": "2025-11-29"
+    },
+    {
+      "id": "cal-2025-12-e1",
+      "title": "11월 학생회비 장부 공개",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-03",
+      "endDate": "2025-12-03"
+    },
+    {
+      "id": "cal-2025-12-e3",
+      "title": "기말 수업 평가",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-11-24",
+      "endDate": "2025-12-07"
+    },
+    {
+      "id": "cal-2025-12-e4",
+      "title": "AI인의 밤 홍보영상 업로드",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-03",
+      "endDate": "2025-12-03"
+    },
+    {
+      "id": "cal-2025-12-e5",
+      "title": "AI인의 밤 럭키드로우 기념품 공개",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-04",
+      "endDate": "2025-12-04"
+    },
+    {
+      "id": "cal-2025-12-e6",
+      "title": "AI인의 밤 참여 확정 명단 발표",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-12-05",
+      "endDate": "2025-12-05"
+    },
+    {
+      "id": "cal-2025-12-e7",
+      "title": "2학기 보강 및 기말고사 기간",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-08",
+      "endDate": "2025-12-21"
+    },
+    {
+      "id": "cal-2025-12-e8",
+      "title": "겨울 계절 학기",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-22",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": "cal-2025-12-e9",
+      "title": "성적 조회 및 이의 신청 기간",
+      "type": "academic",
+      "categoryLabel": "학사 일정",
+      "startDate": "2025-12-29",
+      "endDate": "2025-12-31"
+    },
+    {
+      "id": 1,
+      "title": "신입생 OT",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-02-07",
+      "endDate": "2025-02-14",
+      "eventDate": "2025.02.19 (수) 15:30 ~ 18:30",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "1학기 개강총회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-03-04",
+      "endDate": "2025-03-06",
+      "eventDate": "2025.03.13 (목) 17:00 ~ 20:00",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "학부연구실 설명회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-03-19",
+      "endDate": "2025-03-24",
+      "eventDate": "2025.03.27 (목) 18:00 ~ 20:00",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "1학기 졸업작품 전시회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-04-14",
+      "endDate": "2025-04-16",
+      "eventDate": "2025.04.17 (목)",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "title": "총 MT",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-04-17",
+      "endDate": "2025-04-22",
+      "eventDate": "2025.05.09 (금) ~ 2025.05.10 (토)",
+      "link": "#"
+    },
+    {
+      "id": 7,
+      "title": "전공 박람회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-05-12",
+      "endDate": "2025-05-15",
+      "eventDate": "2025.05.19 (월) ~ 2025.05.20 (화)",
+      "link": "#"
+    },
+    {
+      "id": 8,
+      "title": "IPS 대회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-04-04",
+      "endDate": "2025-04-13",
+      "eventDate": "2025.05.30 (금)",
+      "link": "#"
+    },
+    {
+      "id": 9,
+      "title": "1학기 종강총회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-06-10",
+      "endDate": "2025-06-15",
+      "eventDate": "2025.06.17 (화) 17:30 ~ 20:00",
+      "link": "#"
+    },
+    {
+      "id": 10,
+      "title": "2학기 개강총회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-08-27",
+      "endDate": "2025-09-01",
+      "eventDate": "2025.09.04 (목) 17:30",
+      "link": "#"
+    },
+    {
+      "id": 11,
+      "title": "공과대학 10주년 학술제",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-09-08",
+      "endDate": "2025-09-10",
+      "eventDate": "2025.09.11 (목) 11:00 ~ 17:00",
+      "link": "#"
+    },
+    {
+      "id": 12,
+      "title": "진로콘서트",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-09-16",
+      "endDate": "2025-09-20",
+      "eventDate": "2025.09.29 (월) 18:00 ~ 21:00",
+      "link": "#"
+    },
+    {
+      "id": 13,
+      "title": "2학기 졸업 전시회",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-10-13",
+      "endDate": "2025-10-15",
+      "eventDate": "2025.10.16 (목) 10:00 ~ 15:00",
+      "link": "#"
+    },
+    {
+      "id": 14,
+      "title": "제5회 Uni-D THON",
+      "type": "event",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-10-06",
+      "endDate": "2025-10-12",
+      "eventDate": "2025.11.15 (토) ~ 11.16 (일)",
+      "link": "#"
+    },
+    {
+      "id": "cal-2025-11-ainight-announce",
+      "title": "AI인의 밤 공지 업로드",
+      "type": "department",
+      "categoryLabel": "학과 일정",
+      "startDate": "2025-11-26",
+      "endDate": "2025-11-26",
+      "link": "#"
+    },
+    {
+      "id": 15,
+      "title": "AI인의 밤",
+      "type": "event",
+      "categoryLabel": "학과 행사",
+      "startDate": "2025-12-11",
+      "endDate": "2025-12-16",
+      "eventDate": "2025.12.17 (수) 18:00 ~ 21:30",
+      "link": "#"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 (function () {
   const APPLY_URL = "/data/8_tomato_event_apply.json";
   const APPLY_DETAIL_BASE = "/data/event_apply";
-  const LIST_URL = "/data/8_tomato_event_list.json";
+  const LIST_URL = "/data/8_tomato_event_calendar.json";
   const DEFAULT_ID = "10";
   const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
   let posterImages = [];
@@ -204,7 +204,7 @@
   }
 
   function handleData(listData, applyDetail) {
-    const listArr = Array.isArray(listData) ? listData : [];
+    const listArr = normalizeListData(listData);
     primeApplyState(listArr);
 
     if (!listArr.length && !applyDetail) {
@@ -245,6 +245,16 @@
     currentEvent = mergedEvent;
     renderEvent(mergedEvent, status);
     setPager(manifest, mergedEvent.id);
+  }
+
+  function normalizeListData(listData) {
+    const arr = Array.isArray(listData)
+      ? listData
+      : Array.isArray(listData?.events)
+      ? listData.events
+      : [];
+
+    return arr.filter((item) => (item.type || "event") === "event");
   }
 
   function buildFallbackDetail(item) {

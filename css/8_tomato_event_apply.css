@@ -16,6 +16,7 @@
   justify-content: center;
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   padding: 0 24px 100px;
   position: relative;
 }

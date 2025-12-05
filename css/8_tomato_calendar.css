@@ -270,6 +270,12 @@ body.page-calendar {
   font-size: 11px;
 }
 
+.calendar-detail-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .calendar-detail-card__body {
   display: flex;
   gap: 8px;
@@ -298,15 +304,17 @@ body.page-calendar {
 }
 
 .detail-apply {
-  font-size: 12px;
+  font-size: 13px;
   font-family: Pretendard;
-  font-weight: 200;
+  font-weight: 500;
   color: var(--black);
-  margin-left: auto;
-  align-self: flex-end;
   transition: color 0.2s;
   display: inline-flex;
   align-items: center;
+}
+
+.detail-apply--title {
+  margin-left: auto;
 }
 
 .calendar-detail-card__title {

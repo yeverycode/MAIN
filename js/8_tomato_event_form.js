@@ -3,23 +3,16 @@
   const APPLY_STORAGE_KEY_EVENT = "tomato_event_apply_state_v1"; // 기존 이벤트 신청 키
   const APPLY_STORAGE_KEY_RECRUIT = "tomato_recruit_apply_state_v1"; // 모집 전용 키
 
-  // ==========================================================
-  // 폼 유틸리티 함수 (전체 스코프에서 접근 가능하도록 상위에 정의)
-  // ==========================================================
-  
-  /** ID에 해당하는 input/textarea의 trim된 값을 가져옵니다. */
   function getInputValue(id) {
     const el = document.getElementById(id);
     return el && typeof el.value === "string" ? el.value.trim() : "";
   }
   
-  /** ID에 해당하는 select 요소의 trim된 값을 가져옵니다. */
   function getSelectValue(id) {
     const el = document.getElementById(id);
     return el && typeof el.value === "string" ? el.value.trim() : "";
   }
 
-  /** 인자들 중 첫 번째 유효한 숫자 값을 찾습니다. */
   function pickNumber(...candidates) {
     for (const value of candidates) {
       if (Number.isFinite(value)) return value;
@@ -30,7 +23,6 @@
     return null;
   }
 
-  /** 로컬 스토리지에서 데이터를 로드합니다. */
   function loadApplyState(key) {
     try {
       const raw = localStorage.getItem(key);
@@ -41,7 +33,6 @@
     }
   }
 
-  /** 로컬 스토리지에 데이터를 저장합니다. */
   function saveApplyState(key, state) {
     try {
       localStorage.setItem(key, JSON.stringify(state));
@@ -50,16 +41,11 @@
     }
   }
   
-  /**
-   * 신청/지원 기록을 저장하고 순번을 반환하는 핵심 로직.
-   * meta.id와 storageKey를 사용하여 데이터를 구분합니다.
-   */
   function recordApplication(meta, storageKey) {
     const id = meta.id || "default";
     const state = loadApplyState(storageKey);
     const prev = state[id] || {};
 
-    // 로컬 스토리지에 저장된 값이나 쿼리 파라미터 기반으로 순번을 계산
     const baseApplied = pickNumber(
       prev.applied,
       prev.appliedCount,
@@ -76,9 +62,6 @@
     return nextApplied;
   }
   
-  // ==========================================================
-  // [1] 이벤트 신청 로직 (기존 로직)
-  // ==========================================================
 
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("event-form");
@@ -86,7 +69,7 @@
     const submitButton = form?.querySelector(".submit-button");
     const eventMeta = getEventMeta();
 
-    if (!form || !titleEl || !submitButton || !eventMeta) return; // 이벤트 폼 요소가 없으면 실행 중단
+    if (!form || !titleEl || !submitButton || !eventMeta) return;
       
     setTitleFromQuery(titleEl, eventMeta);
       
@@ -112,7 +95,7 @@
       form.innerHTML = `
         <p class="form-final-message">
           ${applicantName}님은 ${eventTitle} ${positionText}입니다.<br>
-          상세 안내사항은 ${eventDateText}에 ${applicantPhone}로 안내드립니다.<br>
+          상세 안내사항은 ${eventDateText}에<br>${applicantPhone}로 안내드립니다.<br>
           감사합니다.
         </p>
       `;

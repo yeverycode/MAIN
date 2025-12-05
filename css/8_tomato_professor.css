@@ -47,6 +47,10 @@
   color: var(--black);
 }
 
+.prof-info-header {
+  --prof-divider-width: 380px;
+}
+
 /* content 섹션 안쪽만 약간 padding 조정 */
 .prof-detail {
   padding-top: 60px;
@@ -123,8 +127,16 @@
 
 /* 이름/직함 + 연락처 */
 .prof-info-header__title {
-  margin: 30px 0 10px;
-  font-size: 0; /* inline-block 간 간격 제거 */
+  margin: 30px 0 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.prof-info-header__row {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
 }
 
 .prof-info-header__role {
@@ -181,9 +193,32 @@
 .prof-block__divider {
   height: 2px;
   width: 100%;
-  max-width: 380px;
+  max-width: var(--prof-divider-width, 380px);
   background: var(--black);
   margin-bottom: 4px;
+}
+
+.prof-lab-rail {
+  display: none;
+  align-items: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+.prof-lab-rail__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--blue, #0056e0);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.prof-lab-rail__link:hover {
+  color: #0b56d9;
 }
 
 /* 관심분야 태그 */

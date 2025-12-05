@@ -58,7 +58,7 @@ function renderProfessor(prof) {
   // 기본 프로필 정보
   setText('#prof-role', prof.role || '');
   setText('#prof-name', prof.name || '');
-  setText('#prof-phone', prof.phone || '연락처 정보 없음');
+  setPhoneLink(prof.phone);
   setText('#prof-office', prof.office || '연구실 정보 없음');
   setLabLink(prof.name || '');
 
@@ -152,6 +152,24 @@ function setText(selector, value) {
   const el = document.querySelector(selector);
   if (el) {
     el.textContent = value || '';
+  }
+}
+
+function setPhoneLink(phone) {
+  const phoneLink = document.querySelector('#prof-phone-link');
+  const phoneText = document.querySelector('#prof-phone');
+
+  if (!phoneLink || !phoneText) return;
+
+  const raw = phone || '';
+  const tel = raw.replace(/[^\d+]/g, '');
+
+  if (raw && tel) {
+    phoneLink.href = `tel:${tel}`;
+    phoneText.textContent = raw;
+  } else {
+    phoneLink.removeAttribute('href');
+    phoneText.textContent = '연락처 정보 없음';
   }
 }
 

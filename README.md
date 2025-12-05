@@ -1,12 +1,12 @@
 # 2025 Fall Web-Progamming 🍅Tomato Team Project🍅
 with - [@yeverycode](https://github.com/yeverycode) [@24yp01](https://github.com/24yp01) [@seeoah](https://github.com/seeoah) [@judyjello](https://github.com/judyjello)
 
-## 숙명여자대학교 인공지능공학부 웹사이트
+## ✨ 숙명여자대학교 인공지능공학부 웹사이트
 <img width="7016" height="9933" alt="Image" src="https://github.com/user-attachments/assets/ec974d23-5a20-4350-b866-dd3da8c50398" />
 
 학과·학생회 정보, 이벤트, 교수·연구실 소개, 적성 테스트 등을 담은 정적 멀티페이지 사이트입니다. 별도 빌드 없이 HTML/CSS/JS와 JSON 데이터로 구동하며, 페이지별 스크립트가 인터랙션과 필터링을 담당합니다.
 
-## 주요 기능
+## 🤍 주요 기능
 
 - 메인 랜딩: 애니메이션 히어로, 학과 소개 카드, 고정 네비게이션 드롭다운.
 - 학과 소개/커리큘럼: JSON(`data/8_tomato_curriculum.json`) 기반 학년/학기/키워드 필터링 및 검색.
@@ -15,7 +15,7 @@ with - [@yeverycode](https://github.com/yeverycode) [@24yp01](https://github.com
 - 교수·연구실: JSON(`data/professor/8_tomato_professors.json`)으로 교수 카드 생성, 상세 페이지 라우팅, 연구실 적성 테스트(퀴즈 + 공유) 제공.
 - 리크루팅: Kakao 지도 연동, 모집 요강/우대사항/지원 링크 안내.
 
-## 디렉터리 구조
+## 📁 디렉터리 구조
 
 - `pages/` : 개별 HTML 페이지 (메인, 소개, 커리큘럼, 학생회, 이벤트, 교수, FAQ, 리크루트 등).
 - `js/` : 페이지별 바닐라 JS 스크립트. 데이터 로딩, 필터링, 폼 상태 관리, 로컬 스토리지 저장 등을 담당.
@@ -25,7 +25,7 @@ with - [@yeverycode](https://github.com/yeverycode) [@24yp01](https://github.com
 
 브라우저에서 `http://localhost:3000/pages/8_tomato_main.html`을 열고 네비게이션으로 다른 페이지에 이동합니다.
 
-## 데이터 수정
+## 👩🏻‍💻 데이터
 
 - 콘텐츠는 대부분 `data/` 하위 JSON에서 불러옵니다.
   - 커리큘럼: `data/8_tomato_curriculum.json`
@@ -34,7 +34,7 @@ with - [@yeverycode](https://github.com/yeverycode) [@24yp01](https://github.com
   - 교수/연구실: `data/professor/*.json`, `data/8_tomato_lab_test.json`
 - 이미지나 로고를 교체하려면 `assets/` 경로나 JSON 내 이미지 URL을 수정하세요.
 
-## 기술 스택 및 특이사항
+## 🍀 기술 스택 및 특이사항
 
 - HTML + JS + CSS
 - 로컬 스토리지로 이벤트 신청 인원, 퀴즈 답변 등을 기억합니다.

@@ -8,7 +8,7 @@
       "영상 처리",
       "인공지능"
     ],
-    "image": "/assets/8_tomato_jwkang.png",
+    "image": "https://i.postimg.cc/WzkWv8wV/8_tomato_jwkang.png",
     "imageAlt": "강지우 교수님 사진"
   },
   {
@@ -20,7 +20,7 @@
       "의료·헬스케어",
       "지능형 네트워크"
     ],
-    "image": "/assets/8_tomato_bgkim.png",
+    "image": "https://i.postimg.cc/wvPfZZJ0/8_tomato_bgkim.png",
     "imageAlt": "김병규 교수님 사진"
   },
   {
@@ -32,7 +32,7 @@
       "인간-인공지능 상호작용",
       "사용자 인터페이스"
     ],
-    "image": "/assets/8_tomato_sykim.png",
+    "image": "https://i.postimg.cc/x8zx253f/8_tomato_sykim.png",
     "imageAlt": "김상연 교수님 사진"
   },
   {
@@ -44,7 +44,7 @@
       "크라우드 소싱",
       "핀테크"
     ],
-    "image": "/assets/8_tomato_cykim.png",
+    "image": "https://i.postimg.cc/gJ5SQQR1/8_tomato_cykim.png",
     "imageAlt": "김철연 교수님 사진"
   },
   {
@@ -56,7 +56,7 @@
       "헬스케어",
       "인공지능"
     ],
-    "image": "/assets/8_tomato_sydong.png",
+    "image": "https://i.postimg.cc/WzkWv8wT/8_tomato_sydong.png",
     "imageAlt": "동서연 교수님 사진"
   },
   {
@@ -68,7 +68,7 @@
       "쿼리",
       "영상 기반 이상 상황 탐지"
     ],
-    "image": "/assets/8_tomato_yhpark.png",
+    "image": "https://i.postimg.cc/rsrnkjNy/8_tomato_yhpark.png",
     "imageAlt": "박영호 교수님 사진"
   },
   {
@@ -80,7 +80,7 @@
       "가상현실",
       "게임·인터랙티브 미디어"
     ],
-    "image": "/assets/8_tomato_hjpark.png",
+    "image": "https://i.postimg.cc/TwS7FFgX/8_tomato_hjpark.png",
     "imageAlt": "박화진 교수님 사진"
   },
   {
@@ -92,7 +92,7 @@
       "블록체인",
       "빅데이터"
     ],
-    "image": "/assets/8_tomato_yiyoon.png",
+    "image": "https://i.postimg.cc/3NvST1Fx/8_tomato_yiyoon.png",
     "imageAlt": "윤용익 교수님 사진"
   },
   {
@@ -104,7 +104,7 @@
       "음성 기반 인터페이스",
       "딥러닝"
     ],
-    "image": "/assets/8_tomato_jwlee.png",
+    "image": "https://i.postimg.cc/NFHJcDkY/8_tomato_jwlee.png",
     "imageAlt": "이종우 교수님 사진"
   },
   {
@@ -116,7 +116,7 @@
       "강화학습",
       "인공지능"
     ],
-    "image": "/assets/8_tomato_yjlim.png",
+    "image": "https://i.postimg.cc/MT4PNNRF/8_tomato_yjlim.png",
     "imageAlt": "임유진 교수님 사진"
   },
   {
@@ -128,7 +128,7 @@
       "시스템 보안",
       "네트워크 보안"
     ],
-    "image": "/assets/8_tomato_shjeong.png",
+    "image": "https://i.postimg.cc/sxh6rm43/8_tomato_shjeong.png",
     "imageAlt": "정성훈 교수님 사진"
   },
   {
@@ -140,7 +140,7 @@
       "그래프 신경망",
       "추천 시스템"
     ],
-    "image": "/assets/8_tomato_yhchoi.png",
+    "image": "https://i.postimg.cc/j59gmmPT/8_tomato_yhchoi.png",
     "imageAlt": "최윤혁 교수님 사진"
   }
 ]

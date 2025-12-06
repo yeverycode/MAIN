@@ -46,7 +46,7 @@
     height: 100%;
     
     /* GIF 이미지 경로 */
-    background-image: url('https://i.postimg.cc/pLKLxS9t/aiglass3.gif');
+    background-image: url("/assets/8_tomato_aiglass.gif");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -64,7 +64,7 @@
     height: 100%;
 
     /* PNG 이미지 경로 */
-    background-image: url('https://i.postimg.cc/TYLPN1fp/keompojisyeon-1-00119.png'); /* ⬅️ 여기에 PNG 경로를 입력하세요. */
+    background-image: url("/assets/8_tomato_aiglass.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

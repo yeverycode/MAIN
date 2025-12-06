@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const title = document.createElement('h3');
         title.className = 'apply-after-title';
         title.textContent = `${applicantName}님의 지원이 완료되었습니다.`;
-        title.style.fontSize = '3em';
+        title.style.fontSize = '2.5em';
         title.style.marginBottom = '30px';
 
         // 3. 부제 (Subtext)

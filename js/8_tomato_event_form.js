@@ -147,7 +147,7 @@
         return null;
       }
 
-      const phoneRegex = /^01[0-9][- ]?(\\d{3,4})[- ]?(\\d{4})$/;
+      const phoneRegex = /^01[0-9]-(\d{4})-(\d{4})$/;
       if (!phoneRegex.test(phone)) {
         alert("전화번호를 010-1234-5678 형식으로 입력해 주세요.");
         document.getElementById("apply-phone")?.focus();

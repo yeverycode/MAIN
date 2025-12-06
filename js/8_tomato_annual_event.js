@@ -151,7 +151,6 @@
       card.appendChild(thumb);
       card.appendChild(body);
 
-      // 상세 페이지가 있는 항목만 클릭 이동 제공
       if (event.interviewId) {
         card.setAttribute("role", "button");
         card.tabIndex = 0;

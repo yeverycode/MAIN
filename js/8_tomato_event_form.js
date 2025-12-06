@@ -1,7 +1,6 @@
 (function () {
-  // 폼 타입별 로컬 스토리지 키 정의
-  const APPLY_STORAGE_KEY_EVENT = "tomato_event_apply_state_v1"; // 기존 이벤트 신청 키
-  const APPLY_STORAGE_KEY_RECRUIT = "tomato_recruit_apply_state_v1"; // 모집 전용 키
+  const APPLY_STORAGE_KEY_EVENT = "tomato_event_apply_state_v1";
+  const APPLY_STORAGE_KEY_RECRUIT = "tomato_recruit_apply_state_v1";
 
   function getInputValue(id) {
     const el = document.getElementById(id);
@@ -173,17 +172,11 @@
       return { id, title, eventDate, position };
     }
   });
-
-
-  // ==========================================================
-  // [2] 학생회 모집 로직 (새로 추가된 로직)
-  // ==========================================================
   
   document.addEventListener("DOMContentLoaded", () => {
     const recruitForm = document.getElementById("recruitment-form");
     const titleEl = document.getElementById("form-title");
     
-    // 모집 관련 메타 데이터 설정
     const recruitMeta = {
       id: "smwu_ai_council_recruit_current",
       title: "제N대 학생회 MAIN 모집",
@@ -191,16 +184,14 @@
       position: null 
     };
 
-    if (!recruitForm) return; // 모집 폼이 없으면 실행하지 않음
+    if (!recruitForm) return;
 
-    // 폼 제목 업데이트 (학생회 모집 페이지에서만 실행)
     if (titleEl && document.title.includes("RECRUIT APPLY")) {
         const finalTitle = "학생회 모집 지원서 작성";
         titleEl.textContent = finalTitle;
         document.title = `${finalTitle} | 숙명여자대학교 인공지능공학부`;
     }
     
-    // 부서 선택 시 레이블 업데이트 (학생회 모집 폼 전용)
     function updateRecruitLabels() {
         const dept1 = getSelectValue("dept1");
         const dept2 = getSelectValue("dept2");
@@ -212,46 +203,36 @@
         }
     }
 
-    // 포트폴리오 파일 선택 시 파일명을 레이블에 표시
     function updateFileLabel(e) {
         const fileLabel = document.getElementById("file-dropdown-label");
         if (fileLabel) {
-             // target.files가 배열일 수도 있으므로 [0]으로 첫 번째 파일명을 가져옵니다.
              const fileName = e.target.files[0]?.name || "파일을 선택해주세요.";
              fileLabel.textContent = fileName;
         }
     }
 
-    // 부서 선택 시 레이블 업데이트 리스너
     document.getElementById("dept1")?.addEventListener("change", updateRecruitLabels);
     document.getElementById("dept2")?.addEventListener("change", updateRecruitLabels);
 
-    // 파일 선택 시 레이블 업데이트 리스너
     document.getElementById("portfolio-file")?.addEventListener("change", updateFileLabel);
     
-    // 초기 레이블 설정
     updateRecruitLabels();
 
 
     recruitForm.addEventListener("submit", (e) => {
       e.preventDefault();
       
-      // 입력 값들을 폼 요소 ID에 맞게 가져옵니다.
       const name = getInputValue("name");
       const phone = getInputValue("phone");
       const dept1 = getSelectValue("dept1");
       const dept2 = getSelectValue("dept2");
       
-      // 모집 전용 로직을 사용하여 기록합니다.
       recordApplication(recruitMeta, APPLY_STORAGE_KEY_RECRUIT); 
       
-      // 최종 상태 표시 함수 호출
       showRecruitFinalState(name, phone, dept1, dept2, recruitMeta);
     });
 
-    // 폼 제출 완료 후 보여줄 최종 상태 (학생회 모집 버전, 순번 메시지 제거)
     function showRecruitFinalState(nameValue, phoneValue, dept1Value, dept2Value, meta) {
-      // 복귀 URL을 RECRUIT 페이지로 설정
       const fallbackUrl = `/pages/8_tomato_recruit.html`; 
       
       const applicantName = nameValue || "지원자";
@@ -262,7 +243,6 @@
         ? `${dept1Value} (1지망), ${dept2Value} (2지망)`
         : dept1Value || dept2Value || "부서";
 
-      // 최종 메시지 내용을 학생회 모집에 맞게 HTML로 구성
       recruitForm.innerHTML = `
         <p class="form-final-message">
           ${applicantName}님, **${eventTitle}** 지원이 완료되었습니다.<br>
@@ -272,7 +252,6 @@
         </p>
       `;
 
-      // '돌아가기' 버튼 생성
       const backButton = document.createElement("button");
       backButton.type = "button";
       backButton.className = "submit-button";
@@ -280,7 +259,7 @@
       recruitForm.appendChild(backButton);
 
       backButton.addEventListener("click", () => {
-        window.location.href = fallbackUrl; // 모집 페이지로 확실하게 이동
+        window.location.href = fallbackUrl;
       });
     }
   });

@@ -1,13 +1,17 @@
+const DEFAULT_PROF_ID = 'kang-jiwoo';
+
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const profId = params.get('id');
+  const resolvedId = profId || DEFAULT_PROF_ID;
 
   if (!profId) {
-    renderError('잘못된 접근입니다. 교수 정보를 찾을 수 없습니다.');
-    return;
+    params.set('id', DEFAULT_PROF_ID);
+    const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
+    window.history.replaceState({}, '', newUrl);
   }
 
-  loadProfessor(profId);
+  loadProfessor(resolvedId);
 });
 
 const LAB_LINKS = {

@@ -369,7 +369,7 @@
     const stored = getStoredCounts(event.id);
     const baseCount = pickNumber(event.appliedCount);
     const current = stored?.applied ?? baseCount ?? 0;
-    const nextCount = current + 1; // n+1번째 신청자 안내
+    const nextCount = current + 1;
 
     noteEl.textContent = `신청폼을 제출하여 ${nextCount}번째 신청자가 되어주세요.`;
   }

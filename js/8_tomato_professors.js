@@ -39,7 +39,6 @@
   }
 })();
 
-// 교수 카드 데이터를 JSON에서 불러와 정렬한 뒤 렌더링
 (function renderProfessors() {
   const grid = document.querySelector('[data-prof-grid]');
   if (!grid) return;
@@ -125,7 +124,6 @@
     });
 })();
 
-// 교수 카드 플러스 버튼 클릭 시 공통 상세 페이지로 이동
 (function initProfCardLinks() {
   const grid = document.querySelector('[data-prof-grid]');
   if (!grid) return;

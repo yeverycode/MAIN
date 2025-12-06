@@ -186,7 +186,6 @@
   }
 }
 
-/* 반응형 - 히어로 */
 @media (max-width: 1700px) and (min-width: 1321px) {
   .fyig-title {
     font-size: 120px;
@@ -1048,7 +1047,6 @@
   filter: brightness(1.1);
 }
 
-/* 모션 최소화 */
 @media (prefers-reduced-motion: reduce) {
   .scroll-content {
     animation: none !important;

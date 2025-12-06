@@ -7,7 +7,6 @@ const initScores = () =>
     return acc;
   }, {});
 
-// 질문 데이터
 const QUESTIONS = [
   {
     id: 1,
@@ -61,13 +60,10 @@ const QUESTIONS = [
   }
 ];
 
-
-// 상태 관리
 let currentQuestion = 0;
 let answers = {};
 let scores = initScores();
 
-// 요소 참조
 const welcomeScreen = document.getElementById('welcomeScreen');
 const quizScreen = document.getElementById('quizScreen');
 const resultScreen = document.getElementById('resultScreen');
@@ -92,7 +88,7 @@ function renderLabLogos() {
   const row2Labs = labs.slice(6, 12);
 
   const buildRow = (el, items) => {
-    const doubled = items.concat(items); // duplicate for seamless scroll animation
+    const doubled = items.concat(items);
     el.innerHTML = doubled
       .map(
         (lab) => `
@@ -126,7 +122,6 @@ async function loadFields() {
   }
 }
 
-// 시작 버튼
 if (startBtn) {
   startBtn.addEventListener('click', () => {
     if (labScrollStatic) labScrollStatic.classList.add('is-hidden');
@@ -137,7 +132,6 @@ if (startBtn) {
   });
 }
 
-// 질문 렌더링
 function renderQuestion() {
   const q = QUESTIONS[currentQuestion];
   questionContainer.innerHTML = `
@@ -165,13 +159,11 @@ function renderQuestion() {
     </div>
   `;
 
-  // 옵션 클릭 이벤트
   document.querySelectorAll('.option-card').forEach((card) => {
     card.addEventListener('click', () => {
       const score = card.dataset.score;
       const qId = parseInt(card.dataset.question, 10);
 
-      // 현재 질문의 카드만 선택 해제
       document
         .querySelectorAll(`.option-card[data-question="${qId}"]`)
         .forEach((c) => c.classList.remove('selected'));
@@ -185,14 +177,12 @@ function renderQuestion() {
   updateButtons();
 }
 
-// 진행 바 업데이트
 function updateProgress() {
   const progress = ((currentQuestion + 1) / QUESTIONS.length) * 100;
   progressFill.style.width = `${progress}%`;
   if (currentStepEl) currentStepEl.textContent = currentQuestion + 1;
 }
 
-// 버튼 상태 업데이트
 function updateButtons() {
   prevBtn.style.visibility = currentQuestion > 0 ? 'visible' : 'hidden';
   nextBtn.disabled = !answers[QUESTIONS[currentQuestion].id];
@@ -200,7 +190,6 @@ function updateButtons() {
     currentQuestion === QUESTIONS.length - 1 ? '결과 보기' : '다음';
 }
 
-// 이전 버튼
 prevBtn.addEventListener('click', () => {
   if (currentQuestion > 0) {
     currentQuestion--;
@@ -209,7 +198,6 @@ prevBtn.addEventListener('click', () => {
   }
 });
 
-// 다음 버튼
 nextBtn.addEventListener('click', () => {
   if (currentQuestion < QUESTIONS.length - 1) {
     currentQuestion++;
@@ -220,19 +208,16 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
-// 동점 해소용 우승 카테고리 결정 함수
 function getWinnerKeyFromScores(scores, answers) {
   const entries = Object.entries(scores);
   const maxScore = Math.max(...entries.map(([, v]) => v));
   const top = entries.filter(([, v]) => v === maxScore);
 
-  // 1) 동점이 아니면 그대로 반환
   if (top.length === 1) return top[0][0];
 
-  // 2) 최근에 선택한 답변을 우선시 (마지막 질문일수록 영향 크게)
   const answerOrderDesc = Object.entries(answers)
-    .sort((a, b) => Number(b[0]) - Number(a[0])) // id 큰 순 = 마지막 질문부터
-    .map(([, v]) => v); // 선택된 카테고리 key 배열
+    .sort((a, b) => Number(b[0]) - Number(a[0]))
+    .map(([, v]) => v);
 
   for (const selected of answerOrderDesc) {
     if (top.some(([k]) => k === selected)) {
@@ -240,17 +225,14 @@ function getWinnerKeyFromScores(scores, answers) {
     }
   }
 
-  // 3) 고정 우선순위(최후 동점 방지용)
   const PRIORITY = ['humanAI', 'dataInfoGraph', 'visionGraphics', 'systemsNetwork'];
   for (const key of PRIORITY) {
     if (top.some(([k]) => k === key)) return key;
   }
 
-  // 4) 정말 최후의 수단
   return top[0][0];
 }
 
-// 결과 계산
 function calculateResult() {
   if (!Object.keys(fields).length) return;
 
@@ -268,7 +250,6 @@ function calculateResult() {
   }
 }
 
-// 결과 표시
 function showResult(key) {
   const field = fields[key];
   if (!field) return;

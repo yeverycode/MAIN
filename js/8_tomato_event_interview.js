@@ -1,4 +1,3 @@
-// 행사 상세 페이지 데이터 바인딩 스크립트
 (function () {
   const manifest = [
     { id: "1", title: "신입생 OT" },
@@ -38,7 +37,6 @@
     })
     .then((data) => renderEvent(data, eventId))
     .catch(() => {
-      // 폴백: 기본 json
       fetch(fallbackPath)
         .then((res) => res.json())
         .then((data) => renderEvent(data, eventId, true))
@@ -46,10 +44,8 @@
     });
 
   function renderEvent(data, currentId, isFallback = false) {
-    // 상단 메타
     setText("event-meta-title", data.title || "");
 
-    // 썸네일 + 카드
     const coverImg = document.getElementById("event-cover");
     if (coverImg) {
       coverImg.src = data.heroImage || DEFAULTS.cover;
@@ -74,7 +70,6 @@
     fillQA(5, interview[4]);
     fillQA(6, interview[5]);
 
-    // 이미지 매핑
     const topImg = document.getElementById("qa-top-image");
     const topRow = document.querySelector(".qa-row--image-with-questions");
     if (topImg && topRow) {
@@ -176,7 +171,6 @@
       divider.style.display = hasPrev && hasNext ? "block" : "none";
     }
 
-    // 폴백 데이터로 들어왔을 때 제목만 동기화
     if (isFallback && currentTitle && idx >= 0) {
       manifest[idx].title = currentTitle;
     }

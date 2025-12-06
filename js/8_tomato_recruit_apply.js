@@ -88,3 +88,99 @@ fileInput.addEventListener("change", () => {
 
 //* 끝 *//
 
+
+/* ====================================
+** 폼 제출 완료 메시지 표시 기능 추가 **
+** (ID: recruitment-form, name 기준) **
+==================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // A. 제출 완료 후 메시지를 표시하는 함수
+    function showCompletionMessage(applicantName) {
+        // 1. 지원 완료 컨테이너 생성 및 스타일링 (기존 폼 스타일 재사용)
+        const completionContainer = document.createElement('div');
+        completionContainer.className = 'apply-container'; 
+        completionContainer.style.textAlign = 'center';
+        completionContainer.style.padding = '100px 20px';
+        completionContainer.style.marginTop = '80px';
+        completionContainer.style.marginBottom = '80px';
+        completionContainer.style.backgroundColor = 'var(--surface)'; 
+        completionContainer.style.maxWidth = '1000px'; 
+        completionContainer.style.boxShadow = 'var(--shadow-card)'; 
+
+        // 2. 제목 (Title)
+        const title = document.createElement('h3');
+        title.className = 'apply-after-title';
+        title.textContent = `${applicantName}님의 지원이 완료되었습니다.`;
+        title.style.fontSize = '3em';
+        title.style.marginBottom = '30px';
+
+        // 3. 부제 (Subtext)
+        const subtext = document.createElement('p');
+        subtext.style.fontSize = '1.2em';
+        subtext.style.lineHeight = '1.6';
+        subtext.style.color = 'var(--text)';
+        subtext.style.marginBottom = '50px';
+        subtext.innerHTML = `
+            인공지능공학부 학생회 MAIN()에 지원해 주셔서 감사합니다.<br>
+        `;
+
+        // 4. 돌아가기 버튼 (Button)
+        const backButton = document.createElement('a');
+        backButton.href = '/pages/8_tomato_recruit.html'; // 요청하신 링크
+        backButton.className = 'submit-button'; 
+        backButton.textContent = '뒤로가기';
+        backButton.style.marginTop = '0';
+        backButton.style.maxWidth = '300px';
+        backButton.style.margin = '0 auto';
+        backButton.style.textDecoration = 'none';
+
+        // 5. 요소들을 컨테이너에 추가
+        completionContainer.appendChild(title);
+        completionContainer.appendChild(subtext);
+        completionContainer.appendChild(backButton);
+
+        // 6. 기존 폼 섹션을 대체
+        const applyContainer = document.querySelector('.apply-container');
+        const formSection = document.querySelector('.form-section'); 
+        
+        if (applyContainer && formSection) {
+            applyContainer.style.display = 'none'; // 기존 폼 컨테이너 숨기기
+            
+            // apply-container 대신 새로운 완료 컨테이너를 부모 섹션에 추가
+            formSection.appendChild(completionContainer);
+            window.scrollTo(0, 0); // 스크롤 맨 위로 이동
+        } else {
+             // Fallback
+             document.body.innerHTML = '';
+             document.body.appendChild(completionContainer);
+             window.scrollTo(0, 0);
+        }
+    }
+
+    // B. 폼 제출 이벤트 리스너 연결
+    // 폼 ID: recruitment-form, 이름 입력 필드 ID: name
+    const form = document.getElementById('recruitment-form'); 
+    const nameInput = document.getElementById('name'); 
+
+    if (form && nameInput) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // 폼의 기본 제출 동작(페이지 이동) 방지
+
+            // 이름 값 가져오기
+            const name = nameInput.value.trim();
+
+            // 이름 필드 유효성 검사 (필수 입력 항목 가정)
+            if (name === '') {
+                alert('이름을 입력해주세요.'); 
+                nameInput.focus();
+                return;
+            }
+            // 완료 메시지 표시 함수 호출
+            showCompletionMessage(name);
+        });
+    } else {
+        console.error("필수 HTML 요소 (폼 ID: recruitment-form 또는 이름 ID: name)가 문서에 존재하지 않아 제출 기능을 연결할 수 없습니다.");
+    }
+});
+

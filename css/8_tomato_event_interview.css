@@ -1,23 +1,9 @@
-/* ==========================
-   행사 상세 페이지
-   ========================== */
-
-:root {
-  --event-bg: #ffffff;
-  --event-ink: var(--black);
-  --event-muted: #636363;
-  --event-border: var(--gray-strong);
-  --event-blue: #0b50d0;
-  --event-surface: #f6f6f6;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 히어로 */
 .page-hero {
   background: var(--black);
   color: #fff;
@@ -43,7 +29,6 @@
   text-transform: uppercase;
 }
 
-/* 연간 행사 탭을 가로 한 줄로 고정 */
 .page-hero__subnav {
   width: 100%;
   max-width: none;
@@ -91,11 +76,9 @@
   }
 }
 
-/* 메인 레이아웃 */
-
 .event-detail {
-  background: var(--event-bg);
-  color: var(--event-ink);
+  background: var(--white);
+  color: var(--black);
   padding: 96px 0 140px;
 }
 
@@ -105,8 +88,6 @@
   padding: 0 28px;
 }
 
-/* 상단 헤더 라인 */
-
 .event-detail__header-top-line,
 .event-detail__header-bottom-line {
   height: 1px;
@@ -114,7 +95,7 @@
 }
 
 .event-detail__header-bottom-line {
-  background: var(--event-border);
+  background: var(--gray-strong);
 }
 
 .event-detail__header-row {
@@ -137,7 +118,7 @@
 }
 
 .event-detail__meta-value {
-  color: var(--event-muted);
+  color: var(--gray-muted);
   text-align: left;
 }
 
@@ -145,8 +126,6 @@
   text-align: left;
   padding-left: 0;
 }
-
-/* 썸네일 + 정보 카드 */
 
 .event-detail__summary {
   margin-top: 48px;
@@ -174,7 +153,7 @@
 }
 
 .event-detail__info-card {
-  background: var(--event-surface);
+  background: var(--gray);
   border-radius: 8px;
   padding: 32px;
   display: flex;
@@ -195,7 +174,7 @@
 .event-detail__tag {
   font-size: 12px;
   font-weight: 700;
-  color: var(--event-blue);
+  color: var(--blue);
   letter-spacing: 0.08em;
 }
 
@@ -209,7 +188,7 @@
   height: 2px;
   width: 100%;
   max-width: 420px;
-  background: var(--event-ink);
+  background: var(--black);
   margin-top: 6px;
 }
 
@@ -253,15 +232,13 @@
 .event-detail__info-item dd {
   margin: 0;
   font-size: 16px;
-  color: var(--event-ink);
+  color: var(--black);
   display: block;
 }
 
 .event-detail__info-item dd + dd {
   padding-top: 0;
 }
-
-/* 인터뷰 Q&A */
 
 .event-detail__qa {
   margin-top: 70px;
@@ -287,7 +264,6 @@
 }
 
 .qa-row--text-pair .qa-entry {
-  /* padding: 18px 0; */
   border: none;
   box-shadow: none;
 }
@@ -297,13 +273,6 @@
   background: #dcdcdc;
   width: 100%;
 }
-
-/* .qa-divider--horizontal {
-  margin: 12px 0;
-} */
-/* .qa-divider--section {
-  margin: 28px 0;
-} */
 
 .qa-row--image-bottom {
   grid-template-columns: minmax(0, 1fr);
@@ -363,7 +332,7 @@
 .qa-entry__label {
   font-size: 20px;
   font-weight: 800;
-  color: var(--event-blue);
+  color: var(--blue);
 }
 
 .qa-entry__question {
@@ -383,8 +352,6 @@
   display: none !important;
 }
 
-/* 갤러리 */
-
 .event-detail__gallery {
   margin-top: 64px;
   display: flex;
@@ -397,8 +364,6 @@
   border-radius: 6px;
   object-fit: cover;
 }
-
-/* 페이저 & 버튼 */
 
 .event-detail__pager {
   margin-top: 64px;
@@ -435,7 +400,7 @@
 }
 
 .event-detail__pager-label {
-  color: var(--event-muted);
+  color: var(--gray-muted);
   grid-column: 2;
   font-size: 13px;
 }
@@ -501,8 +466,8 @@
   min-width: 140px;
   padding: 14px 48px;
   border-radius: 6px;
-  border: 1px solid var(--event-blue);
-  background: var(--event-blue);
+  border: 1px solid var(--blue);
+  background: var(--blue);
   color: #fff;
   font-size: 15px;
   font-weight: 700;

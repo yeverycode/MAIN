@@ -1,11 +1,8 @@
-// /js/8_tomato_events.js
-
 let eventsData = [];
 let calendarSourceEvents = [];
 let bannerIntervalId = null;
 const APPLY_STORAGE_KEY = "tomato_event_apply_state_v1";
 
-// 오늘 날짜(00:00 기준)
 const today = new Date();
 today.setHours(0, 0, 0, 0);
 
@@ -71,7 +68,6 @@ function mergeStoredCounts(event) {
   };
 }
 
-// 진행중 / 지난 상태 계산
 function normalizeStatus(status) {
   const val = (status || "").toString().toLowerCase();
   if (["open", "closed", "finished"].includes(val)) return val;
@@ -84,11 +80,10 @@ function getStatus(startStr, endStr) {
   start.setHours(0, 0, 0, 0);
   end.setHours(0, 0, 0, 0);
 
-  if (end < today) return "past"; // 기간 끝난 경우
-  return "ongoing"; // 오늘 이후는 진행/예정
+  if (end < today) return "past";
+  return "ongoing";
 }
 
-// D-Day 라벨 (진행중이면 마감일까지 남은 일수)
 function getDDayLabel(startStr, endStr) {
   const target = new Date(endStr || startStr);
   target.setHours(0, 0, 0, 0);
@@ -103,7 +98,7 @@ function getDDayLabel(startStr, endStr) {
 
 function getListStatus(event) {
   const calc = getStatus(event.startDate, event.endDate);
-  if (calc === "past") return "past"; // 날짜가 지나면 무조건 종료
+  if (calc === "past") return "past";
 
   const explicit = normalizeStatus(event.status);
   if (explicit === "finished") return "past";
@@ -130,7 +125,6 @@ function getCapacityInfo(event, status) {
   const applied = Number.isFinite(appliedCount) ? appliedCount : null;
   const waiting = Number.isFinite(waitingCount) ? waitingCount : null;
 
-  // 정원과 현재 신청 인원이 모두 있으면 60/100 형태로 표시
   if (total !== null && applied !== null) {
     if (applied < total) {
       return {
@@ -152,7 +146,6 @@ function getCapacityInfo(event, status) {
     };
   }
 
-  // 기존 데이터 호환: 총원만 있거나 대기 가능 여부만 있는 경우
   const parts = [];
   if (total !== null) parts.push(`선착순 ${total}명 신청`);
   if (waitingAvailable === true) parts.push("대기 가능");
@@ -172,7 +165,6 @@ function getDetailHref(event) {
     : event?.link || "#";
 }
 
-// 상태별 배너 이미지 수집
 function getBannerItemsByStatus(status) {
   const items = [];
 
@@ -216,59 +208,101 @@ function renderBannerDots(dotsEl, count, activeIndex) {
   }
 }
 
-// 배너 회전 시작
 function startBannerRotation(status) {
-  const imageEl = document.querySelector(".event-banner__image");
+  const viewport = document.querySelector(".event-banner__viewport");
+  const trackEl = document.querySelector(".event-banner__track");
   const dotsEl = document.querySelector(".event-banner__dots");
   const prevBtn = document.querySelector(".event-banner__arrow--prev");
   const nextBtn = document.querySelector(".event-banner__arrow--next");
-  if (!imageEl || !dotsEl) return;
+  if (!viewport || !trackEl || !dotsEl) return;
+
+  // Reset track to drop previous listeners
+  const trackParent = trackEl.parentNode;
+  const newTrack = trackEl.cloneNode(false);
+  trackParent.replaceChild(newTrack, trackEl);
+  let track = newTrack;
 
   const items = getBannerItemsByStatus(status);
-  let index = 0;
+  const realCount = items.length;
+  if (bannerIntervalId) {
+    clearInterval(bannerIntervalId);
+    bannerIntervalId = null;
+  }
+
+  track.innerHTML = "";
+  if (realCount === 0) return;
+
+  // Build cloned slides for seamless loop: [lastClone, ...items, firstClone]
+  const slides = [];
+  const makeImg = (item, idx) => {
+    const img = document.createElement("img");
+    img.className = "event-banner__image";
+    img.src = item.src;
+    img.alt = `${item.title || "이벤트"} 배너`;
+    img.loading = idx === 0 ? "eager" : "lazy";
+    return img;
+  };
+
+  if (realCount > 1) slides.push(makeImg(items[realCount - 1], -1));
+  items.forEach((item, idx) => slides.push(makeImg(item, idx)));
+  if (realCount > 1) slides.push(makeImg(items[0], realCount));
+
+  slides.forEach((img) => track.appendChild(img));
+
+  let index = realCount > 1 ? 1 : 0; // start at first real slide
   let currentHref = items[0]?.href || "#";
 
-  const applyFrame = () => {
-    const current = items[index];
-    const handleLoad = () => {
-      imageEl.classList.remove("is-changing");
-      imageEl.removeEventListener("load", handleLoad);
-    };
+  const setTransition = (enable) => {
+    track.style.transition = enable ? "transform 0.55s ease" : "none";
+  };
 
-    imageEl.classList.add("is-changing");
-    imageEl.addEventListener("load", handleLoad);
-    imageEl.src = current.src;
-    imageEl.alt = `${current.title} 배너`;
-    currentHref = current.href || "#";
-    renderBannerDots(dotsEl, items.length, index);
+  const applyFrame = (withTransition = true) => {
+    const realIndex = realCount > 1 ? (index - 1 + realCount) % realCount : index;
+    currentHref = items[realIndex]?.href || "#";
+    setTransition(withTransition);
+    track.style.transform = `translateX(-${index * 100}%)`;
+    renderBannerDots(dotsEl, realCount, realIndex);
   };
 
   const restartInterval = () => {
     if (bannerIntervalId) clearInterval(bannerIntervalId);
     bannerIntervalId = null;
 
-    if (items.length > 1) {
+    if (realCount > 1) {
       bannerIntervalId = setInterval(() => {
-        index = (index + 1) % items.length;
-        applyFrame();
+        index += 1;
+        applyFrame(true);
       }, 4000);
     }
   };
 
+  const normalizeIndex = () => {
+    if (realCount <= 1) return;
+    if (index === 0) {
+      index = realCount;
+      applyFrame(false);
+    } else if (index === realCount + 1) {
+      index = 1;
+      applyFrame(false);
+    }
+  };
+
   const goTo = (nextIndex) => {
-    index = (nextIndex + items.length) % items.length;
-    applyFrame();
+    index = nextIndex;
+    applyFrame(true);
     restartInterval();
   };
 
-  applyFrame();
+  track.addEventListener("transitionend", normalizeIndex);
 
-  imageEl.style.cursor = "pointer";
-  imageEl.onclick = () => {
+  applyFrame(false);
+
+  viewport.style.cursor = items.length ? "pointer" : "default";
+  viewport.onclick = () => {
     if (currentHref) window.location.href = currentHref;
   };
 
-  const disableNav = items.length <= 1;
+  const disableNav = realCount <= 1;
   if (prevBtn) {
     prevBtn.disabled = disableNav;
     prevBtn.onclick = disableNav ? null : () => goTo(index - 1);
@@ -281,7 +315,6 @@ function startBannerRotation(status) {
   restartInterval();
 }
 
-// 카드 DOM 생성
 function createEventCard(event) {
   const status = getListStatus(event);
   const dday = getDDayLabel(event.startDate, event.endDate);
@@ -332,7 +365,6 @@ function createEventCard(event) {
   return article;
 }
 
-// 리스트 렌더링
 function renderEvents(filterStatus = "ongoing") {
   const listEl = document.getElementById("eventList");
   listEl.innerHTML = "";
@@ -354,17 +386,15 @@ function renderEvents(filterStatus = "ongoing") {
     if (filterStatus === "past") {
       const aId = pickNumber(a?.id);
       const bId = pickNumber(b?.id);
-      if (aId !== null && bId !== null) return bId - aId; // ID 내림차순
+      if (aId !== null && bId !== null) return bId - aId;
       return String(b?.id ?? "").localeCompare(String(a?.id ?? ""));
     }
-    return new Date(b.startDate) - new Date(a.startDate); // 진행/예정은 최신순
+    return new Date(b.startDate) - new Date(a.startDate);
   });
 
   sorted.forEach((ev) => listEl.appendChild(createEventCard(ev)));
 }
 
-// 탭 클릭 설정
-// 리스트 / 캘린더 뷰 토글
 function setupViewToggle() {
   const buttons = document.querySelectorAll(".view-icon");
   const listView = document.getElementById("eventList");
@@ -392,13 +422,11 @@ function setupViewToggle() {
   });
 }
 
-// JSON 로드
 async function loadEvents() {
   const LIST_URL = "/data/8_tomato_event_list.json";
   const CALENDAR_URL = "/data/8_tomato_event_calendar.json";
 
   try {
-    // 리스트 전용 데이터
     const listRes = await fetch(LIST_URL);
     if (!listRes.ok) throw new Error("이벤트 리스트 데이터를 불러오지 못했습니다.");
     const listData = await listRes.json();
@@ -414,7 +442,6 @@ async function loadEvents() {
     }
   }
 
-  // 캘린더용 전체 데이터(학사/학과 일정 포함)
   try {
     const calRes = await fetch(CALENDAR_URL);
     if (!calRes.ok) throw new Error("캘린더 데이터를 불러오지 못했습니다.");
@@ -430,10 +457,7 @@ async function loadEvents() {
   }
 }
 
-/* ===== 캘린더 (이벤트 리스트 전용) ===== */
-
 function getEventType(event) {
-  // 타입 정보가 없으면 기본적으로 학과 행사(event)로 처리
   return event?.type || "event";
 }
 
@@ -454,7 +478,6 @@ function formatDateStr(date) {
   return `${y}-${m}-${d}`;
 }
 
-// "2025.11.15 (토) ~ 11.16 (일)" 형태의 행사 일정을 YYYY-MM-DD 범위로 변환
 function parseEventDateRange(eventDateStr) {
   if (!eventDateStr || typeof eventDateStr !== "string") return null;
 
@@ -506,19 +529,15 @@ function passesCalendarFilter(event) {
   return true;
 }
 
-// 리스트에서 온 학과 행사인지 체크
 function isListEvent(ev) {
   return ev && ev.fromEventList === true;
 }
 
-// 캘린더에 찍힐 라벨 결정
 function getCalendarLabel(ev, dateStr) {
-  // 신청기간 룰은 "학과 행사(이벤트)" + 리스트에서 온 애들만 적용
   if (!isListEvent(ev)) {
     return ev.title || "";
   }
 
-  // endDate 전용 마커는 행사명만, 나머지는 신청기간 표기
   if (ev.isEndMarker) {
     return ev.title || "";
   }
@@ -543,7 +562,6 @@ function getCalendarEventsFromList() {
     const baseId =
       ev.id !== undefined && ev.id !== null ? ev.id : `cal-event-${idx}`;
 
-    // 신청 기간: 원래의 start~end 구간 전체를 표시
     result.push({
       ...ev,
       id: `${baseId}-apply`,
@@ -556,11 +574,10 @@ function getCalendarEventsFromList() {
       _startDate: start,
       _endDate: end,
       _trackIndex: null,
-      fromEventList: true, // 신청기간 라벨 사용
+      fromEventList: true,
       isEndMarker: false,
     });
 
-    // 행사 본 일정: eventDate 기반으로 별도 표시 (단일/범위 모두 지원)
     const eventDateRange = parseEventDateRange(ev.eventDate);
     if (eventDateRange) {
       result.push({
@@ -845,7 +862,6 @@ function renderCalendarGrid() {
           pill.title = label;
 
           if (isStart && isEnd) {
-            // 단일 일정이지만 범위형으로 들어온 경우
           } else if (isStart) {
             pill.classList.add("calendar-range-seg--start");
           } else if (isEnd) {
@@ -963,7 +979,6 @@ async function initEventCalendar() {
     return;
   }
 
-  // 필터에 없는 타입은 all로 포괄되지만, 필요 시 확장 대비
   calendarState.events.forEach((ev) => {
     if (!ev.categoryLabel) {
       ev.categoryLabel =
@@ -988,7 +1003,6 @@ async function initEventCalendar() {
   calendarState.initialized = true;
 }
 
-// 상태 탭 설정 (진행중 / 지난)
 function setupStatusTabs(defaultStatus = "ongoing") {
   const tabs = document.querySelectorAll(".page-hero__subnav [data-status]");
 
@@ -1031,7 +1045,6 @@ function setupStatusTabs(defaultStatus = "ongoing") {
   });
 }
 
-// 진행중 이벤트가 없으면 자동으로 지난 탭으로 이동
 function getDefaultStatus() {
   const hash = (window.location.hash || "").replace("#", "");
   if (hash === "past" || hash === "ongoing") return hash;
@@ -1041,7 +1054,6 @@ function getDefaultStatus() {
   return hasOngoing ? "ongoing" : "past";
 }
 
-// 초기 실행
 document.addEventListener("DOMContentLoaded", async () => {
   await loadEvents();
   const defaultStatus = getDefaultStatus();

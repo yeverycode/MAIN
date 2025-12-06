@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="/css/8_tomato_lab_test.css" />
 </head>
 <body class="lab-test-page">
-<!-- 공통 헤더-->
 <div class="site-header-backdrop" aria-hidden="true"></div>
 <header class="site-header" aria-label="주요 탐색">
   <nav class="nav" role="navigation">
@@ -50,7 +49,6 @@
   </nav>
 </header>
 
-<!-- 상단 검정 히어로 -->
 <section class="page-hero page-hero--prof" aria-label="교수/연구실 안내 헤더">
   <div class="page-hero__headline">
     <h1>PR<span class="title-img-wrap">O<img src="/assets/8_tomato_O.png" alt="" aria-hidden="true" class="title-img"></span>F</h1>
@@ -67,7 +65,6 @@
   </nav>
 </section>
 
-<!-- 하단 흰색 콘텐츠 -->
 <main class="content" id="content">
   <section class="lab-scroll-section" aria-labelledby="lab-scroll-title">
     <div class="lab-scroll-static">
@@ -92,36 +89,28 @@
     </div>
 
     <div class="container lab-test-shell">
-      <!-- 시작 화면 -->
       <section class="content test-intro" id="welcomeScreen" aria-label="연구실 테스트 시작">
         <button class="btn btn--primary btn--large" id="startBtn">시작하기</button>
       </section>
 
-      <!-- 퀴즈 화면 -->
       <section class="content test-quiz" id="quizScreen" style="display: none;" aria-labelledby="quiz-title">
-        <!-- 진행 표시기 -->
         <div class="progress-container">
           <div class="progress-bar">
             <div class="progress-fill" id="progressFill"></div>
           </div>
         </div>
 
-        <!-- 질문 컨테이너 -->
         <div class="question-container" id="questionContainer">
-          <!-- 질문들이 동적으로 렌더링됩니다 -->
         </div>
 
-        <!-- 네비게이션 버튼 -->
         <div class="quiz-navigation">
           <button class="btn btn--ghost" id="prevBtn" style="visibility: hidden;">이전</button>
           <button class="btn btn--primary" id="nextBtn" disabled>다음</button>
         </div>
       </section>
 
-      <!-- 결과 화면 -->
       <section class="content test-result" id="resultScreen" style="display: none;" aria-labelledby="result-title">
         <div class="result-container" id="resultContainer">
-          <!-- 결과가 동적으로 렌더링됩니다 -->
         </div>
       </section>
     </div>
@@ -129,9 +118,6 @@
 
 </main>
 
-<!-- 푸터 -->
-
-<!-- 플로팅 레일 / 스크롤 버튼 -->
 <aside class="rail" aria-label="빠른 링크 및 레이블">
   <button class="rail-collapse" type="button" aria-label="패널 닫기">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">

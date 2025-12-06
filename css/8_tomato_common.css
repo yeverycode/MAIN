@@ -1,7 +1,5 @@
-/* Pretendard */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 
-/* 색상/폰트 토큰 */
 :root {
   --black: #000000;
   --white: #FDFDFD;
@@ -16,7 +14,6 @@
   --font-base: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-/* 기본 색상 (다크 테마 고정) */
 :root {
   --bg: var(--black);
   --surface: var(--black);
@@ -69,7 +66,6 @@ button {
   cursor: pointer;
 }
 
-/* 공통 히어로/서브탭 */
 .page-hero {
   min-height: calc(100vh - var(--header-height));
   min-height: calc(100dvh - var(--header-height));
@@ -188,7 +184,6 @@ button {
   }
 }
 
-/* 레이아웃 */
 .container {
   width: min(1648px, 92vw);
   margin-inline: auto;
@@ -205,7 +200,6 @@ button {
   padding: 60px 0 80px;
 }
 
-/* 헤더 */
 .site-header-backdrop {
   position: fixed;
   top: 0;
@@ -277,7 +271,6 @@ button {
   color: var(--accent);
 }
 
-/* 플로팅 레일 & FAB */
 .rail {
   --rail-top: calc(var(--header-height) + 20px);
   --rail-bottom: calc(var(--rail-bottom-gap) + var(--rail-fab-size) + var(--rail-fab-spacing));
@@ -464,7 +457,6 @@ button {
   color: var(--gray);
 }
 
-/* 드롭다운 */
 .nav__item {
   position: relative;
 }
@@ -483,7 +475,6 @@ button {
   color: #b3b3b3;
 }
 
-/* 드롭다운 메뉴 */
 .dropdown {
   position: absolute;
   top: calc(100% + 16px);
@@ -504,14 +495,12 @@ button {
   z-index: 101;
 }
 
-/* 드롭다운 표시 */
 .nav__item:hover .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
 
-/* 드롭다운 아이템 */
 .dropdown__item {
   display: block;
   padding: 12px 16px;
@@ -547,7 +536,6 @@ button {
   }
 }
 
-/* 섹션 전환 효과 */
 .reveal {
   --reveal-translate: 60px;
   --reveal-duration: 1s;
@@ -591,7 +579,9 @@ button {
 
 .reveal-stagger > .reveal,
 .reveal-stagger .reveal {
-  transition-delay: calc(var(--delay, 0ms) + (var(--i, 0) * 150ms));
+  /* Force group animation: ignore individual index delays */
+  transition-delay: 0ms !important;
+  animation-delay: 0ms !important;
 }
 
 .intro-left h2 span {
@@ -607,7 +597,6 @@ html:not(.reveal-ready) .reveal-height {
   height: auto !important;
 }
 
-/* 푸터 */
 .footer-section {
   font-size: 13px;
   font-weight: 200;

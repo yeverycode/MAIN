@@ -1,11 +1,3 @@
-/* ========================================
-   교수님 소개 페이지 전용 스타일
-   ======================================== */
-
-/* ================================
-   1. 검정 배경 비주얼 섹션 (PROF)
-   ================================ */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,7 +29,6 @@
   text-transform: uppercase;
 }
 
-/* 교수/연구실 탭 서브 내비게이션 */
 .prof-subnav {
   position: absolute;
   bottom: 60px;
@@ -107,10 +98,6 @@
   margin: 0 auto;
 }
 
-/* ================================
-   2. 소개 문구 / 섹션 래퍼
-   ================================ */
-
 .prof-section {
   background: var(--black);
   color: var(--white);
@@ -123,7 +110,6 @@
   padding: 0 24px;
 }
 
-/* 상단 소개 문구 */
 .prof-intro-text {
   width: 100%;
   max-width: 1200px;
@@ -169,10 +155,6 @@
   }
 }
 
-/* ================================
-   3. (옵션) 검색창 영역
-   ================================ */
-
 .search-wrapper {
   max-width: 1280px;
   margin: 0 auto 60px;
@@ -217,26 +199,17 @@
   box-shadow: 0 0 0 3px rgba(0, 86, 223, 0.1);
 }
 
-/* ================================
-   4. 교수님 카드 그리드
-   ================================ */
-
 .prof-grid {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: repeat(3, 320px); /* 카드 너비 320 */
+  grid-template-columns: repeat(3, 320px);
   justify-content: center;
-  gap: 30px 20px; /* row, column */
+  gap: 30px 20px;
 }
 
-/* ================================
-   5. 교수 카드 (기본 + hover 상태)
-   ================================ */
-
-/* 카드 전체 (320 x 400, radius 30, #F7F8FB) */
 .prof-card {
   position: relative;
   width: 320px;
@@ -252,14 +225,14 @@
 .prof-card::before {
   content: "";
   position: absolute;
-  inset: -8px; /* 카드 밖까지 덮어 가장자리 어둠 제거 */
+  inset: -8px;
   background: rgba(255, 255, 255, 0.7);
   filter: blur(14px);
   mix-blend-mode: screen;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
-  z-index: 1; /* 텍스트 아래 */
+  z-index: 1;
 }
 
 .prof-card::after {
@@ -270,10 +243,9 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
-  z-index: 1; /* 텍스트 아래 */
+  z-index: 1;
 }
 
-/* 이름 + 연구실 한 줄 (좌측 상단) */
 .prof-card__name-row {
   position: absolute;
   left: 30px;
@@ -293,20 +265,17 @@
 }
 
 .prof-card__lab {
-  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: var(--black);
   z-index: 2;
 }
 
-/* 연구 분야 설명 텍스트 (hover 시 노출) */
 .prof-card__desc {
   position: absolute;
   left: 30px;
   top: 70px;
   margin: 0;
-  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 15px;
   line-height: 1.4;
@@ -318,14 +287,13 @@
   z-index: 2;
 }
 
-/* 교수 사진: 카드 오른쪽 하단 고정 */
 .prof-card__image-wrap {
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 320px; /* 카드 폭에 맞춤 */
+  max-width: 320px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -344,10 +312,9 @@
 }
 
 .prof-card__image-mask {
-  display: none; /* 이미지 위 블러/오버레이 제거 */
+  display: none;
 }
 
-/* 플러스 버튼 (둥근 흰색 원) — 좌측 하단 */
 .prof-card__plus {
   position: absolute;
   bottom: 15px;
@@ -392,7 +359,6 @@
   transition-duration: 500ms;
 }
 
-/* hover 상태: 설명 노출, 사진 흐려짐, + 약간 회전 */
 .prof-card:hover .prof-card__desc {
   opacity: 1;
   transform: translateY(0);
@@ -416,10 +382,6 @@
   opacity: 1;
   box-shadow: none;
 }
-
-/* ================================
-   6. 접근성 유틸
-   ================================ */
 
 .visually-hidden {
   position: absolute;

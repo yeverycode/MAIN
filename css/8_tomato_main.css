@@ -708,7 +708,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  --cal-overlap-shift: 13vw;
+  box-sizing: border-box;
+  padding-left: calc(var(--cal-overlap-shift) + 12px);
+  padding-right: 8px;
+  --cal-card-width: clamp(280px, 40vw, 460px);
+  --cal-overlap-shift: clamp(72px, 13vw, 184px);
 }
 
 .cal-right {
@@ -747,7 +751,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(220px, 40%, 320px);
+  width: 284px;
   height: 70px;
   background: var(--blue);
   color: #ffffff;
@@ -764,13 +768,13 @@
 
 .btn-cal:hover {
   filter: brightness(1.1);
-  transform: translateY(-2px);
 }
 
 .cal-card {
   position: absolute;
-  left: 50%;
-  width: min(460px, 88%);
+  left: auto;
+  right: clamp(0px, 2vw, 24px);
+  width: min(var(--cal-card-width), 88%, calc(100% - var(--cal-overlap-shift) - 12px));
   height: auto;
   padding: 16px;
   border-radius: 10px;
@@ -779,7 +783,6 @@
   flex-direction: column;
   gap: 20px;
   color: var(--black);
-  transform: translateX(-50%);
 }
 
 .cal-card--back {
@@ -787,7 +790,7 @@
   z-index: 1;
   background: var(--white);
   opacity: 0.95;
-  transform: translateX(calc(-50% - var(--cal-overlap-shift) / 2));
+  transform: translateX(calc(-1 * var(--cal-overlap-shift)));
 }
 
 .cal-card--front {
@@ -796,7 +799,7 @@
 
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(20px);
-  transform: translate(calc(-50% + var(--cal-overlap-shift) / 2), 0);
+  transform: translateX(0);
 }
 
 .cal-month-header {
@@ -867,6 +870,41 @@
 .cal-cell--primary {
   background: #0b50d0;
   color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .cal-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(28px, 5vw, 40px);
+    padding-inline: clamp(20px, 6vw, 40px);
+  }
+
+  .cal-left,
+  .cal-right {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .cal-left {
+    min-height: clamp(320px, 70vw, 460px);
+    --cal-card-width: clamp(260px, 86vw, 420px);
+    --cal-overlap-shift: clamp(48px, 10vw, 120px);
+    padding-left: calc(var(--cal-overlap-shift) + 10px);
+  }
+
+  .cal-card {
+    right: clamp(0px, 3vw, 16px);
+  }
+
+  .cal-right-inner {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .cal-right-inner .sec-title {
+    white-space: normal;
+  }
 }
 
 .sec-cta {
@@ -1008,7 +1046,6 @@
 
 .btn-cta:hover {
   filter: brightness(1.1);
-  transform: translateY(-2px);
 }
 
 /* 모션 최소화 */

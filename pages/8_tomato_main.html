@@ -292,45 +292,165 @@
   </div>
 </section>
 
-<!-- 섹션 5: 캘린더  -->
+<!-- 섹션 5: 캘린더 -->
 <section class="section sec-calendar" aria-labelledby="cal-title">
   <div class="cal-wrapper">
+    <!-- 왼쪽: 겹쳐진 캘린더 카드 -->
     <div class="cal-left">
-      <!-- Nov 2025 (뒤쪽) -->
-      <div class="cal-card cal-card--back reveal" data-reveal="up">
-        <header class="cal-header">Nov 2025</header>
-        <div class="cal-grid">
-          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-          <i></i><i></i><i></i><b>1</b><b>2</b><b>3</b><b>4</b>
-          <b class="is-primary">5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b><b>11</b>
-          <b>12</b><b>13</b><b>14</b><b>15</b><b>16</b><b>17</b><b class="is-primary">18</b>
-          <b>19</b><b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b>
-          <b>26</b><b>27</b><b>28</b><b>29</b><b>30</b><i></i><i></i>
+      <!-- Nov 2025 (뒤쪽 카드) -->
+      <div class="cal-card cal-card--back">
+        <header class="cal-month-header">
+          <div class="cal-month-label">Nov 2025</div>
+        </header>
+
+        <div class="cal-table">
+          <div class="cal-row cal-row--weekday">
+            <div class="cal-cell cal-cell--weekday">S</div>
+            <div class="cal-cell cal-cell--weekday">M</div>
+            <div class="cal-cell cal-cell--weekday">T</div>
+            <div class="cal-cell cal-cell--weekday">W</div>
+            <div class="cal-cell cal-cell--weekday">T</div>
+            <div class="cal-cell cal-cell--weekday">F</div>
+            <div class="cal-cell cal-cell--weekday">S</div>
+          </div>
+
+          <div class="cal-row">
+            <div class="cal-cell"></div>
+            <div class="cal-cell"></div>
+            <div class="cal-cell"></div>
+            <div class="cal-cell">1</div>
+            <div class="cal-cell">2</div>
+            <div class="cal-cell">3</div>
+            <div class="cal-cell">4</div>
+          </div>
+
+          <div class="cal-row cal-row--range">
+            <div class="cal-cell cal-cell--range cal-cell--start cal-cell--primary">5</div>
+            <div class="cal-cell cal-cell--range">6</div>
+            <div class="cal-cell cal-cell--range">7</div>
+            <div class="cal-cell cal-cell--range">8</div>
+            <div class="cal-cell cal-cell--range">9</div>
+            <div class="cal-cell cal-cell--range">10</div>
+            <div class="cal-cell cal-cell--range">11</div>
+          </div>
+
+          <div class="cal-row cal-row--range">
+            <div class="cal-cell cal-cell--range">12</div>
+            <div class="cal-cell cal-cell--range">13</div>
+            <div class="cal-cell cal-cell--range">14</div>
+            <div class="cal-cell cal-cell--range">15</div>
+            <div class="cal-cell cal-cell--range">16</div>
+            <div class="cal-cell cal-cell--range">17</div>
+            <div class="cal-cell cal-cell--range cal-cell--end cal-cell--primary">18</div>
+          </div>
+
+          <div class="cal-row">
+            <div class="cal-cell">19</div>
+            <div class="cal-cell">20</div>
+            <div class="cal-cell">21</div>
+            <div class="cal-cell">22</div>
+            <div class="cal-cell">23</div>
+            <div class="cal-cell">24</div>
+            <div class="cal-cell">25</div>
+          </div>
+
+          <div class="cal-row">
+            <div class="cal-cell">26</div>
+            <div class="cal-cell">27</div>
+            <div class="cal-cell">28</div>
+            <div class="cal-cell">29</div>
+            <div class="cal-cell">30</div>
+            <div class="cal-cell">31</div>
+            <div class="cal-cell"></div>
+          </div>
         </div>
       </div>
 
-      <!-- Dec 2025 (앞쪽) -->
-      <div class="cal-card cal-card--front reveal" data-reveal="up" style="--i:1">
-        <header class="cal-header">Dec 2025</header>
-        <div class="cal-grid">
-          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-          <i></i><b>1</b><b>2</b><b>3</b><b>4</b><b class="is-primary">5</b><b>6</b>
-          <b>7</b><b>8</b><b>9</b><b>10</b><b>11</b><b>12</b><b>13</b>
-          <b>14</b><b>15</b><b>16</b><b>17</b><b class="is-primary">18</b><b>19</b><b>20</b>
-          <b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b><b>27</b>
-          <b>28</b><b>29</b><b>30</b><b>31</b><i></i><i></i><i></i>
+      <!-- Dec 2025 (앞쪽 카드) -->
+      <div class="cal-card cal-card--front">
+        <header class="cal-month-header">
+          <div class="cal-month-label">Dec 2025</div>
+        </header>
+
+        <div class="cal-table">
+          <div class="cal-row cal-row--weekday">
+            <div class="cal-cell cal-cell--weekday">S</div>
+            <div class="cal-cell cal-cell--weekday">M</div>
+            <div class="cal-cell cal-cell--weekday">T</div>
+            <div class="cal-cell cal-cell--weekday">W</div>
+            <div class="cal-cell cal-cell--weekday">T</div>
+            <div class="cal-cell cal-cell--weekday">F</div>
+            <div class="cal-cell cal-cell--weekday">S</div>
+          </div>
+
+          <div class="cal-row">
+            <div class="cal-cell"></div>
+            <div class="cal-cell"></div>
+            <div class="cal-cell"></div>
+            <div class="cal-cell">1</div>
+            <div class="cal-cell">2</div>
+            <div class="cal-cell">3</div>
+            <div class="cal-cell">4</div>
+          </div>
+
+          <div class="cal-row cal-row--range">
+            <div class="cal-cell cal-cell--range cal-cell--start cal-cell--primary">5</div>
+            <div class="cal-cell cal-cell--range">6</div>
+            <div class="cal-cell cal-cell--range">7</div>
+            <div class="cal-cell cal-cell--range">8</div>
+            <div class="cal-cell cal-cell--range">9</div>
+            <div class="cal-cell cal-cell--range">10</div>
+            <div class="cal-cell cal-cell--range">11</div>
+          </div>
+
+          <div class="cal-row cal-row--range">
+            <div class="cal-cell cal-cell--range">12</div>
+            <div class="cal-cell cal-cell--range">13</div>
+            <div class="cal-cell cal-cell--range">14</div>
+            <div class="cal-cell cal-cell--range">15</div>
+            <div class="cal-cell cal-cell--range">16</div>
+            <div class="cal-cell cal-cell--range">17</div>
+            <div class="cal-cell cal-cell--range cal-cell--end cal-cell--primary">18</div>
+          </div>
+
+          <div class="cal-row">
+            <div class="cal-cell">19</div>
+            <div class="cal-cell">20</div>
+            <div class="cal-cell">21</div>
+            <div class="cal-cell">22</div>
+            <div class="cal-cell">23</div>
+            <div class="cal-cell">24</div>
+            <div class="cal-cell">25</div>
+          </div>
+
+          <div class="cal-row">
+            <div class="cal-cell">26</div>
+            <div class="cal-cell">27</div>
+            <div class="cal-cell">28</div>
+            <div class="cal-cell">29</div>
+            <div class="cal-cell">30</div>
+            <div class="cal-cell">31</div>
+            <div class="cal-cell"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 오른쪽: 텍스트 및 버튼 영역 -->
+    <!-- 오른쪽: 텍스트와 버튼 -->
     <div class="cal-right">
-      <h2 id="cal-title" class="sec-title reveal" data-reveal="up">학과 캘린더를 확인해보세요.</h2>
-      <p class="cal-subtitle reveal" data-reveal="up" style="--i:1">구글폼 링크까지 한눈에 보실 수 있습니다.</p>
-      <a class="btn-cal reveal" data-reveal="up" style="--i:2" href="#">행사 신청하러 가기</a>
+      <div class="cal-right-inner">
+        <h2 id="cal-title" class="sec-title">
+          학과 캘린더를 확인해보세요.
+        </h2>
+        <p class="cal-subtitle">
+          구글폼 링크까지 한눈에 보실 수 있습니다.
+        </p>
+        <a href="#" class="btn-cal">행사 신청하러 가기</a>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- 섹션 6: CTA  -->
 <section class="section sec-cta" aria-labelledby="cta-title">

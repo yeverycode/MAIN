@@ -1,4 +1,3 @@
-/* 섹션 1 */
 .fyig-hero {
   display: flex;
   flex-flow: column;
@@ -50,7 +49,6 @@
   line-height: clamp(120px, 12vw, 220px);
 }
 
-/* 이미지 슬롯 공통 */
 .ani,
 .gif {
   position: relative;
@@ -75,7 +73,6 @@
   height: 229px;
 }
 
-/* 로켓 이미지 (O) */
 .ani-o .ani-img {
   animation: ro 3s ease-in-out infinite;
 }
@@ -313,7 +310,6 @@
   }
 }
 
-/* 섹션 2 */
 .sec-intro {
   width: 100%;
   min-height: 100vh;
@@ -471,8 +467,6 @@
   }
 }
 
-
-/* 섹션 3: 서아 (다른 사람 건들지 말것 !!)*/
 .sec-cards {
   background: var(--bg);
 }
@@ -485,8 +479,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 39px;
-  justify-content: center;   /* 이거 추가 */
-  align-items: stretch;       /* 카드 높이 균일해짐 */
+  justify-content: center;
+  align-items: stretch;
   
 }
 
@@ -580,7 +574,6 @@
   }
 }
 
-/* 섹션 4: 영서 (다른 사람 건드리지 말것!!) */
 .sec-events {
   background: var(--bg);
 }
@@ -693,156 +686,53 @@
   content: none;
 }
 
-/* 섹션 5: 지수 (다른 사람 건드리지 말기!!) */
-.sec-calendar {
-  background: var(--bg);
-}
-
 .cal-wrapper {
-  width: min(1648px, 92vw);
-  margin-inline: auto;
-  padding-inline: clamp(20px, 4vw, 80px);
+  width: 100%;
+  margin: 0 auto;
+
+  padding-inline: clamp(40px, 6vw, 80px);
+
   display: flex;
-  align-items: stretch;
-  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cal-left,
 .cal-right {
-  flex: 1 1 50%;
-  max-width: 50%;
-  min-width: 0;
+  flex: 0 0 50%;
 }
 
 .cal-left {
+  width: min(480px, 50%);
   position: relative;
-  min-height: clamp(380px, 40vw, 640px);
-}
-
-.cal-card {
-  position: absolute;
-  width: clamp(260px, 80%, 520px);
-  height: clamp(320px, 38vw, 560px);
-  background: var(--gray);
-  border: 1px solid var(--gray-strong);
-  border-radius: 24px;
-  padding: clamp(24px, 3vw, 36px);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  color: var(--black);
-}
-
-.cal-card--back,
-.cal-card--front {
-  inset: 0;
-}
-
-.cal-header {
-  font-size: clamp(20px, 1.6vw, 24px);
-  font-family: Pretendard;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--black);
-  text-align: center;
-  padding-bottom: 12px;
-}
-
-.cal-grid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 4px;
-  padding: 8px 0;
-  flex: 1;
-}
-
-.cal-grid span {
-  text-align: center;
-  color: var(--black);
-  font-size: 15px;
-  font-family: Pretendard;
-  font-weight: 500;
-  padding: 4px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cal-grid b,
-.cal-grid i {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1/1;
-  border-radius: 10px;
-  border: 1px solid var(--gray-strong);
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 24px;
-  color: var(--black);
-  background: transparent;
-}
-
-.cal-grid i {
-  border: none;
-}
-
-.cal-grid b:nth-child(n+8):nth-child(-n+42) {
-  background: #C0D6FF;
-  border-color: #C0D6FF;
-  color: #373435;
-}
-
-.cal-grid b.is-primary {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-}
-
-.cal-card--back {
-  z-index: 1;
-}
-
-.cal-card--front {
-  z-index: 2;
-}
-
-.cal-card--back.reveal {
-  opacity: 0;
-  transform: translate(-20px, 20px);
-}
-
-.cal-card--front.reveal {
-  opacity: 0;
-  transform: translate(60px, 60px);
-}
-
-.cal-card--back.reveal.is-inview {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.cal-card--front.reveal.is-inview {
-  opacity: 1;
-  transform: translate(clamp(30px, 4vw, 70px), clamp(30px, 4vw, 80px));
+  min-height: clamp(360px, 34vw, 520px);
 }
 
 .cal-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cal-right-inner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 28px;
-  text-align: left;
+
+  width: 100%;
+  max-width: 420px;
+  text-align: right;
+  align-items: flex-end;
 }
 
-.cal-right .sec-title {
+.cal-right-inner .sec-title {
   margin: 0;
+  white-space: nowrap;
 }
 
-.cal-subtitle {
-  font-size: clamp(24px, 2vw, 32px);
+.cal-right-inner .cal-subtitle {
+  font-size: 24px;
   font-family: Pretendard;
   font-weight: 700;
   line-height: 1.4;
@@ -857,7 +747,7 @@
   width: clamp(220px, 40%, 320px);
   height: 70px;
   background: var(--blue);
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 24px;
   font-family: Pretendard;
   font-weight: 700;
@@ -865,53 +755,115 @@
   margin-top: 12px;
 }
 
+.cal-right-inner .btn-cal {
+  margin-left: auto;
+}
+
 .btn-cal:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
 }
 
-@media (max-width: 1200px) {
-  .cal-wrapper {
-    flex-direction: column;
-    padding-inline: clamp(20px, 6vw, 60px);
-  }
-  
-  .cal-left,
-  .cal-right {
-    max-width: 100%;
-  }
-  
-  .cal-right {
-    text-align: center;
-    align-items: center;
-  }
-  
-  .cal-right .sec-title,
-  .cal-subtitle {
-    text-align: center;
-  }
-  
-  .btn-cal {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .cal-left {
-    min-height: auto;
-  }
-
-  .cal-card {
-    position: relative;
-    width: 100%;
-    height: auto;
-    transform: none !important;
-    opacity: 1 !important;
-    margin-bottom: 24px;
-  }
+.cal-card {
+  position: absolute;
+  width: min(460px, 88%);
+  height: auto;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--black);
 }
 
+.cal-card--back {
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: var(--white);
+  opacity: 0.95;
+}
 
-/* 섹션 6: 예인 (건드릐지 말기!) */
+.cal-card--front {
+  left: 13vw;
+  top: clamp(26px, 3.5vw, 56px);
+  z-index: 2;
+
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+}
+
+.cal-month-header {
+  width: 100%;
+  padding: 4px 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-month-label {
+  text-align: center;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 600;
+  line-height: 36px;
+  color: var(--black);
+}
+
+.cal-table {
+  width: 100%;
+  padding: 4px 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cal-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.cal-row--weekday {
+  flex: 0 0 auto;
+}
+
+.cal-cell {
+  flex: 1 1 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--black);
+}
+
+.cal-cell--weekday {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.cal-row--range {
+  background: #c0d6ff;
+  border-radius: 75px;
+}
+
+.cal-cell--range {
+  background: transparent;
+  color: #373435;
+}
+
+.cal-cell--primary {
+  background: #0b50d0;
+  color: #ffffff;
+}
+
 .sec-cta {
   background: var(--bg);
   text-align: center;
@@ -936,11 +888,10 @@
 }
 
 .cta-title {
-  font-size:32px;
+  font-size:36px;
   margin: 0;
 }
 
-/* 무한 스크롤 카드 영역 */
 .lab-scroll-section {
   width: 100vw;
   margin: 0 calc(-50vw + 50%);
@@ -983,12 +934,10 @@
   animation-iteration-count: infinite;
 }
 
-/* 첫 번째 줄 - 오른쪽으로 */
 .row-1 .scroll-content {
   animation: scrollRight 30s linear infinite;
 }
 
-/* 두 번째 줄 - 왼쪽으로 */
 .row-2 .scroll-content {
   animation: scrollLeft 30s linear infinite;
 }
@@ -1033,7 +982,6 @@
   opacity: 0.9;
 }
 
-/* CTA 버튼 */
 .btn-cta {
   display: inline-flex;
   align-items: center;

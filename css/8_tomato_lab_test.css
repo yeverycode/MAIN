@@ -82,7 +82,7 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: var(--blue, #0056e0);
+  background-color: var(--blue);
   left: 50%;
   top: 2px;
   transform: translateX(-50%);
@@ -150,8 +150,8 @@
   justify-content: center;
   padding: 14px 28px;
   border: 1px solid #d7dce8;
-  background: #ffffff;
-  color: #0f172a;
+  background: var(--white);
+  color: var(--black);
   font-weight: 700;
   font-size: 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -163,7 +163,7 @@
 .btn--primary {
   background: var(--blue);
   border-color: var(--blue);
-  color: #ffffff;
+  color: var(--white);
 }
 
 .btn--ghost {
@@ -198,8 +198,8 @@
    시작 화면 (Welcome Screen)
    ======================================== */
 main.content {
-  background: #ffffff;
-  color: #121212;
+  background: var(--white);
+  color: var(--black);
   padding: clamp(48px, 6vw, 80px) 0;
 }
 
@@ -217,12 +217,12 @@ section.content {
   font-weight: 800;
   letter-spacing: -0.01em;
   margin: 0;
-  color: #0b162b;
+  color: var(--black);
 }
 
 .test-sub {
   margin: 0 auto;
-  color: #4b5563;
+  color: var(--gray-muted);
   line-height: 1.7;
   max-width: 640px;
   font-size: 16px;
@@ -340,8 +340,8 @@ section.content {
   font-size: 16px;
   font-weight: 700;
   border-radius: 2px;
-  background: #0a5ae6;
-  border-color: #0a5ae6;
+  background: var(--blue);
+  border-color: var(--blue);
   margin-top: 50px;
 }
 
@@ -783,12 +783,12 @@ section.content {
   top: 0;
   background: linear-gradient(
     90deg,
-    var(--white, #ffffff) 0%,
-    var(--white, #ffffff) 16%,
+    var(--white) 0%,
+    var(--white) 16%,
     rgba(255, 255, 255, 0) 45%,
     rgba(255, 255, 255, 0) 55%,
-    var(--white, #ffffff) 84%,
-    var(--white, #ffffff) 100%
+    var(--white) 84%,
+    var(--white) 100%
   );
   z-index: 2;
   pointer-events: none;

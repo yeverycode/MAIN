@@ -134,10 +134,12 @@
         <!-- 기본 정보 -->
         <div class="prof-slot prof-slot--info">
           <header class="prof-info-header">
-            <p class="prof-info-header__title">
-              <span class="prof-info-header__role" id="prof-role"></span>
-              <span class="prof-info-header__name" id="prof-name"></span>
-            </p>
+            <div class="prof-info-header__row">
+              <p class="prof-info-header__title">
+                <span class="prof-info-header__role" id="prof-role"></span>
+                <span class="prof-info-header__name" id="prof-name"></span>
+              </p>
+            </div>
 
             <ul class="prof-contact-list">
               <li>
@@ -146,7 +148,9 @@
                     <path d="M12.6283 9.54705L10.6487 9.32103C10.1733 9.26648 9.70573 9.43014 9.37061 9.76526L7.93661 11.1993C5.73106 10.077 3.92298 8.2767 2.80072 6.06335L4.24251 4.62155C4.57763 4.28643 4.74129 3.81882 4.68673 3.34341L4.46072 1.37945C4.3672 0.592307 3.70476 0 2.90983 0H1.56156C0.680894 0 -0.0516913 0.73259 0.00286291 1.61326C0.415916 8.26891 5.73885 13.5841 12.3867 13.9971C13.2673 14.0517 13.9999 13.3191 13.9999 12.4384V11.0902C14.0077 10.303 13.4154 9.64057 12.6283 9.54705Z" fill="#0163FF"/>
                   </svg>
                 </span>
-                <span id="prof-phone"></span>
+                <a href="#" id="prof-phone-link">
+                  <span id="prof-phone"></span>
+                </a>
               </li>
 
               <li>
@@ -173,7 +177,12 @@
 
           <!-- 관심분야 -->
           <section class="prof-block">
-            <h2 class="prof-block__title">관심분야</h2>
+            <div class="prof-block__header">
+              <h2 class="prof-block__title">관심분야</h2>
+              <div class="prof-lab-rail" aria-hidden="true">
+                <a class="prof-lab-rail__link" id="prof-lab-link" href="#" target="_blank" rel="noopener">+ LAB</a>
+              </div>
+            </div>
             <div class="prof-block__divider"></div>
             <div class="prof-tag-list" id="prof-interests">
               <!-- JS가 span.prof-tag 추가 -->

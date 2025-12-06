@@ -1,0 +1,130 @@
+{
+  "systemsNetwork": {
+    "title": "시스템·네트워크",
+    "fullTitle": "시스템·네트워크형",
+    "desc": "분산 시스템, 시스템 소프트웨어, 네트워크 보안 전반을 다루며 견고한 인프라를 설계합니다.",
+    "color": "#1D4ED8",
+    "labs": [
+      {
+        "englishName": "Smart Distributed System Lab.",
+        "koreanName": "스마트 분산시스템 연구실",
+        "prof": "윤용익",
+        "room": "새힘관 512호",
+        "url": "http://mm.sookmyung.ac.kr/~yiyoon",
+        "logo": "https://i.postimg.cc/kgvfYvJd/8-tomato-yiyoon-logo.png"
+      },
+      {
+        "englishName": "Smart System Software Lab.",
+        "koreanName": "지능형 시스템 소프트웨어 연구실",
+        "prof": "이종우",
+        "room": "새힘관 509호",
+        "url": "https://sites.google.com/view/jwleelab",
+        "logo": "https://i.postimg.cc/KYBDjCh9/8_tomato_jwlee_logo.png"
+      },
+      {
+        "englishName": "System and Network Security Lab.",
+        "koreanName": "시스템 네트워크 보안 연구실",
+        "prof": "정성훈",
+        "room": "명신관 508A호",
+        "url": "https://www.snsec.net",
+        "logo": "https://i.postimg.cc/QxpbVJW5/8-tomato-shjeong-logo.png"
+      }
+    ]
+  },
+  "visionGraphics": {
+    "title": "비전·그래픽스·VR/AR",
+    "fullTitle": "비전·그래픽스·VR/AR형",
+    "desc": "컴퓨터 비전과 3D 그래픽스, VR/AR을 중심으로 시각 지능과 몰입 경험을 연구합니다.",
+    "color": "#2563EB",
+    "labs": [
+      {
+        "englishName": "CG/VR Lab.",
+        "koreanName": "컴퓨터 그래픽스/가상현실 연구실",
+        "prof": "박화진",
+        "room": "새힘관 510호",
+        "url": "https://sites.google.com/sookmyung.ac.kr/cgvr/home",
+        "logo": "https://i.postimg.cc/BvHBbRf7/8_tomato_hjpark_logo.png"
+      },
+      {
+        "englishName": "IVPL (Intelligent Vision Processing Lab.)",
+        "koreanName": "지능형 비전처리 연구실",
+        "prof": "김병규",
+        "room": "새힘관 102호",
+        "url": "http://ivpl.sookmyung.ac.kr",
+        "logo": "https://i.postimg.cc/xCQyzg0Q/8_tomato_bgkim_logo.png"
+      },
+      {
+        "englishName": "3D AI Universe Lab.",
+        "koreanName": "3차원 인공지능 유니버스 연구실",
+        "prof": "강지우",
+        "room": "명신관 618호",
+        "url": "http://www.aiunilab.com/",
+        "logo": "https://i.postimg.cc/V6wBC4zB/8_tomato_jwkang_logo.png"
+      }
+    ]
+  },
+  "dataInfoGraph": {
+    "title": "데이터·정보·그래프",
+    "fullTitle": "데이터·정보·그래프형",
+    "desc": "데이터 분석, 정보공학, 그래프·추천·언어 모델링으로 데이터 기반 지능을 구현합니다.",
+    "color": "#0EA5E9",
+    "labs": [
+      {
+        "englishName": "Data Analytics Lab.",
+        "koreanName": "데이터 분석 연구실",
+        "prof": "박영호",
+        "room": "새힘관 508호",
+        "url": "https://sites.google.com/site/dbsook/professor",
+        "logo": "https://i.postimg.cc/85GB6wTK/8_tomato_yhpark_logo.png"
+      },
+      {
+        "englishName": "Knowledge and Information Engineering Lab.",
+        "koreanName": "지식 및 정보 공학 연구실",
+        "prof": "김철연",
+        "room": "새힘관 103호",
+        "url": "https://kie.sookmyung.ac.kr/",
+        "logo": "https://i.postimg.cc/pdzJr3MQ/8_tomato_cykim_logo.png"
+      },
+      {
+        "englishName": "Graph·Recommender·LLM Lab.",
+        "koreanName": "그래프·추천·언어 모델 연구실",
+        "prof": "최윤혁",
+        "room": "수련교수회관 202호",
+        "url": "https://choiyoonhyuk.github.io/",
+        "logo": "https://i.postimg.cc/GtWJpqRb/8-tomato-yhchoi-logo.png"
+      }
+    ]
+  },
+  "humanAI": {
+    "title": "인간 중심 AI·인터페이스",
+    "fullTitle": "인간 중심 AI·인터페이스형",
+    "desc": "HCI, 지능형 시스템, 인간 중심 AI로 사람과 기술의 상호작용을 연구합니다.",
+    "color": "#10B981",
+    "labs": [
+      {
+        "englishName": "Intelligent System Lab.",
+        "koreanName": "지능형 시스템 연구실",
+        "prof": "임유진",
+        "room": "새힘관 104호",
+        "url": "https://sites.google.com/view/yujin91",
+        "logo": "https://i.postimg.cc/NjYC7jh5/8_tomato_yjlim_logo.png"
+      },
+      {
+        "englishName": "Human Computer Interaction Lab.",
+        "koreanName": "인간 컴퓨터 상호작용 연구실",
+        "prof": "동서연",
+        "room": "새힘관 604호",
+        "url": "https://sites.google.com/site/sydonglab/",
+        "logo": "https://i.postimg.cc/tg4rwvCD/8-tomato-sydong-logo.png"
+      },
+      {
+        "englishName": "Human-centered AI Lab.",
+        "koreanName": "인간 중심 인공지능 연구실",
+        "prof": "김상연",
+        "room": "명신관 511호",
+        "url": "https://sangyeonk.com",
+        "logo": "https://i.postimg.cc/Ss47MVyb/8_tomato_sykim_logo.png"
+      }
+    ]
+  }
+}

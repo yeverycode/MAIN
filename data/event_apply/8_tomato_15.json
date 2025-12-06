@@ -11,19 +11,18 @@
   "applyMethod": "신청폼 제출 (선착순 100명)",
   "capacity": 100,
   "appliedCount": 95,
-  "posterImages": ["https://i.postimg.cc/RCgSxhMw/Kakao-Talk-Photo-2025-11-27-09-28-09.png"],
+  "posterImages": ["https://i.postimg.cc/N0WrwLk4/2025-AIin-ui-bam-seonbaenim-sogae.png"],
   "posterAlt": "AI인의 밤 안내 포스터",
 
   "payment": {
-    "fee": "-",
-    "account": "-"
+    "fee": "과학생회비 납부자 무료 / 미납부자 7,000원",
+    "account": "카카오뱅크 79421308866 (예금주: 박지수)"
   },
 
   "notices": [
     "참가 확정 명단은 12월 5일(금) 12:00에 발표됩니다.",
     "AI인의 밤 참석자에게만 제공되는 전용 기념품이 지급됩니다.",
-    "비건/논비건 옵션 없이 동일 구성의 도시락이 제공됩니다.",
-    "럭키드로우 및 포토부스 운영이 진행됩니다."
+    "비건/논비건 옵션 없이 동일 구성의 도시락이 제공됩니다."
   ],
 
   "schedule": [
@@ -38,6 +37,6 @@
 
   "cta": {
     "label": "신청하기",
-    "link": "https://forms.gle/fsCam2dzLBJRGxJ18"
+    "link": "/pages/event/8_tomato_event_form.html"
   }
 }

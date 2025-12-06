@@ -1,4 +1,3 @@
-// 공통: 레일 토글 & 스크롤 버튼
 (function initRail() {
   const rail = document.querySelector('.rail');
   const trigger = document.querySelector('.rail-trigger');

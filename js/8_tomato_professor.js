@@ -10,6 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
   loadProfessor(profId);
 });
 
+const LAB_LINKS = {
+  '윤용익': 'http://mm.sookmyung.ac.kr/~yiyoon',
+  '이종우': 'https://sites.google.com/view/jwleelab',
+  '정성훈': 'https://www.snsec.net',
+  '박화진': 'https://sites.google.com/sookmyung.ac.kr/cgvr/home',
+  '김병규': 'http://ivpl.sookmyung.ac.kr',
+  '강지우': 'http://www.aiunilab.com/',
+  '박영호': 'https://sites.google.com/site/dbsook/professor',
+  '김철연': 'https://kie.sookmyung.ac.kr/',
+  '최윤혁': 'https://choiyoonhyuk.github.io/',
+  '임유진': 'https://sites.google.com/view/yujin91',
+  '동서연': 'https://sites.google.com/site/sydonglab/',
+  '김상연': 'https://sangyeonk.com'
+};
+
 async function loadProfessor(id) {
   const safeId = id.replace(/[^a-z0-9-]/gi, '');
 
@@ -43,8 +58,9 @@ function renderProfessor(prof) {
   // 기본 프로필 정보
   setText('#prof-role', prof.role || '');
   setText('#prof-name', prof.name || '');
-  setText('#prof-phone', prof.phone || '연락처 정보 없음');
+  setPhoneLink(prof.phone);
   setText('#prof-office', prof.office || '연구실 정보 없음');
+  setLabLink(prof.name || '');
 
   const photoEl = document.querySelector('#prof-photo');
   if (photoEl) {
@@ -136,6 +152,43 @@ function setText(selector, value) {
   const el = document.querySelector(selector);
   if (el) {
     el.textContent = value || '';
+  }
+}
+
+function setPhoneLink(phone) {
+  const phoneLink = document.querySelector('#prof-phone-link');
+  const phoneText = document.querySelector('#prof-phone');
+
+  if (!phoneLink || !phoneText) return;
+
+  const raw = phone || '';
+  const tel = raw.replace(/[^\d+]/g, '');
+
+  if (raw && tel) {
+    phoneLink.href = `tel:${tel}`;
+    phoneText.textContent = raw;
+  } else {
+    phoneLink.removeAttribute('href');
+    phoneText.textContent = '연락처 정보 없음';
+  }
+}
+
+function setLabLink(name) {
+  const labWrap = document.querySelector('.prof-lab-rail');
+  const labLink = document.querySelector('#prof-lab-link');
+  if (!labWrap || !labLink) return;
+
+  const url = LAB_LINKS[name.trim()];
+  if (url) {
+    labLink.href = url;
+    labLink.style.display = 'inline-flex';
+    labWrap.style.display = 'flex';
+    labWrap.removeAttribute('aria-hidden');
+  } else {
+    labLink.style.display = 'none';
+    labWrap.style.display = 'none';
+    labWrap.setAttribute('aria-hidden', 'true');
+    labLink.removeAttribute('href');
   }
 }
 

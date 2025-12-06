@@ -8,7 +8,6 @@
   const searchType = document.getElementById("event-search-type");
   const termRadios = document.querySelectorAll('input[name="event-term"]');
 
-  // 상세 인터뷰 페이지가 준비된 항목 매핑 (없으면 클릭 이벤트 생략)
   const interviewMap = {
     "신입생 OT": "1",
     "1학기 개강총회": "2",

@@ -208,8 +208,8 @@
   height: 100%;
   padding: 12px 24px;
   border-radius: 999px;
-  background: #d9d9d9;
-  color: #171717;
+  background: #eaeaea;
+  color: var(--black);
   font-size: 16px;
   font-weight: 700;
   border: 1px solid transparent;
@@ -219,10 +219,9 @@
   transform: scale(0.98);
 }
 .event-content-header__description {
-  margin-top: 32px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
-  color: #747474;
+  color: var(--gray-muted);
   line-height: 1.6;
 }
 
@@ -346,7 +345,7 @@
 .event-card__title {
   font-size: 24px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .event-card__date {
@@ -356,8 +355,10 @@
 
 /* 섹션 타이틀 컬러 고정 */
 .event-content .sec-title {
+  font-size: 30px;
   color: var(--black);
   font-weight: 800;
+  margin-bottom:14px;
 }
 
 .sr-only {

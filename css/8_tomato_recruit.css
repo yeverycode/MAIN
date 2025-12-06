@@ -78,6 +78,7 @@
 .recruit-left {
     flex: 2;
     padding: 20px;
+    margin-bottom: 80px;
     border-radius: var(--border-radius-medium);
 }
 

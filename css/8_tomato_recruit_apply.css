@@ -11,7 +11,7 @@
 .apply-container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 80px;
     padding: 80px 20px;
     background-color: color-mix(in srgb, var(--surface) 8%, transparent);
     box-shadow: var(--shadow-card);
@@ -55,10 +55,11 @@
     border: 1px solid var(--border);
     background-color: var(--surface);
     color: var(--text);
-    font-size: 0.8em;
+    font-size: 15px;
     transition: border-color 0.3s;
     box-sizing: border-box;
     font-family: var(--font-base);
+    border-radius: 8px;
 }
 
 .form-group textarea {
@@ -86,6 +87,8 @@
 
     background-color: var(--black);
     color: #fff;
+
+    border-radius: 8px;
 
     border: 1px solid #fff;
 
@@ -171,12 +174,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.file-dropdown::after {
-    content: '▼';
-    font-size: 0.8em;
-    color: var(--text);
+    border-radius: 8px;
 }
 
 .file-dropdown input[type="file"] {
@@ -210,19 +208,11 @@
     background-color: color-mix(in srgb, var(--blue) 80%, var(--black));
 }
 
-/* 다크 모드에서의 폼 스타일 조정 */
-/* 모바일 반응형 */
-@media (max-width: 650px) {
-    .apply-title {
-        font-size: 2em;
-    }
-    .apply-container {
-        padding: 30px 15px;
-    }
-    .form-group input[type="text"],
-    .form-group textarea,
-    .file-dropdown {
-        padding: 12px;
-        font-size: 1em;
-    }
+.apply-after-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--heading);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }

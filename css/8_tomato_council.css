@@ -19,65 +19,55 @@
 /* -------------------------------------- */
 /* 2. AI 텍스트 (차오름 & 스켈레톤 & 마진) 스타일 */
 /* -------------------------------------- */
-.rising-text {
-    position: relative;
-    /* 1. 스켈레톤 효과: 차오르기 전, 기본 텍스트 색상을 var(--text-muted)로 설정 */
-    color: var(--text-muted, grey); 
-    font-size: inherit; 
-    font-weight: inherit;
-    /* margin 애니메이션 적용을 위해 필수 */
-    display: inline-block; 
 
-    /* ★ 마진 애니메이션 추가 (4초 동안 실행) */
-    animation: margin-grow 3s ease-in-out forwards;
+/* 1. 기본 스타일: GIF/PNG 이미지를 담을 컨테이너 (.rising-text) */
+.rising-text {
+    color: transparent !important;
+    display: inline-block;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    vertical-align: middle; /* vertical-align 조정은 이 코드 블록 아래 팁을 참고하세요. */
 }
 
-/* 2.1. 차오르는 효과를 위한 ::before 가상 요소 */
-.rising-text::before {
-    /* data-text 속성 값을 content로 사용 ('AI' 텍스트 복제) */
-    content: attr(data-text); 
+.rising-text::after {
+    display: none !important;
+}
+
+/* 2. GIF 배경 (초기 상태) */
+/* 이 클래스에 GIF 이미지를 지정합니다. */
+.rising-text.gif-playing::before { 
+    content: '';
+    display: block;
     position: absolute;
-    top: 0;
+    top: -15px; /* 조정된 위치 */
     left: 0;
     width: 100%;
     height: 100%;
     
-    /* 차오르는 색상 */
-    color: var(--blue, blue); 
-
-    /* ★ clip-path로 처음에는 텍스트 전체를 가림 (100%부터 시작) */
-    clip-path: inset(100% 0 0 0); 
-
-    /* 차오름 애니메이션 (4초 동안 실행) */
-    animation: rise-up 3s ease-in-out forwards;
+    /* GIF 이미지 경로 */
+    background-image: url('https://i.postimg.cc/pLKLxS9t/aiglass3.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/* AI 텍스트 차오름 키프레임 */
-@keyframes rise-up {
-    0% { 
-        /* 시작: 완전히 가려져서 아래 스켈레톤 색상만 보임 */
-        clip-path: inset(100% 0 0 0); 
-    } 
-    100% { 
-        /* 끝: 완전히 드러나서 파란색이 됨 */
-        clip-path: inset(0 0 0 0); 
-    } 
-}
+/* 3. PNG 배경 (재생 완료 후 JS가 이 클래스를 추가) */
+/* 이 클래스는 GIF 재생이 끝난 후 JS에 의해 추가됩니다. */
+.rising-text.static-png::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -15px; /* GIF와 동일한 위치 유지 */
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-/* -------------------------------------- */
-/* 3. AI 텍스트의 마진 증가/감소 키프레임 */
-/* -------------------------------------- */
-@keyframes margin-grow {
-    /* 0%~20%: 스켈레톤 단계, 움직이지 않음 */
-    0%, 20% {
-        margin-left: -5px;
-        margin-right: -5px;
-    }
-    /* 40%~60%: AI가 차오르는 동안 양쪽으로 10px 확장하여 M과 N을 밀어냄 */
-    80%, 100% {
-        margin-left: 0; 
-        margin-right: 0; 
-    }
+    /* PNG 이미지 경로 */
+    background-image: url('https://i.postimg.cc/TYLPN1fp/keompojisyeon-1-00119.png'); /* ⬅️ 여기에 PNG 경로를 입력하세요. */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* ================================================= */
@@ -250,10 +240,11 @@
 .carousel-item h3 .year-text {
     /* 💥 핵심: 왼쪽 마진을 자동으로 설정하여 가능한 한 멀리 오른쪽으로 밀어냅니다. */
     margin-left: auto; 
+    color: var(--blue);
     
     /* <h3>의 마진과 겹치지 않도록 수직 정렬을 맞춥니다. */
     align-self: center; 
-    font-weight: 400;
+    font-weight: 600;
     /* <h3>와 폰트 크기를 맞춥니다. */
     font-size: 1rem; /* <h3> 내부이므로 1em이 <h3>와 동일한 크기입니다. */
     

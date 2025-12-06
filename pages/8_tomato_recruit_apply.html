@@ -58,23 +58,23 @@
         <form id="recruitment-form">
             <div class="form-group">
                 <label for="name">이름*</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" required>
             </div>
 
             <div class="form-group">
                 <label for="student-id">학번*</label>
-                <input type="text" id="student-id" name="student-id">
+                <input type="text" id="student-id" name="student-id" placeholder="2400000" required>
             </div>
 
             <div class="form-group">
                 <label for="phone">전화번호*</label>
-                <input type="text" id="phone" name="phone">
+                <input type="text" id="phone" name="phone" inputmode="tel" placeholder="010-1234-5678" required> 
             </div>
 
             <div class="form-group">
                 <label for="dept1">제1지망 부서*</label>
                 <div class="select-wrapper">
-                <select id="dept1" class="custom-select">
+                <select id="dept1" class="custom-select" required>
                     <option value="">부서를 선택해주세요</option>
                     <option value="재정사무부">재정사무부</option>
                     <option value="홍보복지부">홍보복지부</option>
@@ -87,7 +87,7 @@
             <div class="form-group">
                 <label for="dept2">제2지망 부서*</label>
                 <div class="select-wrapper">
-                <select id="dept2" class="custom-select">
+                <select id="dept2" class="custom-select" required>
                     <option value="">부서를 선택해주세요</option>
                     <option value="재정사무부">재정사무부</option>
                     <option value="홍보복지부">홍보복지부</option>
@@ -98,27 +98,27 @@
 
             <div class="form-group">
                 <label for="self-introduction">자기소개*</label>
-                <textarea id="self-introduction" name="self-introduction" maxlength="200" placeholder="200자 이내"></textarea>
+                <textarea id="self-introduction" name="self-introduction" maxlength="200" placeholder="200자 이내" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="strengths-weaknesses">자신의 장단점*</label>
-                <textarea id="strengths-weaknesses" name="strengths-weaknesses" maxlength="300" placeholder="300자 이내"></textarea>
+                <textarea id="strengths-weaknesses" name="strengths-weaknesses" maxlength="300" placeholder="300자 이내" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="why-apply-dept1" id="dept1-reason-label">1지망 부서를 지원한 이유*</label>
-                <textarea id="why-apply-dept1" name="why-apply-dept1" maxlength="150" placeholder="150자 이내"></textarea>
+                <textarea id="why-apply-dept1" name="why-apply-dept1" maxlength="150" placeholder="150자 이내" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="why-apply-dept2" id="dept2-reason-label">2지망 부서를 지원한 이유*</label>
-                <textarea id="why-apply-dept2" name="why-apply-dept" maxlength="150" placeholder="150자 이내"></textarea>
+                <textarea id="why-apply-dept2" name="why-apply-dept" maxlength="150" placeholder="150자 이내" required></textarea>
             </div>
 
             <div class="form-group">
                 <label>면접 가능 시간*</label>
-                <div class="checkbox-group">
+                <div class="checkbox-group" required>
                     <label>
                         <input type="checkbox" name="interview-time" value="1:00 PM - 2:00 PM">
                         1:00 PM - 2:00 PM

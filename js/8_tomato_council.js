@@ -1,5 +1,28 @@
 // 8_tomato_council.js 파일 전체 내용
 
+// 💡 참고: GIF의 실제 재생 시간을 확인하여 아래 ms 값을 조정해야 합니다.
+// 예를 들어, GIF가 2.5초 동안 재생된다면 2500을 사용합니다.
+const GIF_DURATION_MS = 3200;// 2.5초라고 가정 (사용자님의 GIF 시간에 맞게 수정하세요!)
+
+document.addEventListener('DOMContentLoaded', () => {
+    const risingTextElement = document.querySelector('.rising-text');
+    
+    // 1. 초기: GIF 재생을 위해 'gif-playing' 클래스 추가
+    risingTextElement.classList.add('gif-playing');
+
+    // 2. GIF 재생 시간만큼 기다린 후 함수 실행
+    setTimeout(() => {
+        // 타이머가 만료되면
+        
+        // 3. GIF 클래스 제거
+        risingTextElement.classList.remove('gif-playing');
+        
+        // 4. PNG 클래스 추가 (PNG 배경이 적용됨)
+        risingTextElement.classList.add('static-png');
+        
+    }, GIF_DURATION_MS);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // 애니메이션을 적용할 .line-1과 .line-2만 선택합니다.
     const lines = document.querySelectorAll('.council-intro-line.line-1, .council-intro-line.line-2');

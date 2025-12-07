@@ -4,7 +4,8 @@ with - [@yeverycode](https://github.com/yeverycode) [@24yp01](https://github.com
 ## ✨ 숙명여자대학교 인공지능공학부 웹사이트
 
 - 학과·학생회 정보, 이벤트, 교수·연구실 소개, 적성 테스트 등을 담은 정적 멀티페이지 사이트입니다. 별도 빌드 없이 HTML/CSS/JS와 JSON 데이터로 구동하며, 페이지별 스크립트가 인터랙션과 필터링을 담당합니다.
-<img width="7016" height="9933" alt="Image" src="https://github.com/user-attachments/assets/ec974d23-5a20-4350-b866-dd3da8c50398" />
+<img width="7016" height="9933" alt="Image" src="<img width="7016" height="9933" alt="Frame 7" src="https://github.com/user-attachments/assets/d67d3aac-0649-45de-a7b1-ba370c16ae85" />
+" />
 
 ## 🤍 주요 기능
 

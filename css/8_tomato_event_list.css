@@ -287,11 +287,11 @@
 .event-content {
   max-width: 1245px;
   margin: 0 auto;
-  border-top: 1px solid #111;
+  border-top: 1px solid #ccc;
 }
 
 .event-list {
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #ccc;
 }
 
 .event-card {

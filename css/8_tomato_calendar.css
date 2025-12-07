@@ -1,20 +1,13 @@
-/* 8_tomato_calendar.css */
-
-/* 전체 기본 */
 body.page-calendar {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #222;
   background: #ffffff;
 }
-
-/* ===== 캘린더 영역 ===== */
 
 .page-calendar-section {
   margin-top: 32px;
 }
 
-/* 상단 월/연도 + 필터 */
 .calendar-header {
   display: flex;
   flex-direction: column;
@@ -46,7 +39,6 @@ body.page-calendar {
   letter-spacing: 0.05em;
 }
 
-/* 필터 + 범례 */
 .calendar-controls {
   display: flex;
   justify-content: space-between;
@@ -55,7 +47,6 @@ body.page-calendar {
   flex-wrap: wrap;
 }
 
-/* 필터 버튼 */
 .calendar-filter-segment {
   background: #e4ebff;
   border-radius: 5px;
@@ -79,7 +70,6 @@ body.page-calendar {
   color: #1857ff;
 }
 
-/* 범례 */
 .calendar-legend {
   display: flex;
   gap: 8px;
@@ -90,10 +80,13 @@ body.page-calendar {
 .legend-item {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 8px;
-  border-radius: 5px;
-  background: #ffffff;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #d6d6d6;
+  border-radius: 13px;
+  background: #fff;
+  font-size: 12px;
 }
 
 .legend-item::before {
@@ -115,7 +108,6 @@ body.page-calendar {
   background: #ffb3b3;
 }
 
-/* 요일 줄 */
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -125,7 +117,6 @@ body.page-calendar {
   color: #64748b;
 }
 
-/* 날짜 그리드 */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -135,12 +126,11 @@ body.page-calendar {
   position: relative;
 }
 
-/* 날짜 칸 */
 .calendar-day {
   min-height: 76px;
   border-right: 1px solid rgba(226, 232, 240, 0.9);
   border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-  padding: 4px 4px 6px;
+  padding: 4px 0 6px;
   position: relative;
   font-size: 11px;
 }
@@ -157,7 +147,6 @@ body.page-calendar {
   background: var(--gray);
 }
 
-/* 날짜 숫자 기본 상태 */
 .calendar-day__number {
   font-size: 11px;
   font-weight: 600;
@@ -169,37 +158,40 @@ body.page-calendar {
   padding: 2px 6px;
   border-radius: 5px;
   background: transparent;
+  margin-left: 4px;
 }
 
-/* 선택된 날짜 – 색만 변경 */
 .calendar-day.is-selected .calendar-day__number {
   background: #1857ff;
   color: #ffffff;
 }
 
-/* 날짜 안 pill 들 */
 .calendar-day__events {
   display: flex;
   flex-direction: column;
-  gap: 4px;        /* pill 사이 간격 통일 */
+  gap: 4px;
   margin-top: 4px;
 }
 
-/* =======================
-   pill 기본 (전부 같은 크기 + 네모)
-   ======================= */
 .calendar-event-pill {
   display: block;
-  width: calc(100% + 8px);  /* 멀티데이랑 단일 이벤트 모두 셀 전체 폭 */
-  margin: 0 -4px;           /* .calendar-day padding 보정 */
+  box-sizing: border-box;
   padding: 4px 8px;
   font-size: 10px;
   line-height: 1.4;
-  box-sizing: border-box;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
-/* 타입별 색상 */
+.calendar-event-pill:not(.calendar-range-seg) {
+  width: calc(100% - 8px);
+  margin: 0 4px;
+}
+
+.calendar-event-pill.calendar-range-seg {
+  width: 100%;
+  margin: 0;
+}
+
 .calendar-event-pill--academic {
   background: rgba(148, 196, 255, 0.32);
   color: #1857ff;
@@ -215,19 +207,32 @@ body.page-calendar {
   color: #b91c1c;
 }
 
-/* start/middle/end 에서도 모서리 깎지 않고 기본 모양 유지 */
-.calendar-range-seg--start,
-.calendar-range-seg--middle,
-.calendar-range-seg--end {
-  border-radius: inherit;
+.calendar-event-pill.calendar-range-seg--start {
+  margin-left: 4px;
+  margin-right: 0;
+  width: calc(100% - 4px);
 }
 
-/* 중간/끝 칸에서는 텍스트만 숨김 */
-.calendar-range-seg--ghost {
+.calendar-event-pill.calendar-range-seg--middle {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.calendar-event-pill.calendar-range-seg--end {
+  width: calc(100% - 8px);
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+.calendar-event-pill.calendar-range-seg--ghost {
   color: transparent;
 }
 
-/* ===== 아래 상세 카드 ===== */
+.calendar-range-spacer {
+  visibility: hidden;
+  pointer-events: none;
+}
 
 .calendar-detail {
   margin-top: 16px;
@@ -313,6 +318,10 @@ body.page-calendar {
   align-items: center;
 }
 
+.detail-apply:hover {
+  color: #1857ff;
+}
+
 .detail-apply--title {
   margin-left: auto;
 }
@@ -328,20 +337,12 @@ body.page-calendar {
   flex: 1;
 }
 
-/* 멀티데이 트랙 자리 유지용 더미 (공간만 차지, 보이지 않음) */
-.calendar-range-spacer {
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* 상단 제목 + 월 이동 버튼 묶음 */
 .calendar-header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* 월 이동 화살표 */
 .calendar-month-nav {
   display: inline-flex;
   gap: 4px;

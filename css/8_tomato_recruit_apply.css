@@ -1,8 +1,3 @@
-ㅍ/* ====================================
-** 지원서 폼 전용 스타일 (Common CSS 변수 사용) **
-==================================== */
-
-/* 폼 섹션 컨테이너 */
 .form-section {
     padding: 60px 20px;
     background-color: var(--bg);
@@ -47,7 +42,6 @@
     display: block;
 }
 
-/* 텍스트 입력 필드 및 텍스트 영역 */
 .form-group input[type="text"],
 .form-group textarea {
     width: 100%;
@@ -73,17 +67,15 @@
     outline: none;
 }
 
-/* wrapper */
 .select-wrapper {
     position: relative;
     width: 100%;
 }
 
-/* 기존 select 스타일 유지 */
 .custom-select {
     width: 100%;
     padding: 12px 14px;
-    padding-right: 38px; /* 화살표 공간 확보 */
+    padding-right: 38px;
 
     background-color: var(--black);
     color: #fff;
@@ -95,12 +87,11 @@
     font-size: 15px;
     outline: none;
 
-    appearance: none;        /* 기본 화살표 제거 */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
-/* 커스텀 화살표 */
 .select-wrapper::after {
     content: "▼";
     position: absolute;
@@ -112,14 +103,10 @@
     pointer-events: none;
 }
 
-/* 열렸을 때 ▲ */
 .select-wrapper.open::after {
     content: "▲";
 }
 
-
-
-/* 체크박스 그룹 */
 .checkbox-group {
     margin-top: 15px;
     display: flex;
@@ -136,7 +123,7 @@
     color: var(--text);
     cursor: pointer;
 }
-/* 기본 상태는 커스텀 디자인 유지 */
+
 .checkbox-group input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -150,19 +137,15 @@
     flex-shrink: 0;
 }
 
-/* 체크되면 기본 체크아이콘만 복귀 */
 .checkbox-group input[type="checkbox"]:checked {
     -webkit-appearance: checkbox;
     -moz-appearance: checkbox;
     appearance: checkbox;
     
-    /* 체크했을 때 배경/보더 유지하고 싶으면 다시 스타일 넣기 */
     border: 2px solid var(--blue);
-    background-color: var(--surface); /* 기본 체크박스는 흰 배경 */
+    background-color: var(--surface);
 }
 
-
-/* 드롭다운 (파일 첨부) */
 .file-dropdown {
     position: relative;
     width: 100%;
@@ -187,7 +170,6 @@
     cursor: pointer;
 }
 
-/* 제출 버튼 */
 .submit-button {
     display: block;
     width: 100%;
